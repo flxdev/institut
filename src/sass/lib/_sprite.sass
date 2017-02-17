@@ -1,0 +1,49 @@
+$icons: (0:0)
+$icons: map-merge($icons,(check: (X: -388px, Y:-159px, W: 48px, H: 48px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-1: (X: -89px, Y:-352px, W: 68px, H: 85px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-10: (X: 0px, Y:0px, W: 154px, H: 155px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-11: (X: -158px, Y:0px, W: 154px, H: 154px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-2: (X: 0px, Y:-263px, W: 87px, H: 85px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-3: (X: -91px, Y:-263px, W: 85px, H: 85px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-4: (X: -362px, Y:-263px, W: 77px, H: 55px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-5: (X: 0px, Y:-352px, W: 85px, H: 86px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-6: (X: -474px, Y:0px, W: 34px, H: 87px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-7: (X: -272px, Y:-263px, W: 86px, H: 73px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-8: (X: -180px, Y:-263px, W: 88px, H: 79px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-9: (X: -316px, Y:0px, W: 154px, H: 154px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo-white: (X: 0px, Y:-211px, W: 384px, H: 48px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo: (X: 0px, Y:-159px, W: 384px, H: 48px, TW: 508px, TH: 438px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)	
