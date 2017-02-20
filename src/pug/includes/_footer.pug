@@ -1,6 +1,61 @@
-.footer__main
-
-
-
-
-
+include _mixins.pug
+.box
+	.footer__main
+		.footer-main-nav
+			+footerA('Главная')
+			+footerA('Специалисты')
+			+footerA('Акции')
+			+footerA('Об институте')
+			+footerA('Клиники')
+			+footerA('Контакты')
+		.footer-dop-nav
+			.text-bold Услуги
+			ul.footer-dop-list
+				+footerb('Массаж')
+				+footerb('Пилинги')
+				+footerb('Эпиляция')
+				+footerb('Трихология')
+				+footerb('Косметология')
+				+footerb('Клиника витилиго')
+				+footerb('Пластическая хирургия')
+				+footerb('Лабораторные анализы')
+				+footerb('Послеоперационная  реабилитация')
+				+footerb('Персонализирppованная 			 медицина')
+				+footerb('Лазерная косметология')
+				+footerb('Персонализированная косметика')
+				+footerb('Коррекция фигуры')
+				+footerb('Прайс-лист')
+		.footer-tel
+			.text-bold Контактная информация
+			.footer-tel-nums
+				+footerNum('+7 (495) 212-92-99', 'Многоканальный')
+				+footerNum('+7 (499) 795-10-92', 'Администрация')
+			.footer-tel-contact(style='background-image: url(img/bg/fl.png);')
+				.footer-tel-contact-inner
+					.text-bold Напишите нам
+					p.text Получите профессиональную консультацию в один клик
+					a(href="#").btn Задать вопрос врачу
+	.footer__footer
+		.footer__footer-copy
+			.text2 © 2016 Институт Красоты на Арбате. 
+			a(href="#").footer__footer-copy-link 
+				span Карта сайта
+		.footer__footer-notify
+			.text2 При полном иличастичном использовании материалов обратная ссылка обязательна.
+		.soc-wrapp
+			a(href="#").soc-wrapp-item.vk
+				svg(class="icon icon-drop")
+					use(xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink")
+			a(href="#").soc-wrapp-item.fb
+				svg(class="icon icon-drop")
+					use(xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink")
+			a(href="#").soc-wrapp-item.in
+				svg(class="icon icon-drop")
+					use(xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink")
+		.footer__footer-developer
+			a(href="#").footer-developer-link
+				.text2 Разработка сайта:
+				.footer-developer-icon
+					svg(class="icon icon-drop")
+						use(xlink:href="#logof" xmlns:xlink="http://www.w3.org/1999/xlink")
+				.footer-developer-text FLEX.MEDIA

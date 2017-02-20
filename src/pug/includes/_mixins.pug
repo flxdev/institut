@@ -1,0 +1,11 @@
+//-footer mixins
+mixin footerA(text)
+	a(href="#").link-f #{text}
+mixin footerb(text)
+	a != #{text}
+	li.footer-dop-item
+		a(href="#") #{text}
+mixin footerNum(num, text)
+	a(href="tel:3333").footer-tel-item
+		.text-bold #{num}
+		span.footer-tel-text #{text}

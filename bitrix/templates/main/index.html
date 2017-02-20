@@ -19,37 +19,109 @@
   </head>
   <body>
     <script type="text/javascript">!function(e){function t(o){if(n[o])return n[o].exports;var c=n[o]={exports:{},id:o,loaded:!1};return e[o].call(c.exports,c,c.exports,t),c.loaded=!0,c.exports}var n={};return t.m=e,t.c=n,t.p="/assets/",t(0)}({0:function(e,t,n){n(18),n(19)},18:function(e,t){!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(c))o(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",c,!0),e.onreadystatechange=function(){4===e.readyState&&(o(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=c)},e.send()}else{var n=document.createElement("link");n.href=c,n.rel="stylesheet",n.type="text/css",document.getElementsByTagName("head")[0].appendChild(n),document.cookie="font_css_cache"}}function o(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t),window.onFontLoad&&window.onFontLoad()}var c=window.fonts_href||"../css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}()},19:function(e,t){}});</script>
-    <div class="svg-defs-container" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-rss" viewBox="0 0 30 30"><path clip-rule="evenodd" fill="none" d="M64.3-1392v-8.5h37v-.5c-2.7-1.7-12-10.6-13-13.5 2.2-1.5 3.3-4.1 6-5 5.3 5.5 10.7 11 16 16.5 2.2 2.2 5.8 4 6.5 7.5-5.5 5.3-11 10.7-16.5 16-2.1 2.1-4 5.4-7 6.5-1.5-2.2-4.1-3.3-5-6 4.3-4.2 8.7-8.3 13-12.5v-.5h-37z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15 0C6.7 0 0 6.7 0 15s6.7 15 15 15 15-6.7 15-15S23.3 0 15 0zm-2.8 20.5c-.9 0-1.7-.8-1.7-1.7 0-.9.8-1.7 1.7-1.7.9 0 1.7.8 1.7 1.7.1 1-.7 1.7-1.7 1.7zm4.8 0c-.7 0-1.2-.5-1.2-1.2 0-2.3-1.8-4.1-4.1-4.1-.7 0-1.2-.5-1.2-1.2s.5-1.2 1.2-1.2c3.6 0 6.5 2.9 6.5 6.5 0 .7-.5 1.2-1.2 1.2zm4.3 0c-.7 0-1.2-.6-1.2-1.2 0-4.6-3.7-8.3-8.3-8.3-.7 0-1.2-.6-1.2-1.2s.6-1.2 1.2-1.2c5.9 0 10.8 4.8 10.8 10.8-.1.6-.6 1.1-1.3 1.1z"/></symbol></svg></div>
+    <div class="svg-defs-container" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="logof" viewBox="0 0 55.4 54.7"><style>.flex{fill-rule:evenodd;clip-rule:evenodd}</style><path class="flex" d="M55.3 51.2V3.9c-.2-.8.3-6.4-4.8-2.7-5 3.3-18.6 12.4-18.6 12.4s-3.5 3.3-8.5 0C16.8 9.3 4.5 1.2 4.5 1.2S.2-2.3 0 3.6v48s0 4.1 3.7 2.8C5.4 53.3 7.3 52 8.9 51c2.6-2.2 2.6-5.5 2.6-5.5v-5.4c0-6 4-1.8 4-1.8s5.4 3.6 7.8 5.3c4.8 2.5 8 .2 8 .2s6.9-4.6 9.5-6.4c3.2-2.5 3 2.6 3 2.6v3.8s-.4 3.9 2.6 6.5c1.5 1.2 3.3 2.6 4.9 3.9 4.8 2.1 4-3 4-3zM41.2 26l-10.5 7s-3 1.9-6.5 0c-3.2-2.2-10.8-7.2-10.8-7.2s-2-.6-2-3.6v-2.6s-.2-3.9 2.8-1.5l9.9 6.6c3.1 2.4 6.7 0 6.7 0s6.8-4.6 11.1-7.5c1.9-1.4 1.6 1.1 1.6 1.1v3.2c0 .2.4 2.6-2.3 4.5z"/></symbol></svg></div>
     <!--BEGIN out-->
     <div class="out" id="top">
       <div class="page__outer">
         <div class="page__wrapper">
           <div class="page__header--wrap">
-            <header class="page__header cd-auto-hide-header"></header>
+            <header class="page__header cd-auto-hide-header">
+              <div class="c-menu-block add">
+                <div class="o-menu-search">
+                  <form class="search__wrapper">
+                    <input class="search__input" type="text" placeholder="Поиск по сайту">
+                    <button class="search__btn" type="submit"><i class="search-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 17 17" style="enable-background:new 0 0 17 17;" xml:space="preserve">
+                          <style type="text/css">.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}</style>
+                          <g>
+                            <g>
+                              <path class="search-i" d="M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1								c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8								S13.1,11.3,10.5,11.3z"></path>
+                            </g>
+                          </g>
+                        </svg></i></button>
+                  </form>
+                </div>
+              </div>
+            </header>
           </div>
           <main class="page__content">
-            <p class="test"> Lorem</p>
-            <div class="test rc">lorem</div>
+            <p class="title h1">Клиника активного</p>
+            <p class="title h2">Услуги</p>
+            <p class="title h3">Косметология</p>
+            <p class="text">Мы постоянно расширяем арсенал методик,  углублённо изучаем <br>состояние здоровья пациента,  разрабатываем комплексные<br>программы совершенствования внешности. </p>
+            <p class="text-bold">Будьте в курсе всех главных <br>акций и событий нашей<br>клиники</p>
+            <p class="text-bold">«Институт Красоты» на Арбате</p><a class="btn" href="#">Задать вопрос врачу</a><a class="btn btn-big" href="#">Обратная связь</a>
           </main>
           <footer class="page__footer">
-            <div class="footer__main"></div>
+            <div class="box">
+              <div class="footer__main">
+                <div class="footer-main-nav"><a class="link-f" href="#">Главная</a><a class="link-f" href="#">Специалисты</a><a class="link-f" href="#">Акции</a><a class="link-f" href="#">Об институте</a><a class="link-f" href="#">Клиники</a><a class="link-f" href="#">Контакты</a>
+                </div>
+                <div class="footer-dop-nav">
+                  <div class="text-bold">Услуги</div>
+                  <ul class="footer-dop-list"><a>!= Массаж</a>
+                                <li class="footer-dop-item"><a href="#">Массаж</a></li><a>!= Пилинги</a>
+                                <li class="footer-dop-item"><a href="#">Пилинги</a></li><a>!= Эпиляция</a>
+                                <li class="footer-dop-item"><a href="#">Эпиляция</a></li><a>!= Трихология</a>
+                                <li class="footer-dop-item"><a href="#">Трихология</a></li><a>!= Косметология</a>
+                                <li class="footer-dop-item"><a href="#">Косметология</a></li><a>!= Клиника витилиго</a>
+                                <li class="footer-dop-item"><a href="#">Клиника витилиго</a></li><a>!= Пластическая хирургия</a>
+                                <li class="footer-dop-item"><a href="#">Пластическая хирургия</a></li><a>!= Лабораторные анализы</a>
+                                <li class="footer-dop-item"><a href="#">Лабораторные анализы</a></li><a>!= Послеоперационная  реабилитация</a>
+                                <li class="footer-dop-item"><a href="#">Послеоперационная  реабилитация</a></li><a>!= Персонализирppованная 			 медицина</a>
+                                <li class="footer-dop-item"><a href="#">Персонализирppованная 			 медицина</a></li><a>!= Лазерная косметология</a>
+                                <li class="footer-dop-item"><a href="#">Лазерная косметология</a></li><a>!= Персонализированная косметика</a>
+                                <li class="footer-dop-item"><a href="#">Персонализированная косметика</a></li><a>!= Коррекция фигуры</a>
+                                <li class="footer-dop-item"><a href="#">Коррекция фигуры</a></li><a>!= Прайс-лист</a>
+                                <li class="footer-dop-item"><a href="#">Прайс-лист</a></li>
+                  </ul>
+                </div>
+                <div class="footer-tel">
+                  <div class="text-bold">Контактная информация</div>
+                  <div class="footer-tel-nums"><a class="footer-tel-item" href="tel:3333">
+                                  <div class="text-bold">+7 (495) 212-92-99</div><span class="footer-tel-text">Многоканальный</span></a><a class="footer-tel-item" href="tel:3333">
+                                  <div class="text-bold">+7 (499) 795-10-92</div><span class="footer-tel-text">Администрация</span></a>
+                  </div>
+                  <div class="footer-tel-contact" style="background-image: url(img/bg/fl.png);">
+                    <div class="footer-tel-contact-inner">
+                      <div class="text-bold">Напишите нам</div>
+                      <p class="text">Получите профессиональную консультацию в один клик</p><a class="btn" href="#">Задать вопрос врачу</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer__footer">
+                <div class="footer__footer-copy">
+                  <div class="text2">© 2016 Институт Красоты на Арбате. </div><a class="footer__footer-copy-link" href="#"> <span>Карта сайта</span></a>
+                </div>
+                <div class="footer__footer-notify">
+                  <div class="text2">При полном иличастичном использовании материалов обратная ссылка обязательна.</div>
+                </div>
+                <div class="soc-wrapp"><a class="soc-wrapp-item vk" href="#">
+                    <svg class="icon icon-drop">
+                      <use xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg></a><a class="soc-wrapp-item fb" href="#">
+                    <svg class="icon icon-drop">
+                      <use xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg></a><a class="soc-wrapp-item in" href="#">
+                    <svg class="icon icon-drop">
+                      <use xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg></a></div>
+                <div class="footer__footer-developer"><a class="footer-developer-link" href="#">
+                    <div class="text2">Разработка сайта:</div>
+                    <div class="footer-developer-icon">
+                      <svg class="icon icon-drop">
+                        <use xlink:href="#logof" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                      </svg>
+                    </div>
+                    <div class="footer-developer-text">FLEX.MEDIA</div></a></div>
+              </div>
+            </div>
           </footer>
         </div>
       </div>
     </div>
-    <div class="modals">
-      <div class="modal-layout js-popup-container" data-modal="subscribe">
-        <!--контейнер модалки-->
-        <div class="modal-container modal-small">
-          <div class="modal-container-header">
-            <div class="h-title h2">Спасибо</div><i class="small-link pop-close closePopup"></i>
-          </div>
-          <div class="modal-container-content">
-            <div class="text1">Вы подписались на рассылку новостей от Eat-bit. Настроить подписку вы можете в личном кабинете.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="modals"></div>
     <!--END out-->
     <script src="js/lib.min.js"></script>
     <script src="js/common.min.js"></script>
