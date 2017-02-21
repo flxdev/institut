@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="fb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 595.3" style="enable-background:new 0 0 595.3 595.3;" xml:space="preserve">
+<style type="text/css">
+	.fb0{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="fb_1_" x="154.1" y="0" width="287.1" height="595.3"/>
+		</defs>
+		<clipPath id="fb_2_">
+			<use xlink:href="#fb_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<path class="fb0" d="M154.1,196.1h63v-59.5c0-28,0-66.5,21-91C255.6,17.5,283.6,0,332.7,0c77,0,112.1,10.5,112.1,10.5l-17.5,91
+			c0,0-24.5-7-49-7c-24.5,0-45.5,10.5-45.5,31.5v70h98l-7,91h-91v308.1H217.1V287.1h-63V196.1z"/>
+	</g>
+</g>
+</svg>

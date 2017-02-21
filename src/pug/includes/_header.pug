@@ -1,17 +1,66 @@
-.c-menu-block.add
-	.o-menu-search
-		form.search__wrapper
-			input(type="text",placeholder='Поиск по сайту').search__input
-			button(type='submit').search__btn
-				i.search-icon
-					svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 17 17', style='enable-background:new 0 0 17 17;', xml:space='preserve')
-						style(type='text/css').
-							.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}
-						g
-							g
-								path.search-i(d='M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1\
-								c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8\
-								S13.1,11.3,10.5,11.3z')
+include _mixins.pug
+.page__header-main.box
+	a(href="#").page__header-logo
+		.page__header-logo-big(style='background-image:url(img/logob.png)')
+		.page__header-logo-small(style='background-image:url(img/logob-small.png)')
+	.page__header-content
+		.page__header-nav-top
+			a(href="#").top-nav.top.icon
+				span об инстутуте
+			a(href="#").top-nav.top
+				span Клиники
+			a(href="#").top-nav.top.icon
+				span Акции
+		.page__header-search
+			.o-menu-search
+				form.search__wrapper
+					input(type="text",placeholder='Поиск по сайту').search__input
+					button(type='submit').search__btn
+						i.search-icon
+							svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 17 17', style='enable-background:new 0 0 17 17;', xml:space='preserve')
+								style(type='text/css').
+									.search-i{fill-rule:evenodd;clip-rule:evenodd;fill:#939393;}
+								g
+									g
+										path.search-i(d='M10.5,0C6.9,0,4,2.9,4,6.5c0,1.4,0.4,2.6,1.1,3.7L0,15.3L1.7,17l5.1-5.1c1,0.7,2.3,1.1,3.7,1.1\
+										c3.6,0,6.5-2.9,6.5-6.5C17,2.9,14.1,0,10.5,0z M10.5,11.3c-2.7,0-4.8-2.2-4.8-4.8s2.2-4.8,4.8-4.8s4.8,2.2,4.8,4.8\
+										S13.1,11.3,10.5,11.3z')
+		.page__header-soc
+			.soc-wrapp
+				a(href="#").soc-wrapp-item.vk
+					svg(class="icon icon-drop")
+						use(xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink")
+				a(href="#").soc-wrapp-item.fb
+					svg(class="icon icon-drop")
+						use(xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink")
+				a(href="#").soc-wrapp-item.in
+					svg(class="icon icon-drop")
+						use(xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink")
+		.page__header-nav-bottom
+			a(href="#").top-nav.bottom.icon
+				span УСЛУГИ и цены 
+			a(href="#").top-nav.bottom.icon
+				span СПЕЦИАЛИСТЫ
+			a(href="#").top-nav.bottom
+				span Контакты
+		.page__header-button
+			a(href="#").btn.yell.i-left Записаться на прием
+		.page__header-contact
+			a(href="tel:3333").contact-item
+				.text-bold +7 (495) 212-92-99 
+			a(href="#") Обратный звонок
+			.text2 
+				.dete-item пн–пт: 9:00–21:00
+				.dete-item сб–вс: 10:00–20:00
+		.page__header-hamburger.js-menu
+			.hamburger
+				.hamburger-inner
+					span
+					span
+					span
+.header
+
+.page__header-drop
 
 
 

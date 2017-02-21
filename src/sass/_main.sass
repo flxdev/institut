@@ -25,7 +25,7 @@ a
 	color: $hover
 *
 	+box
-	-webkit-tap-highlight-color: #fcef8d
+	-webkit-tap-highlight-color: rgba(252, 239, 141, 0.41)
 	+placeholder 
 		font-family: $pt
 		+rem(font-size,16px)
@@ -50,14 +50,15 @@ html
   //   overflow-x: hidden
   // +r(769)
   //   font-size: 15px
-  // +r(544)
-  //   font-size: 14px
+	+r(600)
+		font-size: 15px
 body
 	background-color: #fff
 	+box
 	+font-smoothing
 	text-rendering: optimizeLegibility
 	font-family: $pt
+	min-width: 320px
 	& ::selection
 		background-color: #fcef8d
 		color:#000
@@ -81,6 +82,11 @@ body, .out,html
 	top: 0
 	z-index: 20
 	visibility: hidden
+#logob
+	width: 100%
+	height: 100%
+	display: inline-block
+	
 .page
 	&__wrapper
 		background-color: #fff
@@ -95,22 +101,245 @@ body, .out,html
 	&__header
 		background: $white
 		display: flex
-		flex-wrap: nowrap
+		flex-wrap: wrap
 		justify-content: space-between
 		align-items: center
 		position: relative
 		visibility: visible
+		box-shadow: 0px 0px 40px 0px rgba( 214, 190, 59 ,.15);
+		+r(991)
+			transition: transform .3s
+		&:not(.is-hidden)
+			.page__header-logo-small
+				+rm(991)
+					transform: translateY(120%)
+					opacity: 0
+					visibility: hidden
+		&.is-hidden
+			+r(991)
+				transform: translateY(-100%)
+			+rm(991)
+				.page__header-logo-big
+					transform: translateY(120%)
+					opacity: 0
+					visibility: hidden
+					height: 0
+				.page__header-nav-bottom
+					order: 1
+					padding-right: 5%
+					+r(1250)
+						padding-right: 2%
+						+rem(min-width,400px)
+					.top-nav
+						+rem(padding-top,28px)
+						+rem(padding-bottom,30px)
+						&:not(:last-child)
+							padding-right: 11.5%
+							+r(1250)
+								padding-right: 9.5%
+				.page__header-search
+					order: 2
+					.o-menu-search
+						margin-top: 0
+						+rem(padding-top,18px)
+						+rem(padding-bottom,30px)
+				.page__header-button
+					order: 4
+					+rem(padding-top,18px)
+					+r(1150)
+						+rem(padding-left,18px)
+						.btn
+							font-size: 0
+							padding: 20px !important
+							&:before
+								border: none !important
+				.page__header-logo
+					+rem(flex-basis,45px)
+					+rem(padding, 10px 0)
+					flex-shrink: 0
+				.page__header-main
+					+rem(height, 72px)
+
+				.page__header-nav-top,.page__header-soc,.page__header-contact .text2
+					display: none
+				.page__header-content
+					flex-flow: row nowrap
+					align-content: center
+					+rem(padding-left,30px)
+					justify-content: space-between
+					+r(1150)
+				.page__header-contact
+					position: static
+					order: 3
+					+rem(padding-top,25px)
+					padding-left: 1.5%
+					.contact-item
+						line-height: 1
+						+rem(font-size,16px)
+						.text-bold
+							+rem(font-size,16px)
+					a:not(.contact-item)
+						+rem(font-size,12px)
+						color: $gray
+						transform: translateY(-3px)
+						&:after
+							background-color: $gray
+		&-main
+			display: flex !important
+			flex-flow: row nowrap
+			+rem(height,125px)
+			+tr(height .2s)
+			+rm(1210)
+				padding: 0 !important
+			+r(991)
+				+rem(height, 72px)
+		&-nav
+			&-top,&-bottom
+				white-space: nowrap
+				.top-nav
+					white-space: nowrap
+				+r(991)
+					display: none
+			&-top
+				padding-right: 7%
+				+rem(min-width,253px)
+				+r(1150)
+					padding-right: 4%
+					+rem(min-width,233px)
+			&-bottom
+				padding-right: 7%
+				+rem(min-width,451px)
+				+r(1150)
+					padding-right: 4%
+					+rem(min-width,421px)
+		&-logo
+			text-align: center
+			flex-basis: 26.5%
+			overflow: hidden
+			+rem(padding,8px 0 20px)
+			+r(1150)
+				flex-basis: 23.5%
+			+r(991)
+				+rem(flex-basis,45px)
+				+rem(padding, 10px 0)
+				flex-shrink: 0
+			&-big,&-small
+				display: block
+				width: 100%
+				height: 100%
+				+contain
+				transition: transform .2s .1s, opacity .2s
+			&-big
+				+r(991)
+					display: none
+		&-button
+			+rem(padding-top,8px)
+			.btn
+				white-space: nowrap
+			+r(991)
+				order: 2
+				+rem(padding, 15px 0 15px 15px)
+				.btn
+					font-size: 0
+					padding: 20px !important
+					&:before
+						border: none !important
+
+		&-contact 
+			position: absolute
+			+rem(top,16px)
+			text-align: right
+			right: 0
+			+rm(1150)
+				padding-right: 2.1%
+			+r(991)
+				order: 1
+				position: static
+
+			.contact-item
+				+rem(font-size,22px)
+				white-space: nowrap
+				+r(1150)
+					.text-bold
+						+rem(font-size,18px)
+				+r(991)
+					.text-bold
+						+rem(font-size,20px)
+						+rem(padding, 25px 0)
+				+r(375)
+					.text-bold
+						+rem(font-size,17px)	
+						+rem(padding, 26px 0)
+			a:not(.contact-item)
+				position: relative
+				display: inline-block
+				+rem(padding-bottom,3px)
+				+rem(font-size,16px)
+				color: $active
+				transition: color .2s, padding .2s
+				+r(991)
+					display: none
+				&:hover
+					&:after
+						width: 0
+				&:after
+					position: absolute
+					left: 0
+					height: 1px
+					background-color: $active
+					content: ''
+					width: 100%
+					bottom: 0
+					transition: color .2s, width .2s, transform .2s
+			.text2
+				color: $grayy
+				line-height: 1.05
+				+rem(margin-top,13px)
+				+r(991)
+					display: none		
+		&-content
+			display: flex
+			flex-flow: row wrap
+			flex-grow: 1
+			align-content: flex-end
+			padding-left: 5.3%
+			position: relative
+			+r(1150)
+				padding-left: 2.5%
+			+screen(1150,1250)
+				+rem(padding-right, 100px)
+			+r(991)
+				justify-content: flex-end
+				flex-flow: row nowrap
+		&-soc
+			padding-left: 5.1%
+			padding-right: 5%
+			+r(1150)
+				padding-left: 2.1%
+				padding-right: 2%
+			+r(991)
+				display: none
+			.soc-wrapp
+				+rem(margin-top,-11px)
+		&-search
+			+r(991)
+				display: none
+			.o-menu-search
+				width: 100%
+				+rem(margin-top,-15px)
+		&-search,&-soc,&-nav-top
+			+rem(height,33px)
+		&-hamburger
+			order: 3
+			+rem(padding, 25px 0 20px 17px)
+			+rm(991)
+				display: none
+
 	&__footer
 		position: relative
 		flex: 0 0 auto
 		background-color: #e9e8e3
 		flex-flow: row wrap
-    // +gpu
-    // height: 100%
-    // +rem(height,100px)
-    // transition: height .3s, padding .3s,box-shadow .3s
-    // will-change: height, padding, box-shadow
-    // +rem(padding,32.5px 50px 30px 50px)
 	&__content
 		+rem(padding,100px 10px 100px 10px)
 		flex: 1 0 auto
@@ -124,6 +353,74 @@ body, .out,html
 				background: #888888
 				cursor: pointer
 
+.hamburger
+  +rem(width, 24px)
+  +rem(height, 18px)
+  +rem(top, 35px)
+  left: 0
+  +r(991)
+    +rem(top, 15px)
+  &-inner 
+    width: 100%
+    height: 100%
+    +rem(padding, 15px 10px)
+    cursor: pointer
+    position: relative
+    text-align: center
+    div 
+      display: block
+      position: relative
+      +rem(width, 24px)
+      +rem(height, 17px)
+    span 
+      height: 3px
+      width: 100%
+      display: block
+      background-color: #000
+      position: absolute
+      opacity: 1
+      left: 0
+      will-change: transform
+      transform: rotate(0deg)
+      transition: 0.2s ease-in
+      z-index: 1
+      &:nth-child(1) 
+        top: 0
+      &:nth-child(2)
+        +rem(top, 8.5px)
+      &:nth-child(3)
+        +rem(top, 18px)
+        z-index: 4
+.top-nav
+	font-family: $rc
+	text-transform: uppercase;
+	line-height: 1
+	display: inline-block
+	vertical-align: top
+	+tr(padding-right .3s)
+	&.top
+		font-family: $pt
+		+rem(font-size,14px)
+		color: #bfbfbf
+		margin-top: -6px
+		&:not(:last-child)
+			padding-right: 10%
+			+r(1150)
+				padding-right: 7%
+		span
+			display: inline-block
+			transform: scaleX(0.92)
+			transform-origin: left
+	&.bottom
+		+rem(font-size,17px)
+		color: #000
+		+rem(padding-bottom,32px)
+		+rem(padding-top,15px)
+		+rem(letter-spacing,0.4px)
+		&:not(:last-child)
+			padding-right: 10%
+			+r(1150)
+				padding-right: 7%
 .title
 	font-family: $rc
 	color: #000
@@ -172,12 +469,8 @@ blockquote
 	&.small
 		+rem(font-size,16px)
 		line-height: 1.375;
-
-
-
 //search
 .o-menu-search
-	+rem(margin-top,20px)
 	+box
 	.search__wrapper
 		+rem(height,34px)
@@ -197,11 +490,12 @@ blockquote
 		+rem(padding-right,35px)
 		display: inline-block
 		background: #f7f7f7
+
 		+placeholder 
 			+rem(font-size,13.5px)
 			font-family: $pt
 			color: rgb( 109, 109, 109 );
-			line-height: 1.071;
+			+rem(line-height,34px)
 	.search__btn
 		display: inline-block
 		position: absolute
@@ -236,7 +530,8 @@ blockquote
 	text-transform: uppercase;
 	+tr(color .3s)
 	&:hover
-		color: $hover
+		+rm(870)
+			color: $hover
 	&:active
 		color: $active
 .box
@@ -256,8 +551,12 @@ blockquote
 	+rem(padding, 12px 16px)
 	+rem(letter-spacing,-0.3px)
 	transition: color .3s, border-color .3s
+	-webkit-tap-highlight-color: transparent
+	&:not(.yell)
+		+rem(border-radius,5px)
 	&:hover
-		color: $active
+		+rm(870)
+			color: $active
 	&:active
 		border-color: $active
 	&.btn-big
@@ -265,8 +564,45 @@ blockquote
 		font-family: $rc
 		text-transform: uppercase
 		font-weight: 700
-		// +rem(padding,15px 19px)
+		+rem(padding, 14px 19px)
+		+rem(border-radius,3px)
 		+rem(letter-spacing,0px)
+		&:not(.yell)
+			+rem(border-radius,3px)
+		&.yell
+			+rem(letter-spacing,-0.3px)
+			+rem(padding, 15px 19px)
+			+rem(border-radius,1px)
+	&.yell
+		font-family: $pt
+		background-color: $hover
+		border: none
+		+tr(background-color .3s)
+		text-transform: none
+		color: #000
+		font-weight: 400
+		&:hover
+			color: #000
+			+rm(870)
+				background-color: $ihover
+		&:active
+			background-color: $active
+		&.i-left
+			+rem(padding, 10px 13px 10px 51px)
+			+rem(border-radius,2px)
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				+rem(width,41px)
+				left: 0
+				top: 0
+				bottom: 0
+				border-right: 1px solid #d3ba34
+				+contain
+				background-image: url(../img/icons/calendar.png)
+				+rem(background-size, 30px 30px)
+
 
 .footer
 	&__main
@@ -276,10 +612,25 @@ blockquote
 		border-bottom: $bb 
 		+r(1130)
 			justify-content: space-between
+		+r(870)
+			flex-flow: column wrap
+			justify-content: flex-start
 	&-main-nav
 		width: 100%
 		border-bottom: $bb
 		align-content: center
+		+r(870)
+			order: 2
+			+rem(margin-top,-40px)
+			position: relative
+			z-index: 2
+			+rem(padding-bottom,20px)
+			.link-f
+				+rem(padding, 10px 0)
+				min-width: 33.33%
+		+r(600)
+			.link-f
+				min-width: 50%
 		.link-f
 			+rem(padding-top,63px)
 			+rem(padding-bottom,63px)
@@ -291,23 +642,56 @@ blockquote
 			flex-basis: 60%
 			flex-shrink: 1
 			font-size: 0
+			+r(870)
+				order: 3
+				+rem(padding-bottom,20px)
+				&>.text-bold
+					+rem(margin-top,25px)
+					+rem(margin-bottom,15px)
 		&-item
 			display: inline-block
 			vertical-align: top
 			width: 50%
 			+rem(max-width,302px)
 			+rem(padding-right,30px)
+			+r(870)
+				+rem(padding-right,15px)
 			&:nth-of-type(2n)
 				+rem(padding-right,25px)
+				+r(870)
+					padding-right: 0
 			a 
 				color: $grayf
 				+rem(font-size,18px)
 				+rem(padding,11px 0 10px)
 				line-height: 1.444;
+				+r(870)
+					+rem(font-size,16px)	
+				+r(400)
+					+rem(font-size,15px)	
+					word-break: break-word
 				&:hover
-					color: #000
+					+rm(870)
+						color: #000
 	&-tel 
 		+rem(flex-basis,330px)
+		position: relative
+		+r(870)
+			order: 1
+			+rem(padding-top, 43px)
+			&> .text-bold
+				display: none
+			&-button
+				position: static
+				+rem(margin-bottom,20px)
+				
+		&-button
+			position: absolute
+			left: 0
+			+rem(top, -92px)
+			+r(1010)
+				left: auto
+				right: 0
 		&-nums
 			+rem(padding-top,9px)
 			+rem(padding-bottom,33px)
@@ -324,6 +708,8 @@ blockquote
 				.text-bold
 					+rem(font-size,36px)
 					+rem(letter-spacing,0.8px)
+					+r(600)
+						+rem(font-size,30px)
 				.footer-tel-text
 					+rem(margin-top,4px)
 		&-text
@@ -337,6 +723,9 @@ blockquote
 			+rem(padding-bottom,63px)
 			+rem(margin-right,-50px)
 			+rem(background-size, 194px 190px)
+			+r(870)
+				display: none
+				
 			.text-bold
 				+rem(margin-top, 25px)
 				+rem(margin-bottom, 10px)
@@ -449,6 +838,11 @@ blockquote
 			+rem(margin-left,6px)
 			border-radius: 50%
 			+tr(background-color .3s)
+			text-align: center
+			+vertical
+			svg
+				vertical-align: middle
+				+rem(max-height,12px)	
 			&.vk
 				background-color: #77b1e6
 				+rm(900)

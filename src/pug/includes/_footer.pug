@@ -27,6 +27,9 @@ include _mixins.pug
 				+footerb('Прайс-лист')
 		.footer-tel
 			.text-bold Контактная информация
+			//визуально кнопка рядом с верхним списком
+			.footer-tel-button
+				a(href="#").btn.yell.i-left Записаться на прием
 			.footer-tel-nums
 				+footerNum('+7 (495) 212-92-99', 'Многоканальный')
 				+footerNum('+7 (499) 795-10-92', 'Администрация')
@@ -45,13 +48,13 @@ include _mixins.pug
 		.soc-wrapp
 			a(href="#").soc-wrapp-item.vk
 				svg(class="icon icon-drop")
-					use(xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink")
+					use(xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink")
 			a(href="#").soc-wrapp-item.fb
 				svg(class="icon icon-drop")
-					use(xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink")
+					use(xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink")
 			a(href="#").soc-wrapp-item.in
 				svg(class="icon icon-drop")
-					use(xlink:href="#" xmlns:xlink="http://www.w3.org/1999/xlink")
+					use(xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink")
 		.footer__footer-developer
 			a(href="#").footer-developer-link
 				.text2 Разработка сайта:
