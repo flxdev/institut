@@ -5,11 +5,11 @@ include _mixins.pug
 		.page__header-logo-small(style='background-image:url(img/logob-small.png)')
 	.page__header-content
 		.page__header-nav-top
-			a(href="#").top-nav.top.icon
+			a(href="#",data-id='about').top-nav.top.icon
 				span об инстутуте
 			a(href="#").top-nav.top
 				span Клиники
-			a(href="#").top-nav.top.icon
+			a(href="#",data-id='promo').top-nav.top.icon
 				span Акции
 		.page__header-search
 			.o-menu-search
@@ -37,9 +37,9 @@ include _mixins.pug
 					svg(class="icon icon-drop")
 						use(xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink")
 		.page__header-nav-bottom
-			a(href="#").top-nav.bottom.icon
+			a(href="#", data-id='1').top-nav.bottom.icon.js-desktop-hover
 				span УСЛУГИ и цены 
-			a(href="#").top-nav.bottom.icon
+			a(href="#", data-id='2').top-nav.bottom.icon.js-desktop-hover
 				span СПЕЦИАЛИСТЫ
 			a(href="#").top-nav.bottom
 				span Контакты
@@ -58,9 +58,71 @@ include _mixins.pug
 					span
 					span
 					span
-.header
-
 .page__header-drop
+	.page__header-drop-cont
+		.page__header-drop-item.col-3(data-id='1')
+			//без <br> тут в дизайн не попадешь
+			ul.page__header-drop-list
+				li
+					a(href="#") Косметология
+				li
+					a(href="#") Пластическая хирургия
+				li
+					a(href="#") Лазерная косметология
+				li
+					a(href="#") Коррекция фигуры
+				li
+					a(href="#") Трихология
+				li
+					a(href="#") Массаж
+				li
+					a(href="#") Физиотерапия
+				li
+					a(href="#") Флебология
+				li
+					a(href="#") Эндокринология
+				li
+					a(href="#") Лабораторные анализы
+				li
+					a(href="#") Персонализированная косметика
+				li
+					a(href="#") Прайс-лист
+		.page__header-drop-item.col-4(data-id='2')
+			ul.page__header-drop-list
+				li
+					a(href="#") Отделение 
+						br
+						|пластической хирургии
+				li
+					a(href="#") Отделение 
+						br
+						|Аппаратной косметологии
+				li
+					a(href="#") Отделение 
+						br
+						|детской косметологии
+				li
+					a(href="#") Кабинет 
+						br
+						|врача-терапевта
+				li
+					a(href="#") Кабинет 
+						br
+						|физиотерапии
+				li
+					a(href="#") Отделение малоинвазивной хирургии 
+				li
+					a(href="#") Кабинет превентивной и восстановительной медицины
+				li
+					a(href="#") Приемное отделение
+				li
+					a(href="#") Отделение анестезиологии и реанимации
+				li
+					a(href="#") Отделение
+						br
+						| диагностики кожи
+				li
+					a(href="#") Кабинет флебологической реабилитации и УЗИ-диагностики	
 
 
 

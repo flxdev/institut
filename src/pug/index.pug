@@ -4,24 +4,49 @@ block title
 	title Index
 
 block content
-	p.title.h1 Клиника активного
-	p.title.h2 Услуги
-	p.title.h3 Косметология
-	p.text Мы постоянно расширяем арсенал методик,  углублённо изучаем 
-		br
-		|состояние здоровья пациента,  разрабатываем комплексные
-		br
-		|программы совершенствования внешности. 
-	p.text-bold Будьте в курсе всех главных 
-		br
-		|акций и событий нашей
-		br
-		| клиники
-	p.text-bold «Институт Красоты» на Арбате
-	a(href="#").btn Задать вопрос врачу
-	a(href="#").btn.btn-big Обратная связь
-	a(href="#").btn.btn-big.yell Записаться на прием
-	a(href="#").btn.yell.i-left Записаться на прием
+	.wrapper.index-wrapper(style='background-image:url(img/bgmain.jpg)')
+		.box
+			.index-wrapper-inner
+				.index-main
+					.title.h1 Клиника активного долголетия
+					.text-bold «Институт Красоты» на Арбате
+					.card-wrapper
+						+card('1.png','Нитевой лифтинг','Акция')
+							p.text Своевременное восстановление красоты вашего лица по 30% скидке весь январь
+						+card('2.png','Скидка до 20% на Аппаратную косметологию','Акция')
+				.index-aside
+					.index-aside-inner
+						.doctor-slider-wrapper
+							.doctor-slider-container.js-slider-doctor
+								.doctor-slider-container-item(style='background-image:url(img/vrach.png)')
+								.doctor-slider-container-item(style='background-image:url(img/vrach.png)')
+								.doctor-slider-container-item(style='background-image:url(img/vrach.png)')
+								.doctor-slider-container-item(style='background-image:url(img/vrach.png)')
+						//2 слайдер врачей
+						.doctor-slider-block
+							.doctor-slider-add.js-slider-doctor-add
+								.doctor-slider-add-item
+									.doctor-slider-add-item-inner
+										.text.bold Анна Давыдик
+										.text Заведующая отделением, физиотерапевт, косметолог
+								.doctor-slider-add-item
+									.doctor-slider-add-item-inner
+										.text.bold Анна Давыдик
+										.text Заведующая отделением, физиотерапевт, косметолог,физиотерапевт, косметолог
+								.doctor-slider-add-item
+									.doctor-slider-add-item-inner
+										.text.bold Анна Давыдик
+										.text Заведующая отделением, физиотерапевт, косметолог
+								.doctor-slider-add-item
+									.doctor-slider-add-item-inner
+										.text.bold Snoop Dog
+										.text Рэпер, братан, душа компании, знает где достать.
+							.nav-dots
+
+
+
+
+
 	
 
 

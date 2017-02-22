@@ -10,3 +10,14 @@ mixin footerNum(num, text)
 		.text-bold #{num}
 		span.footer-tel-text #{text}
 //- header mixins
+//- main-mixins
+mixin card(img, title, type)
+	.card-item-wrap
+		a.card-item(href="#", style='background-image:url(img/cards/'+img+')')
+			.card-item-content
+				.title.h4 #{title}
+				if block
+					block
+			.card-item-type 
+				.small-block 
+					span #{type}

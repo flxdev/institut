@@ -24,13 +24,13 @@
     <div class="out" id="top">
       <div class="page__outer">
         <div class="page__wrapper">
-          <div class="page__header--wrap">
-            <header class="page__header cd-auto-hide-header">
+          <header class="page__header--wrap">
+            <div class="page__header cd-auto-hide-header">
               <div class="page__header-main box"><a class="page__header-logo" href="#">
                   <div class="page__header-logo-big" style="background-image:url(img/logob.png);"></div>
                   <div class="page__header-logo-small" style="background-image:url(img/logob-small.png);"></div></a>
                 <div class="page__header-content">
-                  <div class="page__header-nav-top"><a class="top-nav top icon" href="#"><span>об инстутуте</span></a><a class="top-nav top" href="#"><span>Клиники</span></a><a class="top-nav top icon" href="#"><span>Акции</span></a></div>
+                  <div class="page__header-nav-top"><a class="top-nav top icon" href="#" data-id="about"><span>об инстутуте</span></a><a class="top-nav top" href="#"><span>Клиники</span></a><a class="top-nav top icon" href="#" data-id="promo"><span>Акции</span></a></div>
                   <div class="page__header-search">
                     <div class="o-menu-search">
                       <form class="search__wrapper">
@@ -59,7 +59,7 @@
                           <use xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                         </svg></a></div>
                   </div>
-                  <div class="page__header-nav-bottom"><a class="top-nav bottom icon" href="#"><span>УСЛУГИ и цены </span></a><a class="top-nav bottom icon" href="#"><span>СПЕЦИАЛИСТЫ</span></a><a class="top-nav bottom" href="#"><span>Контакты</span></a></div>
+                  <div class="page__header-nav-bottom"><a class="top-nav bottom icon js-desktop-hover" href="#" data-id="1"><span>УСЛУГИ и цены </span></a><a class="top-nav bottom icon js-desktop-hover" href="#" data-id="2"><span>СПЕЦИАЛИСТЫ</span></a><a class="top-nav bottom" href="#"><span>Контакты</span></a></div>
                   <div class="page__header-button"><a class="btn yell i-left" href="#">Записаться на прием</a></div>
                   <div class="page__header-contact"><a class="contact-item" href="tel:3333">
                       <div class="text-bold">+7 (495) 212-92-99 </div></a><a href="#">Обратный звонок</a>
@@ -75,17 +75,114 @@
                   </div>
                 </div>
               </div>
-              <div class="header"></div>
-              <div class="page__header-drop"></div>
-            </header>
-          </div>
+              <div class="page__header-drop">
+                <div class="page__header-drop-cont">
+                  <div class="page__header-drop-item col-3" data-id="1">
+                    <!--без <br> тут в дизайн не попадешь-->
+                    <ul class="page__header-drop-list">
+                      <li><a href="#">Косметология</a></li>
+                      <li><a href="#">Пластическая хирургия</a></li>
+                      <li><a href="#">Лазерная косметология</a></li>
+                      <li><a href="#">Коррекция фигуры</a></li>
+                      <li><a href="#">Трихология</a></li>
+                      <li><a href="#">Массаж</a></li>
+                      <li><a href="#">Физиотерапия</a></li>
+                      <li><a href="#">Флебология</a></li>
+                      <li><a href="#">Эндокринология</a></li>
+                      <li><a href="#">Лабораторные анализы</a></li>
+                      <li><a href="#">Персонализированная косметика</a></li>
+                      <li><a href="#">Прайс-лист</a></li>
+                    </ul>
+                  </div>
+                  <div class="page__header-drop-item col-4" data-id="2">
+                    <ul class="page__header-drop-list">
+                      <li><a href="#">Отделение <br>пластической хирургии</a></li>
+                      <li><a href="#">Отделение <br>Аппаратной косметологии</a></li>
+                      <li><a href="#">Отделение <br>детской косметологии</a></li>
+                      <li><a href="#">Кабинет <br>врача-терапевта</a></li>
+                      <li><a href="#">Кабинет <br>физиотерапии</a></li>
+                      <li><a href="#">Отделение малоинвазивной хирургии </a></li>
+                      <li><a href="#">Кабинет превентивной и восстановительной медицины</a></li>
+                      <li><a href="#">Приемное отделение</a></li>
+                      <li><a href="#">Отделение анестезиологии и реанимации</a></li>
+                      <li><a href="#">Отделение<br>диагностики кожи</a></li>
+                      <li><a href="#">Кабинет флебологической реабилитации и УЗИ-диагностики	</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
           <main class="page__content">
-            <p class="title h1">Клиника активного</p>
-            <p class="title h2">Услуги</p>
-            <p class="title h3">Косметология</p>
-            <p class="text">Мы постоянно расширяем арсенал методик,  углублённо изучаем <br>состояние здоровья пациента,  разрабатываем комплексные<br>программы совершенствования внешности. </p>
-            <p class="text-bold">Будьте в курсе всех главных <br>акций и событий нашей<br>клиники</p>
-            <p class="text-bold">«Институт Красоты» на Арбате</p><a class="btn" href="#">Задать вопрос врачу</a><a class="btn btn-big" href="#">Обратная связь</a><a class="btn btn-big yell" href="#">Записаться на прием</a><a class="btn yell i-left" href="#">Записаться на прием</a>
+            <div class="wrapper index-wrapper" style="background-image:url(img/bgmain.jpg);">
+              <div class="box">
+                <div class="index-wrapper-inner">
+                  <div class="index-main">
+                    <div class="title h1">Клиника активного долголетия</div>
+                    <div class="text-bold">«Институт Красоты» на Арбате</div>
+                    <div class="card-wrapper">
+                                    <div class="card-item-wrap"><a class="card-item" href="#" style="background-image:url(img/cards/1.png);">
+                                        <div class="card-item-content">
+                                          <div class="title h4">Нитевой лифтинг</div>
+                                          <p class="text">Своевременное восстановление красоты вашего лица по 30% скидке весь январь</p>
+                                        </div>
+                                        <div class="card-item-type"> 
+                                          <div class="small-block"> <span>Акция</span></div>
+                                        </div></a></div>
+                                    <div class="card-item-wrap"><a class="card-item" href="#" style="background-image:url(img/cards/2.png);">
+                                        <div class="card-item-content">
+                                          <div class="title h4">Скидка до 20% на Аппаратную косметологию</div>
+                                        </div>
+                                        <div class="card-item-type"> 
+                                          <div class="small-block"> <span>Акция</span></div>
+                                        </div></a></div>
+                    </div>
+                  </div>
+                  <div class="index-aside">
+                    <div class="index-aside-inner">
+                      <div class="doctor-slider-wrapper">
+                        <div class="doctor-slider-container js-slider-doctor">
+                          <div class="doctor-slider-container-item" style="background-image:url(img/vrach.png);"></div>
+                          <div class="doctor-slider-container-item" style="background-image:url(img/vrach.png);"></div>
+                          <div class="doctor-slider-container-item" style="background-image:url(img/vrach.png);"></div>
+                          <div class="doctor-slider-container-item" style="background-image:url(img/vrach.png);"></div>
+                        </div>
+                      </div>
+                      <!--2 слайдер врачей-->
+                      <div class="doctor-slider-block">
+                        <div class="doctor-slider-add js-slider-doctor-add">
+                          <div class="doctor-slider-add-item">
+                            <div class="doctor-slider-add-item-inner">
+                              <div class="text bold">Анна Давыдик</div>
+                              <div class="text">Заведующая отделением, физиотерапевт, косметолог</div>
+                            </div>
+                          </div>
+                          <div class="doctor-slider-add-item">
+                            <div class="doctor-slider-add-item-inner">
+                              <div class="text bold">Анна Давыдик</div>
+                              <div class="text">Заведующая отделением, физиотерапевт, косметолог,физиотерапевт, косметолог</div>
+                            </div>
+                          </div>
+                          <div class="doctor-slider-add-item">
+                            <div class="doctor-slider-add-item-inner">
+                              <div class="text bold">Анна Давыдик</div>
+                              <div class="text">Заведующая отделением, физиотерапевт, косметолог</div>
+                            </div>
+                          </div>
+                          <div class="doctor-slider-add-item">
+                            <div class="doctor-slider-add-item-inner">
+                              <div class="text bold">Snoop Dog</div>
+                              <div class="text">Рэпер, братан, душа компании, знает где достать.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="nav-dots"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <footer class="page__footer">
             <div class="box">
