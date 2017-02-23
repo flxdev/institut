@@ -13,6 +13,11 @@ input[type="password"]
 	line-height: 1.65
 input
 	box-shadow : none
+	font-family: $pt
+	color: #000
+	+rem(font-size,16px)
+	+placeholder 
+		font-family: $pt
 svg
 	display: inline-block
 	max-width: 100%
@@ -517,19 +522,22 @@ body, .out,html
 		+rem(font-size,66px)
 	&.h2
 		+rem(font-size,42px)
-		line-height: 1.583;
+		line-height: 1.095;
+
+
 	&.h3
 		+rem(font-size, 36px)
 		line-height: 1.091;
 	&.h4
 		+rem(font-size, 22px)
 		line-height: 1.182;
-blockquote
-  +rem(font-size,18px)
-  font-family: $pt
-  color: $grayf
-  line-height: 1.444;
 
+blockquote
+	+rem(font-size,17px)
+	font-family: $pt
+	color: $grayf
+	line-height: 1.5;
+	+rem(letter-spacing,0.2px)
 .text
 	+rem(font-size,17.4px)
 	font-family: $pt
@@ -627,9 +635,102 @@ blockquote
 	display: block
 	margin: 0 auto
 	+padlr(15px)
+	&-section
+		+rem(margin-top, 100px)
+		+rem(margin-bottom, 128px)
+		+r(1210)
+			+padlr(5px)
+		+r(735)
+			+rem(margin-top, 60px)
+			+rem(margin-bottom, 65px)
+		&-text
+			font-size: 0
+			+r(1210)
+				+rem(max-width, 800px)
+				margin: 0 auto
+			&-title,&-quote
+				display: inline-block
+				vertical-align: top
+				+r(735)
+					min-width: 100%
+			&-title
+				width: 34.2%
+				+rem(padding-right,30px)
+				+rem(padding-top,10px)
+			&-quote
+				width: 65.8%
+				blockquote
+					+rem(max-width,540px)
+					+rem(padding-top,11px)
+					+r(735)
+						+rem(font-size,16px)
+
 .wrapper
 	+rem(margin-left, -10px)
 	+rem(margin-right, -10px)
+.romb-slider
+	&-wrap
+		+rem(max-width,1025px)
+		margin: 0 auto
+	&-inner
+		+rem(margin-top,80px)
+		position: relative
+		+rem(padding-right,120px)
+		+r(1150)
+			+rem(padding-right,80px)
+		+r(630)
+			+rem(padding,0)
+			+rem(margin-right,-15px)
+			+rem(margin-left,-15px)
+		.nav-arrows
+			position: absolute
+			right: 0
+			top: 50%
+			transform: translateY(-50%)
+			+r(630)
+				left: 0
+	&-main
+		&.slick-initialized
+			.romb-item-item
+				+tr(opacity .3s)
+				&:not(.slick-active):not(.slick-cloned)
+					opacity: 0
+.romb-item
+	&-item 
+		position: relative
+		display: inline-block
+		&:hover
+			.romb-item-text
+				color: $hover
+		&:active
+			.romb-item-text
+				color: $active
+	&-text
+		position: absolute
+		+rem(left,25px)
+		+rem(top, 35px)
+		z-index: 2
+		+rem(max-width, 160px)
+		+tr(color .3s)
+		+r(630)
+			left: 50%
+			+rem(margin-left, -100px)
+	&-wrap
+		+rem(width, 250px)
+		overflow: hidden
+		+r(630)
+			width: 100%
+			+rem(max-width, 250px)
+			margin: 0 auto
+	&-middle
+		padding-bottom: 115.5%
+		transform: rotate(-60deg) skewY(30deg)
+	&-inner
+		+coverdiv
+		+cover
+		transform: skewY(-30deg) rotate(60deg)
+		
+
 
 // buttons
 .btn 
@@ -731,6 +832,7 @@ blockquote
 				+rem(padding-right,20px)
 			+r(735)
 				padding-right: 0
+				max-width: 100%
 		&-type
 			position: absolute
 			+rem(top,19px)
@@ -740,6 +842,8 @@ blockquote
 			+rem(padding,75px 115px 30px 27px)
 			position: relative
 			z-index: 2
+			+r(735)
+				+rem(padding,75px 100px 30px 27px)
 			.title
 				overflow: hidden
 				&:not(:only-child)
@@ -759,7 +863,7 @@ blockquote
 				-webkit-box-orient: vertical
 				display: -webkit-box;
 				overflow: hidden
-
+//little orange blocks
 .small-block
 	+rem(font-size,13px)
 	text-transform: uppercase;
@@ -799,13 +903,15 @@ blockquote
 		flex-basis: 67%
 		+r(991)
 			flex-basis: 45%
+			position: relative
+			z-index: 3
 		+r(735)
 			flex-basis: 40%
 		& >.title
 			+rem(margin, 62px 0 26px)
 			+r(991)
 				+rem(margin, 42px 0 26px)
-				width: 150%
+				width: 142%
 			+r(735)
 				font-size: 10vw
 				width: 100%
@@ -827,6 +933,7 @@ blockquote
 				+rem(margin, 25px 0 44px)
 			+r(735)
 				margin-top: 38%
+				margin-bottom: 0
 			+r(480)
 				margin-top: 45%
 			.card-item
@@ -916,6 +1023,11 @@ blockquote
 				+rem(max-width, 190px)
 			&:not(.blod)
 				line-height: 1.5;
+				text-overflow: ellipsis
+				-webkit-line-clamp: 4
+				-webkit-box-orient: vertical
+				display: -webkit-box
+				overflow: hidden		
 				+r(480)
 					+rem(font-size, 13px)
 			&.bold
@@ -935,9 +1047,6 @@ blockquote
 				display: flex
 				flex-flow: column nowrap
 				justify-content: flex-end
-				
-				
-					
 			.bold
 				line-height: .5;
 			+tr(opacity .35s)
@@ -945,13 +1054,6 @@ blockquote
 			&.slick-current,&.slick-cloned
 				opacity: 1
 				+tr(opacity .35s .2s)
-			
-			
-			
-
-
-
-
 .footer
 	&__main
 		display: flex
@@ -1240,7 +1342,247 @@ blockquote
 			transform-origin: 50%
 			+rem(margin-top,2px)
   // line-height: 1.869;
+.wrapper
+	&.gray
+		position: relative
+		background-color: #fafafa
+		.box
+			z-index: 2
+			position: relative
+			.half-main
+				+rem(padding, 105px 0 135px)
+				+r(991)
+					+rem(padding, 45px 0 65px)
+.block-cover
+	&-img
+		position: absolute
+		right: 0
+		bottom: 0
+		left: 0
+		+rem(top,-55px)
+		z-index: 1
+		background-repeat: no-repeat
+		background-size: 72%
+		background-position: left -10px top
+		+r(1380)
+			background-size: 85%
+		+r(991)
+			top: 0
+			background-position: left -20% bottom 32%
+		+r(735)
+			background-size: 140%
+			background-position: left 50% bottom 32%
+		+r(544)
+			background-size: 160%
+			background-position: left 40% bottom 32%
+		&~.box
+			.half-aside
+				vertical-align: bottom
+				.yellow-form
+					// +rem(margin-bottom,-60px)
+					margin-bottom: -12%
+					+r(1500)
+						margin-left: 5%
+						margin-bottom: 9%
+					+r(991)
+						margin-bottom: 0
+						margin-top: -22%
+						margin-bottom: 2%
+					+r(735)
+						margin: 0 auto 2%
+					// +r(1280)
+					// 	margin-bottom: 14%
+				
 
+.half
+	&-block
+		font-size: 0
+		+r(991)
+			display: flex
+			flex-flow: column nowrap
+	&-aside,&-main
+		+rm(991)
+			display: inline-block
+			vertical-align: top
+		min-height: 1px
+		// +r(991)
+		// 	min-width: 100%
+	&-aside
+		width: 100%
+		max-width: 43%
+		+r(1230)
+			max-width: 35%
+		+r(991)
+			order: 2
+			+rem(max-width,800px)
+			margin: 0 auto
+	&-main
+		width: 100%
+		max-width: 57%
+		+r(1230)
+			max-width: 65%
+		+r(991)
+			order: 1
+			align-items: flex-end
+			justify-content: flex-end
+			+rem(max-width, 800px)
+			margin: 0 auto
+
+.info
+	&-block
+		font-size: 0
+		&-inner,&-aside
+			display: inline-block
+			vertical-align: top
+			+rem(min-height, 1px)
+			+r(768)
+				min-width: 100%
+		&-inner
+			width: 67%
+			+rem(padding-right,20px)
+			+r(991)
+				width: 71%
+			.title
+				+rem(margin-bottom,28px)
+				display: inline-block
+		&-aside
+			width: 33%
+			height: 100%
+			+rm(991)
+				+rem(min-height, 330px)
+			+r(991)
+				width: 29%
+			.hexa-block
+				+rem(margin-top,70px)
+				+r(768)
+					display: none
+					
+.hexa-block
+	position: relative
+	text-align: left
+	.hexa
+		position: absolute
+		z-index: -1
+		+rem(width, 100px)
+		overflow: hidden
+		&-in
+			transform: rotate(-60deg) skewY(30deg)
+			background-color: $hover
+			padding-top: 115.5%
+	.text.bold
+		+rem(padding, 50px 0 0 50px)
+		+rem(max-width, 180px)
+.feachure
+	&-list
+		font-size: 0
+		+r(991)
+			text-align: right
+			+rem(margin, 60px 30px)
+		+r(735)
+			+rem(margin, 40px 0px 0)		
+	&-item
+		position: relative
+		text-align: left
+		&-wrap
+			display: inline-block
+			vertical-align: top
+			width: 33.33%
+			+rem(margin-top,25px)
+			+r(991)
+				width: 50%
+				+rem(max-width, 245px)
+				margin-left: 50%
+			+r(600)
+				width: 55%
+				+rem(max-width, 245px)
+				margin-left: 45%
+
+
+		.text-bold
+			+rem(padding, 0 25px 0 45px)
+			+rem(margin-top,-2px)
+			+rem(min-height, 43px)
+			+r(420)
+				padding-right: 0
+				+rem(font-size,17px)
+			// +r()
+		img
+			position: absolute
+			left: 0
+			top: 0
+			+rem(max-width, 32px)
+
+.yellow
+	&-form
+		+rem(padding, 28px 28px 38px 28px)
+		background-color: $hover
+		+rem(border-radius,2.5px)
+		+rem(max-width,304px)
+		+tr(box-shadow .3s)
+		&:hover
+			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+
+		&-img
+			display: block
+			+rem(height, 23.5px)
+			+contain
+			background-position: left center
+		&-text
+			+rem(margin, 25px -4px 31px 0)
+			font-weight: bold;
+			line-height: 1.5;
+			+rem(font-size,19px)
+		&-main
+			background-color: #FFF
+			+rem(border-radius,2.5px)
+			border-color: #fff
+			+rem(border-width, 3px)
+			border-style: solid
+			position: relative
+			+rem(height,38px)
+			overflow: hidden
+			&-submit
+				background-color: $hover
+				background-image: url(../img/icons/i-arrow.png)
+				position: absolute
+				right: 0
+				top: 0
+				bottom: 0
+				+rem(width,32px)
+				+rem(border-radius, 2.5px)
+				+contain
+				+rem(background-size, 7px 15px)
+				+tr(background-color .3s)
+				&:hover
+					background-color: $ihover
+			&-input
+				+rem(line-height,30px)
+				width: 100%
+				height: 100%
+				+rem(padding-right,40px)
+				+rem(padding-left,10px)
+				+placeholder 
+					+rem(font-size,16px)
+					color: $grayy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
 
 
 				

@@ -21,3 +21,9 @@ mixin card(img, title, type)
 			.card-item-type 
 				.small-block 
 					span #{type}
+mixin romb(img, text)
+	a(href="#").romb-item-item
+		.romb-item-wrap
+			.romb-item-middle
+				.romb-item-inner(style='background-image:url(img/romb/'+img+')')
+		.romb-item-text.title.h4 #{text}

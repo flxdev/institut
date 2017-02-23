@@ -81,9 +81,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	} DesktopMenu();
 
 	doctorSlider();
-$('.doctor-slider-add-item-inner').matchHeight({
-	 property: 'min-height'
-});
+	rombSlider()
+	$('.doctor-slider-add-item-inner').matchHeight({
+		property: 'min-height'
+	});
 //end of document.ready
 });
 //end of document.ready
@@ -121,6 +122,42 @@ function doctorSlider(){
 			infinite: true,
 			slidesToShow: 1,
 			slidesToScroll: 1
+		}); 
+	});
+}
+
+function rombSlider(){
+	$(".romb-slider-main").each(function() {
+		var _this = $(this);
+		var parent = _this.closest('.romb-slider-wrap');
+		_this.slick({
+			accessibility: true,
+			arrows: true,
+			draggable: false,
+			autoplay: true,
+			dots: false,
+			touchMove: false,
+			infinite: false,
+			appendArrows: parent.find('.nav-arrows'),
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplaySpeed: 8000,
+			responsive: [
+					{
+				breakpoint: 906,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+				breakpoint: 630,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				},
+			]
 		}); 
 	});
 }
