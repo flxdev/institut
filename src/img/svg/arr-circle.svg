@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="circle-arr" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.c-arr0{fill-rule:evenodd;clip-rule:evenodd;stroke-width:1.5;stroke-miterlimit:10;}
+	.c-arr1{fill-rule:evenodd;clip-rule:evenodd;stroke-width:1.5;stroke-miterlimit:10;}
+</style>
+<path class="c-arr0" d="M16,1c8.3,0,15,6.7,15,15c0,8.3-6.7,15-15,15C7.7,31,1,24.3,1,16C1,7.7,7.7,1,16,1z"/>
+<path class="c-arr1" fill="#fff" stroke="currentColor" d="M13.9,10.1l5.3,5.5l-5.3,6.2"/>
+</svg>

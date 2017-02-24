@@ -45,7 +45,10 @@ block content
 	.box.box-section
 		.box-section-text
 			.box-section-text-title
-				a(href="#").title.h2.link Услуги
+				a(href="#").title.h2.link Услуги 
+					.link-arr
+						svg(class="icon icon-drop")
+							use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
 			.box-section-text-quote
 				blockquote Мы постоянно расширяем арсенал методик,  углублённо изучаем состояние здоровья пациента,  разрабатываем комплексные программы совершенствования внешности.
 		.romb-slider-wrap
@@ -80,6 +83,9 @@ block content
 					.info-block
 						.info-block-inner
 							a(href="#").title.h2.link Институт красоты на Арбате
+								.link-arr
+									svg(class="icon icon-drop")
+										use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
 							.text За долгие годы своей истории «Институт красоты» стал научным центром, в котором получили рождение косметологические и хирургические методы лечения. Он был первым центром профессиональной косметологии и пластической хирургии в России. 
 						.info-block-aside
 							.hexa-block
@@ -99,6 +105,36 @@ block content
 							.feachure-item
 								img(src="img/icons/i-list.png", alt="clock")
 								.text-bold Лучшие специалисты
+	.box.news-box
+		.news-title
+			a(href="#").title.h2.link Новости
+				.link-arr
+					svg(class="icon icon-drop")
+						use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+		.news-wrapper
+			+news('Изменение режима работы в выходные дни','15 января 2017','1.png')
+			+news('Скоро «Институт Красоты на Арбате» переезжает в новое здание','14 января 2017','2.png')
+			+news('AGENDA - лаборатория красоты у Вас дома','13 января 2017','')
+			+news('Внимание! У нас сменился номер телефона и сайт!','13 января 2017', '')
+	.box.box-section
+		.box-section-text
+			.box-section-text-title
+				a(href="#").title.h2.link Партнёры
+					.link-arr
+						svg(class="icon icon-drop")
+							use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+			.box-section-text-quote
+				blockquote Мы активно сотрудничаем с коллегами в смежных областях, оказываем корпоративные услуги.
+		.partner-slider
+			.partner-slider-inner
+				+partner('1.png')
+				+partner('2.png')
+				+partner('3.png')
+				+partner('4.png')
+				+partner('5.png')
+				+partner('6.png')
+			.nav-arrows
+
 
 
 

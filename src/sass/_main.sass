@@ -22,6 +22,9 @@ svg
 	display: inline-block
 	max-width: 100%
 	max-height: 100%
+	// path
+	// 	fill: inherit !important
+	// 	stroke: inherit !important
 button
 	background: 0 0
 a
@@ -30,7 +33,8 @@ a
 	color: $hover
 *
 	+box
-	-webkit-tap-highlight-color: rgba(252, 239, 141, 0.41)
+	// -webkit-tap-highlight-color: rgba(252, 239, 141, 0.41)
+	-webkit-tap-highlight-color: transparent
 	+placeholder 
 		font-family: $pt
 		+rem(font-size,16px)
@@ -199,6 +203,7 @@ body, .out,html
 		&.is-hidden
 			.page__header-drop-cont
 				+rem(padding-left,76px)
+
 				+r(1230)
 					+rem(padding-left,90px)
 			+r(991)
@@ -212,22 +217,23 @@ body, .out,html
 				.page__header-nav-bottom
 					order: 1
 					padding-right: 5%
-					+r(1250)
-						padding-right: 2%
-						+rem(min-width,400px)
+					// +r(1250)
+					// 	padding-right: 2%
+					// 	+rem(min-width,450px)
 					.top-nav
 						+rem(padding-top,28px)
 						+rem(padding-bottom,30px)
 						&:not(:last-child)
 							padding-right: 11.5%
-							+r(1250)
-								padding-right: 9.5%
+							// +r(1250)
+							// 	padding-right: 9.5%
 				.page__header-search
 					order: 2
 					.o-menu-search
 						margin-top: 0
 						+rem(padding-top,18px)
 						+rem(padding-bottom,30px)
+						+rem(min-width,200px)
 				.page__header-button
 					order: 4
 					+rem(padding-top,18px)
@@ -244,7 +250,6 @@ body, .out,html
 					flex-shrink: 0
 				.page__header-main
 					+rem(height, 72px)
-
 				.page__header-nav-top,.page__header-soc,.page__header-contact .text2
 					display: none
 				.page__header-content
@@ -252,7 +257,6 @@ body, .out,html
 					align-content: center
 					+rem(padding-left,30px)
 					justify-content: space-between
-					+r(1150)
 				.page__header-contact
 					position: static
 					order: 3
@@ -275,7 +279,7 @@ body, .out,html
 			+rem(height,125px)
 			+tr(height .2s)
 			+rm(1210)
-				padding: 0 !important
+				padding: 0 5px !important
 			+r(991)
 				+rem(height, 72px)
 		&-nav
@@ -286,13 +290,14 @@ body, .out,html
 				+r(991)
 					display: none
 			&-top
-				padding-right: 7%
-				+rem(min-width,253px)
+				padding-right: 3.5%
+				+rem(min-width,300px)
+				+rem(padding-bottom, 2px)
 				+r(1150)
 					padding-right: 4%
 					+rem(min-width,233px)
 			&-bottom
-				padding-right: 7%
+				padding-right: 5.1%
 				+rem(min-width,451px)
 				+r(1150)
 					padding-right: 4%
@@ -301,7 +306,7 @@ body, .out,html
 			text-align: center
 			flex-basis: 26.5%
 			overflow: hidden
-			+rem(padding,8px 0 20px)
+			+rem(padding,8px 0 18px)
 			+r(1150)
 				flex-basis: 23.5%
 			+r(991)
@@ -329,12 +334,11 @@ body, .out,html
 					padding: 20px !important
 					&:before
 						border: none !important
-
 		&-contact 
 			position: absolute
 			+rem(top,16px)
 			text-align: right
-			right: 0
+			+rem(right,-4px)
 			+rm(1150)
 				padding-right: 2.1%
 			+r(991)
@@ -387,7 +391,7 @@ body, .out,html
 			flex-flow: row wrap
 			flex-grow: 1
 			align-content: flex-end
-			padding-left: 5.3%
+			padding-left: 5.1%
 			position: relative
 			+r(1150)
 				padding-left: 2.5%
@@ -397,7 +401,7 @@ body, .out,html
 				justify-content: flex-end
 				flex-flow: row nowrap
 		&-soc
-			padding-left: 5.1%
+			padding-left: 4%
 			padding-right: 5%
 			+r(1150)
 				padding-left: 2.1%
@@ -414,12 +418,13 @@ body, .out,html
 				+rem(margin-top,-15px)
 		&-search,&-soc,&-nav-top
 			+rem(height,33px)
+		&-search
+			+rem(max-width,225px)
 		&-hamburger
 			order: 3
 			+rem(padding, 25px 0 20px 17px)
 			+rm(991)
 				display: none
-
 	&__footer
 		position: relative
 		flex: 0 0 auto
@@ -485,26 +490,25 @@ body, .out,html
 	line-height: 1
 	display: inline-block
 	vertical-align: top
-
 	+tr(padding-right .3s)
 	&.top
 		+rem(font-size,14px)
 		color: #bfbfbf
 		margin-top: -6px
+		+rem(padding-top,2px)
 		font-weight: 400
 		&:not(:last-child)
-			padding-right: 10%
+			padding-right: 15.5%
 			+r(1150)
 				padding-right: 7%
 		span
 			display: inline-block
 			transform-origin: left
 	&.bottom
-		+rem(font-size,17px)
+		+rem(font-size,18px)
 		color: #000
 		+rem(padding-bottom,32px)
 		+rem(padding-top,15px)
-		+rem(letter-spacing,0.4px)
 		font-weight: 700
 		&:not(:last-child)
 			padding-right: 10%
@@ -517,20 +521,48 @@ body, .out,html
 	text-transform: uppercase;
 	line-height: 1.091;
 	text-align: left;
-
 	&.h1
 		+rem(font-size,66px)
 	&.h2
 		+rem(font-size,42px)
 		line-height: 1.095;
-
-
 	&.h3
 		+rem(font-size, 36px)
 		line-height: 1.091;
 	&.h4
 		+rem(font-size, 22px)
 		line-height: 1.182;
+	&.link
+		.link-arr
+			display: inline-block
+			+rem(height,30px)
+			+rem(width,30px)
+			vertical-align: top
+			+rem(margin-top,7px)
+			+rem(margin-left,7px)
+			border-radius: 50%
+
+			transition: box-shadow .25s
+			svg
+				vertical-align: top
+				use
+					fill: #fff
+					stroke: $hover
+					color: #000
+					transition: fill .25s
+		&:hover
+			+rm(991)
+				.link-arr
+					box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+					use
+						fill: $hover
+						stroke: $hover
+						color: #000
+		&:active
+			.link-arr
+				use
+					fill: $active
+					stroke: $active
 
 blockquote
 	+rem(font-size,17px)
@@ -579,12 +611,12 @@ blockquote
 	.search__input
 		+rem(border-radius, 17.25px)
 		display: inline-block
-		height: 100%
+		+rem(line-height,32px)
 		+rem(padding-left,20px)
 		+rem(padding-right,35px)
 		display: inline-block
 		background: #f7f7f7
-
+		width: 100%
 		+placeholder 
 			+rem(font-size,13.5px)
 			font-family: $pt
@@ -657,6 +689,7 @@ blockquote
 				width: 34.2%
 				+rem(padding-right,30px)
 				+rem(padding-top,10px)
+				white-space: nowrap
 			&-quote
 				width: 65.8%
 				blockquote
@@ -684,11 +717,27 @@ blockquote
 			+rem(margin-left,-15px)
 		.nav-arrows
 			position: absolute
-			right: 0
+			right: 2.5%
 			top: 50%
 			transform: translateY(-50%)
+			display: flex
+			flex-flow: column nowrap
+			align-items: center
+			.carousel-next
+				+rm(630)
+					order: 1
+			.carousel-prev
+				+rm(630)
+					order: 2			
+			.slick-arrow
+				+rm(630)
+					display: flex
+					+rem(margin, 0 auto 10px)
 			+r(630)
-				left: 0
+				+rem(right, 10px)
+				+rem(left, 10px)
+				flex-flow: row nowrap
+				justify-content: space-between
 	&-main
 		&.slick-initialized
 			.romb-item-item
@@ -873,13 +922,15 @@ blockquote
 	background-color: $hover
 	display: inline-block
 	font-weight: 400
-	+rem(padding,3.5px 10px)
+	+rem(padding,3px 10px)
 	font-family: $rc
 	transition: box-shadow .3s, background-color .3s
 	& a
 		&:hover
 			background-color: $hover
-			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2)
+	&.small
+
 .index
 	&-wrapper
 		+cover
@@ -1078,6 +1129,7 @@ blockquote
 			.link-f
 				+rem(padding, 10px 0)
 				min-width: 33.33%
+				height: auto
 		+r(600)
 			.link-f
 				min-width: 50%
@@ -1564,7 +1616,177 @@ blockquote
 				+placeholder 
 					+rem(font-size,16px)
 					color: $grayy
+.news
+	&-box
+		+rem(margin-top, 108px)
+		+r(991)
+			+rem(margin-top, 68px)
+		+r(600)
+			+padlr(5px)
+			+rem(margin-top, 58px)
+		.news-wrapper
+			border-bottom: $bb
+			+rem(padding-bottom,60px)
+			+r(991)
+				+rem(padding-bottom,30px)
+	&-title
+		display: block
+		max-width: 33.33%
+		margin: 0 auto
+		+rem(padding-bottom,70px)
+		+rem(padding-left,10px)
+		+r(700)
+			max-width: 100%
+			+rem(padding-bottom,45px)
+			+rem(padding-left,0)
+	&-wrapper
+		font-size: 0
+		+rem(margin-right,-30px)
+		+clr
+	&-item
+		+rem(padding-right,30px)
+		display: inline-block
+		+rem(min-height,205px)
+		float: left
+		width: 33.3%
+		+r(920)
+			width: 50%
+		+r(600)
+			width: 100%
+			+rem(min-height,0px)
+		&-inner
+			display: block
+			width: 100%
+			height: 100%
+			border-top: $bb
+			border-color: #e6e6e6
+			position: relative
+			&:hover
+				+rm(991)
+					.title
+						color: $hover
+			&:active
+				.title
+					color: $active
+	&-type
+		position: absolute
+		+rem(left,27px)
+		+rem(top,21px)	
+		display: inline-block
+		width: 100%
+		// &:not(:empty)
+		// 	&~.news-content
+		// 		+rem(min-height, 170px)
+		// 	&~.news-image:empty
+		// 		display: inline-block
+		// 		+rem(min-height, 20px)
+		&:only-child
+			left: 0
+			position: static
+			+rem(margin-top, 20px)
+			+rem(margin-bottom, -20px)
+	&-image
+		+rem(max-height, 205px)
+		overflow: hidden
+		margin-top: -1px
+		width: 100%
+		+clr
+		img
+			display: block
+			max-width: 100%
+			max-height: 100%
+			margin: 0 auto
+	&-content
+		+rem(padding, 25px 0 0)
+		+rem(min-height, 190px)
+		overflow: hidden
+		+r(600)
+			+rem(min-height, 150px)
+			+rem(padding, 25px 0 20px)
+		.text2
+			color: $grayy
+			white-space: nowrap
+			overflow: hidden
+			width: 100%
+		.title
+			+rem(margin, 17px 0 13px)
+			+rem(max-height, 104px)
+			overflow: hidden
+			text-overflow: ellipsis
+			-webkit-line-clamp: 4
+			-webkit-box-orient: vertical
+			display: -webkit-box
+			+tr(color .3s)
+.nav-arrows
+	.slick-arrow
+		// display: inline-block
+		+rem(width,43px)
+		+rem(height,44px)
+		use
+			transition: stroke .3s, color .3s
+			fill: #fff
+			stroke: #000
+			color: #000
+		&.slick-disabled
+			use
+				fill: #fff
+				stroke: #000
+				color: #000
+	.carousel-prev
+		transform: scale(-1,1)
+	.carousel-next,.carousel-prev
+		&:not(.slick-disabled)
+			&:hover
+				+rm(991)
+					use
+						fill: #fff
+						stroke: $hover
+			&:active
+				use
+					fill: #fff
+					stroke: $active
+		&.slick-disabled
+			use
+				fill: #fff
+				stroke: #e1e1e1
+				color: #e1e1e1
 
+.partner
+	&-slider
+		margin-top: 100px
+		+rem(margin-top,67px)
+		position: relative
+		+r(768)
+			+rem(margin-top,27px)
+
+		.nav-arrows
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			left: 0
+			right: 0
+		&-inner			
+			+rem(margin-bottom, -115px)
+			+r(1210)
+				+padlr(30px)
+	&-item
+		+padlr(10px)
+		+rem(height,100px)
+		&-inner
+			display: flex
+			flex-flow: column nowrap
+			justify-content: center
+			align-items: flex-start
+			height: 100%
+			+r(1210)
+				align-items: center
+			img
+				+rem(max-width, 130px)
+				// max-width: 100%
+				+rem(max-height, 68px)
 
 
 

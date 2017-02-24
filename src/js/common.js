@@ -81,7 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	} DesktopMenu();
 
 	doctorSlider();
-	rombSlider()
+	rombSlider();
+	partnerSlider();
 	$('.doctor-slider-add-item-inner').matchHeight({
 		property: 'min-height'
 	});
@@ -142,6 +143,8 @@ function rombSlider(){
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			autoplaySpeed: 8000,
+			nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
 			responsive: [
 					{
 				breakpoint: 906,
@@ -155,6 +158,56 @@ function rombSlider(){
 					settings: {
 						slidesToShow: 1,
 						slidesToScroll: 1
+					}
+				},
+			]
+		}); 
+	});
+}
+function partnerSlider(){
+	$(".partner-slider-inner").each(function() {
+		var _this = $(this);
+		_this.slick({
+			accessibility: true,
+			arrows: true,
+			draggable: false,
+			dots: false,
+			touchMove: false,
+			infinite: false,
+			appendArrows: _this.parent().find('.nav-arrows'),
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			responsive: [
+					{
+				breakpoint: 1210,
+					settings: {
+						slidesToShow: 5,
+					}
+				},
+				{
+				breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+					}
+				},
+				{
+				breakpoint: 768,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+				breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{
+				breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
 					}
 				},
 			]

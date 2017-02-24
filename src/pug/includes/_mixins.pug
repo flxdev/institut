@@ -27,3 +27,22 @@ mixin romb(img, text)
 			.romb-item-middle
 				.romb-item-inner(style='background-image:url(img/romb/'+img+')')
 		.romb-item-text.title.h4 #{text}
+mixin news(text, date,img, type)
+	article.news-item
+		a(href="#").news-item-inner
+			.news-image
+				if img != ''
+					img(src="img/news/"+img+"", alt="")
+				if type
+					.news-type
+						.small-block.small
+							span #{type}
+			.news-content
+				date.text2 #{date}
+				h2.title.h4 #{text}
+mixin partner(img)
+	.partner-item
+		.partner-item-inner
+			img(src="img/partner/"+img+"", alt="partner")
+
+
