@@ -76,9 +76,12 @@
 //+font(black, cytiapro-black-webfont)
 
 =placeholder
-	&::placeholder
+	&::placeholder,
 		@content
-
+	&::-ms-input-placeholder
+		@content
+	&::-webkit-input-placeholder
+		@content
 =text-overflow
 	overflow: hidden
 	-ms-text-overflow: ellipsis

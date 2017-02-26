@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		var mainCont = $('.page__header-nav-bottom'),
 			items = mainCont.find('.js-desktop-hover'),
 			targetWrap = $('.page__header-drop'),
+			blocks = $('.page__header-drop-item'),
 			shown = 'is-shown',
 			current = 'is-shown';
 
@@ -61,8 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						targetWrap.addClass(shown);
 						targetWrap.find("[data-id="+ id +"]").addClass(current).siblings().removeClass(current);
 						var h = targetWrap.find("[data-id="+ id +"]").find('.page__header-drop-list').outerHeight();
-							console.log(h)
-							targetWrap.css('height',h + 40);
+							targetWrap.css('height',h + 65);
 					}else{
 						targetWrap.removeClass(shown);
 						items.removeClass('active')
@@ -72,8 +72,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		items.add(targetWrap).on('mouseleave',function(){
 			setTimeout(function(){
 					if ($('.page__header-drop:hover').length != 1 && !$('.js-desktop-hover:hover').length != 0 ) {
-						targetWrap.removeClass(shown);
-						items.removeClass('active')
+						targetWrap.removeClass(shown).attr('style','');
+						blocks.removeClass(current);
+						items.removeClass('active');
 				}
 			},1)
 
@@ -172,7 +173,7 @@ function partnerSlider(){
 			arrows: true,
 			draggable: false,
 			dots: false,
-			touchMove: false,
+			touchMove: true,
 			infinite: false,
 			appendArrows: _this.parent().find('.nav-arrows'),
 			slidesToShow: 6,

@@ -103,6 +103,7 @@ body, .out,html
 		flex-wrap: nowrap
 		flex-direction: column
 		min-height: 100%
+		overflow-x: hidden
 	&__outer
 		width: 100%
 		display: block
@@ -115,33 +116,64 @@ body, .out,html
 		align-items: center
 		position: relative
 		visibility: visible
-		box-shadow: 0px 0px 40px 0px rgba( 214, 190, 59 ,.15);
+		box-shadow: 0px 0px 20px 0px rgba( 214, 190, 59 ,.15);
 		&-drop
 			display: block
 			width: 100%
 			position: absolute
-			top: 100%
+			top: calc(100% + 1px)
 			left: 0
 			right: 0
-			background-color: #fff
-			box-shadow: 0px 5px 20px 0px rgba(183, 174, 122, 0.1);
-			max-height: 0
+			// background-color: #fff
+			// box-shadow: 0px 5px 20px 0px rgba(183, 174, 122, 0.15);
+			// max-height: 0px
 			overflow: hidden
-			min-height: 0
-			border-top: 1px solid transparent
-			transition: max-height .4s, min-height .4s, border-color .25s, height .15s;
+			// opacity: 0
+			margin-top: -1px
+			min-height: 0px
+			height: 0
+			+gpu
+			will-change: height
+			transition:  min-height .25s ,border-color .25s, height .25s, padding-bottom .25s
 			&.is-shown
-				+rem(max-height,532px)
-				+rem(min-height,200px)
-				border-color: #e9e9e3
-				transition-delay: .2s
+				+rem(padding-bottom,25px)
+				+rem(min-height,210px)
+				transition-delay: .1s
+				.page__header-drop-cont:after
+					opacity: 1
+				.page__header-drop-cont:before
+					background-color: #e9e9e3
 			&-cont
 				+rem(max-width, 1210px)
 				width: 100%
 				display: flex
 				flex-flow: column nowrap
-				margin: 0 auto
-				+rem(padding-left, 272px)
+				+rem(margin, 0 auto)
+				background-color: #fff
+				+rem(padding-left, 277px)
+				&:before
+					content: ''
+					position: absolute
+					height: 1px
+					top: 0
+					right: 0
+					left: 0
+					background-color: transparent
+					display: block
+					+tr(background-color .3s)
+				&:after
+					content: ''
+					position: absolute
+					left: 0
+					right: 0
+					+rem(bottom,25px)
+					height: 100%
+					background-color: #fff
+					z-index: -1
+					box-shadow: 0px 5px 20px 0px rgba(183, 174, 122, .15);
+					opacity: 0
+					transition: opacity .25s, height .25s
+
 				+r(1250)
 					+rem(padding-left, 255px)
 				+r(1150)
@@ -154,7 +186,7 @@ body, .out,html
 				opacity: 0
 				&.is-shown
 					+rem(max-height,532px)
-					transition: max-height 0s .18s, padding 0s .18s, opacity .15s .15s
+					transition: max-height 0s .2s, padding 0s .2s, opacity .1s .2s
 					opacity: 1
 					+rem(padding, 20px 0)
 				&.col-3
@@ -165,7 +197,8 @@ body, .out,html
 						a 
 							+rem(padding, 10px 10px 10px 0)
 				&.col-4
-					+rem(max-width, 980px)
+					+rem(max-width, 1000px)
+					+rem(margin-right, -20px)
 					.page__header-drop-list
 						li
 							width: 25%
@@ -221,8 +254,13 @@ body, .out,html
 					// 	padding-right: 2%
 					// 	+rem(min-width,450px)
 					.top-nav
-						+rem(padding-top,28px)
-						+rem(padding-bottom,30px)
+						span
+							+rem(padding-top,28px)
+							+rem(padding-bottom,27px)
+							&:before
+								+rem(bottom,1px)
+							&:after
+								+rem(top, 34px)
 						&:not(:last-child)
 							padding-right: 11.5%
 							// +r(1250)
@@ -393,6 +431,7 @@ body, .out,html
 			align-content: flex-end
 			padding-left: 5.1%
 			position: relative
+			contain: paint
 			+r(1150)
 				padding-left: 2.5%
 			+screen(1150,1250)
@@ -491,12 +530,32 @@ body, .out,html
 	display: inline-block
 	vertical-align: top
 	+tr(padding-right .3s)
+	&.icon
+		span
+			position: relative
+			&:after
+				position: absolute
+				content: ''
+				display: inline-block
+				+rem(right, -15.5px)
+				+rem(top, 20.5px)
+				+rem(width,8px)
+				+rem(height,5px)
+				+contain
 	&.top
 		+rem(font-size,14px)
 		color: #bfbfbf
 		margin-top: -6px
 		+rem(padding-top,2px)
 		font-weight: 400
+		&.icon
+			span
+				&:after
+					+rem(top, 3.5px)
+					+rem(right, -13.5px)
+					+rem(width,8px)
+					+rem(height,4px)
+					background-image: url(../img/icons/i-arr-bl.png)
 		&:not(:last-child)
 			padding-right: 15.5%
 			+r(1150)
@@ -507,9 +566,33 @@ body, .out,html
 	&.bottom
 		+rem(font-size,18px)
 		color: #000
-		+rem(padding-bottom,32px)
-		+rem(padding-top,15px)
 		font-weight: 700
+		span
+			+rem(padding-bottom,32px)
+			+rem(padding-top,15px)
+			position: relative
+			display: inline-block
+			&:before
+				position: absolute
+				content: ''
+				bottom: 0
+				height: 2px
+				background-color: $hover
+				+tr(width .3s)
+				display: inline-block
+				width: 0
+				left: auto
+				right: 0
+		&:hover,&.active
+			span:before
+				width: 100%
+				left: 0
+				right: 0
+			span:after
+				transform: scale(1,-1)
+		&.icon
+			span:after
+				background-image: url(../img/icons/i-arr-b.png)
 		&:not(:last-child)
 			padding-right: 10%
 			+r(1150)
@@ -541,7 +624,6 @@ body, .out,html
 			+rem(margin-top,7px)
 			+rem(margin-left,7px)
 			border-radius: 50%
-
 			transition: box-shadow .25s
 			svg
 				vertical-align: top
@@ -605,49 +687,65 @@ blockquote
 		position: relative
 		transition: border-color .15s
 		&:hover
-			border-color: #e1e1e1
+			border-color: #b7b7b7
 		&.in-focus
-			border-color: #e1e1e1
+			border-color: $hover
+			.search__btn
+				stroke: $hover
 	.search__input
-		+rem(border-radius, 17.25px)
+		+rem(border-radius, 17.2px)
 		display: inline-block
-		+rem(line-height,32px)
 		+rem(padding-left,20px)
 		+rem(padding-right,35px)
+		+rem(padding-top,7px)
+		+rem(padding-bottom,7px)
 		display: inline-block
-		background: #f7f7f7
 		width: 100%
+		+rem(font-size,14px)
+		height: 100%
 		+placeholder 
-			+rem(font-size,13.5px)
+			font-size: 13px
 			font-family: $pt
-			color: rgb( 109, 109, 109 );
-			+rem(line-height,34px)
+			color: rgb( 109, 109, 109 )
+			line-height: 1.6
+		&::-moz-placeholder
+			// line-height: 1.7
+			
+		&:valid
+			&~.search__btn
+				fill: $hover
+				stroke: $hover
+		&:not(:valid)
+			&~.search__btn
+				pointer-events: none
+				cursor: default
+				
 	.search__btn
 		display: inline-block
 		position: absolute
-		+rem(height,38px)
+		height: 100%
 		+rem(width,45px)
 		background: 0 0
 		top: 0
 		right: 0
+		+rem(border-radius, 17.25px)
+		fill: #c8c8c8
+		stroke: #c8c8c8
+		transition: fill .25s, stroke .25s
+		cursor: pointer
 		.search-icon
 			display: inline-block
 			height: 100%
 			width: 100%
 			+vertical
-			.search-i
-				transition: fill .3s
 			svg
 				display: inline-block
 				+rem(height,17px)
 				+rem(width,17px)
 				vertical-align: middle
 		&:hover
-			.search-i
-				fill: #e1e1e1
-		&:hover
-			.search-i
-				fill: #e1e1e1
+			fill: $hover
+			stroke: $hover
 //footer row links
 .link-f
 	+rem(font-size,17px)
@@ -935,11 +1033,12 @@ blockquote
 	&-wrapper
 		+cover
 		+rem(padding-top,40px)
-		// overflow: hidden
+		overflow: hidden
 		+r(1150)
 			background-size: auto 100%
 		+r(735)
 			background-position: left 15% top
+			+rem(padding-bottom,20px)
 		&-inner
 			flex-flow: row nowrap
 			align-items: stretch
@@ -1416,6 +1515,7 @@ blockquote
 		background-repeat: no-repeat
 		background-size: 72%
 		background-position: left -10px top
+		contain: strict
 		+r(1380)
 			background-size: 85%
 		+r(991)
