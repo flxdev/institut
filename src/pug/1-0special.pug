@@ -1,0 +1,108 @@
+extends _layout
+
+block title
+	title СПЕЦИАЛИСТЫ
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Специалисты
+			.content-main
+				.title.h1 Специалисты
+				//- .title-btn
+				//- 	a(href="#").btn Прайс Лист
+	.box
+		//в длинных словах .title можно использовать &shy;
+		.depart-wrap
+			.depart-item.w-50
+				.depart-item-head.head-img(style="background-image:url(img/bg/v1.png)")
+					.title.h2 Хирургия
+				.depart-item-body
+					a(href="#").depart-item-link
+						.link-black Отделение пластической и реконструктивно-восстановительной хирургии
+						+doctors(4,'22')
+					a(href="#").depart-item-link
+						.link-black Отделение малоинвазивной хирургии и лазерных технологий
+						+doctors(4,'12')
+					a(href="#").depart-item-link
+						.link-black Отделение малоинвазивной хирургии и лазерных технологий
+						+doctors(1,'')
+			.depart-item.w-50
+				.depart-item-head.head-img(style="background-image:url(img/bg/v2.png)")
+					.title.h2 Косметология
+				.depart-item-body
+					a(href="#").depart-item-link
+						.link-black Отделение 
+							br
+							|Аппаратной косметологии
+						+doctors(4,'25')
+					a(href="#").depart-item-link
+						.link-black Отделение 
+							br
+							|детской косметологии
+						+doctors(4,'17')
+					a(href="#").depart-item-link
+						.link-black Отделение
+							br
+							|диагностики кожи
+						+doctors(4,'17')
+			.depart-item.w-100
+				.depart-item-head.head-img(style="background-image:url(img/bg/v3.png)")
+					.title.h2 Консультативно-диагностический центр персонализи&shy;рованной медицины
+				.depart-item-body
+					a(href="#").depart-item-link
+						.link-black Кабинет превентивной 
+							br
+							|и восстановительной медицины
+						+doctors(2,'')
+					a(href="#").depart-item-link
+						.link-black Кабинет 
+							br
+							|врача-терапевта
+						+doctors(1,'')
+					a(href="#").depart-item-link
+						.link-black Кабинет флебологической 
+							br
+							|реабилитации и УЗИ-диагностики
+						+doctors(2,'')
+					a(href="#").depart-item-link
+						.link-black Кабинет 
+							br
+							|физиотерапии
+						+doctors(1,'')
+					a(href="#").depart-item-link
+						.link-black Приемное отделение
+						+doctors(1,'')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

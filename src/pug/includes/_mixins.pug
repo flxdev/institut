@@ -44,5 +44,24 @@ mixin partner(img)
 	.partner-item
 		.partner-item-inner
 			img(src="img/partner/"+img+"", alt="partner")
+mixin doctors(args,num)
+	.doc-block
+		- var n = 0;
+		while n < args
+			- n = ++n;
+			.doc-item(style='background-image:url(img/bg/v'+n+'.png)')
+		if num != ''
+			.doc-item.more #{num}
+mixin docCard(img,name, who)
+	.doc-card-wrap
+		a(href="#").doc-card-inner
+			.doc-card-text
+				.title.h4 #{name}
+				.text2 #{who}
+				.link-arr
+					svg(class="icon icon-drop")
+						use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+			.doc-card-img
+				img(src="img/bg/v"+img+".png", alt="vrtach")
 
 

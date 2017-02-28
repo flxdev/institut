@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="sait" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 17.8 15" style="enable-background:new 0 0 17.8 15;" xml:space="preserve">
+<style type="text/css">
+	.sait0{fill:none;stroke:#969696;stroke-miterlimit:10;}
+</style>
+<path fill="#969696" d="M10.3,4.7H7.6c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1h2.7c0.6,0,1,0.4,1,1v2.7C11.3,4.2,10.8,4.7,10.3,4.7z"/>
+<path fill="#969696" d="M10.3,15H7.6c-0.6,0-1-0.4-1-1v-2.7c0-0.6,0.4-1,1-1h2.7c0.6,0,1,0.4,1,1V14C11.3,14.6,10.8,15,10.3,15z"/>
+<path fill="#969696" d="M3.7,15H1c-0.6,0-1-0.4-1-1v-2.7c0-0.6,0.4-1,1-1h2.7c0.6,0,1,0.4,1,1V14C4.7,14.6,4.2,15,3.7,15z"/>
+<path fill="#969696" d="M16.8,15h-2.7c-0.6,0-1-0.4-1-1v-2.7c0-0.6,0.4-1,1-1h2.7c0.6,0,1,0.4,1,1V14C17.8,14.6,17.4,15,16.8,15z"/>
+<path class="sait0" d="M2.3,10.3V8.5c0-0.6,0.4-1,1-1h11.1c0.6,0,1,0.4,1,1v1.8"/>
+<line class="sait0" x1="8.9" y1="10.4" x2="8.9" y2="4.7"/>
+</svg>

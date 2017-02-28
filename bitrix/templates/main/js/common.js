@@ -87,6 +87,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	$('.doctor-slider-add-item-inner').matchHeight({
 		property: 'min-height'
 	});
+	$('.doc-card-inner').matchHeight({
+		property: 'min-height'
+	});
+	$('.doc-card-text .text2').matchHeight({
+		property: 'min-height'
+	});
 //end of document.ready
 });
 //end of document.ready

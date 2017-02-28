@@ -1,0 +1,59 @@
+extends _layout
+
+block title
+	title Отделение
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Специалисты
+				a(href="#").content-bread-item.text2 Отделение аппаратной косметологии
+			.content-main
+				.title.h1 Отделение Аппаратной косметологии
+				//- .title-btn
+				//- 	a(href="#").btn Прайс Лист
+	.box
+		.depart-wrap
+			+docCard(21,'ТОЛКАЧЕВА АЛЕКСАНДРА АЛЕКСАНДРОВНА', 'Заведующая отделением, косметолог, физиотерапевт')
+			+docCard(11,'ИЗРАИЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ', 'Заведующий отделением, врач-пластический хирург, кандидат медицинских наук')
+			+docCard(31,'СМЕТНЕВА СВЕТЛАНА МИХАЙЛОВНА', 'Заведующая кабинетом, врач-терапевт')
+			+docCard(11,'ИЗРАИЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ', 'Заведующий отделением, врач-пластический хирург, кандидат медицинских наук')
+			+docCard(21,'ТОЛКАЧЕВА АЛЕКСАНДРА АЛЕКСАНДРОВНА', 'Заведующая отделением, косметолог, физиотерапевт')
+		.nav-wrapper
+			a(href="#").nav-btn
+				svg(class="icon icon-drop")
+					use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+				span Назад
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
