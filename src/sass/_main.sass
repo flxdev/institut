@@ -78,12 +78,15 @@ body
 body, .out,html
 	width: 100%
 	height: 100%
-	overflow-x: hidden
+	// overflow-x: hidden
+
 	&.modal_open
 		overflow: hidden
 .out
 	position: relative
 	-webkit-overflow-scrolling: touch;
+	+r(768)
+		overflow-x: hidden
 .page__header--wrap
 	position: fixed
 	left: 0
@@ -618,7 +621,6 @@ body, .out,html
 		+rem(font-size, 22px)
 		line-height: 1.182;
 	&.link
-		
 		&:hover
 			+rm(991)
 				.link-arr
@@ -2220,12 +2222,166 @@ a
 		&:active
 			use
 				fill: #fff
-				stroke: $active			
+				stroke: $active	
+.aside
+	&-wrapp
+		font-size: 0
+		position: relative
+		display: flex
+		flex-flow: row nowrap
+		align-items: stretch
+		+rem(padding-top, 75px)
+	&-menu,&-content
+		min-height: 1px
+		display: inline-block
+		vertical-align: top
+	&-menu
+		+rem(flex-basis,272px)
+		flex-shrink: 0
+		position: relative
+		+rem(padding-right,35px)
+		.aside-title
+			+rem(font-size,18px)
+			+rem(padding, 22px 0 13px)
+			line-height: 1.48
+		.aside-stick
+			display: inline-block
+	&-content
+		flex-grow: 1
+		font-size: 24px
+.menu-nav
+	&-item
+		+rem(margin, 26px 0 27px)
+		.link-black	
+			+rem(font-size, 16px)
+.content-column
+	&-wrap
+		display: flex
+		flex-flow: row nowrap
+	&-content
+		flex-grow: 1
+		+rem(font-size,16px)
+		+rem(padding, 0 30px)
+		p
+			+rem(font-size,15px)
+			font-family: $pt
+			color: $grayf
+			line-height: 1.6;
+			+rem(letter-spacing,0.2px)
+			+rem(max-width,510px)
+			+rem(margin, 21px 0)
+			a	
+				box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
+				&:hover
+					+rm(991)
+						box-shadow: none
+		h1,h2,h3,h4
+			font-family: $rc
+			color: #000
+			font-weight: bold;
+			text-transform: uppercase;
+			+rem(margin,40px 0)
+			&:first-of-type
+				+rem(margin, 5px 0 40px)
+			&.link
+				&:hover
+					+rm(991)
+						.link-arr
+							box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+							use
+								fill: $hover
+								stroke: $hover
+								color: #000
+		&:active
+			.link-arr
+				use
+					fill: $active
+					stroke: $active
+		h1
+			+rem(font-size, 42px)
+			line-height: 1.15;
 
-
-
-
+		h2
+			+rem(font-size, 36px)
+			line-height: 1.091;
+		h3
+			+rem(font-size, 22px)
+			line-height: 1.182;
+		.content-slider-wrap, img,.video-wrap
+			display: block
+			+rem(margin-left,-30px)
+			+rem(margin-right,-30px)
+		.video-wrap
+			position: relative
+			padding-bottom: 62.5%
+			+rem(margin, 80px 0)
+			.video-wrap-cover,iframe
+				+coverdiv
+			&:hover
+				.video-wrap-cover
+					opacity: 0
+			// iframe
+			// 	pointer-events: none
+			&:not(.played)
+				.video-wrap-cover
+					z-index: 2
+					+cover
+					+vertical
+					cursor: pointer
+					transition: opacity .3s .2s
+					// pointer-events: none
+					&:after
+						content: ""
+						display: inline-block
+						vertical-align: middle
+						+rem(width,42px)
+						+rem(height,42px)
+						background-position: center left 60%
+						background-repeat: no-repeat
+						background-image: url(../img/icons/i-play.png)
+						+rem(background-size, 18px)
+						border-radius: 50%
+						background-color: $hover
+					
+		.content-slider
+			&-wrap
+				+rem(margin-top,40px)
+				+rem(margin-bottom,40px)
+			&-nav
+				+rem(padding, 0 30px)
+				+rem(margin-top,32px)
+				button
+					+rem(margin-right,10px)
+			&-slider
+				position: relative
+				padding-bottom: 62.5%
+				overflow: hidden
+				white-space: nowrap
+				.slick-list
+					position: absolute
+					left: 0
+					right: 0
+					bottom: 0
+					top: 0
+				.slick-track,.content-item
+					width: 100%
+					height: 100%
+					display: inline-block
+					
+				.content-item
+					img
+						display: block
+						height: 100%
+						margin: 0 auto
+						max-width: 100%
+	&-right
+		+rem(flex-basis, 302px)
+		flex-shrink: 0
+		justify-content: flex-end
+		text-align: right
 		
+
+
 
 		
 

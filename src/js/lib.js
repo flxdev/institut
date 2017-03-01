@@ -2,3 +2,4 @@
 //=include lib/slick.min.js
 //=include lib/jquery.matchHeight-min.js
 //=include lib/jquery.form-validator.min.js
+//=include lib/sticky-kit.min.js
