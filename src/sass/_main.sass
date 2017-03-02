@@ -85,8 +85,8 @@ body, .out,html
 .out
 	position: relative
 	-webkit-overflow-scrolling: touch;
-	+r(768)
-		overflow-x: hidden
+	// +r(768)
+	// 	overflow-x: hidden
 .page__header--wrap
 	position: fixed
 	left: 0
@@ -111,6 +111,7 @@ body, .out,html
 		width: 100%
 		display: block
 		height: 100%
+
 	&__header
 		background: $white
 		display: flex
@@ -243,7 +244,7 @@ body, .out,html
 				+r(1230)
 					+rem(padding-left,90px)
 			+r(991)
-				transform: translateY(-100%)
+				// transform: translateY(-100%)
 			+rm(991)
 				.page__header-logo-big
 					transform: translateY(120%)
@@ -2199,6 +2200,12 @@ a
 		font-weight: 700
 		text-transform: uppercase
 		color: #000
+		&.right
+			svg
+				transform: none
+			span
+				padding-left: 0
+				+rem(padding-right,13px)
 		use
 			transition: stroke .3s, color .3s
 			fill: #fff
@@ -2231,6 +2238,11 @@ a
 		flex-flow: row nowrap
 		align-items: stretch
 		+rem(padding-top, 75px)
+		+r(991)
+			+rem(padding-top, 35px)
+		+r(735)
+			display: block
+			+rem(margin, 0 -10px)
 	&-menu,&-content
 		min-height: 1px
 		display: inline-block
@@ -2240,49 +2252,122 @@ a
 		flex-shrink: 0
 		position: relative
 		+rem(padding-right,35px)
+		+r(735)
+			padding-right: 0
 		.aside-title
 			+rem(font-size,18px)
 			+rem(padding, 22px 0 13px)
 			line-height: 1.48
 		.aside-stick
 			display: inline-block
+			+r(735)
+				position: static !important
+			.menu-nav
+				+r(735)
+					overflow: hidden
+					max-height: 0
+					+tr(max-height .3s)
+					&.active
+						+rem(max-height, 600px)
+			+r(735)
+				display: block
+				margin: 0 auto
+				border: $bb
+				+rem(max-width,400px)
+				+rem(border-radius,3px)
+				.aside-title
+					+rem(padding, 10px 10px)
+					border-bottom: $bb
+					cursor: pointer
+				.menu-nav-item
+					margin: 0
+					+rem(padding, 12px 10px)
+					a 
+						text-transform: uppercase
+						font-weight: 700
+						font-family: $rc
+						box-shadow: none
+						+rem(font-size,16px)
+						line-height: 1.2
+		+r(991)
+			+rem(flex-basis,212px)
+			+rem(padding-right,15px)
+		+r(735)
+			display: block
 	&-content
 		flex-grow: 1
-		font-size: 24px
+		font-size: 14px
+		+rem(flex-basis,280px)
+		+r(735)
+			display: block
 .menu-nav
 	&-item
 		+rem(margin, 26px 0 27px)
+		&.more
+			.link-black
+				box-shadow: none
+				color: $hover
+				border-bottom: 2px dotted $hover
 		.link-black	
 			+rem(font-size, 16px)
 .content-column
 	&-wrap
 		display: flex
 		flex-flow: row nowrap
+		+r(991)
+			flex-direction: column
+			
 	&-content
 		flex-grow: 1
 		+rem(font-size,16px)
 		+rem(padding, 0 30px)
+		display: flex
+		flex-flow: column nowrap
+		+rem(flex-basis,280px)
+		+r(991)
+			order: 2
+			display: block
+		+r(735)
+			padding: 0
+		&-inner
+			width: 100%
+			+rem(padding-bottom, 60px)
+			+r(735)
+				+rem(padding-bottom, 30px)			
 		p
 			+rem(font-size,15px)
 			font-family: $pt
 			color: $grayf
 			line-height: 1.6;
 			+rem(letter-spacing,0.2px)
-			+rem(max-width,510px)
+			
 			+rem(margin, 21px 0)
+			+rm(991)
+				+rem(padding-right,30px)
 			a	
 				box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
 				&:hover
 					+rm(991)
 						box-shadow: none
+			.caption-content
+				+rem(top,-10px)
+
+		i 
+			color: $grayy
+			font-style: italic
+
+		b
+			color: rgb(0, 0, 0);
+			font-weight: bold;
+			+rem(font-size, 16px)
 		h1,h2,h3,h4
 			font-family: $rc
 			color: #000
 			font-weight: bold;
 			text-transform: uppercase;
 			+rem(margin,40px 0)
-			&:first-of-type
-				+rem(margin, 5px 0 40px)
+			+r(735)
+				+rem(margin,30px 0 25px)				
 			&.link
 				&:hover
 					+rm(991)
@@ -2300,10 +2385,18 @@ a
 		h1
 			+rem(font-size, 42px)
 			line-height: 1.15;
-
+			+r(735)
+				+rem(font-size,35px)
+				.link-arr
+					margin-left: 0
+					margin-top: 1px
+			&:first-of-type
+				+rem(margin, 5px 0 40px)
 		h2
 			+rem(font-size, 36px)
 			line-height: 1.091;
+			+r(735)
+				+rem(font-size,28px)
 		h3
 			+rem(font-size, 22px)
 			line-height: 1.182;
@@ -2311,17 +2404,59 @@ a
 			display: block
 			+rem(margin-left,-30px)
 			+rem(margin-right,-30px)
+			+r(735)
+				+rem(margin-left,-15px)
+				+rem(margin-right,-15px)				
+		.caption
+			position: relative
+			text-align: left
+			&-content
+				position: absolute
+				left: 122%
+				+rem(width,220px)
+				top: 0
+				background-color: transparent
+				+r(991)
+					position: static
+					display: block
+					+rem(margin, 10px auto)
+				&>img
+					display: block
+					max-width: 100%
+					+rem(max-height,64px)
+					margin: 0
+					+rem(margin-bottom,10px)
+				i
+					+rem(padding-left,49px)
+					color: $grayy
+					font-style: italic
+					+rem(font-size,14px)
+					display: block
+
+					line-height: 1.571;
+				.date
+					+rem(font-size,28px)
+					font-family: $rc
+					font-weight: 400
+					display: block
+					span
+						+rem(font-size,36px)
 		.video-wrap
 			position: relative
 			padding-bottom: 62.5%
-			+rem(margin, 80px 0)
+			+rem(margin-top,80px)
+			+rem(margin-bottom,80px)
+			.caption-content
+				left: 116%	
+				top: auto
+				bottom: 0
+				+r(991)
+					display: none
 			.video-wrap-cover,iframe
 				+coverdiv
 			&:hover
 				.video-wrap-cover
 					opacity: 0
-			// iframe
-			// 	pointer-events: none
 			&:not(.played)
 				.video-wrap-cover
 					z-index: 2
@@ -2342,19 +2477,47 @@ a
 						+rem(background-size, 18px)
 						border-radius: 50%
 						background-color: $hover
-					
 		.content-slider
 			&-wrap
-				+rem(margin-top,40px)
-				+rem(margin-bottom,40px)
+				+rem(margin-top,50px)
+				+rem(margin-bottom,50px)
+				.caption-content
+					left: 116%
+				&.diffs
+					+rem(margin-bottom,25px)
+					.content-slider-slider
+						padding-bottom: 50%
+					.content-item-diff
+						height: 100%
+						+contain
+						background-position: left center
+						background-size: 100% 100%
+					.content-item
+						.content-item-diff.cocoen
+							&> img
+								&:first-child
+									height: 100%
+								&+ img
+									// height: 0
+									opacity: 0 
+							div + img
+								opacity: 1 !important
+								transition: opacity .3s .15s !important
 			&-nav
 				+rem(padding, 0 30px)
 				+rem(margin-top,32px)
 				button
-					+rem(margin-right,10px)
+					+rem(margin-right,15px)
+				.nav-dots
+					.slick-dots
+						position: static
+						text-align: left
+						+rem(margin-left,-6px)
+						li
+							+rem(width,24px)
 			&-slider
 				position: relative
-				padding-bottom: 62.5%
+				padding-bottom: 57.5%
 				overflow: hidden
 				white-space: nowrap
 				.slick-list
@@ -2367,18 +2530,136 @@ a
 					width: 100%
 					height: 100%
 					display: inline-block
-					
 				.content-item
-					img
+					&>img
 						display: block
 						height: 100%
 						margin: 0 auto
 						max-width: 100%
+					&-diff
+						&> div
+							z-index: 2
+							&>img
+								display: block
+								height: 100%
+
+						img
+							margin: 0
+
+						.cocoen__drag
+							background: linear-gradient(to right, transparent 0%, transparent calc(50% - 0.81px), $hover calc(50% - 0.8px), $hover calc(50% + 0.8px), transparent calc(50% + 0.81px), transparent 100%)
+							+padlr(6px)
+							+rem(margin-left,-6px)
+							z-index: 3	
+							&:before,&:after
+								position: absolute
+								content: ''
+								display: inline-block
+								+contain
+								background-image: url(../img/icons/i-arr-y.png)	
+								+rem(width,10px)			
+								+rem(height,16px)
+								border: none
+								+rem(bottom, 24px)
+								top: auto
+								margin: 0
+							&:before
+								+rem(left, -15px)
+								right: auto
+							&:after
+								+rem(right, -15px)
+								left: auto
+								transform: scale(-1,1)
+	&-links
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: center
+		border-top: $bb
+		+rem(padding-top,55px)
+		.nav-btn
+			svg
+				+rem(width,42px)
+				+rem(height,42px)
+				use
+				    stroke: #000
+			&:hover
+				use
+					stroke: $hover
 	&-right
 		+rem(flex-basis, 302px)
 		flex-shrink: 0
 		justify-content: flex-end
 		text-align: right
+		+r(991)
+			order: 1
+			flex-shrink: 1
+			flex-basis: 0
+		+r(735)
+			text-align: left
+		&-btnwrap
+			display: inline-block
+			border-bottom: $bb
+			+rem(padding-bottom,85px)
+			+rem(padding-top,12px)
+			+rem(padding-right,10px)
+			+r(991)
+				border: none
+				+rem(padding-bottom,15px)
+			+r(735)
+				+rem(padding, 20px 0)
+.diplom-slider
+	+r(991)
+		display: none
+	b
+		display: inline-block
+		+rem(padding-left,49px)
+		line-height: 1.5
+	&-inner
+		+rem(height,155px)
+		+rem(margin, 15px 0)
+		&:not(.slick-initialized)
+			white-space: nowrap
+			overflow: hidden
+		
+		.slick-track,.slick-list
+			height: 100%
+		.slick-arrow
+			background: transparent
+			&.slick-disabled
+				pointer-events: none
+			&:before
+				+hidetext
+				display: inline-block
+				background: transparent
+				+rem(width,9px)
+				+rem(height,9px)
+				border: 2px solid 
+				transform: rotate(45deg)
+				+tr(border-color .25s)
+		.slick-next
+			&:before
+				border-top-color: #000
+				border-right-color: #000
+			&:not(.disabled):hover
+				&:before
+					border-top-color: $hover
+					border-right-color: $hover			
+		.slick-prev
+			&:before
+				border-bottom-color: #000
+				border-left-color: #000
+			&:not(.slick-disabled):hover
+				&:before
+					border-bottom-color: $hover
+					border-left-color: $hover	
+		&-img
+			&>img
+				display: block
+				height: 100%
+				max-width: 100%
+				margin: 0 auto
+				
 		
 
 

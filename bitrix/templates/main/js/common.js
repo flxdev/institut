@@ -85,7 +85,27 @@ document.addEventListener("DOMContentLoaded", function() {
 	partnerSlider();
 	contentSlider();
 	aside();
+	diplomSlider();
+	function MobileDropdown(trigger,parent,target){
+		var trg = $(trigger),
+			prnt = $(parent),
+			trgt = $(target);
+		trg.each(function(){
+			$(this).on('click', function(){
 
+				var item = prnt.find(trgt);
+				console.log(item.length)
+				if(item.hasClass('active')){
+
+					item.removeClass('active');
+				}else{
+					prnt.siblings().find(trgt).removeClass('active');
+					item.addClass('active');
+				}
+			});
+		});
+	}
+	MobileDropdown('.js-dropdown','.js-dropdown-parent','.js-dropdown-target')
 	$('.doctor-slider-add-item-inner').matchHeight({
 		property: 'min-height'
 	});
@@ -111,18 +131,31 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		});
 	}player();
+	function checkListHeight(){
+
+	}
 //end of document.ready
 });
 //end of document.ready
 
 function aside(){
-	setTimeout(function(){
-		$(".aside-stick").stick_in_parent({
-			offset_top : 73
-		});
-	},10)
+	function stickinit(){
+		setTimeout(function(){
+			$(".aside-stick").stick_in_parent({
+				offset_top : 73
+			});
+		},1)
+	}stickinit();
 
+	$(window).on('resize', function(){
+		if(window.matchMedia("(max-width: 735px)").matches){
+			$(".aside-stick").trigger("sticky_kit:detach");
+		}else{
+			stickinit()
+		}
+	});
 }
+
 function doctorSlider(){
 	$(".js-slider-doctor").each(function() {
 		var _this = $(this);
@@ -197,16 +230,38 @@ function rombSlider(){
 		});
 	});
 }
+function diplomSlider(){
+	$(".diplom-slider-inner").each(function() {
+		var _this = $(this);
+		_this.slick({
+			accessibility: true,
+			arrows: true,
+			draggable: false,
+			autoplay: false,
+			dots: false,
+			fade: false,
+			touchMove: false,
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+		});
+	});
+}
 function contentSlider(){
 	$(".content-slider-slider").each(function() {
 		var _this = $(this);
 		var parent = _this.closest('.content-slider-wrap');
+		_this.on('init reinit afterChange', function(event, slick, currentSlide, nextSlide){
+		  	var active = _this.find('.slick-current');
+		  		active.find('.cocoen').cocoen();
+		});
 		_this.slick({
 			accessibility: true,
 			arrows: true,
 			draggable: false,
 			autoplay: false,
 			dots: true,
+			fade: false,
 			touchMove: false,
 			infinite: false,
 			appendArrows: parent.find('.nav-arrows'),
