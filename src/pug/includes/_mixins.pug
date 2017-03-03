@@ -63,5 +63,16 @@ mixin docCard(img,name, who)
 						use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
 			.doc-card-img
 				img(src="img/bg/v"+img+".png", alt="vrtach")
-
+mixin listlist(id,name,img)
+	.feachure-list-item(id=id)
+		.feachure-list-item-inner
+			.doc-card-inner(style='background-image:url(/img/list/'+img+'.png);')
+				.doc-card-text
+					a(href="#").title.h2.link #{name}
+						.link-arr
+							svg(class="icon icon-drop")
+								use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+			.feachure-list-content
+				if block
+					block
 

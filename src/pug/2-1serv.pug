@@ -1,0 +1,194 @@
+extends _layout
+
+block title
+	title кОСМЕТОЛОГИЯ
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Услуги
+			.content-main
+				.title.h1 кОСМЕТОЛОГИЯ
+				//просто вставляем этот блок, а туда уже кнопку которая нужна
+				.title-btn
+					a(href="#").btn.btn-big Прайс Лист
+	.box
+		.aside-wrapp
+			aside.aside-menu(data-sticky_parent)
+				// тут модификатор .list-bold
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Список услуг
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black.active Косметология
+						li.menu-nav-item
+							a(href="#").link-black Пластическая хирургия
+						li.menu-nav-item
+							a(href="#").link-black Лазерная косметология
+						li.menu-nav-item
+							a(href="#").link-black Коррекция фигуры
+						li.menu-nav-item
+							a(href="#").link-black Массаж
+						li.menu-nav-item
+							a(href="#").link-black Физиотерапия
+						li.menu-nav-item
+							a(href="#").link-black Флебология
+						li.menu-nav-item
+							a(href="#").link-black Трихология
+						li.menu-nav-item
+							a(href="#").link-black Эндокринология
+						li.menu-nav-item
+							a(href="#").link-black Лабораторные анализы и экспресс-диагностика
+						li.menu-nav-item
+							a(href="#",data-id='11').link-black Персонализированная косметика
+			.aside-content
+				.feachure-list-wrap
+					.feachure-list-item
+						.feachure-list-item-inner
+							.doc-card-inner(style='background-image:url(/img/list/1.png);')
+								.doc-card-text
+									a(href="#").title.h2.link Услуги
+							.feachure-list-content
+								ul.feachure-list-list
+									li
+										a(href="#") Диагностика кожи
+									li
+										a(href="#") Аутологичное клеточное омоложение рук плазмой
+									li
+										a(href="#") Инъекционная контурная пластика
+									li
+										a(href="#") Лечение угревой болезни
+									li
+										a(href="#") Лечение купероза
+									li
+										a(href="#") Лечение Розацеа
+									li
+										a(href="#") Удаление родинок и папиллом
+									li
+										a(href="#") Вросший ноготь
+									li
+										a(href="#") Биоревитализация
+								ul.feachure-list-list
+									li
+										a(href="#") Ботулинотерапия
+									li
+										a(href="#") Детская косметология
+									li
+										a(href="#") Косметические маски
+									li
+										a(href="#") Косметическое отбеливание зубов
+									li
+										a(href="#") Криодеструкция
+									li
+										a(href="#") Мезотерапия
+									li
+										a(href="#") Мезонити
+									li
+										a(href="#") Лечение гипергидроза
+									li
+										a(href="#") Плазмотерапия
+								ul.feachure-list-list
+									li
+										a(href="#") Фотомодуляция
+									li
+										a(href="#") Чистка лица
+									li
+										a(href="#") Электрокоагуляция
+									li
+										a(href="#") Фототерапия (IPL)
+									li
+										a(href="#") Jet Peel – омоложение
+									li
+										a(href="#") Elos - омоложение
+									li
+										a(href="#") Дерматоонкология
+									li
+										a(href="#") Дермабразия
+									li
+										a(href="#") Дермапигментация
+				.content-column-wrap
+					.content-column-content
+						.content-column-content-inner
+							h1 О кОСМЕТОЛОГИИ
+							.diplom-slider.caption
+								.diplom-slider-content.caption-content
+									b Наша деятельность сертифицирована
+									.diplom-slider-inner
+										.diplom-slider-inner-img
+											img(src="img/content/d1.jpg", alt="fsdfsd")
+										.diplom-slider-inner-img
+											img(src="img/content/d1.jpg", alt="fsdfsd")
+										.diplom-slider-inner-img
+											img(src="img/content/d1.jpg", alt="fsdfsd")
+									i Сертификат на осуществление медицинской деятельности
+							p  Мы постоянно расширяем арсенал методик, которые используем в своей практике и углублённо изучаем состояние здоровья пациента, в том числе его генетические особенности, для того чтобы разработать индивидуальные комплексные программы совершенствования внешности.
+
+							p  В клинике применяются новейшие технологии  (плазмотерапия) и все известные классические методики: 
+								a(href="#") биоревитализация
+								|, 
+								a(href="#") aмезотерапия
+								|, 
+								a(href="#") контурная пластика
+								|, 
+								a(href="#") лифтинг с использованием мезонитей
+								|, 
+								a(href="#") ботулинотерапия
+								|, 
+								a(href="#") химические пилинги 
+								|и т.д.), лечение и омоложение с помощью лазеров и фототерапии, совершенствуются традиционные, ставшие классическими методики массажа и эпиляции. 
+							p  По традиции в отделении семейной медицины оказывают медицинскую косметологическую помощь детям (
+								a(href="#") детская дерматокосметология
+								|). 
+							p  Предмет нашей особой гордости составляют наши 
+								a(href="#") специалисты 
+								|- "золотой фонд" отечественной дерматокосметологии.
+
+					//div нужен
+					.content-column-right
+		.nav-wrapper
+			.nav-btn-wrap
+				//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
+				a(href="#").nav-btn
+					svg(class="icon icon-drop")
+						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+					span Назад
+			form(action="").tel-form.js-validate
+				.tel-form-text
+					.text-bold Не нашли что искали?
+					.text-bold.small Оставьте свой номер и мы перезвоним
+				.tel-form-form
+					input(type="tel").tel-form-inp
+					button(type='submit',value='Отправить').btn.tel-form-btn
+						span Отправить
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

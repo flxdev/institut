@@ -26,7 +26,7 @@ block content
 					.aside-title.title.h4.js-dropdown вРАЧ
 						br
 						|СПЕЦИАЛИЗИРУЕТСЯ:
-					ul.menu-nav.js-dropdown-target
+					ul.menu-nav.js-dropdown-target.menu-scalable
 						li.menu-nav-item
 							a(href="#").link-black Пластика груди
 						li.menu-nav-item
@@ -149,10 +149,12 @@ block content
 						.content-column-right-btnwrap
 							a(href="#").btn.yell.btn-big Записаться на приём
 		.nav-wrapper
-			a(href="#").nav-btn
-				svg(class="icon icon-drop")
-					use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
-				span Назад
+			.nav-btn-wrap
+				//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
+				a(href="#").nav-btn
+					svg(class="icon icon-drop")
+						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+					span Назад
 
 
 

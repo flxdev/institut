@@ -132,7 +132,14 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 	}player();
 	function checkListHeight(){
-
+		var _this = this;
+		_this.eventHandler = function(){
+			_this.trigger.addeventListener('click', _this.expand, false);
+		}
+		_this.getHeight = function(){
+			var h = $(window).height() - 80;
+			var menuh = _this.menu.height() + 90;
+		}
 	}
 //end of document.ready
 });

@@ -947,6 +947,41 @@ blockquote
 				+contain
 				background-image: url(../img/icons/calendar.png)
 				+rem(background-size, 30px 30px)
+.btn-download
+	white-space: nowrap
+	display: inline-block
+	&:active
+		.btn
+			border-color: $active
+
+	+r(735)
+		.btn
+			+rem(height,40px)
+			+rem(padding, 11px 12px)
+	.btn.btn-big:first-of-type
+		border-bottom-right-radius: 0
+		border-top-right-radius: 0
+		border-right: none
+	.btn.btn-big:last-of-type
+		border-bottom-left-radius: 0
+		border-top-left-radius: 0
+	.btn
+		+rem(height,48px)
+		vertical-align: top
+	.btn-down
+		// position: relative
+		+rem(padding, 12px 18px)
+		max-height: 100%
+		.down1,.down2
+			+tr(fill .3s)
+		&:hover
+			.down1,.down2
+				fill: $hover
+		svg
+			// position: absolute
+			// +vcenter
+			+rem(width, 25px)
+			+rem(height, 21px)
 //cards small
 .card
 	&-item
@@ -1917,6 +1952,8 @@ blockquote
 				width: 57%	
 				vertical-align: top
 				+rem(padding-bottom,30px)
+
+					
 				+r(991)
 					width: 65%
 					.title
@@ -1991,9 +2028,22 @@ blockquote
 			flex-grow: 1
 			+r(600)
 				+rem(font-size,37px)
+			&+.title-btn
+				+rem(margin-bottom,20px)
 			&-btn
 				+rem(flex-basis,300px)
 				flex-shrink: 0
+				text-align: center
+				+r(600)
+					+rem(flex-basis,200px)
+					text-align: right
+					.btn-download
+						margin-top: 0
+						margin-left: 0
+						+rem(margin-left,10px)
+				.btn-download,&> .btn
+					+rem(margin-left,30px)
+					+rem(margin-top,15px)
 a
 	&:hover
 		+rm(991)
@@ -2192,8 +2242,13 @@ a
 		flex-flow: row wrap
 		align-items: center
 		+rem(margin-top,80px)
-		+r(600)
+		justify-content: space-between
+		+r(991)
+			+rem(margin-top,60px)
+		+r(620)
 			+rem(margin-top,40px)
+			flex-direction: column
+			align-items: stretch
 	&-btn
 		position: relative
 		font-family: $rc
@@ -2262,6 +2317,21 @@ a
 			display: inline-block
 			+r(735)
 				position: static !important
+			&.list-bold
+				.aside-title
+					+rm(735)
+						display: none
+				.menu-nav
+					+rm(735)
+						+rem(margin-top,35px)
+					.link-black
+						font-size: 18px
+						font-family: $rc
+						font-weight: bold
+						text-transform: uppercase
+						line-height: 1.444
+						&:not(.active)
+							box-shadow: none
 			.menu-nav
 				+r(735)
 					overflow: hidden
@@ -2276,7 +2346,7 @@ a
 				+rem(max-width,400px)
 				+rem(border-radius,3px)
 				.aside-title
-					+rem(padding, 10px 10px)
+					+rem(padding, 10px 10px 6px)
 					border-bottom: $bb
 					cursor: pointer
 				.menu-nav-item
@@ -2301,9 +2371,19 @@ a
 		+r(735)
 			display: block
 .menu-nav
+	&.scalable
+		+rm(735)
+			overflow: hidden
+			+tr(max-height .3s)
+			&.open
+				max-height: 1500px !important
+
+
 	&-item
 		+rem(margin, 26px 0 27px)
 		&.more
+			+r(735)
+				display: none
 			.link-black
 				box-shadow: none
 				color: $hover
@@ -2342,7 +2422,7 @@ a
 			+rem(letter-spacing,0.2px)
 			
 			+rem(margin, 21px 0)
-			+rm(991)
+			+rm(1130)
 				+rem(padding-right,30px)
 			a	
 				box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
@@ -2659,7 +2739,173 @@ a
 				height: 100%
 				max-width: 100%
 				margin: 0 auto
-				
+.feachure-list
+	&-wrap
+		& ~ .content-column-wrap
+			.caption-content
+				+rem(top, -25px)
+			.content-column-content-inner
+				padding-bottom: 0
+		// +rem(margin-bottom,60px)
+		+r(991)
+			+rem(margin-top,-10px)
+		+r(735)
+			+rem(margin-top, 20px)
+		.doc-card
+			&-inner
+				+rem(padding-top,85px)
+				+contain
+				background-position: right 10px bottom
+				+r(991)
+					+rem(padding-top,55px)					
+			&-img
+				position: relative
+				z-index: -1
+			&-text
+				width: 100%
+				+rem(padding-bottom,30px)
+				+r(991)
+					.title
+						+rem(font-size, 40px)
+				+r(735)
+					+rem(max-width, 275px)
+					.title
+						+rem(font-size, 26px)
+						width: 100%
+					.link-arr
+						margin-top: 0
+						margin-left: 0
+				.link-arr
+					position: static
+					margin-top: .4375rem;
+					margin-left: .4375rem;
+					
+	&-item
+		+rem(padding-bottom,120px)
+		margin-right: -50%
+		+rem(padding-left, 30px)
+		&:only-child
+			.feachure-list-item-inner
+				+rem(padding-bottom,15px)
+				border-bottom: $bb
+				+rem(margin-bottom, 35px)
+		+r(1180)
+			margin-right: -40%	
+		+r(991)
+			+rem(padding-bottom,75px)	
+		+r(735)
+			+rem(margin, 0 -15px)
+			+rem(padding, 0 15px) 
+			.feachure-list-item-inner
+				width: 100%
+		&-inner
+			+rem(max-width,910px)
+			width: 70%
+		&:nth-of-type(even)
+			background-color: #fafafa
+		&:last-of-type
+			+rem(padding-bottom,30px)
+	&-content
+		font-size: 0
+	&-list	
+		display: inline-block
+		vertical-align: top
+		+rem(padding-right,30px)
+		+rem(margin-top,9px)
+		+rm(769)
+			&:first-child
+				width: 33.5%
+			&:nth-child(2)
+				width: 33.5%
+			&:nth-child(3)
+				width: 32%
+		+r(768)
+			width: 50%
+			+rem(padding-right,10px)
+		li
+			+rem(margin, 16px 0)
+		a 
+			+rem(font-size,16px)
+			color: $grayf
+			+rem(padding, 5px 0)
+
+			line-height: 1.45;
+			&:hover
+				color: $hover
+.nav-btn-wrap:empty() + .tel-form
+	+r(620)
+		+rem(margin-top, 0px)
+.tel-form
+	background-color: #faf9f5
+	+rem(padding, 35px 41px)
+	font-size: 0
+	+rm(1180)
+		+rem(margin-right,75px)
+	+r(991)
+		display: block
+		+rem(margin-top, 30px)
+		+rem(padding, 30px 35px)
+	+r(620)
+		display: block
+		+rem(margin-top, 30px)
+		+rem(margin-left, -15px)
+		+rem(margin-right, -15px)
+		+rem(padding, 25px 25px)
+	&-text,&-form
+		display: inline-block
+		vertical-align: middle
+		text-align: left
+		+r(620)
+			display: block
+			width: 100%
+	&-text
+		text-align: left
+		+r(991)
+			width: 40%
+		.small
+			font-weight: 400
+			+rem(margin-top,10px)
+			+rem(letter-spacing,0)
+	&-form
+		+rem(margin-left,78px)
+		+r(991)
+			width: 60%
+			margin: 0
+			text-align: right
+		+r(620)
+			width: 100%
+			text-align: left
+			+rem(margin-top, 30px)
+	&-inp,&-btn
+		+rem(height,47.5px)
+		display: inline-block
+		vertical-align: top
+	&-inp
+		font-family: $rc
+		+rem(font-size,18px)
+		+rem(padding, 0 15px)
+		font-weight: 700
+		border: $bb
+		border-radius: 0
+		+rem(max-width,213px)
+		+r(991)
+			width: calc(60% - 15px)
+		+r(620)
+			width: calc(100% - 112px)
+			max-width: 100%
+	&-btn 
+		+rem(font-size, 14px)
+		+rem(margin-left,15px)
+		+rem(width,125px)
+		text-align: center
+		border-radius: 2px !important
+		+r(620)
+			width: auto
+.nav-btn-wrap:empty
+	& ~ .tel-form
+		+r(620)
+			+rem(margin-top, 0px)
+
 		
 
 

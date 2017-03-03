@@ -1,0 +1,261 @@
+extends _layout
+
+block title
+	title Услуги
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Услуги
+			.content-main
+				.title.h1 Услуги
+				//просто вставляем этот блок, а туда уже кнопку которая нужна
+				.title-btn
+					.btn-download
+						a(href="#").btn.btn-big Прайс Лист
+						a(href="#").btn.btn-down.btn-big
+							svg#down-btn(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 24 21', style='enable-background:new 0 0 24 21;', xml:space='preserve')
+								path.down1(d='M18,18c-0.2,0-0.5-0.2-0.5-0.4c0-0.3,0.2-0.5,0.4-0.6c2.8-0.4,5.1-2.9,5.1-5.7c0-3.1-2.5-5.7-5.6-5.7c-0.1,0-0.2,0-0.3,0\
+								c-0.2,0-0.5-0.1-0.5-0.3c-0.9-2.6-3.3-4.3-6-4.3C6.9,1,4.1,3.9,4.1,7.5c0,0.3,0,0.6,0.1,0.9c0,0.2-0.1,0.5-0.3,0.6\
+								C2.1,9.5,1,11.1,1,12.9C1,15.1,2.8,17,5.1,17H6c0.3,0,0.5,0.2,0.5,0.5C6.5,17.8,6.3,18,6,18H5.1C2.3,18,0,15.7,0,12.9\
+								c0-2.1,1.2-3.9,3.1-4.7c0-0.2,0-0.5,0-0.7C3.1,3.3,6.4,0,10.5,0c3,0,5.7,1.8,6.8,4.6c0,0,0,0,0.1,0c3.7,0,6.6,3,6.6,6.7\
+								C24,14.6,21.4,17.6,18,18C18,18,18,18,18,18z')
+								path.down1(d='M12,21c-0.3,0-0.5-0.2-0.5-0.5v-9c0-0.3,0.2-0.5,0.5-0.5s0.5,0.2,0.5,0.5v9C12.5,20.8,12.3,21,12,21z')
+								path.down2(d='M12,21c-0.1,0-0.3,0-0.4-0.1l-3-3c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0l2.6,2.6l2.6-2.6c0.2-0.2,0.5-0.2,0.7,0\
+								c0.2,0.2,0.2,0.5,0,0.7l-3,3C12.3,21,12.1,21,12,21z')
+	.box
+		.aside-wrapp
+			aside.aside-menu(data-sticky_parent)
+				// тут модификатор .list-bold
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Список услуг
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black Косметология
+						li.menu-nav-item
+							a(href="#").link-black Пластическая хирургия
+						li.menu-nav-item
+							a(href="#").link-black Лазерная косметология
+						li.menu-nav-item
+							a(href="#").link-black Коррекция фигуры
+						li.menu-nav-item
+							a(href="#").link-black Массаж
+						li.menu-nav-item
+							a(href="#").link-black Физиотерапия
+						li.menu-nav-item
+							a(href="#").link-black Флебология
+						li.menu-nav-item
+							a(href="#").link-black Трихология
+						li.menu-nav-item
+							a(href="#").link-black Эндокринология
+						li.menu-nav-item
+							a(href="#").link-black Лабораторные анализы и экспресс-диагностика
+						li.menu-nav-item
+							a(href="#",data-id='11').link-black Персонализированная косметика
+			.aside-content
+				.feachure-list-wrap
+					+listlist('1','Косметология','1')
+						ul.feachure-list-list
+							li
+								a(href="#") Диагностика кожи
+							li
+								a(href="#") Аутологичное клеточное омоложение рук плазмой
+							li
+								a(href="#") Инъекционная контурная пластика
+							li
+								a(href="#") Лечение угревой болезни
+							li
+								a(href="#") Лечение купероза
+							li
+								a(href="#") Лечение Розацеа
+							li
+								a(href="#") Удаление родинок и папиллом
+							li
+								a(href="#") Вросший ноготь
+							li
+								a(href="#") Биоревитализация
+						ul.feachure-list-list
+							li
+								a(href="#") Ботулинотерапия
+							li
+								a(href="#") Детская косметология
+							li
+								a(href="#") Косметические маски
+							li
+								a(href="#") Косметическое отбеливание зубов
+							li
+								a(href="#") Криодеструкция
+							li
+								a(href="#") Мезотерапия
+							li
+								a(href="#") Мезонити
+							li
+								a(href="#") Лечение гипергидроза
+							li
+								a(href="#") Плазмотерапия
+						ul.feachure-list-list
+							li
+								a(href="#") Фотомодуляция
+							li
+								a(href="#") Чистка лица
+							li
+								a(href="#") Электрокоагуляция
+							li
+								a(href="#") Фототерапия (IPL)
+							li
+								a(href="#") Jet Peel – омоложение
+							li
+								a(href="#") Elos - омоложение
+							li
+								a(href="#") Дерматоонкология
+							li
+								a(href="#") Дермабразия
+							li
+								a(href="#") Дермапигментация
+					+listlist('2','Пластическая хирургия','2')
+						ul.feachure-list-list
+							li
+								a(href="#") Пластика груди
+							li
+								a(href="#") Пластика носа
+							li
+								a(href="#") Пластика ушных раковин
+							li
+								a(href="#") Пластика лица и шеи
+							li
+								a(href="#") Нитевой лифтинг
+						ul.feachure-list-list
+							li
+								a(href="#") Пластика век
+							li
+								a(href="#") Пластика живота
+							li
+								a(href="#") Липосакция
+							li
+								a(href="#") Интимная пластика
+							li
+								a(href="#") Удаление новообразований
+						ul.feachure-list-list
+							li
+								a(href="#") Пластика бровей
+							li
+								a(href="#") Пластика лба
+							li
+								a(href="#") Пластика рубцов
+							li
+								a(href="#") Устранение двойного подбородк
+							li
+								a(href="#") Интимный филлинг
+					+listlist('3','Лазерная косметология','3')
+						ul.feachure-list-list
+							li
+								a(href="#") Лазерное удаление новообразований
+							li
+								a(href="#") Лазерный фракционный фототермолиз
+							li
+								a(href="#") Лазерное удаление бородавок
+							li
+								a(href="#") Лазерная шлифовка рубцов	
+						ul.feachure-list-list
+							li
+								a(href="#") Безоперационная подтяжка лица и тела (CUTERA - TITAN)
+							li
+								a(href="#") Лазерное омоложение кожи (CUTERA Genesis)
+							li
+								a(href="#") Терапия с использованием эксимерного лазера
+						ul.feachure-list-list
+							li
+								a(href="#") Лазерное удаление татуировок
+							li
+								a(href="#") Лечение и омоложение Фраксель
+							li
+								a(href="#") Лазерная блефаропластика
+							li
+								a(href="#") Лечение лазером				
+					+listlist('4','Коррекция фигуры','41')
+						ul.feachure-list-list
+							li
+								a(href="#") Липомоделирование
+							li
+								a(href="#") Водоструйная липосакция
+						ul.feachure-list-list
+							li
+								a(href="#") Акваликс (инъекции)
+							li
+								a(href="#") Аппаратный массаж VelaShape
+					+listlist('5','Массаж','51')
+						ul.feachure-list-list
+							li
+								a(href="#") Вибрационно-пластический массаж
+							li
+								a(href="#") Антистрессовый массаж	
+						ul.feachure-list-list
+							li
+								a(href="#") Восточный массаж
+							li
+								a(href="#") Висцеральный массаж
+						ul.feachure-list-list
+							li
+								a(href="#") Антицеллюлитный массаж
+					+listlist('6','Физиотерапия','4')
+						ul.feachure-list-list
+							li
+								a(href="#") Диагностика остеопороза (денситометрия)
+							li
+								a(href="#") Физиотерапия в косметологии
+						ul.feachure-list-list
+							li
+								a(href="#") Физиотерапевтическое лечение позвоночника и суставов
+						ul.feachure-list-list
+							li
+								a(href="#") Послеоперационная реабилитация
+					+listlist('7','Флебология','5')
+						ul.feachure-list-list
+							li
+								a(href="#") Флебологический паспорт
+					+listlist('8','Трихология','6')
+					+listlist('9','Эндокринология','7')
+					+listlist('10','Лабораторные анализы','8')
+					+listlist('11','Персонализированная косметика','9')
+		.nav-wrapper
+			.nav-btn-wrap
+			form(action="").tel-form.js-validate
+				.tel-form-text
+					.text-bold Не нашли что искали?
+					.text-bold.small Оставьте свой номер и мы перезвоним
+				.tel-form-form
+					input(type="tel").tel-form-inp
+					button(type='submit',value='Отправить').btn.tel-form-btn
+						span Отправить
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
