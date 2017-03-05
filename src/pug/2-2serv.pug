@@ -1,0 +1,226 @@
+extends _layout
+
+block title
+	title Диагностика кожи
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Услуги
+			.content-main
+				.title.h1 Диагно&shy;стика кожи
+				//просто вставляем этот блок, а туда уже кнопку которая нужна
+				.title-btn
+					a(href="#").btn.btn-big Прайс Лист
+	.box.product-container
+		.product-container-slider
+			.product-container-slider-main
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+			.product-container-slider-slides
+				.product-container-slider-add
+					.product-slider-add-item(style="background-image:url(/img/product/s1.png);")
+					.product-slider-add-item(style="background-image:url(/img/product/s2.png);")
+					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
+					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
+					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
+					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
+					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
+		.product-container-feachure
+			.title.h4 Процедура диагностики кожи позволяет узнать:
+			ul.product-container-list
+				li Влажность / жирность кожи
+				li Уровень содержания меланина
+				li Уровень содержания меланина
+				li рН (кислотно-щелочной баланс)
+				li Эластичность кожи
+				li Биологический возраст кожи
+				li Стадии целлюлита
+			.menu-nav-item.more.js-list-more
+				a(href="#",data-id='11').link-black Подробнее
+		.product-container-price
+			.price-block.sale
+				.text Стоимость услуги:
+				.title.h3 250 000₽
+				.price-old-cont
+					.price-old 250 000₽
+				a(href="#").btn.yell Записаться на прием
+			.spec-block
+				.text Специалисты:
+				+doctors('4', 22)
+	.box
+		.aside-wrapp
+			aside.aside-menu(data-sticky_parent)
+				// тут модификатор .list-bold
+				.aside-stick(data-sticky_column).js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Косметология
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black.active Мезотерапия
+						li.menu-nav-item
+							a(href="#").link-black Инъекционная контурная пластика
+						li.menu-nav-item
+							a(href="#").link-black Лечение витилиго
+						li.menu-nav-item
+							a(href="#").link-black Лечение угревой болезни
+						li.menu-nav-item
+							a(href="#").link-black Лечение купероза
+						li.menu-nav-item
+							a(href="#").link-black Лечение розацеа
+						li.menu-nav-item
+							a(href="#").link-black Удаление родинок и папиллом
+						li.menu-nav-item
+							a(href="#").link-black Биоревитализация
+					.menu-nav-item.more.js-list-more
+						a(href="#",data-id='11').link-black Показать ещё
+			.aside-content
+				.content-column-wrap
+					.content-column-content
+						.content-column-content-inner
+							h1 О диагностике кожи
+							p  В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи на основании 
+								a(href="#") компьютерной диагностики
+								|.
+							p  Поэтомуво время первичной консультации мы проводим профессиональную диагностику состояния Вашей кожи и на основании полученной информации рекомендуем максимально эффективные косметологические процедуры.
+							p  Далее на всех этапах лечения мы проводиммониторинг динамики его эффективности, визуализацию и сравнительный анализ состояния кожи до и после процедур.
+							.content-slider-wrap.caption
+								.content-slider-slider
+									.content-item
+										img(src="img/content/1.jpg", alt="fsdfsd")
+									.content-item
+										img(src="img/content/1.jpg", alt="fsdfsd")
+									.content-item
+										img(src="img/content/1.jpg", alt="fsdfsd")
+								.content-slider-nav
+									.nav-arrows
+								.caption-content
+									b Только современные диагностические системы
+									img(src="img/content/d14.png", alt="")
+									i SOFT Plus — многофункциональный программно-аппаратный комплекс.
+							h3  Мы предлагаем Сделать тестирование кожи, фототипа, диагностику волос.
+							p В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи на основании компьютерной диагностики.
+							blockquote
+								b Наш пациент заслуживает особого индивидуального подхода!
+								p Поэтомуво время первичной консультации мы проводим профессиональную диагностику состояния Вашей кожи и на основании полученной информации рекомендуем максимально эффективные косметологические процедуры.
+							p Далее на всех этапах лечения мы проводиммониторинг динамики его эффективности, визуализацию и сравнительный анализ состояния кожи до и после процедур.
+							.video-wrap
+								.video-wrap-cover(style='background-image:url(img/content/vbg.jpg);')
+								iframe(width='100%', height='100%', src='https://www.youtube.com/embed/qCBOCVblDYk', frameborder='0', allowfullscreen='')
+							p УЗИ-кожи позволит исследовать и определить состояние новооброзования, установленных филеров, фиброза, рубцовых изменений). Далее на всех этапах лечения мы проводиммониторинг динамики его эффективности, визуализацию и сравнительный анализ состояния кожи до и после процедур.
+							h3 До / после
+							.content-slider-wrap.diffs
+								.content-slider-slider
+									.content-item
+										//на бэкграунд вешаем первую картинку, нужна чтобы скрывать инициализацию. Также может служить просто слайдом-картинкой, если внутри пусто. 
+										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
+											img(src="img/content/s1.jpg", alt="fsdfsd")
+											img(src="img/content/1.jpg", alt="fsdfsd")
+									.content-item
+										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
+											img(src="img/content/s1.jpg", alt="fsdfsd")
+											img(src="img/content/1.jpg", alt="fsdfsd")
+									.content-item
+										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
+											img(src="img/content/s1.jpg", alt="fsdfsd")
+											img(src="img/content/1.jpg", alt="fsdfsd")
+								.content-slider-nav
+									.nav-dots
+							p Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши.
+					//div нужен
+					.content-column-right
+						.diplom-slider-content
+									b Наша деятельность сертифицирована
+									.diplom-slider-inner
+										.diplom-slider-inner-img
+											img(src="img/content/d1.jpg", alt="fsdfsd")
+										.diplom-slider-inner-img
+											img(src="img/content/d1.jpg", alt="fsdfsd")
+										.diplom-slider-inner-img
+											img(src="img/content/d1.jpg", alt="fsdfsd")
+									i Сертификат на осуществление медицинской деятельности
+	.wrapper.gray.more-content-wrapper
+			.box
+				.news-title
+					.title.h2 Специа&shy;листы
+					.nav-arrows
+				.more-content-slider
+					.more-content-slider-item
+							+docCard(21,'ТОЛКАЧЕВА АЛЕКСАНДРА АЛЕКСАНДРОВНА', 'Заведующая отделением, косметолог, физиотерапевт')
+					.more-content-slider-item
+						+docCard(11,'ИЗРАИЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ', 'Заведующий отделением, врач-пластический хирург, кандидат медицинских наук')
+					.more-content-slider-item
+						+docCard(31,'СМЕТНЕВА СВЕТЛАНА МИХАЙЛОВНА', 'Заведующая кабинетом, врач-терапевт')
+					.more-content-slider-item
+						+docCard(11,'ИЗРАИЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ', 'Заведующий отделением, врач-пластический хирург, кандидат медицинских наук')
+					.more-content-slider-item
+						+docCard(21,'ТОЛКАЧЕВА АЛЕКСАНДРА АЛЕКСАНДРОВНА', 'Заведующая отделением, косметолог, физиотерапевт')
+	.wrapper.more-content-wrapper
+			.box
+				.news-title
+					.title.h2 Вас также может заинтересовать
+					.nav-arrows
+				.more-content-slider
+					.more-content-slider-item
+						+card('1.png','Инъекционная контурная пластика','альтернативная методика')
+					.more-content-slider-item
+						+card('2.png','Лечение витилиго','Рекомендуем')
+					.more-content-slider-item
+						+card('2.png','Лечение купероза','Рекомендуем')
+					.more-content-slider-item
+						+card('2.png','Скидка до 20% на Аппаратную косметологию','Акция')
+					.more-content-slider-item
+						+card('1.png','Нитевой лифтинг','Акция')
+							p.text Своевременное восстановление красоты вашего лица по 30% скидке весь январь
+	.nav-wrapper
+		.nav-btn-wrap
+			//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
+			a(href="#").nav-btn
+				.nav-btn-inner
+					svg(class="icon icon-drop")
+						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+				span Назад
+		form(action="").tel-form.js-validate
+			.tel-form-text
+				.text-bold Не нашли что искали?
+				.text-bold.small Оставьте свой номер и мы перезвоним
+			.tel-form-form
+				input(type="tel").tel-form-inp
+				button(type='submit',value='Отправить').btn.tel-form-btn
+					span Отправить
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

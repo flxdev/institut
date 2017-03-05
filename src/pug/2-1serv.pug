@@ -11,7 +11,7 @@ block content
 				a(href="#").content-bread-item.text2 Главная
 				a(href="#").content-bread-item.text2 Услуги
 			.content-main
-				.title.h1 кОСМЕТОЛОГИЯ
+				.title.h1 кОСМЕ&shy;ТОЛО&shy;ГИЯ
 				//просто вставляем этот блок, а туда уже кнопку которая нужна
 				.title-btn
 					a(href="#").btn.btn-big Прайс Лист
@@ -113,17 +113,6 @@ block content
 					.content-column-content
 						.content-column-content-inner
 							h1 О кОСМЕТОЛОГИИ
-							.diplom-slider.caption
-								.diplom-slider-content.caption-content
-									b Наша деятельность сертифицирована
-									.diplom-slider-inner
-										.diplom-slider-inner-img
-											img(src="img/content/d1.jpg", alt="fsdfsd")
-										.diplom-slider-inner-img
-											img(src="img/content/d1.jpg", alt="fsdfsd")
-										.diplom-slider-inner-img
-											img(src="img/content/d1.jpg", alt="fsdfsd")
-									i Сертификат на осуществление медицинской деятельности
 							p  Мы постоянно расширяем арсенал методик, которые используем в своей практике и углублённо изучаем состояние здоровья пациента, в том числе его генетические особенности, для того чтобы разработать индивидуальные комплексные программы совершенствования внешности.
 
 							p  В клинике применяются новейшие технологии  (плазмотерапия) и все известные классические методики: 
@@ -148,12 +137,23 @@ block content
 
 					//div нужен
 					.content-column-right
+						.diplom-slider-content
+							b Наша деятельность сертифицирована
+							.diplom-slider-inner
+								.diplom-slider-inner-img
+									img(src="img/content/d1.jpg", alt="fsdfsd")
+								.diplom-slider-inner-img
+									img(src="img/content/d1.jpg", alt="fsdfsd")
+								.diplom-slider-inner-img
+									img(src="img/content/d1.jpg", alt="fsdfsd")
+							i Сертификат на осуществление медицинской деятельности
 		.nav-wrapper
 			.nav-btn-wrap
 				//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
 				a(href="#").nav-btn
-					svg(class="icon icon-drop")
-						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.nav-btn-inner
+						svg(class="icon icon-drop")
+							use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
 					span Назад
 			form(action="").tel-form.js-validate
 				.tel-form-text

@@ -610,11 +610,15 @@ body, .out,html
 	text-transform: uppercase;
 	line-height: 1.091;
 	text-align: left;
+	// hypensis: auto
 	&.h1
 		+rem(font-size,66px)
+		hyphens: manual;
+
 	&.h2
 		+rem(font-size,42px)
 		line-height: 1.095;
+		hyphens: manual;
 	&.h3
 		+rem(font-size, 36px)
 		line-height: 1.091;
@@ -770,6 +774,8 @@ blockquote
 	display: block
 	margin: 0 auto
 	+padlr(15px)
+	.nav-wrapper
+		+padlr(0)
 	&-section
 		+rem(margin-top, 100px)
 		+rem(margin-bottom, 128px)
@@ -890,7 +896,7 @@ blockquote
 	display: inline-block
 	+rem(font-size,16px)
 	font-family: $pt 
-	+rem(border-radius,5px)
+	+rem(border-radius,3px)
 	border: 1px solid #b7b7b7
 	color: #000
 	+rem(padding, 12px 16px)
@@ -898,7 +904,7 @@ blockquote
 	transition: color .3s, border-color .3s
 	-webkit-tap-highlight-color: transparent
 	&:not(.yell)
-		+rem(border-radius,5px)
+		+rem(border-radius,3px)
 	&:hover
 		+rm(870)
 			color: $active
@@ -1029,6 +1035,9 @@ blockquote
 			+rem(padding,75px 115px 30px 27px)
 			position: relative
 			z-index: 2
+			display: flex
+			height: 100%
+			flex-direction: column
 			+r(735)
 				+rem(padding,75px 100px 30px 27px)
 			.title
@@ -1042,6 +1051,7 @@ blockquote
 					-webkit-line-clamp: 3
 					-webkit-box-orient: vertical
 					display: -webkit-box
+					margin-top: auto
 			.text
 				+rem(font-size, 15.2px)
 				+rem(margin-top,5px)
@@ -1938,6 +1948,7 @@ blockquote
 	&-wrapper
 		+cover
 		+rem(padding-top,45px)
+		overflow: hidden
 		+r(600)
 			+rem(padding-top,25px)
 	&-head
@@ -1952,8 +1963,6 @@ blockquote
 				width: 57%	
 				vertical-align: top
 				+rem(padding-bottom,30px)
-
-					
 				+r(991)
 					width: 65%
 					.title
@@ -2031,16 +2040,18 @@ blockquote
 			&+.title-btn
 				+rem(margin-bottom,20px)
 			&-btn
-				+rem(flex-basis,300px)
+				+rem(flex-basis,250px)
 				flex-shrink: 0
 				text-align: center
 				+r(600)
-					+rem(flex-basis,200px)
+					+rem(flex-basis,165px)
 					text-align: right
+					.btn
+						white-space: nowrap
 					.btn-download
 						margin-top: 0
 						margin-left: 0
-						+rem(margin-left,10px)
+						// +rem(margin-left,10px)
 				.btn-download,&> .btn
 					+rem(margin-left,30px)
 					+rem(margin-top,15px)
@@ -2243,6 +2254,11 @@ a
 		align-items: center
 		+rem(margin-top,80px)
 		justify-content: space-between
+		max-width: 75.625rem;
+		width: 100%
+		margin-left: auto
+		margin-right: auto
+		+padlr(15px)
 		+r(991)
 			+rem(margin-top,60px)
 		+r(620)
@@ -2255,8 +2271,11 @@ a
 		font-weight: 700
 		text-transform: uppercase
 		color: #000
+		.nav-btn-inner
+			display: inline-block
+			transform: scale(-1,1)
 		&.right
-			svg
+			.nav-btn-inner
 				transform: none
 			span
 				padding-left: 0
@@ -2270,7 +2289,7 @@ a
 			display: inline-block
 			vertical-align: middle
 		svg
-			transform: scale(-1,1)
+			
 			+rem(width,30px)
 			+rem(height,30px)
 		span
@@ -2309,6 +2328,7 @@ a
 		+rem(padding-right,35px)
 		+r(735)
 			padding-right: 0
+			+rem(margin-bottom,15px)
 		.aside-title
 			+rem(font-size,18px)
 			+rem(padding, 22px 0 13px)
@@ -2440,6 +2460,9 @@ a
 			color: rgb(0, 0, 0);
 			font-weight: bold;
 			+rem(font-size, 16px)
+			display: inline-block
+			+rem(padding-left,49px)
+			line-height: 1.5
 		h1,h2,h3,h4
 			font-family: $rc
 			color: #000
@@ -2480,7 +2503,18 @@ a
 		h3
 			+rem(font-size, 22px)
 			line-height: 1.182;
-		.content-slider-wrap, img,.video-wrap
+		blockquote
+			border: 1px solid $hover
+			+padlr(30px)
+			+rem(padding-top, 20px)
+			+rem(padding-bottom, 5px)
+			+rem(margin-bottom, 40px)
+			+rem(margin-top, 40px)
+			p 
+				padding-right: 0
+			+r(735)
+				+padlr(15px)
+		.content-slider-wrap, img,.video-wrap,blockquote
 			display: block
 			+rem(margin-left,-30px)
 			+rem(margin-right,-30px)
@@ -2511,9 +2545,10 @@ a
 					color: $grayy
 					font-style: italic
 					+rem(font-size,14px)
-					display: block
-
+					displa
 					line-height: 1.571;
+					display: inline-block
+					
 				.date
 					+rem(font-size,28px)
 					font-family: $rc
@@ -2530,6 +2565,7 @@ a
 				left: 116%	
 				top: auto
 				bottom: 0
+
 				+r(991)
 					display: none
 			.video-wrap-cover,iframe
@@ -2563,6 +2599,9 @@ a
 				+rem(margin-bottom,50px)
 				.caption-content
 					left: 116%
+					img
+						+rem(max-height, 100px)
+						+rem(margin, 5px 0 10px)
 				&.diffs
 					+rem(margin-bottom,25px)
 					.content-slider-slider
@@ -2691,17 +2730,32 @@ a
 .diplom-slider
 	+r(991)
 		display: none
-	b
+	&-content
+		text-align: left
+		+rem(max-width, 200px)
 		display: inline-block
-		+rem(padding-left,49px)
-		line-height: 1.5
+		+r(991)
+			display: none
+		i 
+			color: $grayy
+			font-style: italic
+			+rem(padding-left,49px)
+			display: inline-block
+			
+		b
+			color: rgb(0, 0, 0);
+			font-weight: bold;
+			+rem(font-size, 16px)
+			display: inline-block
+			+rem(padding-left,49px)
+			line-height: 1.5
 	&-inner
 		+rem(height,155px)
 		+rem(margin, 15px 0)
+		
 		&:not(.slick-initialized)
 			white-space: nowrap
 			overflow: hidden
-		
 		.slick-track,.slick-list
 			height: 100%
 		.slick-arrow
@@ -2905,9 +2959,242 @@ a
 	& ~ .tel-form
 		+r(620)
 			+rem(margin-top, 0px)
+.more-content
+	&-wrapper
+		+rem(padding, 100px 0 35px)
+		+rem(margin-top,7px)
+		+rem(margin-bottom,0px)
+		&:not(.gray)
+			.news-title
+				+rem(padding-bottom,25px)
+		.news-title
+			position: relative
+			max-width: 50.5%
+			+rem(padding-bottom,38px)
+			+r(600)
+					max-width: 100%
+					width: 100%
+					.title
+						width: 100%
+						+rem(font-size,34px)
+						+rem(padding-right,90px)
+					.nav-arrows
+						left: auto
+						+rem(right, -10px)
+						button
+							+rem(margin-right,10px)
+			.title
+				width: 140%
 
+			.nav-arrows
+				position: absolute
+				+rem(left, -125px)
+				top: 0
+				button
+					+rem(margin-right,15px)
+	&-slider
+		.slick-list
+			+rem(padding, 15px 0)
+
+		&-item
+			.card-item-wrap
+				max-width: 100%
+				width: 100%
+				.card-item
+					width: 100%
+				+r(1110)
+					max-width: 23.28125rem;
+					width: 100%
+				+r(991)
+					display: block
+					+rem(padding,10px 0)
+					+rem(margin, 20px auto 0)
+			.doc-card
+				&-wrap
+					+rem(padding-left,10px)
+					+r(1110)
+						+rem(max-width,500px)
+						width: 100%
+						margin: 0 auto
+						display: block
+						+rem(padding, 0 10px)
+				&-inner
+					border-bottom: 0
+.product
+	&-container
+		border-bottom: $bb
+		+rem(padding-bottom, 75px)
+		+rem(padding-top, 75px)
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		+r(991)
+				flex-flow: row wrap
+				+rem(margin, 0 -10px)
+				+rem(padding-bottom, 55px)
+				+rem(padding-top, 55px)
+		+r(735)
+			flex-direction: column
+			justify-content: flex-start
+			align-items: stretch
+			+rem(padding-bottom, 30px)
+			+rem(padding-top, 30px)
+		.text
+			+rem(font-size,16px)
+			color: #000
+		&-feachure
+			flex-basis: 31%
+
+			+rem(margin-top,21px)
+			+rm(735)
+				+rem(padding-left,15px)
+			+r(991)
+				order: 3
+				flex-basis: 100%
+			+r(735)
+				+rem(margin-top, 30px)
+			ul
+				+rem(margin-top, 35px)
+				li
+					+rem(font-size,16px)
+					line-height: 1.25;
+					color: #000
+					+rem(padding-left,28px)
+					position: relative
+					+rem(padding-bottom, 20px)
+					&:after
+						position: absolute
+						content: ''
+						display: inline-block
+						+rem(left, 3px)
+						+rem(top, 7px)
+						+rem(width,6px)
+						+rem(height, 6px)
+						background-color: #000
+						border-radius: 50%
+			.more 
+				+rem(padding-left,28px)
+				margin-top: 0
+				+r(735)
+					display: block
+					
+		&-price
+			+rem(margin-top,20px)
+			flex-shrink: 0
+			+rem(flex-basis,271px)
+			+r(991)
+				order: 2
+			+r(735)
+				.price-block
+					width: 100%
+					max-width: 100%
+		&-slider
+			border: $bb
+			border-radius: 2px
+			+rem(max-width, 500px)
+			position: relative
+			font-size: 0
+			flex-basis: 37%
+			align-self: flex-start
+
+			+r(991)
+				order: 1
+				flex-basis: 55%
+			+r(735)
+				width: 100%
+				align-self: center
+				.product-container-slider-main
+					width: 100%
+			&-slides
+				position: absolute
+				+rem(bottom,15px)
+				+rem(left,15px)
+				+rem(right,5px)
+				z-index: 5
+			.slick-track,.slick-list,.product-slider-main-item,.product-slider-add-item
+					height: 100%
+			.product-slider-main-item,.product-slider-add-item
+				+cover
+			.slick-list
+				position: absolute
+				+coverdiv
+			&-main
+				padding-bottom: 90.5%
+				position: relative
+				z-index: 2
+			&-add
+				position: relative
+				padding-bottom: 17.5%
+			&-main,&-add
+				max-width: 100%
+	&-slider
+		&-add-item
+			+rem(margin-right, 11px)
+			border: 1px solid transparent
+			+tr(border-color .3s)
+			&.slick-current
+				border-color: $hover
+
+.price-block
+	background-color: #faf9f5
+	+rem(padding, 34px)
+	+rem(max-width,270px)
+	&:not(.sale)
+		.price-old-cont
+			display: none
+	.btn.yell
+		+rem(height,47px)
+		width: 100%
+		line-height: 1.35
+		text-align: center
+		+rem(margin-top,20px)
+		+rem(max-width,200px)
+
+	.text
+		+rem(font-size,16px)
+		color: #000
+		+rem(margin-bottom, 9px)
+		&:after
+			content: 'Акция'
+			+rem(font-size,13px)
+			text-transform: uppercase;
+			line-height: 1.2;
+			color: #000
+			+rem(border-radius, 3px)
+			background-color: $hover
+			display: inline-block
+			font-weight: 400
+			+rem(padding,3px 10px)
+			+rem(margin-top,1px)
+			font-family: $rc
+			transition: box-shadow .3s, background-color .3s
+			float: right
+	.title
+		line-height: 1
+		+rem(margin-top, 8px)
+		+rem(margin-bottom, 11px)
+	.price-old
+		font-family: $rc
+		color: $grayf
+		position: relative
+		display: inline-block
+		font-weight: 700
+		+rem(font-size,18px)
+		&:after
+			position: absolute
+			content: ''
+			+rem(left,-4px)
+			+rem(right,-4px)
+			top: 50%
+			+rem(height,1px)
+			+rem(margin-top,-1px)
+			background-color: $grayf
+.spec-block
+	+rem(margin-top,25px)
+	.text
+		+rem(margin-bottom,30px)
+	+rem(padding-left,34px)
 		
-
 
 
 		

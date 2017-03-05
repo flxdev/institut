@@ -137,13 +137,15 @@ block content
 								a(href="#") отопластика
 						.content-column-links
 							a(href="#").nav-btn
-								svg(class="icon icon-drop")
-									use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+								.nav-btn-inner
+									svg(class="icon icon-drop")
+										use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
 								span Предыдущий
 							a(href="#").nav-btn.right
 								span Следующий
-								svg(class="icon icon-drop")
-									use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+								.nav-btn-inner
+									svg(class="icon icon-drop")
+										use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
 								
 					.content-column-right
 						.content-column-right-btnwrap
@@ -152,8 +154,9 @@ block content
 			.nav-btn-wrap
 				//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
 				a(href="#").nav-btn
-					svg(class="icon icon-drop")
-						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.nav-btn-inner
+						svg(class="icon icon-drop")
+							use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
 					span Назад
 
 

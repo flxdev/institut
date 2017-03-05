@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			scrollDelta = 5,
 			scrollOffset = 100;
 
-		$(document).add('.out').on('scroll', function(){
+		$(window).on('scroll', function(){
 			if( !scrolling ) {
 				scrolling = true;
 				(!window.requestAnimationFrame)
@@ -20,18 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 		function autoHideHeader() {
-			var currentTop = document.querySelector('body').scrollTop;
+			var currentTop = $(document).scrollTop();
 			window.matchMedia("(max-width: 991px)").matches ? checkSimpleNavigationMobile(currentTop) : checkSimpleNavigation(currentTop);
-			 
 			previousTop = currentTop;
 			scrolling = false;
 		}
 
 		function checkSimpleNavigationMobile(currentTop) {
 				if (previousTop - currentTop > scrollDelta) {
-					mainHeader.classList.remove('is-hidden');
+					mainHeader.removeClass('is-hidden');
 				} else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-					mainHeader.classList.add('is-hidden');
+					mainHeader.addClass('is-hidden');
 				}
 		}
 		function checkSimpleNavigation(currentTop) {
@@ -86,6 +85,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	contentSlider();
 	aside();
 	diplomSlider();
+	moreSlider();
+	productSlider();
 	function MobileDropdown(trigger,parent,target){
 		var trg = $(trigger),
 			prnt = $(parent),
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			var _ = $(this);
 			_.on('click', function(e){
 				_.addClass('played').find('iframe')[0].src += "?&autoplay=1";
-    			e.preventDefault();
+				e.preventDefault();
 			});
 		});
 	}player();
@@ -327,6 +328,75 @@ function partnerSlider(){
 					}
 				},
 			]
+		}); 
+	});
+}
+function moreSlider(){
+	$(".more-content-slider").each(function() {
+		var _this = $(this);
+			parent = _this.parents('.more-content-wrapper');
+		_this.slick({
+			accessibility: true,
+			arrows: true,
+			draggable: false,
+			dots: false,
+			touchMove: true,
+			infinite: false,
+			autoplay: true,
+			autoplaySpeed: 4500,
+			appendArrows: parent.find('.nav-arrows'),
+			slidesToShow: parent.hasClass('gray') ? 2 : 3,
+			slidesToScroll: 1,
+			nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			responsive: [
+				{
+				breakpoint: 991,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{
+				breakpoint: 735,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+			]
+		}); 
+	});
+}
+function productSlider(){
+	$(".product-container-slider-main").each(function() {
+		var _this = $(this);
+			parent = _this.closest('.product-container-slider');
+		_this.slick({
+			accessibility: true,
+			arrows: false,
+			draggable: true,
+			dots: false,
+			touchMove: true,
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			focusOnSelect: true,
+			asNavFor: parent.find(".product-container-slider-add")
+		}); 
+	});
+	$(".product-container-slider-add").each(function() {
+		var _this = $(this);
+			parent = _this.closest('.product-container-slider');
+		_this.slick({
+			accessibility: true,
+			arrows: false,
+			draggable: true,
+			dots: false,
+			touchMove: true,
+			infinite: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			focusOnSelect: true,
+			asNavFor: parent.find(".product-container-slider-main")
 		}); 
 	});
 }
