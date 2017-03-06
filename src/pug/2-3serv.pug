@@ -1,0 +1,353 @@
+extends _layout
+
+block title
+	title Прайс-лист
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Прайс-лист
+			.content-main
+				.title.h1 Диагно&shy;стика кожи
+				//просто вставляем этот блок, а туда уже кнопку которая нужна
+				.title-btn
+					a(href="#").btn.btn-big Прайс-лист
+	.box
+		.aside-wrapp
+			aside.aside-menu(data-sticky_parent)
+				// тут модификатор .list-bold
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Косметология
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black Косметология
+						li.menu-nav-item
+							a(href="#").link-black Пластическая хирургия
+						li.menu-nav-item
+							a(href="#").link-black Лазерная косметология
+						li.menu-nav-item
+							a(href="#").link-black Коррекция фигуры
+						li.menu-nav-item
+							a(href="#").link-black Массаж
+						li.menu-nav-item
+							a(href="#").link-black Физиотерапия
+						li.menu-nav-item
+							a(href="#").link-black Флебология
+						li.menu-nav-item
+							a(href="#").link-black Трихология
+						li.menu-nav-item
+							a(href="#").link-black Эндокринология
+						li.menu-nav-item
+							a(href="#").link-black Лабораторные анализы и экспресс-диагностика
+						li.menu-nav-item
+							a(href="#").link-black Персонализированная косметика
+			.aside-content
+				.feachure-list-wrap.price
+					+listlist('','Косметология','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Диагностика кожи
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Аутологичное клеточное омоложение рук плазмой
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Инъекционная контурная пластика
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Лечение угревой болезни
+									.text-bold 60 000₽
+							li
+								a(href="#") 
+									span Лечение купероза
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Биоревитализация
+									.text-bold 42 000₽
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Биоревитализация
+									.text-bold 60 000₽
+							li
+								a(href="#") 
+									span Ботулинотерапия
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Детская косметология
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Косметические маски
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+					+listlist('','Пластическая хирургия','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Диагностика кожи
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Аутологичное клеточное омоложение рук плазмой
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Инъекционная контурная пластика
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Лечение угревой болезни
+									.text-bold 60 000₽
+							li
+								a(href="#") 
+									span Лечение купероза
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Биоревитализация
+									.text-bold 42 000₽
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Биоревитализация
+									.text-bold 60 000₽
+							li
+								a(href="#") 
+									span Ботулинотерапия
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Детская косметология
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Косметические маски
+									.text-bold 42 000₽
+					+listlist('','Лазерная косметология','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Диагностика кожи
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Аутологичное клеточное омоложение рук плазмой
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Инъекционная контурная пластика
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Лечение угревой болезни
+									.text-bold 60 000₽
+							li
+								a(href="#") 
+									span Лечение купероза
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Биоревитализация
+									.text-bold 42 000₽
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 420 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 420 000₽
+							li
+								a(href="#") 
+									span Биоревитализация
+									.text-bold 600 000₽
+							li
+								a(href="#") 
+									span Ботулинотерапия
+									.text-bold 420 000₽
+							li
+								a(href="#") 
+									span Детская косметология
+									.text-bold 420 000₽
+							li
+								a(href="#") 
+									span Косметические маски
+									.text-bold 420 000₽
+					+listlist('','Коррекция фигуры','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Диагностика кожи
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Аутологичное клеточное омоложение рук плазмой
+									.text-bold 42 000₽
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 420 000₽
+					+listlist('','Массаж','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Диагностика кожи
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Аутологичное клеточное омоложение рук плазмой
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Аутологичное клеточное омоложение рук плазмой
+									.text-bold 42 000₽
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Удаление родинок и папиллом
+									.text-bold 420 000₽
+					+listlist('','Физиотерапия','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Диагностика остеопороза (денситометрия)
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Физиотерапия в косметологии
+									.text-bold 42 000₽
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Физиотерапевтическое лечение позвоночника и суставов
+									.text-bold 5 000₽
+							li
+								a(href="#") 
+									span Послеоперационная реабилитация
+									.text-bold 420 000₽
+					+listlist('','Флебология','')
+						ul.feachure-list-list
+							li
+								a(href="#") 
+									span Флебологический паспорт
+									.text-bold 5 000₽
+	.nav-wrapper
+		.nav-btn-wrap
+			//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
+		+phoneform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

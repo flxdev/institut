@@ -14,7 +14,7 @@ block content
 				.title.h1 Диагно&shy;стика кожи
 				//просто вставляем этот блок, а туда уже кнопку которая нужна
 				.title-btn
-					a(href="#").btn.btn-big Прайс Лист
+					a(href="#").btn.btn-big Диагностика кожи
 	.box.product-container
 		.product-container-slider
 			.product-container-slider-main
@@ -187,14 +187,7 @@ block content
 					svg(class="icon icon-drop")
 						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
 				span Назад
-		form(action="").tel-form.js-validate
-			.tel-form-text
-				.text-bold Не нашли что искали?
-				.text-bold.small Оставьте свой номер и мы перезвоним
-			.tel-form-form
-				input(type="tel").tel-form-inp
-				button(type='submit',value='Отправить').btn.tel-form-btn
-					span Отправить
+		+phoneform
 
 
 

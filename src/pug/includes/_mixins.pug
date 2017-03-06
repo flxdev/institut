@@ -66,13 +66,30 @@ mixin docCard(img,name, who)
 mixin listlist(id,name,img)
 	.feachure-list-item(id=id)
 		.feachure-list-item-inner
-			.doc-card-inner(style='background-image:url(/img/list/'+img+'.png);')
-				.doc-card-text
-					a(href="#").title.h2.link #{name}
-						.link-arr
-							svg(class="icon icon-drop")
-								use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+			if img != ""
+				.doc-card-inner(style='background-image:url(/img/list/'+img+'.png);')
+					.doc-card-text
+						a(href="#").title.h2.link #{name}
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+			else
+				.doc-card-inner
+					.doc-card-text
+						a(href="#").title.h2.link #{name}
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
 			.feachure-list-content
 				if block
 					block
 
+mixin phoneform
+	form(action="").tel-form.js-validate
+		.tel-form-text
+			.text-bold Не нашли что искали?
+			.text-bold.small Оставьте свой номер и мы перезвоним
+		.tel-form-form
+			input(type="tel").tel-form-inp
+			button(type='submit',value='Отправить').btn.tel-form-btn
+				span Отправить
