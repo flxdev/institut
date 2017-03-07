@@ -918,6 +918,13 @@ blockquote
 		+rem(padding, 14px 19px)
 		+rem(border-radius,3px)
 		+rem(letter-spacing,0px)
+		&:not(.btn-down)
+			svg 
+				display: inline-block;
+				+rem(height, 16px)
+				vertical-align: middle;
+				+rem(margin-left, 5px)
+
 		&:not(.yell)
 			+rem(border-radius,3px)
 		&.yell
@@ -2032,25 +2039,30 @@ blockquote
 	&-main
 		display: flex
 		flex-flow: row nowrap
+		+r(600)
+			flex-flow: column nowrap	
 		.title
 			flex-basis: 60%
 			flex-grow: 1
 			+r(600)
 				+rem(font-size,37px)
 			&+.title-btn
-				+rem(margin-bottom,20px)
+				+rm(600)
+					+rem(margin-bottom,20px)
 			&-btn
 				+rem(flex-basis,250px)
 				flex-shrink: 0
 				text-align: center
 				+r(600)
-					+rem(flex-basis,165px)
-					text-align: right
+					+rem(flex-basis,40px)
+					text-align: left
+					margin-bottom: 0
 					.btn
 						white-space: nowrap
-					.btn-download
-						margin-top: 0
+					.btn-download,&> .btn
+						+rem(margin-top,15px)
 						margin-left: 0
+
 						// +rem(margin-left,10px)
 				.btn-download,&> .btn
 					+rem(margin-left,30px)
@@ -2335,6 +2347,21 @@ a
 			line-height: 1.48
 		.aside-stick
 			display: inline-block
+			.contact-block
+				+rem(max-width,236px)
+				+rem(margin-top,15px)
+				+rem(margin-bottom,36px)
+				+r(991)
+					+rem(margin-right,-20px)
+				+r(735)
+					text-align: center
+					
+				+r(735)
+					max-width: calc(100% + 2px)
+					width: calc(100% + 2px)
+					+rem(margin, -2px -8px -2px -1px)
+					&~.aside-title,&~.aside-title ~ .menu-nav, &~ .menu-nav
+						display: none
 			+r(735)
 				position: static !important
 			&.list-bold
@@ -2804,7 +2831,96 @@ a
 		+r(991)
 			+rem(margin-top,-10px)
 		+r(735)
-			+rem(margin-top, 20px)
+			+rem(margin-top, 0px)
+		&.price
+			+rem(margin-top, -35px)
+			&~.nav-wrapper
+				+r(735)
+					margin-top: 0
+			+r(735)
+				+rem(margin-top, 20px)
+			.doc-card-inner
+				+rem(padding-top,70px)
+				+r(735)
+					+rem(padding-top,40px)
+					.doc-card-text
+						+rem(max-width,350px)
+				+screen(735,991)
+					.title
+						+rem(font-size,36px)
+			.feachure-list-item
+				margin-right: 0
+				background-color: #fff
+				+rem(padding-bottom,30px)
+			.feachure-list-item-inner
+				width: 100%
+				.menu-nav-item
+					+rem(margin, 25px 0 0)
+					a
+						+rem(font-size,16px)
+			.feachure-list-content
+				+rem(margin-right,-62px)
+
+				+r(991)
+					+rem(margin-right,-22px)
+			.feachure-list-list
+				width: 50%
+				+rem(padding-right,62px)
+				+r(991)
+					+rem(padding-right,22px)
+				+r(900)
+					width: 100%
+					&:last-of-type
+						margin-top: 0
+				li 
+					+rem(margin, 15px 0)
+					&.sale
+						span
+							&:after
+								content: 'Акция'
+								+rem(font-size,10px)
+								text-transform: uppercase;
+								line-height: 1.2;
+								color: #000
+								+rem(border-radius, 3px)
+								background-color: $hover
+								display: inline-block
+								font-weight: 400
+								+rem(padding,2px 8px)
+								transform: translateY(-2px)
+								font-family: $rc
+								+rem(margin-left,5px)
+								transition: box-shadow .3s, background-color .3s
+
+						.text-bold
+							color: $active
+						a 
+							&:hover
+								span:after
+									box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+								.text-bold
+									color: $hover	
+				a
+					display: table
+					+tr(border-color .3s)
+					border-bottom: 1px solid #f8f8f8
+					&:hover
+						border-color: #aaaaaa
+						span
+							color: #000
+		
+					span,.text-bold
+						display: table-cell
+						vertical-align: bottom
+						+tr(color .3s)
+					.text-bold
+						text-align: right
+						white-space: nowrap
+						+rem(font-size,18px)
+					span
+						+rem(padding-right, 5px)
+						
+
 		.doc-card
 			&-inner
 				+rem(padding-top,85px)
@@ -3029,10 +3145,10 @@ a
 		flex-flow: row nowrap
 		justify-content: space-between
 		+r(991)
-				flex-flow: row wrap
-				+rem(margin, 0 -10px)
-				+rem(padding-bottom, 55px)
-				+rem(padding-top, 55px)
+			flex-flow: row wrap
+			+rem(margin, 0 -10px)
+			+rem(padding-bottom, 55px)
+			+rem(padding-top, 55px)
 		+r(735)
 			flex-direction: column
 			justify-content: flex-start
@@ -3044,7 +3160,6 @@ a
 			color: #000
 		&-feachure
 			flex-basis: 31%
-
 			+rem(margin-top,21px)
 			+rm(735)
 				+rem(padding-left,15px)
@@ -3102,6 +3217,7 @@ a
 				flex-basis: 55%
 			+r(735)
 				width: 100%
+				max-width: 100%
 				align-self: center
 				.product-container-slider-main
 					width: 100%
@@ -3191,10 +3307,109 @@ a
 			background-color: $grayf
 .spec-block
 	+rem(margin-top,25px)
+	+rem(padding-left,34px)
 	.text
 		+rem(margin-bottom,30px)
-	+rem(padding-left,34px)
+
 		
+.gray-block
+	background-color: #faf9f5
+	+rem(border-radius, 3px)
+	+rem(padding, 15px 25px)
+	.link-black
+		color: $hover
+		+rem(font-size, 16px)
+		font-weight: 400
+		+rem(margin,16px 0 10px)
+		display: inline-block
+		white-space: nowrap
+		box-shadow: 0 -2px 0 0 #faf9f5, 0 1px 0 0 #fbd400;
+	.contact-item
+		display: block
+		+rem(margin, 15px 0 20px)
+		.text-bold
+			line-height: 1
+			+rem(letter-spacing,-0.8px)
+		.text
+			color: #c0beb2
+			+rem(font-size,15px)
+			line-height: 1
+			+rem(margin-top,6px)
+.address
+	&-wrapper
+		font-size: 0
+		width: 100%
+		+rem(margin-top,-32px)
+		padding-left: 3.2%
+		+r(735)
+			padding-left: 0
+	&-item
+		+rem(padding,42px 0)
+		&:not(:last-child)
+			border-bottom: $bb
+		&-inner
+			font-size: 0
+		&-text,&-map
+			display: inline-block
+			vertical-align: top
+			+r(850)
+				min-width: 100%
+		&-block 
+			+rem(margin,20px 0)
+		&-text
+			width: 46.5%
+			padding-right: 3%
+			+r(850)
+				+rem(margin-bottom,25px)
+			.title.h4
+				+rem(margin-top,10px)
+				+rem(margin-bottom,42px)
+			.text2
+				line-height: 1.5
+				+rem(font-size,16px)
+			.text.bold
+				+rem(font-size,14px)
+				+rem(margin-bottom,3px)
+			.icon-link
+				+rem(margin, 10px 0 0)
+				display: inline-block
+				
+		&-map
+			+rem(height, 387px)
+			position: relative
+			width: 53.5%
+
+			+r(735)
+				+rem(height, 300px)
+				.address-map
+					+rem(height, 300px)
+					+rem(margin, 0 -15px)
+			.address-map
+				+rem(height, 387px)
+.icon-link
+	box-shadow: none
+	color: $active
+	&:hover
+		color: $hover
+		span 
+			border: none
+	span
+		+rem(font-size,14px)
+		border-bottom: 1px dotted $active
+		vertical-align: middle
+	white-space: nowrap
+	&:before
+		content: ''
+		display: inline-block
+		+contain
+		+rem(height,16px)
+		+rem(width,16px)
+		vertical-align: middle
+		+rem(margin-right,5px)
+		background-image: url(../img/icons/i-info.svg)
+
+
+
 
 
 		

@@ -11,16 +11,26 @@ block content
 				a(href="#").content-bread-item.text2 Главная
 				a(href="#").content-bread-item.text2 Прайс-лист
 			.content-main
-				.title.h1 Диагно&shy;стика кожи
+				.title.h1 Прайс-лист
 				//просто вставляем этот блок, а туда уже кнопку которая нужна
 				.title-btn
-					a(href="#").btn.btn-big Прайс-лист
+					a(href="#").btn.btn-big Скачать pdf 
+						svg#down-btn(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 24 21', style='enable-background:new 0 0 24 21;', xml:space='preserve')
+							path.down1(d='M18,18c-0.2,0-0.5-0.2-0.5-0.4c0-0.3,0.2-0.5,0.4-0.6c2.8-0.4,5.1-2.9,5.1-5.7c0-3.1-2.5-5.7-5.6-5.7c-0.1,0-0.2,0-0.3,0\
+							c-0.2,0-0.5-0.1-0.5-0.3c-0.9-2.6-3.3-4.3-6-4.3C6.9,1,4.1,3.9,4.1,7.5c0,0.3,0,0.6,0.1,0.9c0,0.2-0.1,0.5-0.3,0.6\
+							C2.1,9.5,1,11.1,1,12.9C1,15.1,2.8,17,5.1,17H6c0.3,0,0.5,0.2,0.5,0.5C6.5,17.8,6.3,18,6,18H5.1C2.3,18,0,15.7,0,12.9\
+							c0-2.1,1.2-3.9,3.1-4.7c0-0.2,0-0.5,0-0.7C3.1,3.3,6.4,0,10.5,0c3,0,5.7,1.8,6.8,4.6c0,0,0,0,0.1,0c3.7,0,6.6,3,6.6,6.7\
+							C24,14.6,21.4,17.6,18,18C18,18,18,18,18,18z')
+							path.down1(d='M12,21c-0.3,0-0.5-0.2-0.5-0.5v-9c0-0.3,0.2-0.5,0.5-0.5s0.5,0.2,0.5,0.5v9C12.5,20.8,12.3,21,12,21z')
+							path.down2(d='M12,21c-0.1,0-0.3,0-0.4-0.1l-3-3c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0l2.6,2.6l2.6-2.6c0.2-0.2,0.5-0.2,0.7,0\
+							c0.2,0.2,0.2,0.5,0,0.7l-3,3C12.3,21,12.1,21,12,21z')
 	.box
 		.aside-wrapp
 			aside.aside-menu(data-sticky_parent)
 				// тут модификатор .list-bold
+
 				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
-					.aside-title.title.h4.js-dropdown Косметология
+					.aside-title.title.h4.js-dropdown Прайс-лист
 					ul.menu-nav.js-dropdown-target
 						li.menu-nav-item
 							a(href="#").link-black Косметология
@@ -58,10 +68,12 @@ block content
 									.text-bold 42 000₽
 							li
 								a(href="#") 
-									span Инъекционная контурная пластика
+									span Инъекционная 
+										br 
+										|контурная пластика
 									.text-bold 42 000₽
-							li
-								a(href="#") 
+							li.sale
+								a(href="#")
 									span Лечение угревой болезни
 									.text-bold 60 000₽
 							li
@@ -72,17 +84,13 @@ block content
 								a(href="#") 
 									span Лечение Розацеа
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Удаление родинок и папиллом
 									.text-bold 42 000₽
 							li
 								a(href="#") 
 									span Вросший ноготь
-									.text-bold 42 000₽
-							li
-								a(href="#") 
-									span Биоревитализация
 									.text-bold 42 000₽
 						ul.feachure-list-list
 							li
@@ -93,11 +101,11 @@ block content
 								a(href="#") 
 									span Удаление родинок и папиллом
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Вросший ноготь
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Биоревитализация
 									.text-bold 60 000₽
@@ -113,10 +121,12 @@ block content
 								a(href="#") 
 									span Косметические маски
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Вросший ноготь
 									.text-bold 42 000₽
+						.menu-nav-item.more.js-list-more
+							a(href="#").link-black Показать все
 					+listlist('','Пластическая хирургия','')
 						ul.feachure-list-list
 							li
@@ -127,11 +137,11 @@ block content
 								a(href="#") 
 									span Аутологичное клеточное омоложение рук плазмой
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Инъекционная контурная пластика
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Лечение угревой болезни
 									.text-bold 60 000₽
@@ -139,7 +149,7 @@ block content
 								a(href="#") 
 									span Лечение купероза
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Лечение Розацеа
 									.text-bold 42 000₽
@@ -172,7 +182,7 @@ block content
 								a(href="#") 
 									span Биоревитализация
 									.text-bold 60 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Ботулинотерапия
 									.text-bold 42 000₽
@@ -198,7 +208,7 @@ block content
 								a(href="#") 
 									span Инъекционная контурная пластика
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Лечение угревой болезни
 									.text-bold 60 000₽
@@ -206,7 +216,7 @@ block content
 								a(href="#") 
 									span Лечение купероза
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Лечение Розацеа
 									.text-bold 42 000₽
@@ -214,7 +224,7 @@ block content
 								a(href="#") 
 									span Удаление родинок и папиллом
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Вросший ноготь
 									.text-bold 42 000₽

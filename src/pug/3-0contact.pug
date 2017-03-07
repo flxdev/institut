@@ -1,0 +1,117 @@
+extends _layout
+
+block title
+	title Контакты
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Контакты
+			.content-main
+				.title.h1 Контакты
+				//просто вставляем этот блок, а туда уже кнопку которая нужна
+				.title-btn
+					a(href="#").btn.btn-big Обратная связь
+	.box
+		.aside-wrapp
+			aside.aside-menu(data-sticky_parent)
+				// тут модификатор .list-bold
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.gray-block.contact-block
+						a(href="tel:+74952129299").contact-item
+							.text-bold +7 (495) 212-92-99
+							.text Многоканальный
+						a(href="tel:+74997951092").contact-item
+							.text-bold +7 (499) 795-10-92
+							.text Администрация
+						a.link-black(href="mailto:info@institut-krasoty.ru") info@institut-krasoty.ru
+						
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black Арбат
+						li.menu-nav-item
+							a(href="#").link-black Комсомольский пр-т
+			.aside-content
+				.address-wrapper
+					.address-item
+						.address-item-inner
+							.address-item-text
+								.title.h4 Институт Красоты на Арбате
+								.address-item-block
+									.text.bold Адрес:
+									.text2 119002, Москва, Арбат
+										br
+										|Малый Николопесковский переулок, д.8
+								.address-item-block
+									.text.bold Телефон:
+									.text2 +7 (495) 212-92-99
+								.address-item-block
+									.text.bold Режим работы:
+									.text2 Пн-пт 9:00–21:00   Сб-вс 10:00–20:00
+								a(href="#").icon-link 
+									span Схема проезда
+							.address-item-map
+								// координаты  пихаем в дату, в функцию передаем id без хеша, id должен быть уникальный
+								.address-map#map1(data-cords="[55.751076, 37.592298]")
+							script.
+								document.addEventListener("DOMContentLoaded", function() {
+									mapinit('map1');
+								});
+								
+					.address-item
+						.address-item-inner
+							.address-item-text
+								.title.h4 клиника на Комсомольском пр-те
+								.address-item-block
+									.text.bold Адрес:
+									.text2 Москва, Комсомольский пр-т, д.32
+								.address-item-block
+									.text.bold Телефон:
+									.text2 +7 (495) 212-92-99
+								.address-item-block
+									.text.bold Режим работы:
+									.text2 Пн-пт 9:00–21:00   Сб-вс 10:00–20:00
+								a(href="#").icon-link 
+									span Схема проезда
+							.address-item-map
+								.address-map#map2(data-cords="[55.724885, 37.576822]")
+							script.
+								document.addEventListener("DOMContentLoaded", function() {
+									mapinit('map2');
+								});
+	.nav-wrapper
+		.nav-btn-wrap
+			//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
+		+phoneform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

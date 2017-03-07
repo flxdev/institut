@@ -21,18 +21,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		function autoHideHeader() {
 			var currentTop = $(document).scrollTop();
-			window.matchMedia("(max-width: 991px)").matches ? checkSimpleNavigationMobile(currentTop) : checkSimpleNavigation(currentTop);
+			checkSimpleNavigation(currentTop);
 			previousTop = currentTop;
 			scrolling = false;
 		}
 
-		function checkSimpleNavigationMobile(currentTop) {
-				if (previousTop - currentTop > scrollDelta) {
-					mainHeader.removeClass('is-hidden');
-				} else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-					mainHeader.addClass('is-hidden');
-				}
-		}
+		// function checkSimpleNavigationMobile(currentTop) {
+		// 		if (previousTop - currentTop > scrollDelta) {
+		// 			mainHeader.classList.remove('is-hidden');
+		// 		} else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
+		// 			mainHeader.classList.add('is-hidden');
+		// 		}
+		// }
 		function checkSimpleNavigation(currentTop) {
 			if (currentTop <= 110) {
 				mainHeader.classList.remove('is-hidden');
@@ -142,6 +142,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			var menuh = _this.menu.height() + 90;
 		}
 	}
+
+
 //end of document.ready
 });
 //end of document.ready
@@ -260,6 +262,7 @@ function contentSlider(){
 		var _this = $(this);
 		var parent = _this.closest('.content-slider-wrap');
 		_this.on('init reinit afterChange', function(event, slick, currentSlide, nextSlide){
+		  	
 		  	var active = _this.find('.slick-current');
 		  		active.find('.cocoen').cocoen();
 		});
@@ -279,7 +282,11 @@ function contentSlider(){
 			nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
 			prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
 		});
+	if(_this.find('.cocoen').length){
+		_this.slick('slickSetOption', 'swipe', false,false);
+	}
 	});
+
 }
 function partnerSlider(){
 	$(".partner-slider-inner").each(function() {
@@ -399,4 +406,35 @@ function productSlider(){
 			asNavFor: parent.find(".product-container-slider-main")
 		}); 
 	});
+}
+	
+function mapinit(elem){
+	var cords = $("#"+elem).data('cords');
+	var myMap;
+	ymaps.ready(init);
+
+	function init () {
+
+		myMap = new ymaps.Map(elem, {
+			center: cords, 
+			zoom: 14,
+			controls: ['zoomControl', 'fullscreenControl']
+		}, {
+
+		}),
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+		}, {
+			iconLayout: 'default#image',
+			iconImageHref: 'images/myIcon.gif',
+			iconImageHref: 'img/map.svg',
+			// Размеры метки.
+			iconImageSize:[30, 44],
+			iconImageOffset: [-15, -44]
+		});
+		myMap.geoObjects.add(myPlacemark);
+		myMap.behaviors.disable(['rightMouseButtonMagnifier','ruler','scrollZoom']);
+		myMap.controls.remove('typeSelector');
+		myMap.controls.remove('searchControl');
+		myMap.controls.remove('GeolocationControl');
+	};
 }
