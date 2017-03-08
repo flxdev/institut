@@ -142,7 +142,21 @@ document.addEventListener("DOMContentLoaded", function() {
 			var menuh = _this.menu.height() + 90;
 		}
 	}
-
+	$(".js-scroll-to").on('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var elementClick = $(this).attr("href");
+		$(".aside-stick").trigger("sticky_kit:recalc");
+		if($(elementClick)){
+			var destination = $(elementClick).offset().top;
+			$("html, body:not(:animated), .out:not(:animated)").animate({scrollTop: destination - 90}, 500);	
+			setTimeout(function(){
+				window.location.hash= elementClick;
+			},400)
+		}else{
+				e.preventDefault();
+		}
+	});
 
 //end of document.ready
 });
@@ -152,6 +166,7 @@ function aside(){
 	function stickinit(){
 		setTimeout(function(){
 			$(".aside-stick").stick_in_parent({
+				parent: ".aside-menu",
 				offset_top : 73
 			});		
 		},1)		

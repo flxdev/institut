@@ -2329,7 +2329,6 @@ a:active {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  position: relative;
   padding-right: 2.1875rem; }
   .aside-menu .aside-title {
     font-size: 1.125rem;
