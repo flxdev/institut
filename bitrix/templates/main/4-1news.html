@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Контакты</title>
+    <title>Новость</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta content="True" name="HandheldFriendly">
@@ -241,106 +241,57 @@
             <div class="wrapper content-wrapper" style="background-image:url(img/bgmain.jpg);">
               <!--для врачей вешаем класс .personal-->
               <div class="box content-head">
-                <div class="content-bread"><a class="content-bread-item text2" href="#">Главная</a><a class="content-bread-item text2" href="#">Контакты</a></div>
+                <div class="content-bread"><a class="content-bread-item text2" href="#">Главная</a><a class="content-bread-item text2" href="#">Услуги</a><a class="content-bread-item text2" href="#">Открытие отделения Косметологии и пластической хирургии</a></div>
                 <div class="content-main">
-                  <div class="title h1">Контакты</div>
-                  <!--просто вставляем этот блок, а туда уже кнопку которая нужна-->
-                  <div class="title-btn"><a class="js-popup-button btn btn-big" href="#" data-modal="callback">Обратная связь</a></div>
+                  <div class="title h1">Открытие отделения Косметологии и пластической хирургии</div>
                 </div>
               </div>
             </div>
-            <div class="box">
+            <div class="box news-inner-wrapper">
+              <!--для новостей модификатор  .news-inner-wrapper, а если честно хз как ты будешь заголовок новости пихать в шапку страницы и зачем это надо-->
               <div class="aside-wrapp">
                 <aside class="aside-menu" data-sticky_parent>
-                  <!-- тут модификатор .list-bold-->
-                  <div class="aside-stick list-bold js-dropdown-parent" data-sticky_column>
-                    <div class="gray-block contact-block"><a class="contact-item" href="tel:+74952129299">
-                        <div class="text-bold">+7 (495) 212-92-99</div>
-                        <div class="text">Многоканальный</div></a><a class="contact-item" href="tel:+74997951092">
-                        <div class="text-bold">+7 (499) 795-10-92</div>
-                        <div class="text">Администрация</div></a><a class="link-black" href="mailto:info@institut-krasoty.ru">info@institut-krasoty.ru</a></div>
-                    <ul class="menu-nav js-dropdown-target">
-                      <li class="menu-nav-item"><a class="link-black js-scroll-to" href="#1">Арбат</a></li>
-                      <li class="menu-nav-item"><a class="link-black js-scroll-to" href="#2">Комсомольский пр-т</a></li>
-                    </ul>
+                  <div class="news-aside">
+                    <div class="news-type">
+                      <div class="small-block small"><span>Новости</span></div>
+                    </div>
+                    <time class="text2">7 февраля 2017</time>
                   </div>
                 </aside>
                 <div class="aside-content">
-                  <div class="address-wrapper">
-                    <div class="address-item" id="1">
-                      <div class="address-item-inner">
-                        <div class="address-item-text">
-                          <div class="title h4">Институт Красоты на Арбате</div>
-                          <div class="address-item-block">
-                            <div class="text bold">Адрес:</div>
-                            <div class="text2">119002, Москва, Арбат<br>Малый Николопесковский переулок, д.8</div>
+                  <div class="content-column-wrap">
+                    <div class="content-column-content">
+                      <div class="content-column-content-inner">
+                        <div class="content-slider-wrap">
+                          <div class="content-slider-slider">
+                            <div class="content-item"><img src="img/content/1.jpg" alt="fsdfsd"></div>
+                            <div class="content-item"><img src="img/content/1.jpg" alt="fsdfsd"></div>
+                            <div class="content-item"><img src="img/content/1.jpg" alt="fsdfsd"></div>
                           </div>
-                          <div class="address-item-block">
-                            <div class="text bold">Телефон:</div>
-                            <div class="text2">+7 (495) 212-92-99</div>
+                          <div class="content-slider-nav">
+                            <div class="nav-arrows"></div>
                           </div>
-                          <div class="address-item-block">
-                            <div class="text bold">Режим работы:</div>
-                            <div class="text2">Пн-пт 9:00–21:00   Сб-вс 10:00–20:00</div>
-                          </div><a class="icon-link" href="#"> <span>Схема проезда</span></a>
                         </div>
-                        <div class="address-item-map">
-                          <!-- координаты  пихаем в дату, в функцию передаем id без хеша, id должен быть уникальный-->
-                          <div class="address-map" id="map1" data-cords="[55.751076, 37.592298]"></div>
-                        </div>
-                        <script>
-                          document.addEventListener("DOMContentLoaded", function() {
-                          	mapinit('map1');
-                          });
-                          
-                        </script>
+                        <p class="caption">Скоро «Институт Красоты на Арбате» откроет для вас Отделение <a href="#">косметологии </a>и <a href="#">пластической хирургии</a>на Трифоновской. Мы с радостью приглашаем всех в новое  отделение, где вы сможете получить полный спектр услуг по уходу за лицом и телом с использованием классических и современных методик и технологий в исполнении опытных специалистов Института Красоты на Арбате,  бережно сохраняющих традиции первой в стране клиники эстетической медицины, основанной в 1930 году.
+                          <mark class="caption-content"><i>Мы занимаемся медицинской <a href="#">реабилитацией инвалидов</a></i></mark>
+                        </p>
                       </div>
                     </div>
-                    <div class="address-item" id="2">
-                      <div class="address-item-inner">
-                        <div class="address-item-text">
-                          <div class="title h4">клиника на Комсомольском пр-те</div>
-                          <div class="address-item-block">
-                            <div class="text bold">Адрес:</div>
-                            <div class="text2">Москва, Комсомольский пр-т, д.32</div>
-                          </div>
-                          <div class="address-item-block">
-                            <div class="text bold">Телефон:</div>
-                            <div class="text2">+7 (495) 212-92-99</div>
-                          </div>
-                          <div class="address-item-block">
-                            <div class="text bold">Режим работы:</div>
-                            <div class="text2">Пн-пт 9:00–21:00   Сб-вс 10:00–20:00</div>
-                          </div><a class="icon-link" href="#"> <span>Схема проезда</span></a>
-                        </div>
-                        <div class="address-item-map">
-                          <div class="address-map" id="map2" data-cords="[55.724885, 37.576822]"></div>
-                        </div>
-                        <script>
-                          document.addEventListener("DOMContentLoaded", function() {
-                          	mapinit('map2');
-                          });
-                        </script>
-                      </div>
-                    </div>
+                    <!--div нужен-->
+                    <div class="content-column-right"></div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="nav-wrapper">
               <div class="nav-btn-wrap">
-                <!--если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить-->
+                <!--если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить--><a class="nav-btn" href="#">
+                  <div class="nav-btn-inner">
+                    <svg class="icon icon-drop">
+                      <use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                  </div><span>Назад</span></a>
               </div>
-                            <form class="tel-form js-validate" action="">
-                              <div class="tel-form-text">
-                                <div class="text-bold">Не нашли что искали?</div>
-                                <div class="text-bold small">Оставьте свой номер и мы перезвоним</div>
-                              </div>
-                              <div class="tel-form-form">
-                                <input class="tel-form-inp" type="tel" placeholder="+7 (495) 212 92 99" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Неверный номер">
-                                <button class="btn tel-form-btn" type="submit" value="Отправить"><span>Отправить</span></button>
-                              </div>
-                            </form>
             </div>
           </main>
           <footer class="page__footer">

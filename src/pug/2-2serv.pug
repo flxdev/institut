@@ -36,7 +36,7 @@ block content
 					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
 		.product-container-feachure
 			.title.h4 Процедура диагностики кожи позволяет узнать:
-			ul.product-container-list
+			ul.product-container-list.js-slidelist(data-items='6')
 				li Влажность / жирность кожи
 				li Уровень содержания меланина
 				li Уровень содержания меланина
@@ -44,8 +44,15 @@ block content
 				li Эластичность кожи
 				li Биологический возраст кожи
 				li Стадии целлюлита
-			.menu-nav-item.more.js-list-more
-				a(href="#",data-id='11').link-black Подробнее
+				li Стадии целлюлита
+				li Стадии целлюлита
+				li Стадии целлюлита
+				li Стадии целлюлита
+				li Стадии целлюлита
+				li Стадии целлюлита
+				li Стадии целлюлита
+			.menu-nav-item.more.js-list-more(data-alt-text='Свернуть')
+				a(href="#").link-black Подробнее
 		.product-container-price
 			.price-block.sale
 				.text Стоимость услуги:
@@ -62,7 +69,7 @@ block content
 				// тут модификатор .list-bold
 				.aside-stick(data-sticky_column).js-dropdown-parent
 					.aside-title.title.h4.js-dropdown Косметология
-					ul.menu-nav.js-dropdown-target
+					ul.menu-nav.js-dropdown-target.js-slidelist(data-items='9')
 						li.menu-nav-item
 							a(href="#").link-black.active Мезотерапия
 						li.menu-nav-item
@@ -79,8 +86,8 @@ block content
 							a(href="#").link-black Удаление родинок и папиллом
 						li.menu-nav-item
 							a(href="#").link-black Биоревитализация
-					.menu-nav-item.more.js-list-more
-						a(href="#",data-id='11').link-black Показать ещё
+					.menu-nav-item.more.js-list-more(data-alt-text='Свернуть')
+						a(href="#").link-black Показать ещё
 			.aside-content
 				.content-column-wrap
 					.content-column-content

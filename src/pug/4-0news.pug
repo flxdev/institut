@@ -1,0 +1,35 @@
+extends _layout
+
+block title
+	title Акции и новости
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Специалисты
+				a(href="#").content-bread-item.text2 Акции и новости
+			.content-main
+				.title.h1 Акции и новости
+				//- .title-btn
+				//- 	a(href="#").btn Прайс Лист
+	.box
+		.action-wrap
+			.action-btns
+				a(href="#").btn.btn-big.active Все
+				a(href="#").btn.btn-big Акции
+				a(href="#").btn.btn-big Новости
+				a(href="#").btn.btn-big Мероприятия
+			.action-inner
+				.news-wrapper
+					+news('Изменение режима работы в выходные дни','15 января 2017','1.png','Акция')
+					+news('Скоро «Институт Красоты на Арбате» переезжает в новое здание','14 января 2017','2.png','Акция')
+					+news('AGENDA - лаборатория красоты у Вас дома','13 января 2017','2.png','Новости')
+					+news('Внимание! У нас сменился номер телефона и сайт!','13 января 2017', '2.png','Мероприятия')
+					+news('Внимание! У нас сменился номер телефона и сайт!','13 января 2017', '2.png','Мероприятия')
+					+news('Внимание! У нас сменился номер телефона и сайт!','13 января 2017', '','Новости')
+					+news('Внимание! У нас сменился номер телефона и сайт!','13 января 2017', '','Новости')
+			.menu-nav-item.more
+				a(href="#").link-black Показать больше

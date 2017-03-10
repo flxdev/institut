@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta content="True" name="HandheldFriendly">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#2d2d2d">
+    <meta name="theme-color" content="#fce37d">
     <meta name="apple-mobile-web-app-status-bar-style" content="#2d2d2d">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="img/fav/57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/fav/72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/fav/114x114.png">
+    <link rel="stylesheet" media="all" href="css/font.css">
     <link rel="stylesheet" media="all" href="css/screen.min.css">
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   </head>
@@ -31,7 +32,54 @@
                   <div class="page__header-logo-big" style="background-image:url(img/logob.png);"></div>
                   <div class="page__header-logo-small" style="background-image:url(img/logob-small.png);"></div></a>
                 <div class="page__header-content">
-                  <div class="page__header-nav-top"><a class="top-nav top icon" href="#" data-id="about"><span>об инстутуте</span></a><a class="top-nav top" href="#"><span>Клиники</span></a><a class="top-nav top icon" href="#" data-id="promo"><span>Акции</span></a></div>
+                  <div class="page__header-nav-top">
+                    <div class="top-nav top icon dropdown-trigger"><a href="#"><span>об инстутуте</span></a>
+                      <div class="dropdown-target">
+                        <div class="dropdown-inner">
+                          <div class="dropdown-content">
+                            <ul class="dropdown-list about">
+                              <li><a href="#">Об институте</a></li>
+                              <li><a href="#">Руководство</a></li>
+                              <li><a href="#">Миссия</a></li>
+                              <li><a href="#">История</a></li>
+                              <li><a href="#">Лицензии</a></li>
+                            </ul>
+                            <ul class="dropdown-list">
+                              <li><a href="#">Исследовательский центр</a></li>
+                              <li><a href="#">Научный центр</a></li>
+                              <li><a href="#">Косметическое производство</a></li>
+                            </ul>
+                            <ul class="dropdown-list">
+                              <li><a href="#">Рекламодателям</a></li>
+                              <li><a href="#">Вакансии</a></li>
+                              <li><a href="#">Вопрос-ответ</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="top-nav top"><a href="#"><span>Клиники</span></a></div>
+                    <div class="top-nav top icon dropdown-trigger"><a href="#"><span>Акции</span></a>
+                      <div class="dropdown-target">
+                        <div class="dropdown-inner">
+                          <div class="dropdown-content">
+                            <ul class="dropdown-list">
+                              <li><a href="#">Акция</a></li>
+                              <li><a href="#">Акция на лазерную коррекцию</a></li>
+                              <li><a href="#">Акция</a></li>
+                              <li><a href="#">Акция</a></li>
+                              <li><a href="#">Акция</a></li>
+                            </ul>
+                            <ul class="dropdown-list">
+                              <li><a href="#">Исследовательский центр</a></li>
+                              <li><a href="#">Научный центр</a></li>
+                              <li><a href="#">Косметическое производство</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="page__header-search">
                     <div class="o-menu-search">
                       <form class="search__wrapper">
@@ -58,7 +106,7 @@
                   <div class="page__header-nav-bottom"><a class="top-nav bottom icon js-desktop-hover" href="#" data-id="1"><span>УСЛУГИ и цены </span></a><a class="top-nav bottom icon js-desktop-hover" href="#" data-id="2"><span>СПЕЦИАЛИСТЫ</span></a><a class="top-nav bottom" href="#"><span>Контакты</span></a></div>
                   <div class="page__header-button"><a class="btn yell i-left" href="#">Записаться на прием</a></div>
                   <div class="page__header-contact"><a class="contact-item" href="tel:3333">
-                      <div class="text-bold">+7 (495) 212-92-99 </div></a><a href="#">Обратный звонок</a>
+                      <div class="text-bold">+7 (495) 212-92-99 </div></a><a class="js-popup-button" href="#" data-modal="fallback">Обратный звонок</a>
                     <div class="text2"> 
                       <div class="dete-item">пн–пт: 9:00–21:00</div>
                       <div class="dete-item">сб–вс: 10:00–20:00</div>
@@ -105,6 +153,86 @@
                       <li><a href="#">Кабинет флебологической реабилитации и УЗИ-диагностики	</a></li>
                     </ul>
                   </div>
+                </div>
+              </div>
+              <div class="page__header-mobmenu">
+                <div class="page__header-mobmenu-inner">
+                  <ul class="page__header-mobmenu-list">
+                    <li class="js-sub-toggle"><a class="top-nav bottom icon" href="#"><span>УСЛУГИ и цены </span></a>
+                      <ul class="mobile_l2">
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Косметология</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Флебология</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Пластическая хирургия</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Трихология</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Лазерная косметология</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Эндокринология</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Коррекция фигуры</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Лабораторные анализы и экспресс-диагностика</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Массаж</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Персонализированная косметика</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Физиотерапия</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Физиотерапия</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Флебология</a></li>
+                      </ul>
+                    </li>
+                    <li class="js-sub-toggle"><a class="top-nav bottom icon" href="#"><span>специалисты</span></a>
+                      <ul class="mobile_l2">
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение пластической хирургии</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение Аппаратной косметологии</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение детской косметологии</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Кабинет врача-терапевта</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Кабинет физиотерапии</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Кабинет превентивной и восстановительной медицины</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение малоинвазивной хирургии</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Лабораторные анализы и экспресс-диагностика</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение анестезиологии и реанимации</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Персонализированная косметика</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Физиотерапия</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Физиотерапия</a></li>
+                        <li class="mobile_l2-item"><a class="link-black" href="#">Флебология</a></li>
+                      </ul>
+                    </li>
+                    <li class="js-sub-toggle"><a class="top-nav bottom" href="#"><span>Контакты</span></a></li>
+                    <li class="js-sub-toggle"><a class="top-nav top icon" href="#"><span>об инстутуте</span></a>
+                      <ul class="mobile_l2">
+                        <li class="mobile_l2-item"><a href="#">Об институте</a></li>
+                        <li class="mobile_l2-item"><a href="#">Исследовательский центр</a></li>
+                        <li class="mobile_l2-item"><a href="#">Научный центр</a></li>
+                        <li class="mobile_l2-item"><a href="#">Косметическое производство</a></li>
+                        <li class="mobile_l2-item"><a href="#">Партнёры   </a></li>
+                        <li class="mobile_l2-item"><a href="#">Рекламодателям    </a></li>
+                        <li class="mobile_l2-item"><a href="#">Вакансии  </a></li>
+                        <li class="mobile_l2-item"><a href="#">Вопрос-ответ       </a></li>
+                        <li class="mobile_l2-item"><a href="#">Отделение анестезиологии и реанимации       </a></li>
+                        <li class="mobile_l2-item"><a href="#">Отзывы   </a></li>
+                      </ul>
+                    </li>
+                    <li class="js-sub-toggle"><a class="top-nav top" href="#"><span>Клиники</span></a></li>
+                    <li class="js-sub-toggle"><a class="top-nav top icon" href="#"><span>акции</span></a>
+                      <ul class="mobile_l2">
+                        <li class="mobile_l2-item"><a href="#">Об институте</a></li>
+                        <li class="mobile_l2-item"><a href="#">Исследовательский центр</a></li>
+                        <li class="mobile_l2-item"><a href="#">Научный центр</a></li>
+                        <li class="mobile_l2-item"><a href="#">Косметическое производство</a></li>
+                        <li class="mobile_l2-item"><a href="#">Партнёры   </a></li>
+                        <li class="mobile_l2-item"><a href="#">Рекламодателям    </a></li>
+                        <li class="mobile_l2-item"><a href="#">Вакансии  </a></li>
+                        <li class="mobile_l2-item"><a href="#">Вопрос-ответ       </a></li>
+                        <li class="mobile_l2-item"><a href="#">Отделение анестезиологии и реанимации       </a></li>
+                        <li class="mobile_l2-item"><a href="#">Отзывы  </a></li>
+                      </ul>
+                    </li>
+                    <div class="soc-wrapp"><a class="soc-wrapp-item vk" href="#">
+                        <svg class="icon icon-drop">
+                          <use xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg></a><a class="soc-wrapp-item fb" href="#">
+                        <svg class="icon icon-drop">
+                          <use xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg></a><a class="soc-wrapp-item in" href="#">
+                        <svg class="icon icon-drop">
+                          <use xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg></a></div>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -281,7 +409,7 @@
                       <div class="yellow-form-img" style="background-image:url(img/icons/i-mail.png);"></div>
                       <div class="yellow-form-text text-bold">Будьте в курсе всех главных акций и событий нашей клиники</div>
                       <div class="yellow-form-main">
-                        <input class="yellow-form-main-input" type="email" placeholder="Ваш e-mail">
+                        <input class="yellow-form-main-input" type="email" placeholder="Ваш e-mail" data-validation="email" data-validation-error-msg="Неверный E-mail">
                         <button class="yellow-form-main-submit" type="submit" value="Отправить"></button>
                       </div>
                     </form>
@@ -475,7 +603,111 @@
         </div>
       </div>
     </div>
-    <div class="modals"></div>
+    <div class="modals">
+      <div class="modal-layout js-popup-container" data-modal="callback">
+        <!--контейнер модалки-->
+        <!-- по саксесу вешаю на этот блок класс из-за которого следующий открывается-->
+        <div class="modal-container">
+          <div class="modal-container-header">
+            <div class="title h4">Обратная связь</div><i class="small-link pop-close closePopup"></i>
+          </div>
+          <div class="modal-container-content">
+            <form class="form js-validate" data-block=".modal-container">
+              <div class="input-item s-50">
+                <div class="input-wrapper req">
+                  <label>Имя</label>
+                  <input class="input-main" type="text" placeholder="Имя" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Не заполнено">
+                </div>
+              </div>
+              <div class="input-item s-50">
+                <div class="input-wrapper req">
+                  <label>E-mail</label>
+                  <input class="input-main" type="email" placeholder="example@mail.com" data-validation="email" data-validation-error-msg="Не заполнено">
+                </div>
+              </div>
+              <div class="input-item s-50">
+                <div class="input-wrapper req">
+                  <label>Телефон</label>
+                  <input class="input-main" type="tel" placeholder="Телефон" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Не заполнено">
+                </div>
+              </div>
+              <div class="input-item s-100">
+                <div class="input-wrapper">
+                  <label>Сообщение</label>
+                  <textarea class="input-main" rows="5" placeholder="Сообщение"> </textarea>
+                </div>
+              </div>
+              <div class="form-footer">
+                <div class="form-footer-notify">
+                  <div class="text">Поля обязательные для заполнения</div>
+                </div>
+                <button class="btn yell" type="submit">Отправить	</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--контейнер модалки  -->
+        <div class="modal-container response" style="display: none;">
+          <div class="modal-container-header">
+            <div class="title h4">Спасибо</div><i class="small-link pop-close closePopup"></i>
+          </div>
+          <div class="modal-container-content">
+            <div class="text">Благодарим вас за проявленый интерес к нашей компании. С вами свяжется наш специалист для решения вашего вопроса.  </div>
+          </div>
+          <div class="modal-container-footer">
+            <button class="link-black closePopup" type="button">Закрыть</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-layout js-popup-container" data-modal="fallback">
+        <!--контейнер модалки-->
+        <div class="modal-container">
+          <div class="modal-container-header">
+            <div class="title h4">Заказать обратный звонок</div><i class="small-link pop-close closePopup"></i>
+          </div>
+          <div class="modal-container-content">
+            <form class="form js-validate" data-block=".modal-container">
+              <div class="input-item s-50">
+                <div class="input-wrapper req">
+                  <label>Имя</label>
+                  <input class="input-main" type="text" placeholder="Имя" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Не заполнено">
+                </div>
+              </div>
+              <div class="input-item s-50">
+                <div class="input-wrapper req">
+                  <label>Телефон</label>
+                  <input class="input-main" type="tel" placeholder="Телефон" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Не заполнено">
+                </div>
+              </div>
+              <div class="input-item s-100">
+                <div class="input-wrapper">
+                  <label>Комментарий  </label>
+                  <textarea class="input-main" rows="5" placeholder="Комментарий"> </textarea>
+                </div>
+              </div>
+              <div class="form-footer">
+                <div class="form-footer-notify">
+                  <div class="text">Поля обязательные для заполнения</div>
+                </div>
+                <button class="btn yell" type="submit">Заказать звонок	</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--контейнер модалки  -->
+        <div class="modal-container response" style="display: none;">
+          <div class="modal-container-header">
+            <div class="title h4">Спасибо</div><i class="small-link pop-close closePopup"></i>
+          </div>
+          <div class="modal-container-content">
+            <div class="text">Благодарим вас за проявленый интерес к нашей компании. С вами свяжется наш специалист для решения вашего вопроса.  </div>
+          </div>
+          <div class="modal-container-footer">
+            <button class="link-black closePopup" type="button">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--END out-->
     <script src="js/lib.min.js"></script>
     <script src="js/common.min.js"></script>

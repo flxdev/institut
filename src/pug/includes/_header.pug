@@ -5,12 +5,66 @@ include _mixins.pug
 		.page__header-logo-small(style='background-image:url(img/logob-small.png)')
 	.page__header-content
 		.page__header-nav-top
-			a(href="#",data-id='about').top-nav.top.icon
-				span об инстутуте
-			a(href="#").top-nav.top
-				span Клиники
-			a(href="#",data-id='promo').top-nav.top.icon
-				span Акции
+			.top-nav.top.icon.dropdown-trigger
+				a(href="#")
+					span об инстутуте
+				.dropdown-target
+					.dropdown-inner
+						.dropdown-content
+							ul.dropdown-list.about
+								li
+									a(href="#") Об институте
+								li
+									a(href="#") Руководство
+								li
+									a(href="#") Миссия
+								li
+									a(href="#") История
+								li
+									a(href="#") Лицензии
+							ul.dropdown-list
+								li
+									a(href="#") Исследовательский центр
+								li
+									a(href="#") Научный центр
+								li
+									a(href="#") Косметическое производство
+
+							ul.dropdown-list
+								li
+									a(href="#") Рекламодателям
+								li
+									a(href="#") Вакансии
+								li
+									a(href="#") Вопрос-ответ
+
+			.top-nav.top
+				a(href="#")
+					span Клиники
+			.top-nav.top.icon.dropdown-trigger
+				a(href="#")
+					span Акции
+				.dropdown-target
+					.dropdown-inner
+						.dropdown-content
+							ul.dropdown-list
+								li
+									a(href="#") Акция
+								li
+									a(href="#") Акция на лазерную коррекцию
+								li
+									a(href="#") Акция
+								li
+									a(href="#") Акция
+								li
+									a(href="#") Акция
+							ul.dropdown-list
+								li
+									a(href="#") Исследовательский центр
+								li
+									a(href="#") Научный центр
+								li
+									a(href="#") Косметическое производство
 		.page__header-search
 			.o-menu-search
 				form.search__wrapper
@@ -42,7 +96,7 @@ include _mixins.pug
 		.page__header-contact
 			a(href="tel:3333").contact-item
 				.text-bold +7 (495) 212-92-99 
-			a(href="#") Обратный звонок
+			a(href="#",data-modal='fallback').js-popup-button Обратный звонок
 			.text2 
 				.dete-item пн–пт: 9:00–21:00
 				.dete-item сб–вс: 10:00–20:00
@@ -117,9 +171,130 @@ include _mixins.pug
 						| диагностики кожи
 				li
 					a(href="#") Кабинет флебологической реабилитации и УЗИ-диагностики	
-
-
-
-
-
-
+.page__header-mobmenu
+	.page__header-mobmenu-inner
+		ul.page__header-mobmenu-list
+			li.js-sub-toggle
+				a(href="#").top-nav.bottom.icon
+					span УСЛУГИ и цены 
+				ul.mobile_l2
+					li.mobile_l2-item
+						a(href="#").link-black Косметология
+					li.mobile_l2-item
+						a(href="#").link-black Флебология
+					li.mobile_l2-item
+						a(href="#").link-black Пластическая хирургия
+					li.mobile_l2-item
+						a(href="#").link-black Трихология
+					li.mobile_l2-item
+						a(href="#").link-black Лазерная косметология
+					li.mobile_l2-item
+						a(href="#").link-black Эндокринология
+					li.mobile_l2-item
+						a(href="#").link-black Коррекция фигуры
+					li.mobile_l2-item
+						a(href="#").link-black Лабораторные анализы и экспресс-диагностика
+					li.mobile_l2-item
+						a(href="#").link-black Массаж
+					li.mobile_l2-item
+						a(href="#").link-black Персонализированная косметика
+					li.mobile_l2-item
+						a(href="#").link-black Физиотерапия
+					li.mobile_l2-item
+						a(href="#").link-black Физиотерапия
+					li.mobile_l2-item
+						a(href="#").link-black Флебология
+			li.js-sub-toggle
+				a(href="#").top-nav.bottom.icon
+					span специалисты
+				ul.mobile_l2
+					li.mobile_l2-item
+						a(href="#").link-black Отделение пластической хирургии
+					li.mobile_l2-item
+						a(href="#").link-black Отделение Аппаратной косметологии
+					li.mobile_l2-item
+						a(href="#").link-black Отделение детской косметологии
+					li.mobile_l2-item
+						a(href="#").link-black Кабинет врача-терапевта
+					li.mobile_l2-item
+						a(href="#").link-black Кабинет физиотерапии
+					li.mobile_l2-item
+						a(href="#").link-black Кабинет превентивной и восстановительной медицины
+					li.mobile_l2-item
+						a(href="#").link-black Отделение малоинвазивной хирургии
+					li.mobile_l2-item
+						a(href="#").link-black Лабораторные анализы и экспресс-диагностика
+					li.mobile_l2-item
+						a(href="#").link-black Отделение анестезиологии и реанимации
+					li.mobile_l2-item
+						a(href="#").link-black Персонализированная косметика
+					li.mobile_l2-item
+						a(href="#").link-black Физиотерапия
+					li.mobile_l2-item
+						a(href="#").link-black Физиотерапия
+					li.mobile_l2-item
+						a(href="#").link-black Флебология
+			li.js-sub-toggle
+				a(href="#").top-nav.bottom
+						span Контакты
+			li.js-sub-toggle
+				a(href="#").top-nav.top.icon
+					span об инстутуте
+				ul.mobile_l2
+					li.mobile_l2-item
+						a(href="#") Об институте
+					li.mobile_l2-item
+						a(href="#") Исследовательский центр
+					li.mobile_l2-item
+						a(href="#") Научный центр
+					li.mobile_l2-item
+						a(href="#") Косметическое производство
+					li.mobile_l2-item
+						a(href="#") Партнёры   
+					li.mobile_l2-item
+						a(href="#") Рекламодателям    
+					li.mobile_l2-item
+						a(href="#") Вакансии  
+					li.mobile_l2-item
+						a(href="#") Вопрос-ответ       
+					li.mobile_l2-item
+						a(href="#") Отделение анестезиологии и реанимации       
+					li.mobile_l2-item
+						a(href="#") Отзывы   
+			li.js-sub-toggle
+				a(href="#").top-nav.top
+					span Клиники
+			li.js-sub-toggle
+				a(href="#").top-nav.top.icon
+					span акции
+				ul.mobile_l2
+					li.mobile_l2-item
+						a(href="#") Об институте
+					li.mobile_l2-item
+						a(href="#") Исследовательский центр
+					li.mobile_l2-item
+						a(href="#") Научный центр
+					li.mobile_l2-item
+						a(href="#") Косметическое производство
+					li.mobile_l2-item
+						a(href="#") Партнёры   
+					li.mobile_l2-item
+						a(href="#") Рекламодателям    
+					li.mobile_l2-item
+						a(href="#") Вакансии  
+					li.mobile_l2-item
+						a(href="#") Вопрос-ответ       
+					li.mobile_l2-item
+						a(href="#") Отделение анестезиологии и реанимации       
+					li.mobile_l2-item
+						a(href="#") Отзывы  
+			.soc-wrapp
+				a(href="#").soc-wrapp-item.vk
+					svg(class="icon icon-drop")
+						use(xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink")
+				a(href="#").soc-wrapp-item.fb
+					svg(class="icon icon-drop")
+						use(xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink")
+				a(href="#").soc-wrapp-item.in
+					svg(class="icon icon-drop")
+						use(xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink")

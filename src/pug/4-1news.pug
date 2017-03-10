@@ -1,0 +1,86 @@
+extends _layout
+
+block title
+	title Новость
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Услуги
+				a(href="#").content-bread-item.text2 Открытие отделения Косметологии и пластической хирургии
+			.content-main
+				.title.h1 Открытие отделения Косметологии и пластической хирургии
+	.box.news-inner-wrapper
+		//для новостей модификатор  .news-inner-wrapper, а если честно хз как ты будешь заголовок новости пихать в шапку страницы и зачем это надо
+		.aside-wrapp
+			aside.aside-menu(data-sticky_parent)
+				.news-aside
+					.news-type
+						.small-block.small
+							span Новости
+					time.text2 7 февраля 2017
+			.aside-content
+				.content-column-wrap
+					.content-column-content
+						.content-column-content-inner
+							.content-slider-wrap
+								.content-slider-slider
+									.content-item
+										img(src="img/content/1.jpg", alt="fsdfsd")
+									.content-item
+										img(src="img/content/1.jpg", alt="fsdfsd")
+									.content-item
+										img(src="img/content/1.jpg", alt="fsdfsd")
+								.content-slider-nav
+									.nav-arrows
+							p.caption Скоро «Институт Красоты на Арбате» откроет для вас Отделение 
+								a(href="#") косметологии 
+								|и 
+								a(href="#") пластической хирургии
+								| на Трифоновской. Мы с радостью приглашаем всех в новое  отделение, где вы сможете получить полный спектр услуг по уходу за лицом и телом с использованием классических и современных методик и технологий в исполнении опытных специалистов Института Красоты на Арбате,  бережно сохраняющих традиции первой в стране клиники эстетической медицины, основанной в 1930 году.
+								mark.caption-content
+									i Мы занимаемся медицинской 
+										a(href="#") реабилитацией инвалидов
+
+					//div нужен
+					.content-column-right
+	.nav-wrapper
+		.nav-btn-wrap
+			//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
+			a(href="#").nav-btn
+				.nav-btn-inner
+					svg(class="icon icon-drop")
+						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+				span Назад
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -18,6 +18,8 @@ input
 	+rem(font-size,16px)
 	+placeholder 
 		font-family: $pt
+	&::-ms-clear
+		display: none;
 svg
 	display: inline-block
 	max-width: 100%
@@ -39,8 +41,14 @@ a
 		font-family: $pt
 		+rem(font-size,16px)
 textarea
-	line-height: 1.5
+	line-height: 1.4
 	resize: none
+	font-family: $pt
+	+rem(font-size,16px)
+	+rem(padding-top,5px)
+	+placeholder 
+		font-family: $pt
+		+rem(font-size,14px)
 ul
 	li>a 
 		display: inline-block
@@ -79,9 +87,11 @@ body, .out,html
 	width: 100%
 	height: 100%
 	// overflow-x: hidden
-
 	&.modal_open
-		overflow: hidden
+		position: fixed
+	&.open
+		+r(991)
+			overflow: hidden
 .out
 	position: relative
 	-webkit-overflow-scrolling: touch;
@@ -121,6 +131,93 @@ body, .out,html
 		position: relative
 		visibility: visible
 		box-shadow: 0px 0px 20px 0px rgba( 214, 190, 59 ,.15);
+		&-mobmenu
+			position: fixed
+			+rem(top, 67px)
+			z-index: 20
+			width: 100%
+			height: 100%
+			background-color: #FFF
+			transform: translateX(100%)
+			+tr(transform .3s)
+			+padlr(20px)
+			+r(480)
+				+padlr(15px)
+			+rm(991)
+				display: none
+			&.open
+				transform: translateX(0)
+			&-list
+				+rem(margin-right,-10px)
+				+rem(margin-bottom,20px)
+			&-inner
+				+rem(max-width,600px)
+				width: 100%
+				+rem(margin, 30px auto)
+				text-align: center
+				max-height: 80%
+				will-change: max-height
+				overflow-y: scroll
+				overflow-x: hidden
+				.soc-wrapp
+					text-align: center
+					max-width: 100%
+					+rem(margin, 25px 0)
+				.link-black
+					+r(600)
+						+rem(font-size,14px)
+				.js-sub-toggle
+					&.active
+						.top-nav
+							span:after
+								transform: scale(1,-1)
+						.mobile_l2
+							+rem(max-height,1000px)
+							will-change: max-height
+					.top-nav
+						+rem(margin-bottom,15px)
+						span 
+							+rem(padding, 13px 0)
+							&:after
+								+rem(top, 18px)
+							&:before
+								display: none
+						&.icon
+							span
+								margin-left: 7%
+						&.top 
+							span 
+								+rem(font-size,14px)
+								font-weight: 700
+								&:after
+									+rem(top, 17px)	
+							&+ ul
+								li 
+									+r(480)
+										+rem(margin, 5px 0)
+									a
+										+rem(padding, 5px 5px 7px 0)
+										+rem(font-size,16px)
+										color: rgb(4, 4, 5);
+										line-height: 1.125;
+										text-transform: none
+										cursor: pointer
+				.mobile_l2
+					font-size: 0
+					text-align: left
+					max-height: 0
+					overflow: hidden
+					+tr(max-height .3s)
+					li 
+						display: inline-block
+						vertical-align: top
+						width: 50%
+						+rem(margin, 10px 0)
+						+rem(padding-right,10px)
+						+r(359)
+							width: 100%
+							
+
 		&-drop
 			display: block
 			width: 100%
@@ -145,6 +242,7 @@ body, .out,html
 				transition-delay: .1s
 				.page__header-drop-cont:after
 					opacity: 1
+					transition-delay: 0s
 				.page__header-drop-cont:before
 					background-color: #e9e9e3
 			&-cont
@@ -176,8 +274,10 @@ body, .out,html
 					z-index: -1
 					box-shadow: 0px 5px 20px 0px rgba(183, 174, 122, .15);
 					opacity: 0
-					transition: opacity .25s, height .25s
-
+					transition: opacity .15s, height .15s
+					transition-delay: .15s
+					+gpu
+					will-change: opacity, height
 				+r(1250)
 					+rem(padding-left, 255px)
 				+r(1150)
@@ -190,7 +290,7 @@ body, .out,html
 				opacity: 0
 				&.is-shown
 					+rem(max-height,532px)
-					transition: max-height 0s .2s, padding 0s .2s, opacity .1s .2s
+					transition: max-height 0s .25s, padding 0s .25s, opacity .1s .25s
 					opacity: 1
 					+rem(padding, 20px 0)
 				&.col-3
@@ -254,9 +354,6 @@ body, .out,html
 				.page__header-nav-bottom
 					order: 1
 					padding-right: 5%
-					// +r(1250)
-					// 	padding-right: 2%
-					// 	+rem(min-width,450px)
 					.top-nav
 						span
 							+rem(padding-top,28px)
@@ -335,6 +432,11 @@ body, .out,html
 				padding-right: 3.5%
 				+rem(min-width,300px)
 				+rem(padding-bottom, 2px)
+				position: relative
+				.dropdown-target
+					+rem(margin,-15px -170px -15px -35px)
+					+r(1210)
+						+rem(margin,-15px -200px -15px -35px)
 				+r(1150)
 					padding-right: 4%
 					+rem(min-width,233px)
@@ -435,7 +537,6 @@ body, .out,html
 			align-content: flex-end
 			padding-left: 5.1%
 			position: relative
-			contain: paint
 			+r(1150)
 				padding-left: 2.5%
 			+screen(1150,1250)
@@ -468,6 +569,21 @@ body, .out,html
 			+rem(padding, 25px 0 20px 17px)
 			+rm(991)
 				display: none
+			&.open
+		      position: relative
+		      z-index: 50
+		      .hamburger-inner
+		        span 
+		          &:nth-child(1) 
+		            transform: rotate(135deg)
+		            +rem(top, 9px)
+		          &:nth-child(2)
+		            opacity: 0
+		            left: 60px
+		            +rem(left, 60px)
+		          &:nth-child(3)
+		            transform: rotate(-135deg)
+		            +rem(top, 9px) 
 	&__footer
 		position: relative
 		flex: 0 0 auto
@@ -528,6 +644,7 @@ body, .out,html
       &:nth-child(3)
         +rem(top, 18px)
         z-index: 4
+
 // top nav with dropdown
 .top-nav
 	font-family: $rc
@@ -554,6 +671,13 @@ body, .out,html
 		margin-top: -6px
 		+rem(padding-top,2px)
 		font-weight: 400
+		cursor: pointer
+		a 
+			+rem(padding-top,5px)
+			+rem(padding-bottom,5px)
+			color: #bfbfbf
+			position: relative
+			z-index: 15
 		&.icon
 			span
 				&:after
@@ -562,6 +686,13 @@ body, .out,html
 					+rem(width,8px)
 					+rem(height,4px)
 					background-image: url(../img/icons/i-arr-bl.png)
+		&:hover,&.active
+			span:before
+				width: 100%
+				left: 0
+				right: 0
+			span:after
+				transform: scale(1,-1)
 		&:not(:last-child)
 			padding-right: 15.5%
 			+r(1150)
@@ -569,6 +700,19 @@ body, .out,html
 		span
 			display: inline-block
 			transform-origin: left
+			cursor: pointer
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				+rem(bottom,-8px)
+				height: 2px
+				background-color: $hover
+				+tr(width .3s)
+				display: inline-block
+				width: 0
+				left: auto
+				right: 0
 	&.bottom
 		+rem(font-size,18px)
 		color: #000
@@ -603,6 +747,79 @@ body, .out,html
 			padding-right: 10%
 			+r(1150)
 				padding-right: 7%
+.dropdown-trigger
+	&:hover
+		.dropdown-target
+			transition-delay: .15s
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+.dropdown-target
+	+gpu
+	position: absolute
+	z-index: 5
+	+rem(margin, -15px -15px -15px -15px)
+	+padlr(15px)
+	+rem(padding-top,15px)
+	// max-height: 0
+	left: 0
+	right: 0
+	opacity: 0
+	top: 100%	
+	transform: translateY(5%)
+	transition: opacity .25s, transform .25s, visibility .25s
+	visibility: hidden
+	+clr
+	.dropdown-inner
+		+rem(margin-bottom,2px)
+		float: right
+		width: 100%
+		+rem(padding,0px 10px 30px 20px)
+		font-size: 0
+		background: $white
+		box-shadow: 0px 5px 20px 0px rgba(183, 174, 122, 0.1);
+		.dropdown-list
+			display: inline-block
+			vertical-align: top
+			width: 33.33%
+			white-space: normal
+			+rem(padding-right,5px)
+
+			a
+				+rem(padding, 10px 10px 7px 0)
+				+rem(font-size,16px)
+				color: rgb(4, 4, 5);
+				line-height: 1.125;
+				text-transform: none
+				cursor: pointer
+				&:hover
+					color: $hover
+			&.about
+				li:first-child
+					a
+						position: relative
+						&:after
+							content: ''
+							+rem(margin-left, 10px)
+							display: inline-block
+							vertical-align: middle
+							+rem(width,8px)
+							+rem(height,4px)
+							+contain
+							background-image: url(../img/icons/i-arr-bl.png)
+				li:not(:first-child)
+					a
+						+rem(font-size,14px)
+						color: rgb(109, 109, 109);
+						line-height: 1.286;
+						+rem(padding, 8px 10px 7px 0)
+						&:hover
+							color: $hover
+
+
+
+
+
 .title
 	font-family: $rc
 	color: #000
@@ -887,9 +1104,6 @@ blockquote
 		+coverdiv
 		+cover
 		transform: skewY(-30deg) rotate(60deg)
-		
-
-
 // buttons
 .btn 
 	line-height: 1
@@ -908,6 +1122,9 @@ blockquote
 	&:hover
 		+rm(870)
 			color: $active
+	&.active
+		color: $active
+		pointer-events: none
 	&:active
 		border-color: $active
 	&.btn-big
@@ -1085,6 +1302,7 @@ blockquote
 			background-color: $hover
 			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2)
 	&.small
+		+rem(padding,2px 10px)
 
 .index
 	&-wrapper
@@ -1733,6 +1951,7 @@ blockquote
 		+rem(border-radius,2.5px)
 		+rem(max-width,304px)
 		+tr(box-shadow .3s)
+
 		&:hover
 			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 
@@ -1754,7 +1973,14 @@ blockquote
 			border-style: solid
 			position: relative
 			+rem(height,38px)
-			overflow: hidden
+			.help-block
+				position: absolute
+				+rem(top,40px)
+				left: 0
+				+rem(font-size,14px)
+				color: #000
+				font-weight: 700
+				z-index: 3
 			&-submit
 				background-color: $hover
 				background-image: url(../img/icons/i-arrow.png)
@@ -1827,6 +2053,9 @@ blockquote
 				+rm(991)
 					.title
 						color: $hover
+					.small-block
+						background-color: $hover
+						box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2)
 			&:active
 				.title
 					color: $active
@@ -1884,6 +2113,9 @@ blockquote
 		// display: inline-block
 		+rem(width,43px)
 		+rem(height,44px)
+		svg 
+			width: 2.6875rem;
+			height: 2.75rem;
 		use
 			transition: stroke .3s, color .3s
 			fill: #fff
@@ -2218,6 +2450,7 @@ a
 		display: flex
 		flex-flow: row nowrap
 		align-items: flex-end
+
 		&:hover
 			+rm(991)
 				.link-arr
@@ -2234,10 +2467,11 @@ a
 					stroke: $active
 					color: #000				
 	&-text,&-img
-		// display: inline-block
+
 	&-text
 		width: 55%
 		// +rem(padding-top,100px)
+		max-width: 55%
 		position: relative
 		+rem(padding-bottom, 65px)
 		.link-arr
@@ -2254,11 +2488,20 @@ a
 			+rem(min-height,42px)
 	&-img
 		width: 45%
+		max-width: 45%
 		height: 100%
+		min-height: 100%
+		// display: block
+		// clear: both
+		position: relative
+		align-self: stretch
+		
 		img
 			display: block
 			max-width: 100%
 			+rem(max-height, 221px)
+			// position: relative
+			
 .nav
 	&-wrapper
 		display: flex
@@ -2376,8 +2619,10 @@ a
 						font-weight: bold
 						text-transform: uppercase
 						line-height: 1.444
+						
 						&:not(.active)
 							box-shadow: none
+							display: block
 			.menu-nav
 				+r(735)
 					overflow: hidden
@@ -2398,6 +2643,8 @@ a
 				.menu-nav-item
 					margin: 0
 					+rem(padding, 12px 10px)
+					&:not(.more)
+						display: block !important
 					a 
 						text-transform: uppercase
 						font-weight: 700
@@ -2417,19 +2664,13 @@ a
 		+r(735)
 			display: block
 .menu-nav
-	&.scalable
-		+rm(735)
-			overflow: hidden
-			+tr(max-height .3s)
-			&.open
-				max-height: 1500px !important
-
-
+	.more
+		+r(735)
+			display: none	
 	&-item
 		+rem(margin, 26px 0 27px)
 		&.more
-			+r(735)
-				display: none
+
 			.link-black
 				box-shadow: none
 				color: $hover
@@ -2468,6 +2709,8 @@ a
 			+rem(letter-spacing,0.2px)
 			
 			+rem(margin, 21px 0)
+			&:first-child
+				+rem(margin-top,5px)
 			+rm(1130)
 				+rem(padding-right,30px)
 			a	
@@ -2496,7 +2739,9 @@ a
 			text-transform: uppercase;
 			+rem(margin,40px 0)
 			+r(735)
-				+rem(margin,30px 0 25px)				
+				+rem(margin,30px 0 25px)
+			&:first-child
+				+rem(margin-top,5px)				
 			&.link
 				&:hover
 					+rm(991)
@@ -2544,6 +2789,8 @@ a
 			display: block
 			+rem(margin-left,-30px)
 			+rem(margin-right,-30px)
+			&:first-child
+				+rem(margin-top,5px)
 			+r(735)
 				+rem(margin-left,-15px)
 				+rem(margin-right,-15px)				
@@ -2726,8 +2973,14 @@ a
 			svg
 				+rem(width,42px)
 				+rem(height,42px)
+				+r(400)
+					+rem(width,30px)
+					+rem(height,30px)				
 				use
 				    stroke: #000
+			span 
+				+r(400)
+					+rem(font-size,16px)
 			&:hover
 				use
 					stroke: $hover
@@ -2851,6 +3104,11 @@ a
 				margin-right: 0
 				background-color: #fff
 				+rem(padding-bottom,30px)
+				+r(950)
+					padding-left: 0
+				+r(735)
+					+rem(padding-left,15px)
+					+rem(margin-right, -15px)
 			.feachure-list-item-inner
 				width: 100%
 				.menu-nav-item
@@ -2863,16 +3121,35 @@ a
 				+r(991)
 					+rem(margin-right,-22px)
 			.feachure-list-list
-				width: 50%
-				+rem(padding-right,62px)
-				+r(991)
-					+rem(padding-right,22px)
+				min-width: 100%
+				display: block
+				font-size: 0
+				column-count: 2
+				padding-right: 0
+				+rem(margin-top,20px)
+				+r(800)
+					column-count: 1
 				+r(900)
-					width: 100%
 					&:last-of-type
 						margin-top: 0
 				li 
-					+rem(margin, 15px 0)
+					+rem(margin, 0 0)
+					+rem(padding-top,7.5px)
+					+rem(padding-bottom,7.5px)
+					column-fill: auto
+						// margin-top: 0
+					// width: 50%
+					-webkit-transform: translate3d(0, 0, 0)
+					-webkit-column-break-inside: avoid;
+					page-break-inside: avoid;
+					break-inside: avoid;
+					+clr
+					+rem(padding-right,62px)
+					+r(991)
+						+rem(padding-right,22px)
+					a
+						span 
+							+rem(padding-right,10px)
 					&.sale
 						span
 							&:after
@@ -2933,6 +3210,7 @@ a
 			&-text
 				width: 100%
 				+rem(padding-bottom,30px)
+				max-width: 100%
 				+r(991)
 					.title
 						+rem(font-size, 40px)
@@ -3037,6 +3315,7 @@ a
 			+rem(letter-spacing,0)
 	&-form
 		+rem(margin-left,78px)
+		&.has-error
 		+r(991)
 			width: 60%
 			margin: 0
@@ -3057,6 +3336,12 @@ a
 		border: $bb
 		border-radius: 0
 		+rem(max-width,213px)
+		+placeholder
+			color: $gray !important
+		&.error
+			border-color: red
+		&:focus
+			border-color: $hover
 		+r(991)
 			width: calc(60% - 15px)
 		+r(620)
@@ -3068,6 +3353,17 @@ a
 		+rem(width,125px)
 		text-align: center
 		border-radius: 2px !important
+		transition: border-color .3s, background-color .3s
+		&:hover
+			border-color: $hover
+			background-color: $hover
+			span
+				color: #000
+		&:active
+			border-color: $active
+			background-color: $active
+			span
+				color: #000
 		+r(620)
 			width: auto
 .nav-btn-wrap:empty
@@ -3105,8 +3401,12 @@ a
 				position: absolute
 				+rem(left, -125px)
 				top: 0
+				font-size: 0
 				button
 					+rem(margin-right,15px)
+				.carousel-prev
+					+rem(margin-left,15px)
+					// margin-right: 0
 	&-slider
 		.slick-list
 			+rem(padding, 15px 0)
@@ -3127,6 +3427,9 @@ a
 			.doc-card
 				&-wrap
 					+rem(padding-left,10px)
+					width: 100%
+					position: relative
+					
 					+r(1110)
 						+rem(max-width,500px)
 						width: 100%
@@ -3406,6 +3709,235 @@ a
 		vertical-align: middle
 		+rem(margin-right,5px)
 		background-image: url(../img/icons/i-info.svg)
+.modal-layout
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	width: 100%
+	height: 100%
+	margin: 0
+	background: rgba(0,0,0,0.3)
+	z-index: 200
+	opacity: 0
+	visibility: hidden
+	transition: opacity .2s, visibility .2s
+	+vertical
+	contain: paint 
+	transition-delay: .5s
+	&.active
+		visibility: visible
+		opacity: 1
+		transition-delay: 0s
+		.modal-container
+			transform: translateY(0)
+			opacity: 1
+			transition-delay: .2s
+			&:before
+				+tr(width .35s)
+				transition-delay: .4s
+				width: 100%
+				left: 0
+				right: 0
+	.modal-container
+		display: inline-block
+		vertical-align: middle 
+		+rem(min-width,320px)
+		+rem(max-width,609px)
+		max-height: 100%;
+		overflow-y: auto 
+		width: 100%
+		background: #faf9f5
+		position: relative
+		transform: translateY(5%)
+		transition: transform .2s, opacity .2s
+		opacity: 0
+		transition-delay: 0.3s
+		+rem(padding,32px 40px)
+		+r(480)
+			+rem(padding,26px 30px)
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			height: 3px
+			background-color: $hover
+			+tr(width .35s)
+			display: inline-block
+			width: 0
+			left: auto
+			right: 0
+			transition-delay: 0
+	.modal-container-content
+		+rem(margin-top,30px)
+		text-align: left
+	.modal-container-footer
+		+rem(padding, 25px 0 35px)
+		text-align: left
+		.link-black
+			font-weight: 400
+			+rem(font-size,14px)
+	.modal-container-header
+		position: relative
+		+rem(padding-top,35px)
+		.small-link
+			cursor: pointer
+			position: absolute
+			+rem(right,-16px)
+			+rem(top,-14px)
+			display: inline-block
+			+rem(width,40px)
+			+rem(height,40px)
+			+contain
+			background-image: url(../img/icons/i-close.png)
+			+rem(background-size, 13px 13px)
+.form
+	+rem(margin-right,-35px)
+	font-size: 0
+	text-align: left
+	+r(480)
+		+rem(margin-right,-25px)
+	&-footer
+		+rem(padding-right,35px)
+		+rem(margin,10px 0 3px)
+		+rm(480)
+			+justify
+		+r(480)
+			text-align: center
+			+rem(padding-right,25px)
+		&-notify
+			display: inline-block
+			vertical-align: middle
+			font-style: italic
+			text-align: left
+			+r(480)
+				display: block
+				width: 100%	
+			.text
+				+rem(font-size,14px)
+				color: $grayy
+				+r(480)
+					text-align: center
+					+rem(margin,0 0 15px)
+				&:before
+					content: '*'
+					color: $active
+					+rem(font-size,23px)
+					line-height: 0
+					display: inline-block
+					+rem(margin-right,10px)
+					// +rem(margin-bottom, -5px)
+					vertical-align: middle
+					font-weight: 100
+.input-item	
+	display: inline-block
+	vertical-align: top
+	+rem(padding-right,35px)
+	+r(480)
+		+rem(padding-right,25px)	
+	&.s-33 
+		width: 33.33%
+	&.s-50 
+		width: 50%
+		+r(400)
+			width: 100%
+	&.s-100 
+		width: 100%
+.input-wrapper
+	position: relative;
+	+rem(margin-bottom,24px)
+	&.has-error
+		.input-main
+			border-color: red
+	&.req
+		label
+			&:after
+				content: '*'
+				color: $active
+				+rem(font-size,23px)
+				line-height: 0
+				display: inline-block
+				+rem(margin-left,3px)
+				// +rem(margin-bottom, -5px)
+				vertical-align: middle
+				font-weight: 100
+				
+	label
+		display: inline-block;
+		width: 100%;
+		+rem(margin-bottom,7px)
+		white-space: nowrap;
+		+rem(font-size,14px)
+		color: rgb(109, 109, 109);
+		line-height: 1.714;
+		text-align: left
+	.input-main
+		border-width: 1px;
+		border-color: rgb(204, 204, 204);
+		border-style: solid;
+		+rem(border-radius,3px)
+		+rem(min-height,39px)
+		width: 100%
+		+padlr(15px)
+		color: #000
+		&:focus
+			border-color: $active
+		+placeholder
+			color: #c5c5c5
+			+rem(font-size,14px)
+			line-height: 1.5
+
+.action
+	&-wrap
+		+rem(margin-top,57px)
+		+r(991)
+			+rem(margin-top,37px)
+		.menu-nav-item.more
+			+rem(margin,17px 0 8px)
+			.link-black
+				color: $active
+				+rem(font-size,15.5px)
+				&:hover
+					color: $hover
+	&-btns
+		+rem(margin-bottom,65px)
+		+r(991)
+			+rem(margin-bottom,45px)
+		.btn 
+			+rem(margin,13px 13px 0 0)
+			+rem(padding, 10px 13px)
+			&:last-of-type
+				margin-right: 0
+	&-inner
+		.news-item
+			.news-content
+				min-height: 12.875rem;
+			&:nth-of-type(n+5)
+				.news-content
+				    min-height: 9.85rem;
+		.news-image
+			+rem(min-height,45px)
+.news-inner-wrapper
+	.content-column-content-inner
+		+rem(padding-bottom,15px)
+	&+.nav-wrapper
+		margin-top: 0
+	.news-aside
+		position: relative
+		+rem(margin-top,5px)
+		.text2
+			color: $grayy
+	.news-type
+		position: static
+		+rem(margin-bottom,15px)
+
+
+				
+		
+
+
+
 
 
 

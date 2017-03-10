@@ -73,6 +73,9 @@ mixin listlist(id,name,img)
 							.link-arr
 								svg(class="icon icon-drop")
 									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+				.feachure-list-content
+					if block
+						block
 			else
 				.doc-card-inner
 					.doc-card-text
@@ -80,9 +83,9 @@ mixin listlist(id,name,img)
 							.link-arr
 								svg(class="icon icon-drop")
 									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
-			.feachure-list-content
-				if block
-					block
+				.feachure-list-content.js-slidelist(data-items='16')
+					if block
+						block
 
 mixin phoneform
 	form(action="").tel-form.js-validate
@@ -90,6 +93,6 @@ mixin phoneform
 			.text-bold Не нашли что искали?
 			.text-bold.small Оставьте свой номер и мы перезвоним
 		.tel-form-form
-			input(type="tel").tel-form-inp
+			input(type="tel", placeholder = '+7 (495) 212 92 99',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Неверный номер").tel-form-inp
 			button(type='submit',value='Отправить').btn.tel-form-btn
 				span Отправить

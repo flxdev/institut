@@ -23,10 +23,8 @@ block content
 		.aside-wrapp
 			aside.aside-menu(data-sticky_parent)
 				.aside-stick(data-sticky_column).js-dropdown-parent
-					.aside-title.title.h4.js-dropdown вРАЧ
-						br
-						|СПЕЦИАЛИЗИРУЕТСЯ:
-					ul.menu-nav.js-dropdown-target.menu-scalable
+					.aside-title.title.h4.js-dropdown вРАЧ СПЕЦИАЛИЗИРУЕТСЯ:
+					ul.menu-nav.js-dropdown-target.js-slidelist(data-items='9')
 						li.menu-nav-item
 							a(href="#").link-black Пластика груди
 						li.menu-nav-item
@@ -51,7 +49,7 @@ block content
 							a(href="#").link-black Пластика век
 						li.menu-nav-item
 							a(href="#").link-black Пластика век
-					.menu-nav-item.more.js-list-more
+					.menu-nav-item.more.js-list-more(data-alt-text='Свернуть')
 						a(href="#").link-black Все направления
 			.aside-content
 				.content-column-wrap

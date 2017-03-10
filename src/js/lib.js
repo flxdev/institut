@@ -4,3 +4,4 @@
 //=include lib/jquery.form-validator.min.js
 //=include lib/sticky-kit.min.js
 //=include lib/cocoen.min.js
+//=include lib/inputmask.min.js
