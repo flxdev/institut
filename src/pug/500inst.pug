@@ -1,0 +1,97 @@
+extends _layout
+
+block title
+	title Институт красоты
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Институт красоты
+			.content-main
+				.title.h1 Институт красоты
+	.box
+		.aside-wrapp
+			// а вот тут ссылки уже ссылки а не якоря
+			// помимо самой ссылки .active надо вешать еще и на дочернюю ссылку если мы на страницах связанных с институтом красоты
+			aside.aside-menu(data-sticky_parent)
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Об институте
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black.active институт красоты
+							.menu-add-items
+								a(href="#").menu-add-link
+									.link-black Руководство
+								a(href="#").menu-add-link
+									.link-black Миссия
+								a(href="#").menu-add-link
+									.link-black История
+								a(href="#").menu-add-link
+									.link-black Лицензии
+						li.menu-nav-item
+							a(href="#").link-black Исследовательский центр
+						li.menu-nav-item
+							a(href="#").link-black Научный центр
+						li.menu-nav-item
+							a(href="#").link-black Косметическое производство
+						li.menu-nav-item
+							a(href="#").link-black партнёры
+						li.menu-nav-item
+							a(href="#").link-black Рекламодателям
+						li.menu-nav-item
+							a(href="#").link-black вакансии
+						li.menu-nav-item
+							a(href="#").link-black вопрос-ответ
+						li.menu-nav-item
+							a(href="#").link-black отзывы
+						li.menu-nav-item
+							a(href="#").link-black Записаться на приём
+
+			.aside-content
+				// на страницах далее модификатор .special
+				.content-column-wrap.special
+					.content-column-content
+						.content-column-content-inner
+							p.caption В 2015 году отмечает своё 85-летие. знаменитый на всю страну «Институт Красоты» на Арбате. Он был первым центром профессиональной косметологии и пластической хирургии, открывшийся в такие времена, когда казалось, никто и не мог подумать о таких вещах. 
+								mark.caption-content
+									span.date 
+										span 1930
+										|год
+									i основание Института Красоты на Арбате 
+							p С самого начала в институте, который тогда назывался очень скромно — «Кабинет врачебной косметологии», не только проводились лечебные процедуры, но велись научные исследования. Особенно активно Институт стал развиваться после окончания Великой Отечественной Войны, когда потребовалась помощь по восстановительной хирургии лица. Работавшие в нем специалисты решали не только медицинские, но и эстетические проблемы пациентов, которые получали рекомендации по уходу за лицом.
+							p Это был единственный в России косметологический центр, и он пользовался большой популярностью. Ведь женщины всегда, не смотря ни на какие обстоятельства не хотели отказываться от заботы о своей внешности, хотели быть красивыми и привлекательными.
+							p За долгие годы своей истории «Институт красоты» стал не только самой авторитетной клиникой страны, но и научным центром, в котором получили рождение косметологические и хирургические методы лечения, а также школой, которой многие сотни сегодняшних врачей обязаны своим высоким профессиональным мастерством.
+					//div нужен
+					.content-column-right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

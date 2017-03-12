@@ -76,6 +76,7 @@ body
 	text-rendering: optimizeLegibility
 	font-family: $pt
 	min-width: 320px
+	
 	& ::selection
 		background-color: #fcef8d
 		color:#000
@@ -83,7 +84,7 @@ body
 		background-color: #fcef8d
 		color:#000
 
-body, .out,html
+body, .out
 	width: 100%
 	height: 100%
 	// overflow-x: hidden
@@ -100,7 +101,7 @@ body, .out,html
 .page__header--wrap
 	position: fixed
 	left: 0
-	right: 0
+	width: 100%
 	top: 0
 	z-index: 20
 	visibility: hidden
@@ -415,6 +416,7 @@ body, .out,html
 		&-main
 			display: flex !important
 			flex-flow: row nowrap
+			overflow: visible !important
 			+rem(height,125px)
 			+tr(height .2s)
 			+rm(1210)
@@ -592,6 +594,7 @@ body, .out,html
 	&__content
 		+rem(padding,125px 10px 100px 10px)
 		flex: 1 0 auto
+		width: 100%
 		+r(991)
 			+rem(padding,72px 10px 70px 10px)
 		+r(600)
@@ -990,6 +993,7 @@ blockquote
 	width: 100%
 	display: block
 	margin: 0 auto
+	overflow: hidden
 	+padlr(15px)
 	.nav-wrapper
 		+padlr(0)
@@ -1039,8 +1043,8 @@ blockquote
 			+rem(padding-right,80px)
 		+r(630)
 			+rem(padding,0)
-			+rem(margin-right,-15px)
-			+rem(margin-left,-15px)
+			+rem(margin-right,-10px)
+			+rem(margin-left,-10px)
 		.nav-arrows
 			position: absolute
 			right: 2.5%
@@ -2188,6 +2192,8 @@ blockquote
 		+cover
 		+rem(padding-top,45px)
 		overflow: hidden
+		&~ .box
+			overflow: visible
 		+r(600)
 			+rem(padding-top,25px)
 	&-head
@@ -2307,7 +2313,7 @@ a
 				box-shadow: none
 	&:active
 		color: $active
-.link-black
+.link-black,.menu-add-items .link-black
 	color: #000
 	font-weight: 700
 	+rem(font-size, 19px)
@@ -2607,22 +2613,49 @@ a
 			+r(735)
 				position: static !important
 			&.list-bold
+				.menu-add-items
+					display: none
+					+r(735)
+						+rem(padding-left,15px)
+					.menu-add-link
+						display: block
+						+rem(margin,24px 0 28px)
+						&:hover,&.active
+							.link-black
+								color: #000
+						&.active
+							pointer-events: none
+							.link-black
+								color: #000			
+								box-shadow: none
 				.aside-title
 					+rm(735)
 						display: none
 				.menu-nav
 					+rm(735)
 						+rem(margin-top,35px)
-					.link-black
+					li >.link-black
 						font-size: 18px
 						font-family: $rc
 						font-weight: bold
 						text-transform: uppercase
 						line-height: 1.444
-						
 						&:not(.active)
 							box-shadow: none
 							display: block
+						&.active		
+							&+.menu-add-items
+								display: block
+								
+				// 	.link-black	
+				// 		color: #000
+				// 		font-weight: 700
+				// 		+rem(font-size, 19px)
+				// 		line-height: 1.3
+				// 		display: inline
+				// 		+tr(color .3s)
+				// 		// +rem(letter-spacing,-0.6px)
+				// 		box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
 			.menu-nav
 				+r(735)
 					overflow: hidden
@@ -2665,12 +2698,15 @@ a
 			display: block
 .menu-nav
 	.more
-		+r(735)
-			display: none	
+
 	&-item
 		+rem(margin, 26px 0 27px)
+		a
+			&.active
+				pointer-events: none
 		&.more
-
+			+r(735)
+				display: none	!important
 			.link-black
 				box-shadow: none
 				color: $hover
@@ -2681,6 +2717,11 @@ a
 	&-wrap
 		display: flex
 		flex-flow: row nowrap
+		&.special
+			.content-column-content-inner
+				+rem(padding-top,30px)
+				h1:first-child
+					+rem(margin-top,-1px)
 		+r(991)
 			flex-direction: column
 			
@@ -2781,6 +2822,8 @@ a
 			+rem(padding-bottom, 5px)
 			+rem(margin-bottom, 40px)
 			+rem(margin-top, 40px)
+			b 
+				padding-left: 0
 			p 
 				padding-right: 0
 			+r(735)
@@ -3931,9 +3974,151 @@ a
 	.news-type
 		position: static
 		+rem(margin-bottom,15px)
+.ya-share2__item_service_vkontakte .ya-share2__badge
+	background-color: #77b1e6 !important
+.ya-share2__item_service_facebook .ya-share2__badge
+	background-color: #3f84d5 !important
+.ya-share2__counter
+	display: inline-block !important
+.content-share
+	+rem(margin-bottom,-25px)
+	+r(735)
+			text-align: right	
+			margin-bottom: 0	
+.ya-share2__container_size_m .ya-share2__item
+	margin-right: 10px	!important
 
+.persona
+	&-wrapper
+		font-size: 0
 
+		+rem(margin-right,-30px)
+		+rm(735)
+			+rem(padding-left,30px)			
+	&-item
+		display: inline-block
+		vertical-align: top
+		width: 33.33%
+		+rem(padding-right,30px)
+		+rem(margin-top,37px)
+		+r(940)
+			width: 50%
+		+r(390)
+			width: 100%
+			.persona-item-img-inner
+				margin: 0 auto
+		&-img
+			+rem(height,229px)
+			+rem(margin-bottom,32px)
+			&-inner
+				background-color: #eaeaea
+				+rem(width,171px)
+				height: 100%
+				img 
+					max-width: 100%
+					max-height: 100%
+					vertical-align: bottom
+		&-text
+			.text2
+				+rem(margin-top,10px)
+				+rem(margin-bottom,10px)
+
+.organ
+	&-wrapper
+		font-size: 0
+		+rem(padding-left,30px)
+		+rem(padding-top,30px)
+		+rem(margin-right,-50px)
+		+r(991)
+			+rem(margin-right,-25px)	
+		+r(735)
+			padding-left: 0
+			margin-right: 0	
+	&-head
+		+rem(padding-right,50px)
+		+r(991)
+			+rem(padding-right,25px)
+		+r(735)
+			padding-right: 0
+		&-name
+			+rem(padding-bottom,30px)
+			.title,.organ-head-btn
+				display: inline-block
+				vertical-align: middle
+				+r(900)
+					width: 100%
+			.title
+				width: 70%
+			.organ-head-btn
+				width: 30%
+				text-align: right
+				+r(900)
+					text-align: left
+					+rem(margin-top,20px)
+				.btn
+					white-space: nowrap
+	&-item
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		+rem(padding-right,50px)
+		+r(991)
+			+rem(padding-right,25px)
+		+r(735)
+			width: 100%
+			padding-right: 0	
+			.organ-item-inner
+				min-width: 0
+		&-inner
+			border-top: $bb
+			+rem(padding-top,40px)
+			+rem(padding-bottom,35px)
+			+rem(min-height,314px)
+			.title
+				+rem(margin-bottom,23px)
+			.text.bold
+				+rem(font-size,14px)
+			.text2 
+				+rem(font-size,16px)
+		&-block
+			+rem(margin,20px 0 21px)
 				
+.sertificat
+	&-item
+		display: inline-block
+		vertical-align: top
+		width: 25%
+		+rem(padding-right,25px)
+		+rem(margin-top,45px)
+		+rem(margin-bottom,20px)
+		+r(1120)
+			width: 33.33%	
+			+rem(margin-top,30px)
+			+rem(margin-bottom,15px)
+		+r(860)
+			width: 50%	
+		+r(735)
+			width: 33.33%	
+		+r(600)
+			width: 50%
+			img 
+				margin: 0 auto
+				display: block
+			.text2
+					text-align: center	
+			&:nth-of-type(odd)
+				padding-right: 0	
+		+r(390)
+			.sertificat-item-img
+				+rem(margin-bottom,10px)
+			.text2
+				+rem(max-width,250px)
+		&-img
+			+rem(height, 185px)
+			+rem(margin-bottom,25px)
+			img
+				max-width: 100%
+				max-height: 100%
 		
 
 

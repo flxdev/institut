@@ -1,0 +1,169 @@
+extends _layout
+
+block title
+	title Лицензии
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Лицензии
+			.content-main
+				.title.h1 Лицензии
+	.box
+		.aside-wrapp
+			// а вот тут ссылки уже ссылки а не якоря
+			// помимо самой ссылки .active надо вешать еще и на дочернюю ссылку если мы на страницах связанных с институтом красоты
+			aside.aside-menu(data-sticky_parent)
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Об институте
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black.active институт красоты
+							.menu-add-items
+								a(href="#").menu-add-link
+									.link-black Руководство
+								a(href="#").menu-add-link
+									.link-black Миссия
+								a(href="#").menu-add-link
+									.link-black История
+								a(href="#").menu-add-link.active
+									.link-black Лицензии
+						li.menu-nav-item
+							a(href="#").link-black Исследовательский центр
+						li.menu-nav-item
+							a(href="#").link-black Научный центр
+						li.menu-nav-item
+							a(href="#").link-black Косметическое производство
+						li.menu-nav-item
+							a(href="#").link-black партнёры
+						li.menu-nav-item
+							a(href="#").link-black Рекламодателям
+						li.menu-nav-item
+							a(href="#").link-black вакансии
+						li.menu-nav-item
+							a(href="#").link-black вопрос-ответ
+						li.menu-nav-item
+							a(href="#").link-black отзывы
+						li.menu-nav-item
+							a(href="#").link-black Записаться на приём
+
+			.aside-content
+				.organ-wrapper
+					.organ-head
+						.organ-head-name
+							.title.h2 надзорные органы
+							.organ-head-btn
+								a(href="#").btn 
+									| Правила для пациентов
+					.organ-item
+						.organ-item-inner
+							.title.h4 Департамент здравоохранения г. Москвы:
+							.organ-item-block
+								.text.bold Адрес:
+								.text2 Москва, Оружейный переулок, д.43
+							.organ-item-block
+								.text.bold Телефон:
+								.text2 +7 (499) 973-09-24
+							.organ-item-block
+								.text.bold Горячая линия:
+								.text2 +7 (499) 973-09-24
+					.organ-item
+						.organ-item-inner
+							.title.h4 Федеральная служба по надзору в сфере здравоохранения:
+							.organ-item-block
+								.text.bold Адрес:
+								.text2 109074, г. Москва, Славянская площадь, дом 4, стр.1 
+							.organ-item-block
+								.text.bold Телефон:
+								.text2 +7 (499) 973-09-24
+					.organ-item
+						.organ-item-inner
+							.title.h4 Управление Федеральной службы по надзору в сфере защиты прав потребителей и благополучия человека г. Москве:
+							.organ-item-block
+								.text.bold Адрес:
+								.text2 129626, г. Москва, Графский пер., д.4/9 
+							.organ-item-block
+								.text.bold Телефон:
+								.text2 +7 (495) 698-45-38
+					.organ-item
+						.organ-item-inner
+							.title.h4 Отдел Защиты Прав Потребителей Территориального Отдела Территориального Управления по г.Москве Роспотребнадзора ЮЗАО:
+							.organ-item-block
+								.text.bold Адрес:
+								.text2 117485, ул. Бутлерова, д.7А
+							.organ-item-block
+								.text.bold Телефон:
+								.text2 +7 (495) 779-32-44
+				.organ-wrapper
+					.organ-head
+						.organ-head-name
+							.title.h2 Наши сертификаты
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+					.sertificat-item
+						a(href="#" target="_blank").sertificat-item-inner
+							.sertificat-item-img
+								img(src="img/content/d1.jpg", alt="")
+							.sertificat-item-text
+								.text2 Лицензия на осуществление медицинской деятельности
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

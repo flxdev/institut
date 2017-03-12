@@ -1,0 +1,123 @@
+extends _layout
+
+block title
+	title Миссия
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Миссия
+			.content-main
+				.title.h1 Миссия
+	.box
+		.aside-wrapp
+			// а вот тут ссылки уже ссылки а не якоря
+			// помимо самой ссылки .active надо вешать еще и на дочернюю ссылку если мы на страницах связанных с институтом красоты
+			aside.aside-menu(data-sticky_parent)
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Об институте
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black.active институт красоты
+							.menu-add-items
+								a(href="#").menu-add-link
+									.link-black Руководство
+								a(href="#").menu-add-link.active
+									.link-black Миссия
+								a(href="#").menu-add-link
+									.link-black История
+								a(href="#").menu-add-link
+									.link-black Лицензии
+						li.menu-nav-item
+							a(href="#").link-black Исследовательский центр
+						li.menu-nav-item
+							a(href="#").link-black Научный центр
+						li.menu-nav-item
+							a(href="#").link-black Косметическое производство
+						li.menu-nav-item
+							a(href="#").link-black партнёры
+						li.menu-nav-item
+							a(href="#").link-black Рекламодателям
+						li.menu-nav-item
+							a(href="#").link-black вакансии
+						li.menu-nav-item
+							a(href="#").link-black вопрос-ответ
+						li.menu-nav-item
+							a(href="#").link-black отзывы
+						li.menu-nav-item
+							a(href="#").link-black Записаться на приём
+
+			.aside-content
+				// на страницах далее модификатор .special
+				.content-column-wrap.special
+					.content-column-content
+						.content-column-content-inner
+							p.caption Клиника Активного долголетия «Институт Красоты на Арбате» занимается решением социально значимых задач в соответствии с Государственной программой города Москвы на среднесрочный период (2012-2016 годы) «Развитие здравоохранения города Москвы (Столичное здравоохранение)».
+								mark.caption-content
+									i Мы занимаемся медицинской 
+										a(href="#") реабилитацией инвалидов
+							p 
+								a(href="#") Специалисты 
+								|нашей клиники оказывают специализированную медицинскую помощь по 
+								a(href="#") дерматовенерологии
+								|, 
+								a(href="#") офтальмологии
+								|, 
+								a(href="#") терапии
+								|, 
+								a(href="#") физиотерапии
+								|, 
+								a(href="#") хирургии
+								|, 
+								a(href="#") челюстно-лицевой хирургии
+								|, 
+								a(href="#") анестезиологии
+								|, 
+								a(href="#") реаниматологии
+								|, 
+								a(href="#") рентгенологии
+								|, 
+								a(href="#") косметологии
+								|.
+							p Инновационные медицинские технологии и современные методы лечения позволяют нам осуществлять реабилитацию и восстановление внешнего облика пострадавших во время боевых действий, в катастрофах, террористических актах и в дорожно-транспортных происшествиях.
+							p Мы занимаемся медицинской 
+								a(href="#") реабилитацией инвалидов
+								|: многоэтапное сложное хирургическое лечение и реабилитация больных с врожденными пороками развития (в т.ч. «заячья губа» и «волчья пасть»).
+							blockquote
+								b Ветеранам и льготникам!
+								p В Институте Красоты на Арбате действуют специальные условия на оказание медицинской помощи.
+								p Ветеранам Великой Отечественной Войны, ветеранам контртеррористических операций на Северном Кавказе и в Афганистане при устранении дефектов и деформаций, полученных при участии в военных действиях, предоставляется скидка от стоимости 15%.
+					//div нужен
+					.content-column-right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -96,3 +96,12 @@ mixin phoneform
 			input(type="tel", placeholder = '+7 (495) 212 92 99',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Неверный номер").tel-form-inp
 			button(type='submit',value='Отправить').btn.tel-form-btn
 				span Отправить
+mixin person(name,text,img)
+	.persona-item
+		.persona-item-img
+			.persona-item-img-inner
+				if img != ''
+					img(src="img/content/"+img+".png", alt="4234")
+		.persona-item-text
+			.title.h4 #{name}
+			.text2 #{text}
