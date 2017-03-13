@@ -1,0 +1,85 @@
+extends _layout
+
+block title
+	title Наши партнёры
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Наши партнёры
+			.content-main
+				.title.h1 Наши партнёры
+	.box
+		.aside-wrapp
+			// а вот тут ссылки уже ссылки а не якоря
+			// помимо самой ссылки .active надо вешать еще и на дочернюю ссылку если мы на страницах связанных с институтом красоты
+			aside.aside-menu(data-sticky_parent)
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Об институте
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black институт красоты
+							.menu-add-items
+								a(href="#").menu-add-link
+									.link-black Руководство
+								a(href="#").menu-add-link
+									.link-black Миссия
+								a(href="#").menu-add-link
+									.link-black История
+								a(href="#").menu-add-link
+									.link-black Лицензии
+						li.menu-nav-item
+							a(href="#").link-black Исследовательский центр
+						li.menu-nav-item
+							a(href="#").link-black Научный центр
+						li.menu-nav-item
+							a(href="#").link-black Косметическое производство
+						li.menu-nav-item
+							a(href="#").link-black.active партнёры
+						li.menu-nav-item
+							a(href="#").link-black Рекламодателям
+						li.menu-nav-item
+							a(href="#").link-black вакансии
+						li.menu-nav-item
+							a(href="#").link-black вопрос-ответ
+						li.menu-nav-item
+							a(href="#").link-black отзывы
+						li.menu-nav-item
+							a(href="#").link-black Записаться на приём
+
+			.aside-content
+				.organ-wrapper
+					+partner(1,'BEAUTY EXPERT','www.mybex.ru','В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи на основании f dfg  dgdf gd gd')
+					+partner(2,'Maruga 434535345353','www.maruga.ru','В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи на основании...')
+					+partner(3,'BTL Aesthetics','www.btl.ru','В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи на основании.')
+					+partner(4,'BTL Aesthetics','www.agenda.ru','В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи на основании.')
+					+partner(5,'Nikemed','www.nikemed.ru','В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи.')
+					+partner(6,'fijie','www.nikemed.ru','В Институте Красоты практикуется подбор косметических средств и назначение врачом косметологом программ коррекции состояния кожи.')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

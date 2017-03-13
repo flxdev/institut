@@ -1,0 +1,99 @@
+extends _layout
+
+block title
+	title Рекламодателям
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		//для врачей вешаем класс .personal
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Рекламодателям
+			.content-main
+				.title.h1 Рекламодателям
+	.box
+		.aside-wrapp
+			// а вот тут ссылки уже ссылки а не якоря
+			// помимо самой ссылки .active надо вешать еще и на дочернюю ссылку если мы на страницах связанных с институтом красоты
+			aside.aside-menu(data-sticky_parent)
+				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
+					.aside-title.title.h4.js-dropdown Об институте
+					ul.menu-nav.js-dropdown-target
+						li.menu-nav-item
+							a(href="#").link-black институт красоты
+							.menu-add-items
+								a(href="#").menu-add-link
+									.link-black Руководство
+								a(href="#").menu-add-link
+									.link-black Миссия
+								a(href="#").menu-add-link
+									.link-black История
+								a(href="#").menu-add-link
+									.link-black Лицензии
+						li.menu-nav-item
+							a(href="#").link-black Исследовательский центр
+						li.menu-nav-item
+							a(href="#").link-black Научный центр
+						li.menu-nav-item
+							a(href="#").link-black Косметическое производство
+						li.menu-nav-item
+							a(href="#").link-black партнёры
+						li.menu-nav-item
+							a(href="#").link-black.active Рекламодателям
+						li.menu-nav-item
+							a(href="#").link-black вакансии
+						li.menu-nav-item
+							a(href="#").link-black вопрос-ответ
+						li.menu-nav-item
+							a(href="#").link-black отзывы
+						li.menu-nav-item
+							a(href="#").link-black Записаться на приём
+
+			.aside-content
+				.content-column-wrap.special
+					.content-column-content
+						.content-column-content-inner
+							h1 Приглашаем вас к сотрудничеству
+							p.caption За долгие годы своей истории «Институт красоты» стал не только самой авторитетной клиникой страны, но и научным центром, в котором получили рождение косметологические и хирургические методы лечения, а также школой, которой многие сотни сегодняшних врачей обязаны своим высоким профессиональным мастерством.
+								mark.caption-content
+									i «Институт Красоты» — это история развития 
+										a(href="#") косметологии 
+										|и 
+										a(href="#") пластической хирургии 
+										| в России
+							p Наша клиника занимается решением социально значимых задач в соответствии с Государственной программой города Москвы на среднесрочный период (2012-2016 годы) «Развитие здравоохранения города Москвы (Столичное здравоохранение)». Более того, в компании ежесезонно проводятся презентации косметических линий. Каждый год специалисты представляют косметические продукты на российских выставках, где каждый желающий может ознакомиться с ассортиментом компании, а также обсудить все детали сотрудничества.
+							blockquote 
+								b По вопросам сотрудничества или размещения рекламных материалов пишите нам, либо звоните по телефону:
+								p +7 (495) 212-06-64 &nbsp;&nbsp;&nbsp;
+									a(href="#")  kirillina@institut-krasoty.ru
+							p За долгие годы своей истории «Институт красоты» стал не только самой авторитетной клиникой страны, но и научным центром, в котором получили рождение косметологические и хирургические методы лечения, а также школой, которой многие сотни сегодняшних врачей обязаны своим высоким профессиональным мастерством.
+					//div нужен
+					.content-column-right
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

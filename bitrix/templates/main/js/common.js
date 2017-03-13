@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			$(this).on('click', function(){
 
 				var item = prnt.find(trgt);
-				console.log(item.length)
 				if(item.hasClass('active')){
 
 					item.removeClass('active');
@@ -122,6 +121,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			property: 'min-height'
 		});
 		$('.doc-card-text .text2').matchHeight({
+			property: 'min-height'
+		});
+		$('.partner-elem-inner').matchHeight({
 			property: 'min-height'
 		});
 	},300)
@@ -213,6 +215,58 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		})
 	}listhide();
+	function Accordeon(){
+		if($('.offerlist-section').length){
+			// $(".aside-stick").trigger("sticky_kit:detach");
+			$(".aside-stick").stick_in_parent({
+				offset_top : 73,
+				recalc_every: 1
+			});
+			var maintrigger = $('.js-accordion-trigger'),
+				body = $('.js-accordion-body'),
+				truetrigger = maintrigger.children('.table-item').not('.table-status').not('.table-btn');
+			maintrigger.not('.active').find(body).hide();
+			truetrigger.on('click',function(event){
+				var parent = $(this).parent(),
+					target = parent.find(body);
+
+				if(parent.hasClass('active')){
+					parent.siblings().removeClass('active').find(body).slideUp(200);
+					parent.removeClass('active').find(body).slideUp(300);
+
+				}else{
+					parent.siblings().removeClass('active').find(body).slideUp(200);
+					parent.addClass('active').find(body).slideDown(300, function(){
+						var pos = parent.offset().top;
+						jQuery("body:not(:animated)").animate({scrollTop: pos -80}, 500);
+					});
+				}
+				setTimeout(function(){
+					$('body').trigger('scroll')
+				},801)
+			});
+		}
+	}Accordeon();
+	function stars(){
+		var parent = $('.js-stars'),
+			items = parent.find('.star-item');
+
+		items.click(function(e) {
+			$(this).closest('.input-wrapper').removeClass('has-error').addClass('has-success');
+			e.preventDefault();
+			num = parseInt($(this).data("num"));
+			i = 1;
+			for (i = 1; i <= num; i++) {
+				$("#rev-star-" + i).addClass('active');
+			}
+			for (i = num + 1; i <= 5; i++) {
+				$("#rev-star-" + i).removeClass('active');
+			}
+			$(".rev-hidden").val(num);
+
+			return false;
+		});
+	}stars();
 	DesktopMenu();
 	doctorSlider();
 	rombSlider();
@@ -225,15 +279,56 @@ document.addEventListener("DOMContentLoaded", function() {
 	popUpsInit();
 	validateForms();
 	masktel();
+	initCustomSelectList();
 //end of document.ready
 });
 //end of document.ready
 function masktel(){
-	console.log($('input[type=tel]').length)
-	// $('.tel-form-inp').inputmask("+9 (999) 999 99 99");
 	var nodes = document.querySelectorAll("input[type=tel]");
 	var im = new Inputmask("+7 (999) 999 99 99",{ showMaskOnHover: false});
 	im.mask(nodes);
+}
+function initCustomSelectList() {
+	var _conf = {
+			initClass: 'cs-active',
+			f: {}
+		},
+		_items = $('.js-select-custom');
+	$.each(_items, function () {
+		var _select = $(this),
+			_button = _select.find('button'),
+			placeholder = _button.data('placeholder'),
+			_list = _select.find('.select-list');
+		_select.on('reinit', function() {
+			var _active = _list.find('input:checked');
+			if(_active.length) {
+				_button.children('.btn-text').addClass('active').text(''+_active.siblings('span').text()+'').parent().addClass('is-checked')
+			}
+			else {
+				_button.children('.btn-text').removeClass('active').text(_button.data('placeholder')).parent().removeClass('is-checked');
+			}
+			CheckForSelect($(this).parents('form'));
+		});
+		_button.on('click', function() {
+		   _button.parent().toggleClass('active').siblings().removeClass('active');
+			return(false);
+		});
+		_select.on('click', 'label', function() {
+		   var _label = $(this),
+			   _input = _label.find('input');
+			_input.prop('checked', true);
+			_select.trigger('reinit');
+			_button.parent().removeClass('active');
+		});
+		_select.trigger('reinit');
+		_select.addClass(_conf.initClass);
+		 $(document).on('mouseup', function (e){
+			if (!_select.is(e.target)
+				&& _select.has(e.target).length === 0) {
+				_select.removeClass('active');
+			}
+		});
+	});
 }
 function aside(){
 	function stickinit(){
@@ -547,6 +642,7 @@ function validateForms(){
 				onValidate : function($form) {
 					CheckForSelect(form_this);
 					checkStars(form_this);
+
 				},
 			});
 		});
@@ -581,6 +677,7 @@ function checkStars(form){
 		}
 	}
 }
+
 function popUpsInit() {
 	var _this = this;
 	_this.b = {open: $('.js-popup-button')};

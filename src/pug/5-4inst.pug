@@ -1,7 +1,7 @@
 extends _layout
 
 block title
-	title Институт красоты
+	title Вакансии
 
 block content
 	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
@@ -9,9 +9,9 @@ block content
 		.box.content-head
 			.content-bread
 				a(href="#").content-bread-item.text2 Главная
-				a(href="#").content-bread-item.text2 История
+				a(href="#").content-bread-item.text2 Вакансии
 			.content-main
-				.title.h1 История
+				.title.h1 Вакансии
 	.box
 		.aside-wrapp
 			// а вот тут ссылки уже ссылки а не якоря
@@ -21,13 +21,13 @@ block content
 					.aside-title.title.h4.js-dropdown Об институте
 					ul.menu-nav.js-dropdown-target
 						li.menu-nav-item
-							a(href="#").link-black.active институт красоты
+							a(href="#").link-black институт красоты
 							.menu-add-items
 								a(href="#").menu-add-link
 									.link-black Руководство
 								a(href="#").menu-add-link
 									.link-black Миссия
-								a(href="#").menu-add-link.active
+								a(href="#").menu-add-link
 									.link-black История
 								a(href="#").menu-add-link
 									.link-black Лицензии
@@ -42,7 +42,7 @@ block content
 						li.menu-nav-item
 							a(href="#").link-black Рекламодателям
 						li.menu-nav-item
-							a(href="#").link-black вакансии
+							a(href="#").link-black.active вакансии
 						li.menu-nav-item
 							a(href="#").link-black вопрос-ответ
 						li.menu-nav-item
@@ -51,33 +51,27 @@ block content
 							a(href="#").link-black Записаться на приём
 
 			.aside-content
-				// на страницах далее модификатор .special
 				.content-column-wrap.special
 					.content-column-content
-						.content-column-content-inner
-							h1 История Института красоты
-							p.caption История первого в стране лечебного учреждения косметологического профиля началась в 1930 году. Тогда по инициативе  П.С. Жемчужиной в Москве был открыт первый кабинет врачебной косметики.
-								mark.caption-content
-									span.date 
-										span 1930
-										|год
-									i основание Института Красоты на Арбате 
-							.content-slider-wrap.caption
-								.content-slider-slider
-									.content-item
-										img(src="img/content/1.jpg", alt="fsdfsd")
-									.content-item
-										img(src="img/content/1.jpg", alt="fsdfsd")
-									.content-item
-										img(src="img/content/1.jpg", alt="fsdfsd")
-								.content-slider-nav
-									.nav-arrows
-							h3 Руководителем и организатором первого кабинета стала С.Я. Газарова.
-							p В перечне услуг был массаж лица по методике доктора Поспелова, гигиенический и косметический массажи, а также уход за кожей головы и за волосами.
+						.vacancy-wrapper.offerlist-section.caption
+							+vacancy('Врач ультразвуковой диагностики')
+							+vacancy('Врач-дерматовенеролог (трихолог)')
+							+vacancy('Врач-дерматовенеролог (трихолог)')
+							+vacancy('Врач-дерматовенеролог (трихолог)')
+							mark.caption-content
+								b Начальник 
+									br
+									|отдела кадров:
+								p Кириллина Татьяна 
+									br
+									| Вячеславовна
+									br
+									|+7 (495) 212-06-64
+								a(href="#") kirillina@institut-krasoty.ru
+
 					//div нужен
 					.content-column-right
-
-
+						
 
 
 

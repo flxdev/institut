@@ -40,6 +40,7 @@ a
 	+placeholder 
 		font-family: $pt
 		+rem(font-size,16px)
+
 textarea
 	line-height: 1.4
 	resize: none
@@ -1000,6 +1001,7 @@ blockquote
 	&-section
 		+rem(margin-top, 100px)
 		+rem(margin-bottom, 128px)
+		overflow: visible
 		+r(1210)
 			+padlr(5px)
 		+r(735)
@@ -1031,6 +1033,8 @@ blockquote
 .wrapper
 	+rem(margin-left, -10px)
 	+rem(margin-right, -10px)
+	.box
+		overflow: visible
 .romb-slider
 	&-wrap
 		+rem(max-width,1025px)
@@ -2696,9 +2700,19 @@ a
 		+rem(flex-basis,280px)
 		+r(735)
 			display: block
+		.action-inner
+			+rem(margin-top,35px)
+			+rem(max-width,810px)
+			+r(735)
+				+rem(margin-top,35px)
+			+rm(735)
+				+rem(padding-left,30px)
+			.news-item
+				width: 50%
+				+r(600)
+					width: 100%
 .menu-nav
 	.more
-
 	&-item
 		+rem(margin, 26px 0 27px)
 		a
@@ -3894,7 +3908,7 @@ a
 		.input-main
 			border-color: red
 	&.req
-		label
+		&>label,.label
 			&:after
 				content: '*'
 				color: $active
@@ -3906,7 +3920,7 @@ a
 				vertical-align: middle
 				font-weight: 100
 				
-	label
+	label,.label
 		display: inline-block;
 		width: 100%;
 		+rem(margin-bottom,7px)
@@ -3953,6 +3967,7 @@ a
 			&:last-of-type
 				margin-right: 0
 	&-inner
+		overflow: hidden
 		.news-item
 			.news-content
 				min-height: 12.875rem;
@@ -4029,11 +4044,66 @@ a
 		+rem(padding-left,30px)
 		+rem(padding-top,30px)
 		+rem(margin-right,-50px)
+		&:not(:first-of-type)
+			+rem(margin-top,30px)
 		+r(991)
 			+rem(margin-right,-25px)	
+		+r(850)
+			+rem(padding-left,15px)
 		+r(735)
 			padding-left: 0
 			margin-right: 0	
+		.partner
+			&-elem
+				width: 50%
+				+rem(padding-right,50px)
+				display: inline-block
+				vertical-align: top
+				+r(991)
+					+rem(padding-right,25px)
+				+r(600)
+					width: 100%
+					padding-right: 0
+					&:nth-child(n+2)
+						.partner-elem-inner	
+							border-top: $bb	
+							+rem(padding-top,25px)				
+							+rem(padding-top,25px)				
+				&:nth-child(-n+2)
+					.partner-elem-inner	
+						border-top: none
+				&:nth-child(n+3)
+					.partner-elem-inner	
+						+rem(padding-top,45px)		
+				&-inner
+					font-size: 0
+					border-top: $bb
+					+rem(padding-bottom,50px )
+				&-img,&-content
+					display: inline-block
+					vertical-align: top
+				&-img
+					width: 35%
+					padding-right: 5.5%
+					img
+						max-width: 100%
+						max-height: 100%
+						+rem(margin-top,5px)
+				&-content 
+					width: 65%
+					+rem(padding-top,5px)
+					a	
+						+rem(font-size,14px)
+						box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
+					.partner-elem-link
+						+rem(margin,8px 0 20px)
+					.text2
+						// +rem(margin-right,-6px)
+						overflow: hidden
+						+rem(letter-spacing,-0.2px)
+						line-height: 1.6
+					
+			
 	&-head
 		+rem(padding-right,50px)
 		+r(991)
@@ -4113,16 +4183,213 @@ a
 				+rem(margin-bottom,10px)
 			.text2
 				+rem(max-width,250px)
+
 		&-img
 			+rem(height, 185px)
 			+rem(margin-bottom,25px)
 			img
 				max-width: 100%
 				max-height: 100%
-		
+.vacancy
+	&-wrapper
+		+rem(padding-top,40px)
+		b 
+			padding-left: 0
+		.caption-content
+			+rem(top,30px)	
+			+r(991)
+				+rem(padding-top,20px)
+				margin-left: 0
+	&-head
+		cursor: pointer
+		border-top: $bb
+		&:last-of-type
+			border-bottom: $bb
+		.title
+			+rem(font-size,18px)
+			+tr(color .3s)
+			+rem(padding, 25px 1px 20px)
+		.table-arr 
+			+rem(padding, 25px 15px 20px 15px)
+			+vertical
+		.select-img
+			display: inline-block
+			vertical-align: middle
+			+rem(width,8px)
+			+rem(height,6px)
+			+contain
+			background-image: url(../img/icons/i-arr-b.png)
+		&:hover
+			.title	
+				color: $hover
+		&.active
+			.title
+				color: $active
+			.select-img
+				transform: scale(1,-1)
+		&-inner
+			display: table
+			width: 100%
+			border-bottom: none
+			.title,.table-arr 
+				display: table-cell
+				vertical-align: middle
+				
+	&-body
+		b
+			+rem(padding-left,24px)
+			+rem(font-size,14px)
+			+rem(margin,4px 0)
+		blockquote
+			+rem(margin-bottom,70px)
+		ul 
+			+rem(margin, 20px 0 32px)
+			li 
+				+rem(padding-left,24px)
+				+rem(margin,9px 0)
+				color: rgb(109, 109, 109);
+				line-height: 1.375;
+				+rem(font-size,16px)
+				position: relative
+				&:before
+					position: absolute
+					content: ''
+					background-color: #000
+					display: inline-block
+					+rem(width,6px)
+					+rem(height,6px)
+					+rem(top,7px)
+					+rem(left,0px)
+					border-radius: 50%
+					
+.content-form
+	&-block
+		&>.title
+			+rem(margin-top,5px)
+			+rem(margin-bottom,64px)
+		&-block
+			+rem(margin, 0 -30px)
+			background-color: #faf9f5
+			+rem(padding, 33px 38px)
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				height: 2px
+				background-color: $hover
+				+tr(width .35s)
+				display: inline-block
+				left: 0
+				right: 0
+			.input-wrapper
+				+rem(margin-bottom,22px)
 
+.js-select-custom.active
+	.selects
+		border-color: $active
+		.select-img
+			transform: scale(1,-1)
+	.dropdown-target
+		transform: translateY(0)
+		opacity: 1
+		visibility: visible
 
+.select-check
+	display: inline-block
+	vertical-align: top
+	width: 100%
+	+rem(margin-top,-1px)
+	&.disabled
+		opacity: .5
+		pointer-events: none
+	&.error
+		.selects
+			border-color: red
+	div::-webkit-scrollbar
+		border-radius: 10px;
+		width: 4px
+		background-color: #faf9f5
+	div::-webkit-scrollbar-thumb
+		background-color: $hover
+	.dropdown-inner
+		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+		+rem(padding-top,20px)
+		+rem(padding-bottom,10px)
 
+	.dropdown-content
+		overflow-y: auto
+		+rem(max-height,322px)
+		+rem(margin-left,-7px)
+		.listed
+			b 
+				+rem(font-size,14px)
+				padding-left: 0
+				cursor: auto
+				+rem(margin-top,1px)
+				color: #6d6d6d
+				
+
+.selects
+	width: 100%
+	display: inline-block
+	position: relative
+	+tr(border .3s)
+	+padlr(15px)
+	text-align: left
+	background-color: #FFF
+	border: $bb 
+	border-radius: 3px
+	+rem(font-size,14px)
+	+rem(height,41px)
+	color: #c5c5c5
+	&:active
+		color: #c5c5c5
+	.select-img
+		position: absolute
+		+rem(right,15px)
+		top: 44%
+
+	.btn-text
+		+rem(margin-top,2px)
+		display: block
+		+rem(font-size,14px)
+		white-space: nowrap
+		text-overflow: ellipsis
+		overflow: hidden
+		width: 100%
+		+rem(padding-right,25px)
+		&.active
+			color: #000
+	.select-img
+		display: inline-block
+		vertical-align: middle
+		+rem(width,8px)
+		+rem(height,6px)
+		+contain
+		background-image: url(../img/icons/i-arr-bl.png)
+
+.option
+	display: block
+	width: 100%
+	cursor: pointer;
+	position: relative;
+	+rem(padding,5px 0 5px 7px);
+	+rem(font-size,14px)
+	color: rgb(109, 109, 109);
+	line-height: 1.429;
+	margin-bottom: 0 !important
+	white-space: normal !important
+	&:hover
+		span
+			color: #000
+	span 
+		+tr(color .3s)
+	input
+		position: absolute;
+		opacity: 0
+		&:checked + span
+			color: #000
 
 
 

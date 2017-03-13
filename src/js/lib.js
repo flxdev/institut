@@ -5,3 +5,6 @@
 //=include lib/sticky-kit.min.js
 //=include lib/cocoen.min.js
 //=include lib/inputmask.min.js
+//=include lib/moment.js
+//=include lib/combodate.js
+//=include lib/jquery-ui.min.js
