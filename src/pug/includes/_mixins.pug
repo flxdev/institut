@@ -105,14 +105,14 @@ mixin person(name,text,img)
 		.persona-item-text
 			.title.h4 #{name}
 			.text2 #{text}
-mixin partner(img, name,link,text)
-	.partner-elem
-		.partner-elem-inner
-			.partner-elem-img
+mixin partner2(img, name,link,text)
+	.partner-block
+		.partner-block-inner
+			.partner-block-img
 				img(src="img/partner/"+img+".png", alt="5345")
-			.partner-elem-content
+			.partner-block-content
 				.title.h4 #{name}
-				.partner-elem-link
+				.partner-block-link
 					a(href="#") #{link}
 				.text2 #{text}
 mixin vacancy(name)

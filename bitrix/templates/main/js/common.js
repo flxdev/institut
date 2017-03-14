@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		if (altText) {
 			this.data("alt-text", this.text());
-			this.find('a').text(altText);
+			this.find('.link-black').text(altText);
 
 		}
 	};
@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				itemsl = items.length,
 				text = 'Свернуть'
 			trigger = _.parent().find('.js-list-more');
+
 			if(len >= itemsl){
 				trigger.css('display', 'none');
 			}else{
@@ -215,6 +216,44 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		})
 	}listhide();
+	function comenthide(){
+		var target = $('.js-coment');
+		target.each(function(){
+			var _ = $(this),
+				len = _.height(),
+				item = _.find('.feedback-item-content-inner').height(),
+				trigger = _.parent().find('.js-list-more');
+			$(window).on('resize', function(){
+				setTimeout(function(){
+					item = _.find('.feedback-item-content-inner').height();
+					Checkh();
+				},600)
+			});
+			function Checkh(){
+				if(len >= item){
+					trigger.css('display', 'none');
+				}else{
+					trigger.removeAttr('style');
+					initclick();
+				}
+			}Checkh();
+			function initclick(){
+				trigger.off('click').on('click', function(e){
+					console.log(item);
+					if(_.attr('style')){
+						// len.removeAtttr('style');
+						_.css('max-height', '');
+						$(this).toggleText();
+					}else{
+						_.css('max-height', item);
+						$(this).toggleText();
+					}
+
+					// $(".aside-stick").trigger("sticky_kit:recalc");
+				});
+			}
+		})
+	}comenthide();
 	function Accordeon(){
 		if($('.offerlist-section').length){
 			// $(".aside-stick").trigger("sticky_kit:detach");
@@ -280,6 +319,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	validateForms();
 	masktel();
 	initCustomSelectList();
+	datepick();
 //end of document.ready
 });
 //end of document.ready
@@ -301,6 +341,18 @@ function initCustomSelectList() {
 			_list = _select.find('.select-list');
 		_select.on('reinit', function() {
 			var _active = _list.find('input:checked');
+			if($(this).parents('.depends-on').length){
+				var item = $(this).closest('.depends-on');
+				if(_active.length){
+					var next = item.nextAll('.depends-on').find('.select-check');
+					next.removeClass('disabled').find('input').prop('checked', false);
+					next.trigger('reinit');
+				}else{
+					var next = item.nextAll('.depends-on').find('.select-check');
+					next.addClass('disabled').find('input').prop('checked', false);
+					next.trigger('reinit');
+				}
+			}
 			if(_active.length) {
 				_button.children('.btn-text').addClass('active').text(''+_active.siblings('span').text()+'').parent().addClass('is-checked')
 			}
@@ -335,7 +387,8 @@ function aside(){
 		setTimeout(function(){
 			$(".aside-stick").stick_in_parent({
 				parent: ".aside-menu",
-				offset_top : 73
+				offset_top : 73,
+				recalc_every: 1
 			});
 		},1)
 	}stickinit();
@@ -348,7 +401,57 @@ function aside(){
 		}
 	});
 }
+function updateToSelectMenu() {
+	$('.ui-datepicker-title select').selectmenu({
+		select: function(e) {
+			$(this).trigger('change');
+			updateToSelectMenu();
+		}
+	})
+	$('.ui-datepicker-title').append($('.ui-selectmenu-menu'));
+}
 
+function datepick(){
+
+	var item = $( ".datepicker" );
+	item.each(function(){
+
+		var _ = $(this),
+			cur_date = new Date(),
+			hours = cur_date.getHours(),
+			offset;
+		_.datepicker({
+			changeMonth: true,
+			changeYear: true,
+			dayNamesMin: ["Вс" , "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+			monthNamesShort: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
+			dateFormat: 'dd.mm.yy',
+			firstDay: 1,
+			minDate: offset,
+			yearRange: '-0:+1',
+			beforeShow: function() {
+				setTimeout(function() {
+					updateToSelectMenu()
+				},0);
+			},
+			onChangeMonthYear: function() {
+				setTimeout(function() {
+					updateToSelectMenu()
+				},0);
+		   }
+		});
+		_.datepicker('refresh');
+	})
+	$("body").add('.out').add('.page__outer').scroll(function() {
+	  item.datepicker('hide');
+	  $('.datepicker').blur();
+	});
+
+	$(window).resize(function() {
+	  item.datepicker('hide');
+	  $('.datepicker').blur();
+	});
+}
 function doctorSlider(){
 	$(".js-slider-doctor").each(function() {
 		var _this = $(this);

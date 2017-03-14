@@ -136,9 +136,11 @@ body, .out
 		&-mobmenu
 			position: fixed
 			+rem(top, 67px)
-			z-index: 20
+			z-index: 100
 			width: 100%
 			height: 100%
+			bottom: 0
+			left: 0
 			background-color: #FFF
 			transform: translateX(100%)
 			+tr(transform .3s)
@@ -454,6 +456,8 @@ body, .out
 			flex-basis: 26.5%
 			overflow: hidden
 			+rem(padding,8px 0 18px)
+			position: relative
+			
 			+r(1150)
 				flex-basis: 23.5%
 			+r(991)
@@ -466,9 +470,17 @@ body, .out
 				height: 100%
 				+contain
 				transition: transform .2s .1s, opacity .2s
+				position: relative
+				z-index: 20
 			&-big
 				+r(991)
 					display: none
+			&-small
+				+r(991)
+					position: absolute
+					left: 0
+					top: 0
+					transform: translateZ(0)			
 		&-button
 			+rem(padding-top,8px)
 			.btn
@@ -1502,19 +1514,22 @@ blockquote
 		width: 100%
 		border-bottom: $bb
 		align-content: center
+		font-size: 0
 		+r(870)
 			order: 2
-			+rem(margin-top,-40px)
 			position: relative
 			z-index: 2
 			+rem(padding-bottom,20px)
+			+rem(padding-top,20px)
 			.link-f
 				+rem(padding, 10px 0)
 				min-width: 33.33%
 				height: auto
+				
 		+r(600)
 			.link-f
 				min-width: 50%
+
 		.link-f
 			+rem(padding-top,63px)
 			+rem(padding-bottom,63px)
@@ -1563,6 +1578,7 @@ blockquote
 		+r(870)
 			order: 1
 			+rem(padding-top, 43px)
+			+rem(flex-basis,230px)
 			&> .text-bold
 				display: none
 			&-button
@@ -1632,10 +1648,13 @@ blockquote
 		display: block
 		font-size: 0
 		+rem(padding, 55px 0)
+		position: relative
+		
 		+r(950)
 			display: flex
-			flex-flow: row wrap
+			flex-flow: column nowrap
 			+rem(padding, 35px 0)
+			align-items: stretch
 			.soc-wrapp
 				order: 2
 				text-align: center
@@ -1664,7 +1683,7 @@ blockquote
 			display: inline-block
 			vertical-align: top
 			+r(950)
-				min-width: 50%
+				min-width: 100%
 		&-notify,&-developer
 			+r(600)
 				min-width: 100%
@@ -1707,6 +1726,13 @@ blockquote
 		.soc-wrapp
 			width: 15.5%
 			+rem(margin-top,-2px)
+			+r(950)
+				position: absolute
+				left: 0
+				top: 0
+				text-align: right
+				+rem(padding-right,10px)
+				+rem(padding-top,30px)
 		&-developer
 			width: 25%
 			text-align: right
@@ -2577,6 +2603,11 @@ a
 		flex-flow: row nowrap
 		align-items: stretch
 		+rem(padding-top, 75px)
+		&.inner
+			+rm(991)
+				+rem(padding-top, 45px)	
+			.content-column-content-inner
+				padding-bottom: 0
 		+r(991)
 			+rem(padding-top, 35px)
 		+r(735)
@@ -2711,6 +2742,11 @@ a
 				width: 50%
 				+r(600)
 					width: 100%
+.aside-wrapp
+	.menu-nav
+		.more
+			+r(735)
+				display: none	!important
 .menu-nav
 	.more
 	&-item
@@ -2719,8 +2755,7 @@ a
 			&.active
 				pointer-events: none
 		&.more
-			+r(735)
-				display: none	!important
+
 			.link-black
 				box-shadow: none
 				color: $hover
@@ -3855,6 +3890,18 @@ a
 	text-align: left
 	+r(480)
 		+rem(margin-right,-25px)
+	.divider
+		+rem(margin-left,-37px)
+		+rem(margin-right,-3px)
+		+rem(margin-bottom,30px)
+		+rem(margin-top,25px)
+		background-color: #ebebeb
+		color: #ebebeb
+		height: 1px
+		border: none
+		display: block
+		+r(600)
+			+rem(margin-right,-10px)
 	&-footer
 		+rem(padding-right,35px)
 		+rem(margin,10px 0 3px)
@@ -4054,7 +4101,7 @@ a
 			padding-left: 0
 			margin-right: 0	
 		.partner
-			&-elem
+			&-block
 				width: 50%
 				+rem(padding-right,50px)
 				display: inline-block
@@ -4065,15 +4112,15 @@ a
 					width: 100%
 					padding-right: 0
 					&:nth-child(n+2)
-						.partner-elem-inner	
+						.partner-block-inner	
 							border-top: $bb	
 							+rem(padding-top,25px)				
 							+rem(padding-top,25px)				
 				&:nth-child(-n+2)
-					.partner-elem-inner	
+					.partner-block-inner	
 						border-top: none
 				&:nth-child(n+3)
-					.partner-elem-inner	
+					.partner-block-inner	
 						+rem(padding-top,45px)		
 				&-inner
 					font-size: 0
@@ -4095,7 +4142,7 @@ a
 					a	
 						+rem(font-size,14px)
 						box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
-					.partner-elem-link
+					.partner-block-link
 						+rem(margin,8px 0 20px)
 					.text2
 						// +rem(margin-right,-6px)
@@ -4267,11 +4314,19 @@ a
 		&>.title
 			+rem(margin-top,5px)
 			+rem(margin-bottom,64px)
+			+r(735)
+				+rem(margin-bottom,30px)
 		&-block
 			+rem(margin, 0 -30px)
 			background-color: #faf9f5
 			+rem(padding, 33px 38px)
 			position: relative
+			+r(1210)
+				+rem(margin, 0 -100px 0 -30px)
+			+r(991)
+				+rem(margin, 0 -30px)
+			+r(735)
+				+rem(margin, 0 -15px)
 			&:before
 				position: absolute
 				content: ''
@@ -4390,10 +4445,274 @@ a
 		opacity: 0
 		&:checked + span
 			color: #000
+.star
+	&-wrapper
+		white-space: nowrap
+		+rem(margin-top,9px)
+		&.small 
+			.star-item
+				+rem(width,15px)
+				+rem(height,15px)
+				&:not(:first-child)
+					+rem(margin-left,3px)
+	&-item
+		display: inline-block
+		+rem(width,18px)
+		+rem(height,18px)
+		+contain
+		cursor: pointer
+		+tr(transform .3s)
+		background-image: url(../img/icons/star-gray.png)
+		&:not(.active):hover
+			transform: scale(1.2)
+		&:not(:first-child)
+			+rem(margin-left,9px)
+		&.active
+			background-image: url(../img/icons/star-yellow.png)
+.js-stars.has-error
+	.label
+		color: red
+.feedback
+	&-wrapper
+		+rem(margin-top,55px)
+	&-item
+		+rem(padding,30px 0)
+		&:not(:last-child)
+			border-bottom: $bb
+		&:not(:first-child)
+			+rem(padding,60px 0 30px)
+		.menu-nav-item
+			cursor: pointer
+			+rem(margin, 10px 0 15px)
+			.link-black
+				+rem(font-size,15.5px)
+		&-head
+			display: table
+			width: 100%
+			+rem(margin-bottom,15px)
+			.text2
+				color: #bfbfbf
+				+rem(font-size,14px)
+			.title,.star-wrapper
+				display: table-cell
+				vertical-align: top
+				+r(735)
+					display: block
+					text-align: left
+				
+			.star-wrapper
+				+rem(width,115px)	
+				text-align: right
+				.star-item
+					+rem(margin-top,2px)
+		&-who
+			.who-line
+				+rem(font-size,14px)
+				color: #6d6d6d
+				+r(735)
+					+rem(margin,3px 0)
+			.text.bold
+				+rem(font-size,14px)
+				display: inline-block
+				+rem(padding-right,5px)
+		&-content
+			color: #6d6d6d
+			+rem(font-size,16px)
+			line-height: 1.5;
+			+rem(margin-top,15px)
+			overflow: hidden
+			+rem(max-height,96px)
+			+tr(max-height .3s)
+		&-reply
+			position: relative
+			+rem(padding-left,25px)
+			color: #6d6d6d
+			+rem(font-size,15.5px)
+			+rem(margin-top,25px)
+			.text.bold
+				+rem(font-size,14px)
+				+rem(margin-bottom,12px)
+			.reply-content
+				line-height: 1.5
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				width: 1px
+				background-color: $hover
+.ui-datepicker-month, .ui-datepicker-year
+  border: none;
+  background-color: white;
+  border-color: none;
+#ui-datepicker-div .ui-selectmenu-menu, #ui-datepicker-div .ui-selectmenu-button
+  width: 35%;
+  +rem(font-size,16px)
+  +r(544)
+    width: 50%;
+.ui-menu
+  max-height: 200px !important;
+  +scrollbar
+    +rem(width,4px)
+  +scrollbar-track
+      background-color: #fff
+  +scrollbar-thumb
+      background-color: $hover
 
+#ui-datepicker-div .ui-selectmenu-button
+  opacity: 0.7
+  &:hover
+    opacity: 1
+.ui-datepicker
+  +rem(font-size,16px)
+  font-weight: 300
+  border: none !important
+  box-shadow: 0px 1px 10px 0px rgba( 0, 0, 0, 0.15);
+  +rem(max-width,343px)
+  width: 80%
+  +rem(padding-top,11px)
 
+  .ui-datepicker-calendar
+    +rem(margin, 0 0 20px)
+  & *:not(.ui-menu-item)
+    border: none !important
+    &:hover
+      border: none !important
+    &:active
+      background: $white
+      color: #000
+    a
+      border: none !important
+  th
+    span
+      +rem(font-size,12px)
+  td 
+    +rem(padding,4px 2px 9px)
+  .ui-selectmenu-button
+    background: $white
+    text-align: center
+    +tr(opacity .3s)
+    &.ui-selectmenu-button-open
+      opacity: 1 !important
+      .ui-selectmenu-icon
+        transform: scale(1,-1)
+  .ui-selectmenu-text
+    +rem(font-size,16px)
+    font-weight: 300
+    margin: 0
+  .ui-selectmenu-icon
+    background-image: url(../img/icons/i-arr-bl.png)
+    +contain
+    background-size: 8px 6px
+    left: auto
+    +rem(top,1px)
+  .ui-menu-item-wrapper
+    font-weight: 300
+  .ui-menu
+    +rem(max-width,100px)
+    +rem(margin-top,5px)
+    box-shadow: 0px 1px 10px 0px rgba( 0, 0, 0, 0.15);
+  .ui-state-active
+    color: #000
+    background-color: $white
+  .ui-menu-item
+    text-align: left
+    +rem(font-size,14px)
+    .ui-menu-item-wrapper
+      color: #6d6d6d
+      &.ui-state-acticve,&:hover
+        color: $active !important
+.ui-datepicker-header
+  background: $white
+  .ui-button
+    padding: 0
+  .ui-datepicker-prev, .ui-datepicker-next
+    display: inline-block
+    vertical-align: top
+    position: absolute
+    +rem(width,30px)
+    +rem(height,30px)
+    .ui-icon
+      display: inline-block
+      vertical-align: top
+      +rem(width,10px)
+      +rem(height,8px)
+      +rem(margin-top,-5px)
+  .ui-datepicker-next
+    right: 0
+    .ui-icon
+      transform: rotate(-90deg)
+  .ui-datepicker-prev
+    left: 0
+    .ui-icon
+      transform: rotate(90deg)
+  .ui-datepicker-next,.ui-datepicker-prev
+    background: 0 0
+    cursor: pointer
+    &.ui-datepicker-next-hover
+    &.ui-datepicker-prev-hover
+    &.ui-state-active
+      .ui-icon
+        background-color: #FFF
+    .ui-icon
+      +contain
+      background-image: url(../img/icons/i-arr-b.png)
+      +rem(height,11px)
+.ui-datepicker td a, .ui-datepicker td span
+  text-align: center
+  +rem(font-size,14px)
+  +rem(line-height,21px)
+  &.ui-state-default
+    border-radius: 50%
+    background: 0 0
+  &.ui-state-active
+    background: $hover
+    color: #000
+    opacity: 1
+.ui-datepicker td a
+  +rem(width,25px)
+  +rem(height,25px)
+  opacity: .7
+  display: block
+  margin: 0 auto
+  +rem(padding,2px)
+  text-align: center
+  &:hover,&.ui-state-active
+    opacity: 1
+.ui-state-highlight
+  color: #000 !important
+  font-weight: 400
+  &.ui-state-active
+    color: $white !important
+.ui-menu-item-wrapper
+  +tr(background .3s)
 
-
+.clinic
+	&-block
+		&:not(:last-of-type)
+			.organ-item-inner
+				border-bottom: $bb 
+				+rem(padding-bottom,85px)
+				+r(991)
+					+rem(padding-bottom,45px)
+		&:not(:first-of-type)
+			+rem(padding-top,80px)
+			+r(991)
+				+rem(padding-top,50px)
+		&:last-of-type
+			.organ-item-inner
+				padding-bottom: 0
+		.organ-item
+			width: 100%
+			padding-right: 0
+			&-inner
+				border-top: none
+				+rem(padding-top,30px)
+				+r(735)
+					+rem(padding-top,15px)
+				.title
+					+rem(margin-bottom,26px)
 
 		
 

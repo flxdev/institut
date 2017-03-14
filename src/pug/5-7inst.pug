@@ -1,7 +1,7 @@
 extends _layout
 
 block title
-	title Рекламодателям
+	title Записаться на приём
 
 block content
 	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
@@ -9,9 +9,9 @@ block content
 		.box.content-head
 			.content-bread
 				a(href="#").content-bread-item.text2 Главная
-				a(href="#").content-bread-item.text2 Рекламодателям
+				a(href="#").content-bread-item.text2 Записаться на приём
 			.content-main
-				.title.h1 Рекламодателям
+				.title.h1 Записаться на приём
 	.box
 		.aside-wrapp
 			// а вот тут ссылки уже ссылки а не якоря
@@ -40,7 +40,7 @@ block content
 						li.menu-nav-item
 							a(href="#").link-black партнёры
 						li.menu-nav-item
-							a(href="#").link-black.active Рекламодателям
+							a(href="#").link-black Рекламодателям
 						li.menu-nav-item
 							a(href="#").link-black вакансии
 						li.menu-nav-item
@@ -48,26 +48,221 @@ block content
 						li.menu-nav-item
 							a(href="#").link-black отзывы
 						li.menu-nav-item
-							a(href="#").link-black Записаться на приём
+							a(href="#").link-black.active Записаться на приём
 
 			.aside-content
 				.content-column-wrap.special
 					.content-column-content
 						.content-column-content-inner
-							h1 Приглашаем вас к сотрудничеству
-							p.caption За долгие годы своей истории «Институт красоты» стал не только самой авторитетной клиникой страны, но и научным центром, в котором получили рождение косметологические и хирургические методы лечения, а также школой, которой многие сотни сегодняшних врачей обязаны своим высоким профессиональным мастерством.
-								mark.caption-content
-									i «Институт Красоты» — это история развития 
-										a(href="#") косметологии 
-										|и 
-										a(href="#") пластической хирургии 
-										| в России
-							p Наша клиника занимается решением социально значимых задач в соответствии с Государственной программой города Москвы на среднесрочный период (2012-2016 годы) «Развитие здравоохранения города Москвы (Столичное здравоохранение)». Более того, в компании ежесезонно проводятся презентации косметических линий. Каждый год специалисты представляют косметические продукты на российских выставках, где каждый желающий может ознакомиться с ассортиментом компании, а также обсудить все детали сотрудничества.
-							blockquote 
-								b По вопросам сотрудничества или размещения рекламных материалов пишите нам, либо звоните по телефону:
-								p +7 (495) 212-06-64 &nbsp;&nbsp;&nbsp;
-									a(href="#")  kirillina@institut-krasoty.ru
-							p За долгие годы своей истории «Институт красоты» стал не только самой авторитетной клиникой страны, но и научным центром, в котором получили рождение косметологические и хирургические методы лечения, а также школой, которой многие сотни сегодняшних врачей обязаны своим высоким профессиональным мастерством.
+							.content-form-block
+								.title.h4 Записаться на приём
+								.content-form-block-block
+									form.form.js-validate(data-block='.modal-container')
+										.input-item.s-50
+											.input-wrapper.req
+												label Имя
+												input.input-main(type="text",placeholder='Имя',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Не заполнено")
+										.input-item.s-50
+											.input-wrapper.req
+												label E-mail
+												input.input-main(type="email",placeholder='example@mail.com',data-validation="email",data-validation-error-msg="Не заполнено")
+										.input-item.s-50
+											.input-wrapper.req
+												label Фамилия
+												input.input-main(type="text",placeholder='Фамилия',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Не заполнено")
+										.input-item.s-50
+											.input-wrapper.req
+												label Телефон
+												input.input-main(type="tel",placeholder='Телефон',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Не заполнено")
+										.input-item.s-50
+											.input-wrapper
+												label Отчество
+												input.input-main(type="text",placeholder='Отчество',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Не заполнено")
+										hr.divider
+										.input-item.s-50.depends-on
+											.input-wrapper
+												.label Услуга
+												.select-check.js-select-custom
+													button.selects(data-placeholder='Выберите')
+														span.btn-text Выберите
+														i.select-img
+													.dropdown-target
+														.dropdown-inner
+															.dropdown-content
+																.select-u-body.select-list
+																	label.option
+																		input(type='radio', name='group45', value='val1',)
+																		span Здоровье
+																	label.option
+																		input(type='radio', name='group45', value='val2')
+																		span Нездоровье
+																	label.option
+																		input(type='radio', name='group45', value='val3')
+																		span DFDF
+																	label.option
+																		input(type='radio', name='group45', value='val4')
+																		span GHJGHJ
+																	label.option
+																		input(type='radio', name='group45', value='val5')
+																		span GHJ
+																	label.option
+																		input(type='radio', name='group45', value='val6')
+																		span HGJGHJ
+																	label.option
+																		input(type='radio', name='group45', value='val7')
+																		span GHJHG
+																	label.option
+																		input(type='radio', name='group45', value='val8')
+																		span HGJG
+																	label.option
+																		input(type='radio', name='group45', value='val9')
+																		span 3HGJ
+										.input-item.s-50.depends-on
+											.input-wrapper.req
+												.label Специалист
+												.select-check.js-select-custom
+													button.selects(data-placeholder='Выберите')
+														span.btn-text Выберите
+														i.select-img
+													.dropdown-target
+														.dropdown-inner
+															.dropdown-content
+																.select-u-body.select-list
+																	label.option
+																		input(type='radio', name='group4', value='val1')
+																		span Специалист1
+																	label.option
+																		input(type='radio', name='group4', value='val2')
+																		span Специалист2
+																	label.option
+																		input(type='radio', name='group4', value='val3')
+																		span Специалист 3
+																	label.option
+																		input(type='radio', name='group4', value='val4')
+																		span GHJGHJ
+																	label.option
+																		input(type='radio', name='group4', value='val5')
+																		span GHJ
+																	label.option
+																		input(type='radio', name='group4', value='val6')
+																		span HGJGHJ
+																	label.option
+																		input(type='radio', name='group4', value='val7')
+																		span GHJHG
+																	label.option
+																		input(type='radio', name='group4', value='val8')
+																		span HGJG
+																	label.option
+																		input(type='radio', name='group4', value='val9')
+																		span 3HGJ
+																	label.option
+																		input(type='radio', name='group4', value='val9')
+																		span 3HGJ
+																	label.option
+																		input(type='radio', name='group4', value='val9')
+																		span 3HGJ
+																	label.option
+																		input(type='radio', name='group4', value='val9')
+																		span 3HGJ
+																	label.option
+																		input(type='radio', name='group4', value='val9')
+																		span 3HGJ
+										hr.divider
+										.input-item.s-50
+											.input-wrapper
+												label Дата приема
+												input.input-main.datepicker(type="text",placeholder='Отчество',data-validation="length required",data-validation-length='min2',data-validation-error-msg="Не выбрано")
+										.input-item.s-50
+											.input-wrapper.req
+												.label Время приема
+												.select-check.js-select-custom
+													button.selects(data-placeholder='Выберите')
+														span.btn-text Выберите
+														i.select-img
+													.dropdown-target
+														.dropdown-inner
+															.dropdown-content
+																.select-u-body.select-list
+																	label.option
+																		input(type='radio', name='group47', value='val1')
+																		span 9:00
+																	label.option
+																		input(type='radio', name='group47', value='val2')
+																		span 9:30
+																	label.option
+																		input(type='radio', name='group47', value='val3')
+																		span 10:00
+																	label.option
+																		input(type='radio', name='group47', value='val4')
+																		span 10:30
+																	label.option
+																		input(type='radio', name='group47', value='val5')
+																		span 11:00
+																	label.option
+																		input(type='radio', name='group47', value='val6')
+																		span 11:30
+																	label.option
+																		input(type='radio', name='group47', value='val7')
+																		span 12:00
+																	label.option
+																		input(type='radio', name='group47', value='val8')
+																		span 12:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 13:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 13:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 14:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 14:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 15:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 15:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 16:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 16:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 17:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 17:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 18:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 18:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 19:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 19:30
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 12:00
+																	label.option
+																		input(type='radio', name='group47', value='val9')
+																		span 12:30
+										.input-item.s-100
+											.input-wrapper
+												label Комментарий
+												textarea.input-main(rows='5',placeholder='Комментарий') 
+										.form-footer
+											.form-footer-notify
+												.text Поля обязательные для заполнения
+											button(type='submit').btn.yell Записаться
 					//div нужен
 					.content-column-right
 
