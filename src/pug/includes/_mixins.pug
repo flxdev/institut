@@ -67,7 +67,7 @@ mixin listlist(id,name,img)
 	.feachure-list-item(id=id)
 		.feachure-list-item-inner
 			if img != ""
-				.doc-card-inner(style='background-image:url(/img/list/'+img+'.png);')
+				.doc-card-inner(style='background-image:url(img/list/'+img+'.png);')
 					.doc-card-text
 						a(href="#").title.h2.link #{name}
 							.link-arr
@@ -107,13 +107,13 @@ mixin person(name,text,img)
 			.text2 #{text}
 mixin partner2(img, name,link,text)
 	.partner-block
-		.partner-block-inner
+		a(href="#").partner-block-inner
 			.partner-block-img
 				img(src="img/partner/"+img+".png", alt="5345")
 			.partner-block-content
 				.title.h4 #{name}
 				.partner-block-link
-					a(href="#") #{link}
+					span #{link}
 				.text2 #{text}
 mixin vacancy(name)
 	.vacancy-head.js-accordion-trigger
@@ -146,5 +146,6 @@ mixin vacancy(name)
 				b По вопросам трудоустройства обращаться к начальнику отдела кадров:
 				p Кириллиной Татьяне Вячеславовне
 					br 
-					| +7 (495) 212-06-64 &nbsp;&nbsp;&nbsp;
+					| 
+					a(href="#").text2 +7 (495) 212-06-64 &nbsp;&nbsp;&nbsp;
 					a(href="#")  kirillina@institut-krasoty.ru

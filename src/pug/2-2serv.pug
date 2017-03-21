@@ -18,22 +18,17 @@ block content
 	.box.product-container
 		.product-container-slider
 			.product-container-slider-main
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
-				.product-slider-main-item(style="background-image:url(/img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(img/product/1.png);")
+				.product-slider-main-item(style="background-image:url(img/product/1.png);")
 			.product-container-slider-slides
 				.product-container-slider-add
-					.product-slider-add-item(style="background-image:url(/img/product/s1.png);")
-					.product-slider-add-item(style="background-image:url(/img/product/s2.png);")
-					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
-					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
-					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
-					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
-					.product-slider-add-item(style="background-image:url(/img/product/s3.png);")
+					.product-slider-add-item(style="background-image:url(img/product/s1.png);")
+					.product-slider-add-item(style="background-image:url(img/product/s2.png);")
+					.product-slider-add-item(style="background-image:url(img/product/s3.png);")
+					.product-slider-add-item(style="background-image:url(img/product/s3.png);")
 		.product-container-feachure
 			.title.h4 Процедура диагностики кожи позволяет узнать:
 			ul.product-container-list.js-slidelist(data-items='6')
@@ -60,7 +55,7 @@ block content
 				.price-old-cont
 					.price-old 250 000₽
 				a(href="#").btn.yell Записаться на прием
-			.spec-block
+			a(href="#specialist").spec-block.js-scroll-to
 				.text Специалисты:
 				+doctors('4', 22)
 	.box
@@ -117,7 +112,11 @@ block content
 							blockquote
 								b Наш пациент заслуживает особого индивидуального подхода!
 								p Поэтомуво время первичной консультации мы проводим профессиональную диагностику состояния Вашей кожи и на основании полученной информации рекомендуем максимально эффективные косметологические процедуры.
-							p Далее на всех этапах лечения мы проводиммониторинг динамики его эффективности, визуализацию и сравнительный анализ состояния кожи до и после процедур.
+							p.caption Далее на всех этапах лечения мы проводиммониторинг динамики его эффективности, визуализацию и сравнительный анализ состояния кожи до и после процедур.
+								mark.caption-content
+									i УЗИ-кожи позволит исследовать и определить состояние 
+										a(href="#") новооброзования
+										|, установленных филеров, фиброза, рубцовых изменений.
 							.video-wrap
 								.video-wrap-cover(style='background-image:url(img/content/vbg.jpg);')
 								iframe(width='100%', height='100%', src='https://www.youtube.com/embed/qCBOCVblDYk', frameborder='0', allowfullscreen='')
@@ -153,7 +152,7 @@ block content
 										.diplom-slider-inner-img
 											img(src="img/content/d1.jpg", alt="fsdfsd")
 									i Сертификат на осуществление медицинской деятельности
-	.wrapper.gray.more-content-wrapper
+	.wrapper.gray.more-content-wrapper#specialist
 			.box
 				.news-title
 					.title.h2 Специа&shy;листы

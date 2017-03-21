@@ -306,6 +306,12 @@ document.addEventListener("DOMContentLoaded", function() {
 			return false;
 		});
 	}stars();
+	$('.diplom-slider-inner').each(function(){
+		$(this).lightGallery({
+	    	cssEasing : 'cubic-bezier(0.470, 0.000, 0.745, 0.715)',
+	    	selector: '.diplom-slider-inner-img'
+		}); 
+	});
 	DesktopMenu();
 	doctorSlider();
 	rombSlider();
@@ -583,6 +589,8 @@ function partnerSlider(){
 			draggable: false,
 			dots: false,
 			touchMove: true,
+			autoplay: true,
+			autoplaySpeed: 5000,
 			infinite: false,
 			appendArrows: _this.parent().find('.nav-arrows'),
 			slidesToShow: 6,

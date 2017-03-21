@@ -1,103 +1,30 @@
 extends _layout
 
 block title
-	title Клиники
+	title Ошибка 404
 
 block content
 	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
 		.box.content-head
 			.content-bread
 				a(href="#").content-bread-item.text2 Главная
-				a(href="#").content-bread-item.text2 Клиники
+				a(href="#").content-bread-item.text2 Ошибка 404
 			.content-main
-				.title.h1 Клиники
+				.title.h1 Ошибка 404
 	.box
-		.aside-wrapp.inner
-			aside.aside-menu(data-sticky_parent)
-				// тут модификатор .list-bold
-
-				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
-					.aside-title.title.h4.js-dropdown Прайс-лист
-					ul.menu-nav.js-dropdown-target
-						li.menu-nav-item
-							a(href="#1").link-black.js-scroll-to Арбат
-						li.menu-nav-item
-							a(href="#2").link-black.js-scroll-to Комсомольский пр-т
-			.aside-content
-				.content-column-wrap.special
-					.content-column-content
-						.content-column-content-inner
-							.clinic-block#1
-								h1 Клиника на арбате
-								p.caption  История первого в стране лечебного учреждения косметологического профиля началась в 1930 году. Тогда по инициативе  П.С. Жемчужиной в Москве был открыт первый кабинет врачебной косметики.
-									mark.caption-content
-										span.date 
-											span 1930
-											|год
-										i основание Института Красоты на Арбате 
-								.content-slider-wrap
-									.content-slider-slider
-										.content-item
-											img(src="img/content/1.jpg", alt="fsdfsd")
-										.content-item
-											img(src="img/content/1.jpg", alt="fsdfsd")
-										.content-item
-											img(src="img/content/1.jpg", alt="fsdfsd")
-									.content-slider-nav
-										.nav-arrows
-								h3 Руководителем и организатором первого кабинета стала С.Я. Газарова.
-								p В перечне услуг был массаж лица по методике доктора Поспелова, гигиенический и косметический массажи, а также уход за кожей головы и за волосами.
-
-								.organ-item
-									.organ-item-inner
-										.title.h4 Контакты
-										.organ-item-block
-											.text.bold Адрес:
-											.text2 119002, Москва, Арбат
-												br
-												|Малый Николопесковский переулок, д.8
-										.organ-item-block
-											.text.bold Телефон:
-											.text2 +7 (499) 973-09-24
-										.organ-item-block
-											.text.bold Режим работы:
-											.text2 Пн-пт 9:00–21:00   Сб-вс 10:00–20:00
-							.clinic-block#2
-								h1 Клиника на комсамольском пр-те
-								p.caption  История первого в стране лечебного учреждения косметологического профиля началась в 1930 году. Тогда по инициативе  П.С. Жемчужиной в Москве был открыт первый кабинет врачебной косметики.
-									mark.caption-content
-										span.date 
-											span 1930
-											|год
-										i основание Института Красоты на Арбате 
-								.content-slider-wrap
-									.content-slider-slider
-										.content-item
-											img(src="img/content/1.jpg", alt="fsdfsd")
-										.content-item
-											img(src="img/content/1.jpg", alt="fsdfsd")
-										.content-item
-											img(src="img/content/1.jpg", alt="fsdfsd")
-									.content-slider-nav
-										.nav-arrows
-								h3 Руководителем и организатором первого кабинета стала С.Я. Газарова.
-								p В перечне услуг был массаж лица по методике доктора Поспелова, гигиенический и косметический массажи, а также уход за кожей головы и за волосами.
-								.organ-item
-									.organ-item-inner
-										.title.h4 Контакты
-										.organ-item-block
-											.text.bold Адрес:
-											.text2 119002, Москва, Арбат
-												br
-												|Малый Николопесковский переулок, д.8
-										.organ-item-block
-											.text.bold Телефон:
-											.text2 +7 (499) 973-09-24
-										.organ-item-block
-											.text.bold Режим работы:
-											.text2 Пн-пт 9:00–21:00   Сб-вс 10:00–20:00
-					//div нужен
-					.content-column-right
+		.content-center
+			.content-center-inner
+				.title.h2 Страница не найдена
+				.text Такое иногда случается. Самые вероятные причины - устаревшая ссылка или страница была удалена автором. Перейдите на 
+					a(href="#") главную страницу 
+					| и попробуйте начать оттуда.
+	.nav-wrapper
+		.nav-btn-wrap
+			a(href="#").nav-btn
+				.nav-btn-inner
+					svg(class="icon icon-drop")
+						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
+				span Назад
 
 
 

@@ -1,0 +1,383 @@
+extends _layout
+
+block title
+	title Карта сайта
+
+block content
+	.wrapper.content-wrapper(style='background-image:url(img/bgmain.jpg)')
+		.box.content-head
+			.content-bread
+				a(href="#").content-bread-item.text2 Главная
+				a(href="#").content-bread-item.text2 Карта сайта
+			.content-main
+				.title.h1 Карта сайта
+	.box
+		.mapcont-wrapper
+			.mapcont-row
+				.map-item.s-100
+					.map-item-head
+						a(href="#").title.h2.link Услуги и цены
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					//колонки в блоке, как правило 2 на элемент
+					.map-item-col
+						//елемент в колонкеб может быть несколько на колонку
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Косметология
+							ul
+								li
+									a(href="#") Диагностика кожи
+								li
+									a(href="#") Инъекционная контурная пластика
+								li
+									a(href="#") Лечение витилиго
+								li
+									a(href="#") Лечение угревой болезни
+								li
+									a(href="#") Лечение купероза
+								li
+									a(href="#") Лечение розацеа
+								li
+									a(href="#") Удаление родинок и папиллом
+								li
+									a(href="#") Биоревитализация
+								li
+									a(href="#") Ботулинотерапия
+								li
+									a(href="#") Вросший ноготь
+								li
+									a(href="#") Детская косметология
+								li
+									a(href="#") Косметические маски
+								li
+									a(href="#") Криодеструкция
+								li
+									a(href="#") Мезонити
+							ul
+								li
+									a(href="#") Плазмотерапия
+								li
+									a(href="#") Фотомодуляция
+								li
+									a(href="#") Чистка лица
+								li
+									a(href="#") Электрокоагуляция
+								li
+									a(href="#") Фототерапия (IPL)
+								li
+									a(href="#") Jet Peel (Джет Пил)
+								li
+									a(href="#") Elos - омоложение
+								li
+									a(href="#") Дерматоонкология
+								li
+									a(href="#") Дермабразия
+								li
+									a(href="#") Аутологичное клеточное омоложение рук плазмой
+								li
+									a(href="#") Лечение гипергидроза
+								li
+									a(href="#") Пилинги
+								li
+									a(href="#") Эпиляция
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Пластическая хирургия
+							ul
+								li
+									a(href="#") Пластика груди (маммопластика)
+								li
+									a(href="#") Пластика носа (ринопластика)
+								li
+									a(href="#") Пластика ушных раковин
+								li
+									a(href="#") Пластика лица и шей
+								li
+									a(href="#") Нитевой лифтинг
+								li
+									a(href="#") Интимный филлинг
+								li
+									a(href="#") Интимная пластика - лабиопластика
+								li
+									a(href="#") Удаление новообразований
+							ul
+								li
+									a(href="#") Пластика век
+								li
+									a(href="#") Пластика живота
+								li
+									a(href="#") Липосакция
+								li
+									a(href="#") Пластика бровей
+								li
+									a(href="#") Пластика лба
+								li
+									a(href="#") Пластика рубцов
+								li
+									a(href="#") Устранение двойного подбородка
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Лабораторные анализы 
+									br 
+									|и экспресс-диагностика
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Персонализированная косметика
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Прайс-лист
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Лазерная косметология
+							ul
+								li
+									a(href="#") Безоперационная подтяжка лица и тела (CUTERA - TITAN)
+								li
+									a(href="#") Лазерное омоложение кожи (CUTERA Genesis)
+								li
+									a(href="#") Лазерная шлифовка рубцов
+								li
+									a(href="#") Лазерное удаление новообразований
+								li
+									a(href="#") Лазерный фракционный фототермолиз
+							ul
+								li
+									a(href="#") Лазерное удаление татуировок
+								li
+									a(href="#") Лечение и омоложение Фраксель
+								li
+									a(href="#") Лазерная блефаропластика
+								li
+									a(href="#") Лечение лазером
+								li
+									a(href="#") Лазерное удаление бородавок
+								li
+									a(href="#") Терапия с использованием эксимерного лазера
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Коррекция фигуры
+							ul
+								li
+									a(href="#") Липомоделирование
+								li
+									a(href="#") Водоструйная липосакция
+							ul
+								li
+									a(href="#") Акваликс (инъекции)
+								li
+									a(href="#") Аппаратный массаж VelaShape
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Массаж
+							ul
+								li
+									a(href="#") Вибрационно-пластический массаж
+								li
+									a(href="#") Антистрессовый массаж
+								li
+									a(href="#") Восточный массаж
+							ul
+								li
+									a(href="#") Висцеральный массаж
+								li
+									a(href="#") Антицеллюлитный массаж
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Физиотерапия
+							ul
+								li
+									a(href="#") Физиотерапевтическое лечение позвоночника и суставов
+								li
+									a(href="#") Диагностика остеопороза (денситометрия)
+							ul
+								li
+									a(href="#") Физиотерапия в косметологии
+								li
+									a(href="#") Послеоперационная реабилитация
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Флебология
+							ul
+								li
+									a(href="#") Флебологический паспорт
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Трихология
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Эндокринология		
+			.mapcont-row
+				.map-item.s-100.list-single
+					.map-item-head
+						a(href="#").title.h2.link Специалисты
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Хирургия
+							ul
+								li
+									a(href="#") Отделение пластической и реконструктивно-восстановительной хирургии
+								li
+									a(href="#") Отделение малоинвазивной хирургии и лазерных технологий
+								li
+									a(href="#") Отделение анестезиологии и реанимации
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Консультативно-диагностический центр персонализированной медицины
+							ul
+								li
+									a(href="#") Кабинет врача-терапевта
+								li
+									a(href="#") ОКабинет превентивной и восстановительной медицины
+								li
+									a(href="#") Кабинет флебологической реабилитации и УЗИ-диагностики
+								li
+									a(href="#") Кабинет физиотерапии
+								li
+									a(href="#") Приемное отделение
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Косметология
+							ul
+								li
+									a(href="#") Отделение Аппаратной косметологии
+								li
+									a(href="#") Отделение детской косметологии
+								li
+									a(href="#") Отделение диагностики кожи
+			.mapcont-row
+				.map-item.s-100.col-3
+					.map-item-head
+						a(href="#").title.h2.link Об институте
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Институт красоты
+							ul
+								li
+									a(href="#") Руководство
+								li
+									a(href="#") Миссия
+								li
+									a(href="#") История
+								li
+									a(href="#") Лицензии
+							.map-item-col-elem
+								a(href="#").map-item-col-name
+									.link-black Исследовательский центр
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Научный центр
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Косметическое производство
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Партнёры
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Рекламодателям
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Вакансии
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Вопрос-ответ
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Отзывы
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Записаться на приём
+			.mapcont-row
+				.map-item.s-33
+					.map-item-head
+						a(href="#").title.h2.link Акции
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Акции
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Новости
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Мероприятия				
+				.map-item.s-33
+					.map-item-head
+						a(href="#").title.h2.link Клиники
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Клиника на Арбате 
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Клиника на Партизанском пр-те		
+				.map-item.s-33
+					.map-item-head
+						a(href="#").title.h2.link Контакты
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.map-item-col
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Арбат 
+						.map-item-col-elem
+							a(href="#").map-item-col-name
+								.link-black Партизанский пр-т	
+			.mapcont-row
+				.map-item.s-33
+					.map-item-head
+						a(href="#").title.h2.link Поиск
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+				.map-item.s-33
+					.map-item-head
+						a(href="#").title.h2.link Клиники
+							.link-arr
+								svg(class="icon icon-drop")
+									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

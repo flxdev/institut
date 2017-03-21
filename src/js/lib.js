@@ -6,3 +6,4 @@
 //=include lib/cocoen.min.js
 //=include lib/inputmask.min.js
 //=include lib/jquery-ui.min.js
+//=include lib/lightgallery.min.js

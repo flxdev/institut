@@ -33,6 +33,9 @@ a
 	text-decoration: none
 	transition: color .3s
 	color: $hover
+	&.text2
+		&:hover
+			color: $hover
 *
 	+box
 	// -webkit-tap-highlight-color: rgba(252, 239, 141, 0.41)
@@ -507,6 +510,15 @@ body, .out
 			.contact-item
 				+rem(font-size,22px)
 				white-space: nowrap
+				.text-bold
+					+tr(color .3s)
+				&:hover
+					+rm(991)
+						.text-bold
+							color: $hover
+				&:active
+					.text-bold
+						color: $active	
 				+r(1150)
 					.text-bold
 						+rem(font-size,18px)
@@ -872,6 +884,29 @@ body, .out
 				use
 					fill: $active
 					stroke: $active
+.biglink
+	+rem(font-size,42px)
+	line-height: 1.095;
+	hyphens: manual;
+	font-family: $rc
+	color: #000
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1.091;
+	text-align: left;
+	&:hover
+		+rm(991)
+			.link-arr
+				box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+				use
+					fill: $hover
+					stroke: $hover
+					color: #000
+	&:active
+		.link-arr
+			use
+				fill: $active
+				stroke: $active
 .link-arr
 	display: inline-block
 	+rem(height,30px)
@@ -982,8 +1017,8 @@ blockquote
 			+vertical
 			svg
 				display: inline-block
-				+rem(height,17px)
-				+rem(width,17px)
+				+rem(height,15px)
+				+rem(width,15px)
 				vertical-align: middle
 		&:hover
 			fill: $hover
@@ -1137,6 +1172,18 @@ blockquote
 	+rem(letter-spacing,-0.3px)
 	transition: color .3s, border-color .3s
 	-webkit-tap-highlight-color: transparent
+	svg
+		display: inline-block
+		+rem(height,25px)
+		+rem(width,25px)
+		vertical-align: middle
+		+rem(margin-left,-2px)
+		+rem(margin-right,9px)
+
+	span 
+		display: inline-block
+		vertical-align: middle
+		
 	&:not(.yell)
 		+rem(border-radius,3px)
 	&:hover
@@ -1159,6 +1206,7 @@ blockquote
 			svg 
 				display: inline-block;
 				+rem(height, 16px)
+				+rem(width, 16px)
 				vertical-align: middle;
 				+rem(margin-left, 5px)
 
@@ -1488,12 +1536,16 @@ blockquote
 			+rem(margin-left, -5px)
 	&-add
 		&-item
+			&:hover
+				.bold
+					color: $hover
 			&-inner
 				display: flex
 				flex-flow: column nowrap
 				justify-content: flex-end
 			.bold
 				line-height: .5;
+				+tr(color .3s)
 			+tr(opacity .35s)
 			opacity: 0
 			&.slick-current,&.slick-cloned
@@ -2810,6 +2862,8 @@ a
 						box-shadow: none
 			.caption-content
 				+rem(top,-10px)
+		a.text2 
+			box-shadow: none
 
 		i 
 			color: $grayy
@@ -2832,30 +2886,25 @@ a
 				+rem(margin,30px 0 25px)
 			&:first-child
 				+rem(margin-top,5px)				
-			&.link
-				&:hover
-					+rm(991)
-						.link-arr
-							box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-							use
-								fill: $hover
-								stroke: $hover
-								color: #000
-		&:active
-			.link-arr
-				use
-					fill: $active
-					stroke: $active
 		h1
 			+rem(font-size, 42px)
 			line-height: 1.15;
 			+r(735)
 				+rem(font-size,35px)
-				.link-arr
-					margin-left: 0
-					margin-top: 1px
+
 			&:first-of-type
 				+rem(margin, 5px 0 40px)
+		.biglink
+			display: block
+			+rem(margin,40px 0)
+			+r(735)
+				+rem(font-size,35px)
+				+rem(margin,30px 0 25px)
+				.link-arr
+					margin-left: 0
+					margin-top: 1px	
+			&:first-child
+				+rem(margin-top,5px)				
 		h2
 			+rem(font-size, 36px)
 			line-height: 1.091;
@@ -2930,7 +2979,6 @@ a
 				left: 116%	
 				top: auto
 				bottom: 0
-
 				+r(991)
 					display: none
 			.video-wrap-cover,iframe
@@ -2965,8 +3013,11 @@ a
 				.caption-content
 					left: 116%
 					img
-						+rem(max-height, 100px)
-						+rem(margin, 5px 0 10px)
+						max-height: 100%
+						+rem(margin-top,10px)
+					// 	+rem(max-height, 100px)
+					// 	+rem(margin, 5px 0 10px)
+
 				&.diffs
 					+rem(margin-bottom,25px)
 					.content-slider-slider
@@ -3123,7 +3174,7 @@ a
 	&-inner
 		+rem(height,155px)
 		+rem(margin, 15px 0)
-		
+		cursor: pointer
 		&:not(.slick-initialized)
 			white-space: nowrap
 			overflow: hidden
@@ -3702,6 +3753,7 @@ a
 .spec-block
 	+rem(margin-top,25px)
 	+rem(padding-left,34px)
+	display: block
 	.text
 		+rem(margin-bottom,30px)
 
@@ -4126,6 +4178,15 @@ a
 					font-size: 0
 					border-top: $bb
 					+rem(padding-bottom,50px )
+					display: inline-block
+					.title
+						+tr(color .3s)
+					&:hover
+						// .title
+						// 	color: $hover
+
+						span 
+							box-shadow: none
 				&-img,&-content
 					display: inline-block
 					vertical-align: top
@@ -4139,8 +4200,9 @@ a
 				&-content 
 					width: 65%
 					+rem(padding-top,5px)
-					a	
+					span
 						+rem(font-size,14px)
+						color: $hover
 						box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
 					.partner-block-link
 						+rem(margin,8px 0 20px)
@@ -4713,6 +4775,232 @@ a
 					+rem(padding-top,15px)
 				.title
 					+rem(margin-bottom,26px)
+.content
+	&-center
+		+rem(max-width,514px)
+		+rem(margin,80px auto 94px)
+		+r(768)
+			+rem(margin,40px auto 54px)
+		&-inner
+			+rm(991)
+				+rem(margin-left,-35px)
+			.title
+				+rem(margin-bottom,39px)
+				+r(600)
+					+rem(font-size,32px)
+					+rem(margin-bottom,30px)
+				+r(420)
+					+rem(font-size,26px)
+			.text
+				+rem(font-size,16px)
+				a 
+					box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
+
+.search
+	&-container
+		+rem(padding-left,5px)
+		+rem(padding-top,10px)
+		.o-menu-search
+			+rm(600)
+				+rem(margin, 0 -30px)
+		+r(600)
+			padding-left: 0
+			+rem(margin, 0 -15px)
+	&-head
+		+rem(margin-top, 70px)
+		+rem(margin-bottom, 45px)
+		+r(735)
+			+rem(margin-top, 45px)
+			+rem(margin-bottom, 30px)	
+	&-result
+		&-item
+			+rem(padding,35px 0 50px)
+			display: block
+			+r(600)
+				+rem(padding,20px 0 30px)	
+			&:not(:first-child)
+				border-top: $bb
+			&-head
+				display: table
+				.search-counter,.text-bold
+					display: table-cell
+				.search-counter
+					+rem(font-size,18px)
+					font-weight: 400
+					color: #000
+					+rem(padding-right,3px)
+				.text-bold
+					b 
+						color: $active
+			&-content 
+				+rem(margin-top,30px)
+				overflow: hidden
+				text-overflow: ellipsis
+				-webkit-line-clamp: 3
+				-webkit-box-orient: vertical
+				display: -webkit-box	
+				line-height: 1.7;
+				+r(600)
+					-webkit-line-clamp: 4	
+				b 
+					color: $hover	
+					box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
+.mapcont
+	&-wrapper
+		+rem(padding-top,37px)
+		+r(650)
+			+rem(margin, 0 -10px)
+			+rem(padding-top,22px)
+	&-row 
+		font-size: 0
+		+rem(margin-right,-30px)
+		overflow: hidden
+		+r(650)
+			+rem(margin-right,-15px)	
+		&:not(:last-child)
+			border-bottom: $bb
+		.map-item
+			+rem(padding-right,30px)
+			+r(650)
+				+rem(padding-right,15px)
+			&.list-single
+				ul 
+					width: 60%
+					+r(991)
+						width: 80%
+					+r(800)
+						width: 100%
+			&.s-100
+				display: block
+				width: 100%
+				padding-right: 0
+				.map-item-col
+					+rem(padding-bottom,30px)
+				&.col-3
+					+rem(margin-right,-30px)
+					padding-right: 0
+					+r(800)
+						.map-item-col
+							width: 50%
+							padding-bottom: 0
+							&:last-of-type
+								+rem(padding-bottom,30px)
+					+r(650)
+						+rem(margin-right,-15px)
+						.map-item-col
+							+rem(padding-right,15px)
+					.map-item-col
+						width: 33.33%
+						+rem(padding-right,30px)
+						+rem(padding-bottom,35px)
+
+						.map-item-col-elem
+							+rem(padding-bottom, 10px)
+						ul
+							+rem(padding-bottom, 10px)	
+			&.s-33
+				width: 33.33%
+				display: inline-block
+				vertical-align: top
+				+rem(padding-bottom,30px)
+				+r(900)
+					width: 50%
+					+rem(padding-bottom,0px)
+					.map-item-col-elem
+						+rem(padding-bottom, 5px)
+					.map-item-col
+						+rem(padding-bottom, 0px)
+					&:last-of-type
+						+rem(padding-bottom,30px)
+				+r(650)
+					+rem(padding-right,15px)
+				+r(544)
+					width: 100%
+				.map-item-col-elem
+					+rem(padding-bottom, 10px)
+				.map-item-col
+					width: 100%
+			&-head
+				display: block
+				+rem(margin,45px 0 35px)
+				+r(900)
+					+rem(margin,30px 0 20px)	
+				+r(650)
+					.title
+						+rem(font-size,36px)
+						.link-arr
+							+rem(margin-left, 0)
+							+rem(margin-top,3px)
+							// +rem(width,25px)
+							// +rem(height,25px)
+			&-col 
+				display: inline-block
+				vertical-align: top
+				width: 50%
+				+rem(padding-bottom, 20px)
+				+r(420)
+					width: 100% !important
+				&-elem
+					font-size: 0
+					+rem(padding-bottom, 18px)
+					+r(900)
+						padding-bottom: 0
+					ul
+						display: inline-block
+						vertical-align: top
+						width: 50%
+						+rem(padding-bottom,2px)
+						+r(800)
+							width: 100%
+						li 
+							+rem(padding-right,15px)
+							a 
+								+rem(font-size,14px)
+								color: rgb(109, 109, 109);
+								line-height: 1.429;
+								+rem(padding,7px 0 6px)
+								&:hover
+									+rm(991)
+										color: $hover
+								&:active
+									color: $active
+
+
+				&-name
+					display: block
+					+rem(margin,17px 0 14px)
+					+rem(max-width,375px)
+					+r(900)
+						+rem(margin,14px 0 9px)
+.lg-backdrop
+	background: rgba(0,0,0,0.3)
+.lg-img-wrap
+	+rem(padding, 60px 0 85px)
+.lg-sub-html
+	background-color: #fff
+.lg-download
+	display: none
+.lg-toolbar
+	background-color: transparent !important
+.lg-sub-html
+	+rem(height, 71px)
+	p 
+		+rem(font-size,16px)
+		line-height: 1.5
+		color: #6d6d6d
+
+.lg-icon
+	color: #000 !important
+	background-color: transparent !important
+	&:hover
+		color: $hover !important
+#lg-counter,#lg-counter-all
+	color: #000 !important
+	display: none
+	
+#lg-counter-current
+	color: $active !important
+
 
 		
 
