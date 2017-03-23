@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		items.each(function(){
 			var _ = $(this),
 				id = parseInt(_.data('id'));
-				_.on('mouseenter',function(){
+				_.on('mouseenter touchstart',function(){
 					if(targetWrap.find("[data-id="+ id +"]").length){
 						_.addClass('active').siblings().removeClass('active');
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					}
 				})
 		});
-		items.add(targetWrap).on('mouseleave',function(){
+		items.add(targetWrap).on('mouseleave touchstart',function(){
 			setTimeout(function(){
 					if ($('.page__header-drop:hover').length != 1 && !$('.js-desktop-hover:hover').length != 0 ) {
 						targetWrap.removeClass(shown).attr('style','');
@@ -306,12 +306,21 @@ document.addEventListener("DOMContentLoaded", function() {
 			return false;
 		});
 	}stars();
-	$('.diplom-slider-inner').each(function(){
-		$(this).lightGallery({
-	    	cssEasing : 'cubic-bezier(0.470, 0.000, 0.745, 0.715)',
-	    	selector: '.diplom-slider-inner-img'
-		}); 
-	});
+	function galery(){
+		$('.diplom-slider-inner').each(function(){
+			$(this).lightGallery({
+				cssEasing : 'cubic-bezier(0.470, 0.000, 0.745, 0.715)',
+				selector: '.diplom-slider-inner-img'
+			}); 
+		});
+		$('.sertificat-slider').each(function(){
+			$(this).lightGallery({
+				cssEasing : 'cubic-bezier(0.470, 0.000, 0.745, 0.715)',
+				selector: '.sertificat-item-inner'
+			}); 
+		});		
+	}galery()
+
 	DesktopMenu();
 	doctorSlider();
 	rombSlider();

@@ -392,7 +392,7 @@ body, .out
 								border: none !important
 				.page__header-logo
 					+rem(flex-basis,45px)
-					+rem(padding, 10px 0)
+					+rem(margin, 10px 0)
 					flex-shrink: 0
 				.page__header-main
 					+rem(height, 72px)
@@ -458,14 +458,13 @@ body, .out
 			text-align: center
 			flex-basis: 26.5%
 			overflow: hidden
-			+rem(padding,8px 0 18px)
+			+rem(margin,8px 0 18px)
 			position: relative
-			
 			+r(1150)
 				flex-basis: 23.5%
 			+r(991)
 				+rem(flex-basis,45px)
-				+rem(padding, 10px 0)
+				+rem(margin, 10px 0)
 				flex-shrink: 0
 			&-big,&-small
 				display: block
@@ -473,8 +472,10 @@ body, .out
 				height: 100%
 				+contain
 				transition: transform .2s .1s, opacity .2s
-				position: relative
+				position: absolute
 				z-index: 20
+				left: 0
+				top: 0
 			&-big
 				+r(991)
 					display: none
@@ -1172,13 +1173,14 @@ blockquote
 	+rem(letter-spacing,-0.3px)
 	transition: color .3s, border-color .3s
 	-webkit-tap-highlight-color: transparent
-	svg
-		display: inline-block
-		+rem(height,25px)
-		+rem(width,25px)
-		vertical-align: middle
-		+rem(margin-left,-2px)
-		+rem(margin-right,9px)
+	&:not(.btn-big)
+		svg
+			display: inline-block
+			+rem(height,25px)
+			+rem(width,25px)
+			vertical-align: middle
+			+rem(margin-left,-2px)
+			+rem(margin-right,9px)
 
 	span 
 		display: inline-block
@@ -1248,6 +1250,7 @@ blockquote
 .btn-download
 	white-space: nowrap
 	display: inline-block
+	font-size: 0
 	&:active
 		.btn
 			border-color: $active
@@ -1560,7 +1563,8 @@ blockquote
 		+r(1130)
 			justify-content: space-between
 		+r(870)
-			flex-flow: column wrap
+			flex-flow: column nowrap
+			min-height: 74vh
 			justify-content: flex-start
 	&-main-nav
 		width: 100%
@@ -1596,6 +1600,8 @@ blockquote
 			+r(870)
 				order: 3
 				+rem(padding-bottom,20px)
+				display: block !important
+				flex-basis: 0%
 				&>.text-bold
 					+rem(margin-top,25px)
 					+rem(margin-bottom,15px)
@@ -1630,7 +1636,7 @@ blockquote
 		+r(870)
 			order: 1
 			+rem(padding-top, 43px)
-			+rem(flex-basis,230px)
+			+rem(flex-basis,270px)
 			&> .text-bold
 				display: none
 			&-button
@@ -3933,9 +3939,16 @@ a
 			display: inline-block
 			+rem(width,40px)
 			+rem(height,40px)
-			+contain
-			background-image: url(../img/icons/i-close.png)
-			+rem(background-size, 13px 13px)
+			+vertical
+			&:after
+				content: ''
+				+rem(width,13px)
+				+rem(height,13px)
+				+contain
+				background-image: url(../img/icons/i-close.png)
+				display: inline-block
+				vertical-align: middle
+				
 .form
 	+rem(margin-right,-35px)
 	font-size: 0
@@ -4292,7 +4305,10 @@ a
 				+rem(margin-bottom,10px)
 			.text2
 				+rem(max-width,250px)
-
+		&-inner
+			display: inline-block
+			width: 100%
+			height: 100%
 		&-img
 			+rem(height, 185px)
 			+rem(margin-bottom,25px)
@@ -5000,6 +5016,19 @@ a
 	
 #lg-counter-current
 	color: $active !important
+#modal-road
+	.modal-container
+		background: 0 0
+		padding: 0
+		+rem(max-width,675px)
+		&:before
+			display: none
+		&-content
+			background-color: #FFF
+			margin-top: 0
+			+rem(padding,38px)
+
+			
 
 
 		
