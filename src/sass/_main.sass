@@ -1657,10 +1657,15 @@ blockquote
 		&-item
 			+rem(margin-top,20px)
 			display: block
+			&:hover
+				+rm(991)
+					.text-bold
+						color: $active
 			.text-bold
 				font-family: $rc
 				+rem(font-size,22px)
 				+rem(letter-spacing,0.5px)
+				+tr(color .3s)
 			&:first-child
 				+rem(margin-top,3px)
 				.text-bold
@@ -3779,9 +3784,13 @@ a
 	.contact-item
 		display: block
 		+rem(margin, 15px 0 20px)
+		&:hover
+			.text-bold
+				color: $active
 		.text-bold
 			line-height: 1
 			+rem(letter-spacing,-0.8px)
+			+tr(color .3s)
 		.text
 			color: #c0beb2
 			+rem(font-size,15px)
@@ -3931,23 +3940,23 @@ a
 	.modal-container-header
 		position: relative
 		+rem(padding-top,35px)
-		.small-link
-			cursor: pointer
-			position: absolute
-			+rem(right,-16px)
-			+rem(top,-14px)
+	.small-link
+		cursor: pointer
+		position: absolute
+		+rem(right,-16px)
+		+rem(top,-14px)
+		display: inline-block
+		+rem(width,40px)
+		+rem(height,40px)
+		+vertical
+		&:after
+			content: ''
+			+rem(width,13px)
+			+rem(height,13px)
+			+contain
+			background-image: url(../img/icons/i-close.png)
 			display: inline-block
-			+rem(width,40px)
-			+rem(height,40px)
-			+vertical
-			&:after
-				content: ''
-				+rem(width,13px)
-				+rem(height,13px)
-				+contain
-				background-image: url(../img/icons/i-close.png)
-				display: inline-block
-				vertical-align: middle
+			vertical-align: middle
 				
 .form
 	+rem(margin-right,-35px)
@@ -5017,16 +5026,56 @@ a
 #lg-counter-current
 	color: $active !important
 #modal-road
+	+rem(padding-top,70px)
+	overflow-y: auto
+	overflow-x: hidden
+	+r(600)
+		+rem(padding-top,40px)	
+	.small-link
+		+rem(right,-14px)
+		+rem(top,-40px)
+	.modal-container-header,.modal-container-content
+		// pointer-events: none
+		padding-top: 0
+		width: 100%		
+	.modal-container-header-img
+		img
+			width: 100%
 	.modal-container
 		background: 0 0
 		padding: 0
+		// overflow-x: hidden
 		+rem(max-width,675px)
+		max-height: none
+		position: relative
+		overflow-y: visible
+		+rem(margin-top,30px)
+		// overflow-x: hidden
+		// +rem(margin-top,60px)
+		+rem(margin-bottom,100px)
+		.title
+			+rem(margin-bottom,50px)
+			+r(600)
+				+rem(margin-bottom,20px)
 		&:before
 			display: none
 		&-content
 			background-color: #FFF
 			margin-top: 0
 			+rem(padding,38px)
+			+r(600)
+				+rem(padding,25px 15px)	
+			.content-slider-nav
+				+rem(margin, 26px 0 35px)
+
+				.slick-arrow
+					+rem(margin-right, 15px)
+			.content-slider-add-item p
+				+rem(font-size,16px)
+				color: rgb(109, 109, 109);
+				line-height: 1.5;
+				+rem(margin-bottom,25px)
+
 
 			
 

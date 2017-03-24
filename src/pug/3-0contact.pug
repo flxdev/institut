@@ -51,7 +51,7 @@ block content
 								.address-item-block
 									.text.bold Режим работы:
 									.text2 Пн-пт 9:00–21:00   Сб-вс 10:00–20:00
-								a(href="map1.html",data-modal='road',data-href='').icon-link.js-popup-button
+								a(href="map1.html",data-modal='road',data-href='').icon-link.js-popup-button.ajax-trigger
 									span Схема проезда
 							.address-item-map
 								// координаты  пихаем в дату, в функцию передаем id без хеша, id должен быть уникальный
@@ -74,7 +74,7 @@ block content
 								.address-item-block
 									.text.bold Режим работы:
 									.text2 Пн-пт 9:00–21:00   Сб-вс 10:00–20:00
-								a(href="map2.html",data-modal='road',data-href='').icon-link.js-popup-button
+								a(href="map2.html",data-modal='road',data-href='').icon-link.js-popup-button.ajax-trigger
 									span Схема проезда
 							.address-item-map
 								.address-map#map2(data-cords="[55.724885, 37.576822]")
@@ -86,6 +86,11 @@ block content
 		.nav-btn-wrap
 			//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
 		+phoneform
+		script.
+			document.addEventListener("DOMContentLoaded", function() {
+				var ajax = new AjaxLoading($(".ajax-trigger"));
+			});
+			
 
 
 

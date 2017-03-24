@@ -542,7 +542,7 @@
                             <div class="text bold">Режим работы:</div>
                             <div class="text2">Пн-пт 9:00–21:00   Сб-вс 10:00–20:00</div>
                           </div>
-                          <a class="icon-link js-popup-button" href="map1.html" data-modal="road" data-href="">
+                          <a class="icon-link js-popup-button ajax-trigger" href="map1.html" data-modal="road" data-href="">
                             <span>Схема проезда</span>
                           </a>
                         </div>
@@ -574,7 +574,7 @@
                             <div class="text bold">Режим работы:</div>
                             <div class="text2">Пн-пт 9:00–21:00   Сб-вс 10:00–20:00</div>
                           </div>
-                          <a class="icon-link js-popup-button" href="map2.html" data-modal="road" data-href="">
+                          <a class="icon-link js-popup-button ajax-trigger" href="map2.html" data-modal="road" data-href="">
                             <span>Схема проезда</span>
                           </a>
                         </div>
@@ -608,6 +608,11 @@
                                 </button>
                               </div>
                             </form>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                	var ajax = new AjaxLoading($(".ajax-trigger"));
+                });
+              </script>
             </div>
           </main>
           <footer class="page__footer">

@@ -678,6 +678,43 @@ function moreSlider(){
 		}); 
 	});
 }
+function roadSlider(){
+	$(".road-slider-slider").each(function() {
+		var _this = $(this),
+			parent = _this.closest('.road-slider-wrap');
+		_this.slick({
+			accessibility: true,
+			arrows: true,
+			draggable: true,
+			dots: false,
+			touchMove: true,
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			focusOnSelect: true,
+			appendArrows: parent.find('.nav-arrows'),
+			nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			asNavFor: parent.find(".content-slider-add")
+		}); 
+	});
+	$(".content-slider-add").each(function() {
+		var _this = $(this),
+			parent = _this.closest('.road-slider-wrap');
+		_this.slick({
+			accessibility: true,
+			arrows: false,
+			draggable: true,
+			dots: false,
+			touchMove: true,
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			focusOnSelect: true,
+			asNavFor: parent.find(".road-slider-slider")
+		}); 
+	});
+}
 function productSlider(){
 	$(".product-container-slider-main").each(function() {
 		var _this = $(this),
@@ -816,8 +853,10 @@ function popUpsInit() {
 		/**
 		 * Close buttons.
 		 */
-		$(".modal-layout .modal-container").click(function(e) {
-			e.stopPropagation();
+		$(_popup).on('click','.modal-container-content,.modal-container-header',function(e) {
+			if(!_this.conf.close_selector.is(e.target)){
+				e.stopPropagation();
+			} 
 		});
 		_popup.find(_this.conf.close_selector).add(_popup).off('click.popup').on('click.popup', function () {
 			_this.f.closePopup(_popup);
@@ -860,6 +899,40 @@ function popUpsInit() {
 		_this.f.openPopup(_popup);
 		return false;
 	});
+}
+
+function AjaxLoading(el){
+	var _this = this;
+
+	_this.ajaxLink = el;
+	_this.appendMain = $("#modal-road");
+
+
+	_this.initEvents = function(){
+
+		$(".ajax-trigger").off("click.trigger").on("click.trigger", function(e){
+			var link = $(this).attr("href");
+			_this.action(link)
+			e.preventDefault();
+			return false;
+		});
+	};
+
+	_this.action = function(link) {
+		$.ajax({
+			url: link,
+			dataType: "html",
+			success: function(content) {
+				var mainContent = $(content).html();
+				_this.appendMain.html(mainContent).promise().done(function(){
+					_this.initEvents();
+					roadSlider();
+					popUpsInit();
+				});
+			}
+		})
+	};
+	_this.initEvents();
 }
 // function ajaxSubmit(form){
 // 	var formsubscrube = $(form).serialize(),
