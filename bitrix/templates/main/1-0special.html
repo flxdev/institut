@@ -498,7 +498,9 @@
               <!--в длинных словах .title можно использовать &shy;-->
               <div class="depart-wrap">
                 <div class="depart-item w-50">
-                  <div class="depart-item-head head-img" style="background-image:url(img/bg/v1.png);">
+                  <!--js-anim для блоков в которых больше ожной ькартинки врача-->
+                  <div class="depart-item-head head-img js-anim" data-images="img/bg/v1.png, img/bg/v2.png, img/bg/v3.png">
+                    <div class="depart-doctor-img"></div>
                     <div class="title h2">Хирургия</div>
                   </div>
                   <div class="depart-item-body">
@@ -531,7 +533,8 @@
                   </div>
                 </div>
                 <div class="depart-item w-50">
-                  <div class="depart-item-head head-img" style="background-image:url(img/bg/v2.png);">
+                  <div class="depart-item-head head-img js-anim" data-images="img/bg/v2.png, img/bg/v1.png,img/bg/v3.png">
+                    <div class="depart-doctor-img"></div>
                     <div class="title h2">Косметология</div>
                   </div>
                   <div class="depart-item-body">
@@ -568,7 +571,8 @@
                   </div>
                 </div>
                 <div class="depart-item w-100">
-                  <div class="depart-item-head head-img" style="background-image:url(img/bg/v3.png);">
+                  <div class="depart-item-head head-img">
+                    <div class="depart-doctor-img" style="background-image:url(img/bg/v3.png);"></div>
                     <div class="title h2">Консультативно-диагностический центр персонализи&shy;рованной медицины</div>
                   </div>
                   <div class="depart-item-body">

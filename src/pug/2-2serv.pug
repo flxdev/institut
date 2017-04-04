@@ -49,7 +49,11 @@ block content
 			.menu-nav-item.more.js-list-more(data-alt-text='Свернуть')
 				a(href="#").link-black Подробнее
 		.product-container-price
+			//если акции нету, убираем класс sale. 
+			// .small-block и .price-old-cont при этом можно оставить
 			.price-block.sale
+				a(href="#").small-block.small
+					span Акция
 				.text Стоимость услуги:
 				.title.h3 250 000₽
 				.price-old-cont
@@ -125,18 +129,38 @@ block content
 							.content-slider-wrap.diffs
 								.content-slider-slider
 									.content-item
-										//на бэкграунд вешаем первую картинку, нужна чтобы скрывать инициализацию. Также может служить просто слайдом-картинкой, если внутри пусто. 
-										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
-											img(src="img/content/s1.jpg", alt="fsdfsd")
-											img(src="img/content/1.jpg", alt="fsdfsd")
+										.compare-item_container.comparator
+											.compare-item_compator.comparator-frame
+												.compare-result.from
+													.compare-idea_preview
+														img(src="img/content/1.jpg")
+												.compare-runner.cocoen__drag
+													.compare-roller
+												.compare-idea.to
+													.compare-idea_preview
+														.compare-image(style="background-image:url(img/content/s1.jpg)")
 									.content-item
-										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
-											img(src="img/content/s1.jpg", alt="fsdfsd")
-											img(src="img/content/1.jpg", alt="fsdfsd")
+										.compare-item_container.comparator
+											.compare-item_compator.comparator-frame
+												.compare-result.from
+													.compare-idea_preview
+														img(src="img/content/1.jpg")
+												.compare-runner.cocoen__drag
+													.compare-roller
+												.compare-idea.to
+													.compare-idea_preview
+														.compare-image(style="background-image:url(img/content/s1.jpg)")
 									.content-item
-										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
-											img(src="img/content/s1.jpg", alt="fsdfsd")
-											img(src="img/content/1.jpg", alt="fsdfsd")
+										.compare-item_container.comparator
+											.compare-item_compator.comparator-frame
+												.compare-result.from
+													.compare-idea_preview
+														img(src="img/content/1.jpg")
+												.compare-runner.cocoen__drag
+													.compare-roller
+												.compare-idea.to
+													.compare-idea_preview
+														.compare-image(style="background-image:url(img/content/s1.jpg)")
 								.content-slider-nav
 									.nav-dots
 							p Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши.

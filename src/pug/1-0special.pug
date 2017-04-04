@@ -18,7 +18,9 @@ block content
 		//в длинных словах .title можно использовать &shy;
 		.depart-wrap
 			.depart-item.w-50
-				.depart-item-head.head-img(style="background-image:url(img/bg/v1.png)")
+				//js-anim для блоков в которых больше ожной ькартинки врача
+				.depart-item-head.head-img.js-anim(data-images="img/bg/v1.png, img/bg/v2.png, img/bg/v3.png")
+					.depart-doctor-img
 					.title.h2 Хирургия
 				.depart-item-body
 					a(href="#").depart-item-link
@@ -31,7 +33,8 @@ block content
 						.link-black Отделение малоинвазивной хирургии и лазерных технологий
 						+doctors(1,'')
 			.depart-item.w-50
-				.depart-item-head.head-img(style="background-image:url(img/bg/v2.png)")
+				.depart-item-head.head-img.js-anim( data-images='img/bg/v2.png, img/bg/v1.png,img/bg/v3.png')
+					.depart-doctor-img
 					.title.h2 Косметология
 				.depart-item-body
 					a(href="#").depart-item-link
@@ -50,7 +53,8 @@ block content
 							|диагностики кожи
 						+doctors(4,'17')
 			.depart-item.w-100
-				.depart-item-head.head-img(style="background-image:url(img/bg/v3.png)")
+				.depart-item-head.head-img
+					.depart-doctor-img(style="background-image:url(img/bg/v3.png)")
 					.title.h2 Консультативно-диагностический центр персонализи&shy;рованной медицины
 				.depart-item-body
 					a(href="#").depart-item-link

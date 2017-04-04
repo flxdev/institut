@@ -59,15 +59,10 @@ block content
 								br
 								|о специалисте
 							p  Окончил Дагестанский медицинский институт, клиническую ординатуру по хирургической стоматологии. После аспирантуры успешно защитил кандидатскую диссертацию.
-							p.caption  Валерий Александрович выполняет все эстетические операции в области лица и тела. Состоит в Российском обществе реконструктивных и эстетических хирургов (ОПРЭХ)
-								mark.caption-content
-									span.date 
-										span 1982 
-										|год
-									i работает в Институте Красоты на Арбате c 1982 года
+							p Валерий Александрович выполняет все эстетические операции в области лица и тела. Состоит в Российском обществе реконструктивных и эстетических хирургов (ОПРЭХ)
 							p  Несмотря на огромный рабочий стаж и профессиональный опыт Валерий Александрович постоянно повышает свой профессиональный уровень, участвует в конгрессах и конференциях.
 							p  Израилов читает курс лекций, проводит практические занятия по пластической хирургии, а также выступает в научной и научно – популярной литературе.
-							.content-slider-wrap.caption
+							.content-slider-wrap
 								.content-slider-slider
 									.content-item
 										img(src="img/content/1.jpg", alt="fsdfsd")
@@ -77,20 +72,6 @@ block content
 										img(src="img/content/1.jpg", alt="fsdfsd")
 								.content-slider-nav
 									.nav-arrows
-								mark.caption-content
-									img(src="img/content/as1.jpg", alt="fsdfsd")
-									i Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).
-							.diplom-slider.caption
-								.diplom-slider-content.caption-content
-									b Дипломы и лицензии специалиста
-									.diplom-slider-inner
-										a(href="img/content/big.jpg",data-sub-html='<div class="text bold">Сертификат качества</div><p class="text2">Выдан специалисту высшего разряда</p>').diplom-slider-inner-img
-											img(src="img/content/d1.jpg", alt="fsdfsd")
-										a(href="img/content/big.jpg",data-sub-html='<div class="text bold">Сертификат качества</div><p class="text2">Выдан специалисту высшего разряда</p>').diplom-slider-inner-img
-											img(src="img/content/d1.jpg", alt="fsdfsd")
-										a(href="img/content/big.jpg",data-sub-html='<div class="text bold">Сертификат качества</div><p class="text2">Выдан специалисту высшего разряда</p>').diplom-slider-inner-img
-											img(src="img/content/d1.jpg", alt="fsdfsd")
-									i Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).
 							p.caption В практике хирурга огромное количество операций по исправлению 
 								a(href="#") рубцовых деформаций.
 								| Наиболее часто пациенты обращаются с рубцами лица и открытых участков тела – послеожоговыми, посттравматическими, рубцами, приобретёнными в результате бытовых или автотравм. 
@@ -117,18 +98,38 @@ block content
 							.content-slider-wrap.diffs
 								.content-slider-slider
 									.content-item
-										//на бэкграунд вешаем первую картинку, нужна чтобы скрывать инициализацию. Также может служить просто слайдом-картинкой, если внутри пусто. 
-										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
-											img(src="img/content/s1.jpg", alt="fsdfsd")
-											img(src="img/content/1.jpg", alt="fsdfsd")
+										.compare-item_container.comparator
+											.compare-item_compator.comparator-frame
+												.compare-result.from
+													.compare-idea_preview
+														img(src="img/content/1.jpg")
+												.compare-runner.cocoen__drag
+													.compare-roller
+												.compare-idea.to
+													.compare-idea_preview
+														.compare-image(style="background-image:url(img/content/s1.jpg)")
 									.content-item
-										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
-											img(src="img/content/s1.jpg", alt="fsdfsd")
-											img(src="img/content/1.jpg", alt="fsdfsd")
+										.compare-item_container.comparator
+											.compare-item_compator.comparator-frame
+												.compare-result.from
+													.compare-idea_preview
+														img(src="img/content/1.jpg")
+												.compare-runner.cocoen__drag
+													.compare-roller
+												.compare-idea.to
+													.compare-idea_preview
+														.compare-image(style="background-image:url(img/content/s1.jpg)")
 									.content-item
-										.content-item-diff.cocoen(style="background-image: url(img/content/s1.jpg)")
-											img(src="img/content/s1.jpg", alt="fsdfsd")
-											img(src="img/content/1.jpg", alt="fsdfsd")
+										.compare-item_container.comparator
+											.compare-item_compator.comparator-frame
+												.compare-result.from
+													.compare-idea_preview
+														img(src="img/content/1.jpg")
+												.compare-runner.cocoen__drag
+													.compare-roller
+												.compare-idea.to
+													.compare-idea_preview
+														.compare-image(style="background-image:url(img/content/s1.jpg)")
 								.content-slider-nav
 									.nav-dots
 							p Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши. Отклонение ушной раковины может быть выражено в различной степени: от едва заметного оттопыревания и до почти перпендикулярного положения, тогда проводится коррекция ушных раковин - 
@@ -148,6 +149,24 @@ block content
 					.content-column-right
 						.content-column-right-btnwrap
 							a(href="#").btn.yell.btn-big Записаться на приём
+						.caption-content
+							span.date 
+								span 1982 
+								|год
+							i работает в Институте Красоты на Арбате c 1982 года
+						.caption-content
+							img(src="img/content/as1.jpg", alt="fsdfsd")
+							i Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).
+						.diplom-slider-content.caption-content
+							b Дипломы и лицензии специалиста
+							.diplom-slider-inner
+								a(href="img/content/big.jpg",data-sub-html='<div class="text bold">Сертификат качества</div><p class="text2">Выдан специалисту высшего разряда</p>').diplom-slider-inner-img
+									img(src="img/content/d1.jpg", alt="fsdfsd")
+								a(href="img/content/big.jpg",data-sub-html='<div class="text bold">Сертификат качества</div><p class="text2">Выдан специалисту высшего разряда</p>').diplom-slider-inner-img
+									img(src="img/content/d1.jpg", alt="fsdfsd")
+								a(href="img/content/big.jpg",data-sub-html='<div class="text bold">Сертификат качества</div><p class="text2">Выдан специалисту высшего разряда</p>').diplom-slider-inner-img
+									img(src="img/content/d1.jpg", alt="fsdfsd")
+							i Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).
 		.nav-wrapper
 			.nav-btn-wrap
 				//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
