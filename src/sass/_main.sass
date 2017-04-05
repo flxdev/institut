@@ -824,20 +824,19 @@ body, .out
 				cursor: pointer
 				&:hover
 					color: $hover
-			&.about
-				li:first-child
-					a
-						position: relative
-						&:after
-							content: ''
-							+rem(margin-left, 10px)
-							display: inline-block
-							vertical-align: middle
-							+rem(width,8px)
-							+rem(height,4px)
-							+contain
-							background-image: url(../img/icons/i-arr-bl.png)
-				li:not(:first-child)
+			li.about
+				a
+					position: relative
+					&:after
+						content: ''
+						+rem(margin-left, 10px)
+						display: inline-block
+						vertical-align: middle
+						+rem(width,8px)
+						+rem(height,4px)
+						+contain
+						background-image: url(../img/icons/i-arr-bl.png)
+				& ~ li
 					a
 						+rem(font-size,14px)
 						color: rgb(109, 109, 109);
@@ -2804,6 +2803,8 @@ a
 					+rem(padding, 12px 10px)
 					&:not(.more)
 						display: block !important
+					&.more
+						display: none !important
 					a 
 						text-transform: uppercase
 						font-weight: 700
@@ -2953,6 +2954,13 @@ a
 		h3
 			+rem(font-size, 22px)
 			line-height: 1.182;
+		img
+			display: block
+			max-width: calc(100% + 3.75rem)
+			+rem(margin-bottom, 40px)
+			+rem(margin-top, 40px)
+			&:first-child
+				+rem(margin-top,5px)
 		blockquote
 			border: 1px solid $hover
 			+padlr(30px)
@@ -3185,8 +3193,19 @@ a
 			+r(991)
 				border: none
 				+rem(padding-bottom,15px)
+				display: block
+				&~ .caption-content:not(.diplom-slider-content)
+					display: inline-block
+					+rem(margin, 25px 0)
+					clear: both
+					width: 48%
+					vertical-align: top
+					padding-right: 5%
+					
 			+r(735)
 				+rem(padding, 20px 0)
+				&~ .caption-content:not(.diplom-slider-content)
+					width: 100%
 .caption
 	position: relative
 	text-align: left
@@ -3777,11 +3796,11 @@ a
 	+rem(max-width,270px)
 	position: relative
 	&:not(.sale)
-		.price-old-cont,.small-block
+		.price-old-cont,.text:after
 			display: none
-	.small-block
-		position: absolute
-		+rem(right,30px)
+	// .small-block
+	// 	position: absolute
+	// 	+rem(right,30px)
 	.btn.yell
 		+rem(height,47px)
 		width: 100%
@@ -3794,21 +3813,21 @@ a
 		+rem(font-size,16px)
 		color: #000
 		+rem(margin-bottom, 9px)
-		// &:after
-		// 	content: 'Акция'
-		// 	+rem(font-size,13px)
-		// 	text-transform: uppercase;
-		// 	line-height: 1.2;
-		// 	color: #000
-		// 	+rem(border-radius, 3px)
-		// 	background-color: $hover
-		// 	display: inline-block
-		// 	font-weight: 400
-		// 	+rem(padding,3px 10px)
-		// 	+rem(margin-top,1px)
-		// 	font-family: $rc
-		// 	transition: box-shadow .3s, background-color .3s
-		// 	float: right
+		&:after
+			content: 'Акция'
+			+rem(font-size,13px)
+			text-transform: uppercase;
+			line-height: 1.2;
+			color: #000
+			+rem(border-radius, 3px)
+			background-color: $hover
+			display: inline-block
+			font-weight: 400
+			+rem(padding,3px 10px)
+			+rem(margin-top,1px)
+			font-family: $rc
+			transition: box-shadow .3s, background-color .3s
+			float: right
 	.title
 		line-height: 1
 		+rem(margin-top, 8px)

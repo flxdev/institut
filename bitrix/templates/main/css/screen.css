@@ -2996,9 +2996,9 @@ body, .out {
         cursor: pointer; }
         .dropdown-target .dropdown-inner .dropdown-list a:hover {
           color: #fbd400; }
-      .dropdown-target .dropdown-inner .dropdown-list.about li:first-child a {
+      .dropdown-target .dropdown-inner .dropdown-list li.about a {
         position: relative; }
-        .dropdown-target .dropdown-inner .dropdown-list.about li:first-child a:after {
+        .dropdown-target .dropdown-inner .dropdown-list li.about a:after {
           content: '';
           margin-left: 0.625rem;
           display: inline-block;
@@ -3009,12 +3009,12 @@ body, .out {
           background-size: contain;
           background-position: 50% 50%;
           background-image: url(../img/icons/i-arr-bl.png); }
-      .dropdown-target .dropdown-inner .dropdown-list.about li:not(:first-child) a {
+      .dropdown-target .dropdown-inner .dropdown-list li.about ~ li a {
         font-size: 0.875rem;
         color: #6d6d6d;
         line-height: 1.286;
         padding: 0.5rem 0.625rem 0.4375rem 0; }
-        .dropdown-target .dropdown-inner .dropdown-list.about li:not(:first-child) a:hover {
+        .dropdown-target .dropdown-inner .dropdown-list li.about ~ li a:hover {
           color: #fbd400; }
 
 .title {
@@ -4812,6 +4812,14 @@ a:active {
   .content-column-content h3 {
     font-size: 1.375rem;
     line-height: 1.182; }
+  .content-column-content img {
+    display: block;
+    max-width: -webkit-calc(100% + 3.75rem);
+    max-width: calc(100% + 3.75rem);
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem; }
+    .content-column-content img:first-child {
+      margin-top: 0.3125rem; }
   .content-column-content blockquote {
     border: 1px solid #fbd400;
     padding-left: 1.875rem;
@@ -5495,11 +5503,8 @@ a:active {
   padding: 2.125rem;
   max-width: 16.875rem;
   position: relative; }
-  .price-block:not(.sale) .price-old-cont, .price-block:not(.sale) .small-block {
+  .price-block:not(.sale) .price-old-cont, .price-block:not(.sale) .text:after {
     display: none; }
-  .price-block .small-block {
-    position: absolute;
-    right: 1.875rem; }
   .price-block .btn.yell {
     height: 2.9375rem;
     width: 100%;
@@ -5511,6 +5516,24 @@ a:active {
     font-size: 1rem;
     color: #000;
     margin-bottom: 0.5625rem; }
+    .price-block .text:after {
+      content: 'Акция';
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: #000;
+      border-radius: 0.1875rem;
+      background-color: #fbd400;
+      display: inline-block;
+      font-weight: 400;
+      padding: 0.1875rem 0.625rem;
+      margin-top: 0.0625rem;
+      font-family: "Roboto Condensed";
+      -webkit-transition: background-color .3s, -webkit-box-shadow .3s;
+      transition: background-color .3s, -webkit-box-shadow .3s;
+      transition: box-shadow .3s, background-color .3s;
+      transition: box-shadow .3s, background-color .3s, -webkit-box-shadow .3s;
+      float: right; }
   .price-block .title {
     line-height: 1;
     margin-top: 0.5rem;
@@ -7226,7 +7249,15 @@ a:active {
     flex-basis: 0; }
   .content-column-right-btnwrap{
     border: none;
-    padding-bottom: 0.9375rem; }
+    padding-bottom: 0.9375rem;
+    display: block; }
+  .content-column-right-btnwrap ~ .caption-content:not(.diplom-slider-content){
+    display: inline-block;
+    margin: 1.5625rem 0;
+    clear: both;
+    width: 48%;
+    vertical-align: top;
+    padding-right: 5%; }
   .caption-content{
     position: static;
     display: block;
@@ -7649,6 +7680,8 @@ a:active {
     padding: 0.75rem 0.625rem; }
   .aside-menu .aside-stick .menu-nav-item:not(.more){
     display: block !important; }
+  .aside-menu .aside-stick .menu-nav-item.more{
+    display: none !important; }
   .aside-menu .aside-stick .menu-nav-item a{
     text-transform: uppercase;
     font-weight: 700;
@@ -7691,6 +7724,8 @@ a:active {
     text-align: left; }
   .content-column-right-btnwrap{
     padding: 1.25rem 0; }
+  .content-column-right-btnwrap ~ .caption-content:not(.diplom-slider-content){
+    width: 100%; }
   .feachure-list-wrap{
     margin-top: 0; }
   .feachure-list-wrap.price ~ .nav-wrapper{

@@ -1042,8 +1042,15 @@ function popUpsInit() {
 	};
 	_this.f.openPopup = function (_popup) {
 		var _h = _this.c.body.scrollTop();
-		_popup.addClass(_this.conf.active_class);
-		_this.c.body.addClass(_this.conf.body_class).css('top',-_h);
+		if(_h === 0){
+			_h = $('html').scrollTop();
+		}
+		setTimeout(function(){
+			console.log(_h,'timeout')
+			_popup.addClass(_this.conf.active_class);
+			_this.c.body.addClass(_this.conf.body_class).css('top',-_h);
+		},10)
+
 	};
 	/**
 	 * Initial.
@@ -1056,7 +1063,8 @@ function popUpsInit() {
 		});
 		_popup.addClass(_this.conf.initial_class);
 	});
-	_this.b.open.off('click.popup').on('click.popup', function () {
+	_this.b.open.off('click.popup').on('click.popup', function (e) {
+		e.preventDefault();
 		var _b = $(this),
 			_popup = _this.c.popup.filter('[data-modal="' + _b.data('modal') + '"]');
 		_this.f.openPopup(_popup);
