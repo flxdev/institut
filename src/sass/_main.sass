@@ -2954,6 +2954,27 @@ a
 		h3
 			+rem(font-size, 22px)
 			line-height: 1.182;
+		ul
+			+rem(margin, 24px 0 )
+			display: block
+			li
+				line-height: 1.25;
+				color: #000
+				+rem(padding-left,28px)
+				position: relative
+				+rem(padding-bottom, 10px)
+				font-size: .9375rem
+				color: #6d6d6d;
+				&:after
+					position: absolute
+					content: ''
+					display: inline-block
+					+rem(left, 3px)
+					+rem(top, 7px)
+					+rem(width,6px)
+					+rem(height, 6px)
+					background-color: #000
+					border-radius: 50%
 		img
 			display: block
 			max-width: calc(100% + 3.75rem)
@@ -3264,7 +3285,7 @@ a
 			+rem(padding-left,49px)
 			line-height: 1.5
 	&-inner
-		+rem(height,155px)
+		
 		+rem(margin, 15px 0)
 		cursor: pointer
 		&:not(.slick-initialized)
@@ -3274,6 +3295,8 @@ a
 			height: 100%
 		.slick-arrow
 			background: transparent
+			will-change: opacity
+			top: 31%
 			&.slick-disabled
 				pointer-events: none
 			&:before
@@ -3304,11 +3327,16 @@ a
 		&-img
 			&>img
 				display: block
-				height: 100%
+				+rem(height,155px)
 				max-width: 100%
 				margin: 0 auto
+			i 
+				+rem(margin-top,20px)
+				line-height: 1.5
+				// width: 110%
 .feachure-list
 	&-wrap
+		+rem(margin-top,-52px)
 		& ~ .content-column-wrap
 			.caption-content
 				+rem(top, -25px)

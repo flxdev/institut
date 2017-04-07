@@ -171,10 +171,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	$(".js-scroll-to").on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
-		var elementClick = $(this).attr("href");
+		var elementClick = $(this).data("href");
+		var target = $('body').find('[data-id="' + elementClick + '"]');
 		$(".aside-stick").trigger("sticky_kit:recalc");
-		if($(elementClick)){
-			var destination = $(elementClick).offset().top,
+		if(target.length){
+			var destination = $(target).offset().top,
 				pad = window.matchMedia('(max-width: 991px)').matches ? 70 : 90;
 			$("html, body:not(:animated), .out:not(:animated)").animate({scrollTop: destination - pad}, 500);
 			setTimeout(function(){

@@ -4812,6 +4812,27 @@ a:active {
   .content-column-content h3 {
     font-size: 1.375rem;
     line-height: 1.182; }
+  .content-column-content ul {
+    margin: 1.5rem 0;
+    display: block; }
+    .content-column-content ul li {
+      line-height: 1.25;
+      color: #000;
+      padding-left: 1.75rem;
+      position: relative;
+      padding-bottom: 0.625rem;
+      font-size: .9375rem;
+      color: #6d6d6d; }
+      .content-column-content ul li:after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        left: 0.1875rem;
+        top: 0.4375rem;
+        width: 0.375rem;
+        height: 0.375rem;
+        background-color: #000;
+        border-radius: 50%; }
   .content-column-content img {
     display: block;
     max-width: -webkit-calc(100% + 3.75rem);
@@ -5094,7 +5115,6 @@ a:active {
     line-height: 1.5; }
 
 .diplom-slider-inner {
-  height: 9.6875rem;
   margin: 0.9375rem 0;
   cursor: pointer; }
   .diplom-slider-inner:not(.slick-initialized) {
@@ -5103,7 +5123,9 @@ a:active {
   .diplom-slider-inner .slick-track, .diplom-slider-inner .slick-list {
     height: 100%; }
   .diplom-slider-inner .slick-arrow {
-    background: transparent; }
+    background: transparent;
+    will-change: opacity;
+    top: 31%; }
     .diplom-slider-inner .slick-arrow.slick-disabled {
       pointer-events: none; }
     .diplom-slider-inner .slick-arrow:before {
@@ -5134,127 +5156,127 @@ a:active {
     border-left-color: #fbd400; }
   .diplom-slider-inner-img > img {
     display: block;
-    height: 100%;
+    height: 9.6875rem;
     max-width: 100%;
     margin: 0 auto; }
+  .diplom-slider-inner-img i {
+    margin-top: 1.25rem;
+    line-height: 1.5; }
 
-.feachure-list-wrap ~ .content-column-wrap .caption-content {
-  top: -1.5625rem; }
-
-.feachure-list-wrap ~ .content-column-wrap .content-column-content-inner {
-  padding-bottom: 0; }
-
-.feachure-list-wrap.price {
-  margin-top: -2.1875rem; }
-  .feachure-list-wrap.price .doc-card-inner {
-    padding-top: 4.375rem; }
-  .feachure-list-wrap.price .feachure-list-item {
-    margin-right: 0;
-    background-color: #fff;
-    padding-bottom: 1.875rem; }
-  .feachure-list-wrap.price .feachure-list-item-inner {
-    width: 100%; }
-    .feachure-list-wrap.price .feachure-list-item-inner .menu-nav-item {
-      margin: 1.5625rem 0 0; }
-      .feachure-list-wrap.price .feachure-list-item-inner .menu-nav-item a {
-        font-size: 1rem; }
-  .feachure-list-wrap.price .feachure-list-content {
-    margin-right: -3.875rem; }
-  .feachure-list-wrap.price .feachure-list-list {
-    min-width: 100%;
-    display: block;
-    font-size: 0;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    padding-right: 0;
-    margin-top: 1.25rem; }
-    .feachure-list-wrap.price .feachure-list-list li {
-      margin: 0 0;
-      padding-top: 0.46875rem;
-      padding-bottom: 0.46875rem;
-      -webkit-column-fill: auto;
-      -moz-column-fill: auto;
-      column-fill: auto;
-      -webkit-transform: translate3d(0, 0, 0);
-      -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-      break-inside: avoid;
-      *zoom: 1;
-      padding-right: 3.875rem; }
-      .feachure-list-wrap.price .feachure-list-list li:after {
-        content: " ";
+.feachure-list-wrap {
+  margin-top: -3.25rem; }
+  .feachure-list-wrap ~ .content-column-wrap .caption-content {
+    top: -1.5625rem; }
+  .feachure-list-wrap ~ .content-column-wrap .content-column-content-inner {
+    padding-bottom: 0; }
+  .feachure-list-wrap.price {
+    margin-top: -2.1875rem; }
+    .feachure-list-wrap.price .doc-card-inner {
+      padding-top: 4.375rem; }
+    .feachure-list-wrap.price .feachure-list-item {
+      margin-right: 0;
+      background-color: #fff;
+      padding-bottom: 1.875rem; }
+    .feachure-list-wrap.price .feachure-list-item-inner {
+      width: 100%; }
+      .feachure-list-wrap.price .feachure-list-item-inner .menu-nav-item {
+        margin: 1.5625rem 0 0; }
+        .feachure-list-wrap.price .feachure-list-item-inner .menu-nav-item a {
+          font-size: 1rem; }
+    .feachure-list-wrap.price .feachure-list-content {
+      margin-right: -3.875rem; }
+    .feachure-list-wrap.price .feachure-list-list {
+      min-width: 100%;
+      display: block;
+      font-size: 0;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      padding-right: 0;
+      margin-top: 1.25rem; }
+      .feachure-list-wrap.price .feachure-list-list li {
+        margin: 0 0;
+        padding-top: 0.46875rem;
+        padding-bottom: 0.46875rem;
+        -webkit-column-fill: auto;
+        -moz-column-fill: auto;
+        column-fill: auto;
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        *zoom: 1;
+        padding-right: 3.875rem; }
+        .feachure-list-wrap.price .feachure-list-list li:after {
+          content: " ";
+          display: table;
+          clear: both; }
+        .feachure-list-wrap.price .feachure-list-list li a span {
+          padding-right: 0.625rem; }
+        .feachure-list-wrap.price .feachure-list-list li.sale span:after {
+          content: 'Акция';
+          font-size: 0.625rem;
+          text-transform: uppercase;
+          line-height: 1.2;
+          color: #000;
+          border-radius: 0.1875rem;
+          background-color: #fbd400;
+          display: inline-block;
+          font-weight: 400;
+          padding: 0.125rem 0.5rem;
+          -webkit-transform: translateY(-2px);
+          -ms-transform: translateY(-2px);
+          transform: translateY(-2px);
+          font-family: "Roboto Condensed";
+          margin-left: 0.3125rem;
+          -webkit-transition: background-color .3s, -webkit-box-shadow .3s;
+          transition: background-color .3s, -webkit-box-shadow .3s;
+          transition: box-shadow .3s, background-color .3s;
+          transition: box-shadow .3s, background-color .3s, -webkit-box-shadow .3s; }
+        .feachure-list-wrap.price .feachure-list-list li.sale .text-bold {
+          color: #e4b809; }
+        .feachure-list-wrap.price .feachure-list-list li.sale a:hover span:after {
+          -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15); }
+        .feachure-list-wrap.price .feachure-list-list li.sale a:hover .text-bold {
+          color: #fbd400; }
+      .feachure-list-wrap.price .feachure-list-list a {
         display: table;
-        clear: both; }
-      .feachure-list-wrap.price .feachure-list-list li a span {
-        padding-right: 0.625rem; }
-      .feachure-list-wrap.price .feachure-list-list li.sale span:after {
-        content: 'Акция';
-        font-size: 0.625rem;
-        text-transform: uppercase;
-        line-height: 1.2;
-        color: #000;
-        border-radius: 0.1875rem;
-        background-color: #fbd400;
-        display: inline-block;
-        font-weight: 400;
-        padding: 0.125rem 0.5rem;
-        -webkit-transform: translateY(-2px);
-        -ms-transform: translateY(-2px);
-        transform: translateY(-2px);
-        font-family: "Roboto Condensed";
-        margin-left: 0.3125rem;
-        -webkit-transition: background-color .3s, -webkit-box-shadow .3s;
-        transition: background-color .3s, -webkit-box-shadow .3s;
-        transition: box-shadow .3s, background-color .3s;
-        transition: box-shadow .3s, background-color .3s, -webkit-box-shadow .3s; }
-      .feachure-list-wrap.price .feachure-list-list li.sale .text-bold {
-        color: #e4b809; }
-      .feachure-list-wrap.price .feachure-list-list li.sale a:hover span:after {
-        -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15); }
-      .feachure-list-wrap.price .feachure-list-list li.sale a:hover .text-bold {
-        color: #fbd400; }
-    .feachure-list-wrap.price .feachure-list-list a {
-      display: table;
-      -webkit-transition: border-color 0.3s;
-      transition: border-color 0.3s;
-      border-bottom: 1px solid #f8f8f8; }
-      .feachure-list-wrap.price .feachure-list-list a:hover {
-        border-color: #aaaaaa; }
-        .feachure-list-wrap.price .feachure-list-list a:hover span {
-          color: #000; }
-      .feachure-list-wrap.price .feachure-list-list a span, .feachure-list-wrap.price .feachure-list-list a .text-bold {
-        display: table-cell;
-        vertical-align: bottom;
-        -webkit-transition: color 0.3s;
-        transition: color 0.3s; }
-      .feachure-list-wrap.price .feachure-list-list a .text-bold {
-        text-align: right;
-        white-space: nowrap;
-        font-size: 1.125rem; }
-      .feachure-list-wrap.price .feachure-list-list a span {
-        padding-right: 0.3125rem; }
-
-.feachure-list-wrap .doc-card-inner {
-  padding-top: 5.3125rem;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50% 50%;
-  background-position: right 10px bottom; }
-
-.feachure-list-wrap .doc-card-img {
-  position: relative;
-  z-index: -1; }
-
-.feachure-list-wrap .doc-card-text {
-  width: 100%;
-  padding-bottom: 1.875rem;
-  max-width: 100%; }
-  .feachure-list-wrap .doc-card-text .link-arr {
-    position: static;
-    margin-top: .4375rem;
-    margin-left: .4375rem; }
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        border-bottom: 1px solid #f8f8f8; }
+        .feachure-list-wrap.price .feachure-list-list a:hover {
+          border-color: #aaaaaa; }
+          .feachure-list-wrap.price .feachure-list-list a:hover span {
+            color: #000; }
+        .feachure-list-wrap.price .feachure-list-list a span, .feachure-list-wrap.price .feachure-list-list a .text-bold {
+          display: table-cell;
+          vertical-align: bottom;
+          -webkit-transition: color 0.3s;
+          transition: color 0.3s; }
+        .feachure-list-wrap.price .feachure-list-list a .text-bold {
+          text-align: right;
+          white-space: nowrap;
+          font-size: 1.125rem; }
+        .feachure-list-wrap.price .feachure-list-list a span {
+          padding-right: 0.3125rem; }
+  .feachure-list-wrap .doc-card-inner {
+    padding-top: 5.3125rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-position: right 10px bottom; }
+  .feachure-list-wrap .doc-card-img {
+    position: relative;
+    z-index: -1; }
+  .feachure-list-wrap .doc-card-text {
+    width: 100%;
+    padding-bottom: 1.875rem;
+    max-width: 100%; }
+    .feachure-list-wrap .doc-card-text .link-arr {
+      position: static;
+      margin-top: .4375rem;
+      margin-left: .4375rem; }
 
 .feachure-list-item {
   padding-bottom: 7.5rem;
