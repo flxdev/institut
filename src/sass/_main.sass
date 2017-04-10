@@ -2847,6 +2847,7 @@ a
 		a
 			&.active
 				pointer-events: none
+				box-shadow: none
 		&.more
 
 			.link-black
@@ -2954,7 +2955,7 @@ a
 		h3
 			+rem(font-size, 22px)
 			line-height: 1.182;
-		ul
+		ul:not([class])
 			+rem(margin, 24px 0 )
 			display: block
 			li
@@ -2975,6 +2976,26 @@ a
 					+rem(height, 6px)
 					background-color: #000
 					border-radius: 50%
+		ol:not([class])
+			+rem(margin, 24px 0 )
+			display: block
+			counter-reset: list
+			li
+				line-height: 1.25;
+				color: #000
+				position: relative
+				+rem(padding-bottom, 10px)
+				font-size: .9375rem
+				color: #6d6d6d;	
+				counter-increment: list
+				&:before
+	   				content: counter(list)
+	   				+rem(font-size,16px )
+	   				font-weight: 600
+	   				color: #000
+	   				display: inline-block
+	   				+rem(width,24px)
+	   				+rem(padding-right,5px)
 		img
 			display: block
 			max-width: calc(100% + 3.75rem)
@@ -3414,22 +3435,30 @@ a
 						span 
 							+rem(padding-right,10px)
 					&.sale
-						span
-							&:after
-								content: 'Акция'
-								+rem(font-size,10px)
-								text-transform: uppercase;
-								line-height: 1.2;
-								color: #000
-								+rem(border-radius, 3px)
-								background-color: $hover
-								display: inline-block
-								font-weight: 400
-								+rem(padding,2px 8px)
-								transform: translateY(-2px)
-								font-family: $rc
-								+rem(margin-left,5px)
-								transition: box-shadow .3s, background-color .3s
+						position: relative
+						.text-bold
+							// vertical-align: middle
+						a:first-child
+
+							+rem(padding-bottom,25px)
+						.small-block
+							position: absolute
+							+rem(right,65px)
+							z-index: 2
+							display: inline-block
+							width: auto
+							+rem(font-size,10px)
+							+rem(width,44px)
+							+rem(height,19px)
+							text-align: center
+							+rem(padding,2px 7px)
+							+rem(bottom, 12px)
+							span
+								width: 100%
+								text-align: center
+								
+							+r(800)
+								+rem(right,25px)
 
 						.text-bold
 							color: $active
@@ -3824,11 +3853,11 @@ a
 	+rem(max-width,270px)
 	position: relative
 	&:not(.sale)
-		.price-old-cont,.text:after
+		.price-old-cont,.small-block
 			display: none
-	// .small-block
-	// 	position: absolute
-	// 	+rem(right,30px)
+	.small-block
+		position: absolute
+		+rem(right,30px)
 	.btn.yell
 		+rem(height,47px)
 		width: 100%
@@ -3841,21 +3870,21 @@ a
 		+rem(font-size,16px)
 		color: #000
 		+rem(margin-bottom, 9px)
-		&:after
-			content: 'Акция'
-			+rem(font-size,13px)
-			text-transform: uppercase;
-			line-height: 1.2;
-			color: #000
-			+rem(border-radius, 3px)
-			background-color: $hover
-			display: inline-block
-			font-weight: 400
-			+rem(padding,3px 10px)
-			+rem(margin-top,1px)
-			font-family: $rc
-			transition: box-shadow .3s, background-color .3s
-			float: right
+		// &:after
+		// 	content: 'Акция'
+		// 	+rem(font-size,13px)
+		// 	text-transform: uppercase;
+		// 	line-height: 1.2;
+		// 	color: #000
+		// 	+rem(border-radius, 3px)
+		// 	background-color: $hover
+		// 	display: inline-block
+		// 	font-weight: 400
+		// 	+rem(padding,3px 10px)
+		// 	+rem(margin-top,1px)
+		// 	font-family: $rc
+		// 	transition: box-shadow .3s, background-color .3s
+		// 	float: right
 	.title
 		line-height: 1
 		+rem(margin-top, 8px)
@@ -4403,6 +4432,8 @@ a
 				+rem(font-size,16px)
 		&-block
 			+rem(margin,20px 0 21px)
+			.text2
+				display: block
 				
 .sertificat
 	&-item
