@@ -3438,28 +3438,26 @@ a
 						position: relative
 						.text-bold
 							// vertical-align: middle
-						a:first-child
+						// a:first-child
 
-							+rem(padding-bottom,25px)
+						// 	+rem(padding-bottom,25px)
 						.small-block
-							position: absolute
-							+rem(right,65px)
-							z-index: 2
 							display: inline-block
 							width: auto
 							+rem(font-size,10px)
 							+rem(width,44px)
+							vertical-align: bottom
+							
 							+rem(height,19px)
 							text-align: center
 							+rem(padding,2px 7px)
-							+rem(bottom, 12px)
+							// +rem(bottom, 12px)
+							&:hover
+								background-color: $hover
+								box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2)	
 							span
 								width: 100%
 								text-align: center
-								
-							+r(800)
-								+rem(right,25px)
-
 						.text-bold
 							color: $active
 						a 

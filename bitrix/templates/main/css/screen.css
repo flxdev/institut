@@ -5236,20 +5236,19 @@ a:active {
           padding-right: 0.625rem; }
         .feachure-list-wrap.price .feachure-list-list li.sale {
           position: relative; }
-          .feachure-list-wrap.price .feachure-list-list li.sale a:first-child {
-            padding-bottom: 1.5625rem; }
           .feachure-list-wrap.price .feachure-list-list li.sale .small-block {
-            position: absolute;
-            right: 4.0625rem;
-            z-index: 2;
             display: inline-block;
             width: auto;
             font-size: 0.625rem;
             width: 2.75rem;
+            vertical-align: bottom;
             height: 1.1875rem;
             text-align: center;
-            padding: 0.125rem 0.4375rem;
-            bottom: 0.75rem; }
+            padding: 0.125rem 0.4375rem; }
+            .feachure-list-wrap.price .feachure-list-list li.sale .small-block:hover {
+              background-color: #fbd400;
+              -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+              box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2); }
             .feachure-list-wrap.price .feachure-list-list li.sale .small-block span {
               width: 100%;
               text-align: center; }
@@ -7772,9 +7771,6 @@ a:active {
     -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1; }
-
-  .feachure-list-wrap.price .feachure-list-list li.sale .small-block {
-    right: 1.5625rem; }
 
   .mapcont-row .map-item.list-single ul {
     width: 100%; }
