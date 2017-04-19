@@ -585,7 +585,7 @@
                                           <li class="sale">
                                             <a href="#">
                                               <span>Лечение угревой болезни
-                                                <div class="small-block small">
+                                                <div class="small-block small js-popup-button ajax-trigger" data-href="promo.html" data-modal="road">
                                                   <span>Акция</span>
                                                 </div>
                                               </span>
@@ -607,7 +607,7 @@
                                           <li class="sale">
                                             <a href="#"> 
                                               <span>Удаление родинок и папиллом
-                                                <div class="small-block small">
+                                                <div class="small-block small js-popup-button ajax-trigger" data-href="promo.html" data-modal="road">
                                                   <span>Акция</span>
                                                 </div>
                                               </span>
@@ -665,7 +665,7 @@
                                           <li class="sale">
                                             <a href="#"> 
                                               <span>Вросший ноготь
-                                                <div class="small-block small">
+                                                <div class="small-block small js-popup-button ajax-trigger" data-href="promo.html" data-modal="road">
                                                   <span>Акция</span>
                                                 </div>
                                               </span>
@@ -703,7 +703,7 @@
                                           <li class="sale">
                                             <a href="#"> 
                                               <span>Вросший ноготь
-                                                <div class="small-block small">
+                                                <div class="small-block small js-popup-button ajax-trigger" data-href="promo.html" data-modal="road">
                                                   <span>Акция</span>
                                                 </div>
                                               </span>
@@ -1290,6 +1290,11 @@
                               </div>
                             </form>
             </div>
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+              	var ajax = new AjaxLoading($(".ajax-trigger"));
+              });
+            </script>
           </main>
           <footer class="page__footer">
             <div class="box">
@@ -1467,7 +1472,7 @@
               <div class="input-item s-100">
                 <div class="input-wrapper">
                   <label>Сообщение</label>
-                  <textarea class="input-main" rows="5" placeholder="Сообщение"> </textarea>
+                  <textarea class="input-main" rows="5" placeholder="Сообщение"></textarea>
                 </div>
               </div>
               <div class="form-footer">

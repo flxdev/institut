@@ -3747,6 +3747,7 @@ a
 			align-items: stretch
 			+rem(padding-bottom, 30px)
 			+rem(padding-top, 30px)
+			margin: 0
 		.text
 			+rem(font-size,16px)
 			color: #000
@@ -5190,6 +5191,8 @@ a
 	.modal-container-header-img
 		img
 			width: 100%
+	.caption-content
+		display: none
 	.modal-container
 		background: 0 0
 		padding: 0
@@ -5206,6 +5209,7 @@ a
 			+rem(margin-bottom,50px)
 			+r(600)
 				+rem(margin-bottom,20px)
+
 		&:before
 			display: none
 		&-content
@@ -5224,7 +5228,36 @@ a
 				color: rgb(109, 109, 109);
 				line-height: 1.5;
 				+rem(margin-bottom,25px)
-
+		&.sale
+			background-color: #faf9f5
+			.modal-container-content
+				background: 0 0
+				padding-top: 0
+				.content-column-content-inner
+					padding-bottom: 0
+			.modal-container-header
+				height: auto
+				+rem(padding-top,40px)
+				+rem(padding-left,30px)
+				text-align: left
+				+rem(padding-right,30px)
+				.title
+					+rem(margin-bottom,25px)
+				.small-block
+					+rem(margin-bottom,20px)
+			&:before
+				position: absolute
+				content: ''
+				top: 0
+				height: 3px
+				background-color: $hover
+				+tr(width .35s)
+				display: inline-block
+				left: auto
+				right: 0
+				transition-delay: 0
+			.nav-arrows .slick-arrow use
+				fill: transparent
 
 			
 

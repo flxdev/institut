@@ -542,7 +542,7 @@
                 <!--если акции нету, убираем класс sale. -->
                 <!-- .small-block и .price-old-cont при этом можно оставить-->
                 <div class="price-block sale">
-                  <a class="small-block small" href="#">
+                  <a class="small-block small js-popup-button ajax-trigger" href="promo.html" data-modal="road" data-href="">
                     <span>Акция</span>
                   </a>
                   <div class="text">Стоимость услуги:</div>
@@ -974,6 +974,12 @@
                               </div>
                             </form>
             </div>
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+              	var ajax = new AjaxLoading($(".ajax-trigger"));
+              });
+              	
+            </script>
           </main>
           <footer class="page__footer">
             <div class="box">
@@ -1151,7 +1157,7 @@
               <div class="input-item s-100">
                 <div class="input-wrapper">
                   <label>Сообщение</label>
-                  <textarea class="input-main" rows="5" placeholder="Сообщение"> </textarea>
+                  <textarea class="input-main" rows="5" placeholder="Сообщение"></textarea>
                 </div>
               </div>
               <div class="form-footer">

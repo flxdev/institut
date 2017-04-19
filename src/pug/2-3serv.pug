@@ -75,7 +75,7 @@ block content
 							li.sale
 								a(href="#")
 									span Лечение угревой болезни
-										.small-block.small
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
 											span Акция
 									.text-bold 60 000₽
 							li
@@ -89,7 +89,7 @@ block content
 							li.sale
 								a(href="#") 
 									span Удаление родинок и папиллом
-										.small-block.small
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
 											span Акция
 									.text-bold 42 000₽
 							li
@@ -127,7 +127,7 @@ block content
 							li.sale
 								a(href="#") 
 									span Вросший ноготь
-										.small-block.small
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
 											span Акция
 									.text-bold 42 000₽
 							li.sale
@@ -152,7 +152,7 @@ block content
 							li.sale
 								a(href="#") 
 									span Вросший ноготь
-										.small-block.small
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
 											span Акция
 									.text-bold 42 000₽
 
@@ -423,10 +423,10 @@ block content
 		.nav-btn-wrap
 			//если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить
 		+phoneform
-
-
-
-
+	script.
+		document.addEventListener("DOMContentLoaded", function() {
+			var ajax = new AjaxLoading($(".ajax-trigger"));
+		});
 
 
 

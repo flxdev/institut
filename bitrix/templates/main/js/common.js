@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	}
-	bgfade()
+	bgfade();
 	DesktopMenu();
 	doctorSlider();
 	rombSlider();
@@ -423,6 +423,20 @@ function initCustomSelectList() {
 		   var _label = $(this),
 			   _input = _label.find('input');
 			_input.prop('checked', true);
+			if(_input.hasClass('valid') && _select.hasClass('ajax')){
+				var data = $(_input).data();
+				delete data.validationErrorMsg;
+				delete data.validation;
+				$.ajax({
+					url: '/include/form/form_get.php',
+					dataType: "html",
+					data: {"data" : data},
+					method: "POST",
+					success: function(content) {
+						$('.select-list.ajax-target').html(content);
+					}
+				})
+			}
 			_select.trigger('reinit');
 			_button.parent().removeClass('active');
 		});
@@ -600,36 +614,36 @@ function diplomSlider(){
 function contentSlider(){
 	$(".content-slider-slider").each(function() {
 		var _this = $(this);
-		var parent = _this.closest('.content-slider-wrap');
-		_this.on('init reinit afterChange', function(event, slick, currentSlide, nextSlide){
+		if(!_this.hasClass('slick-initialized')){
+			var parent = _this.closest('.content-slider-wrap');
+			_this.on('init reinit afterChange', function(event, slick, currentSlide, nextSlide){
+			  	var active = _this.find('.slick-current');
+			  	var compareEl = active.find(".comparator-frame");
+			  	if(compareEl.length){
 
-		  	var active = _this.find('.slick-current');
-		  	var compareEl = active.find(".comparator-frame");
-		  	if(compareEl.length){
-
-		  	}
-		});
-		_this.slick({
-			accessibility: true,
-			arrows: true,
-			draggable: false,
-			autoplay: false,
-			dots: true,
-			fade: false,
-			touchMove: false,
-			infinite: false,
-			appendArrows: parent.find('.nav-arrows'),
-			appendDots: parent.find('.nav-dots'),
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
-			prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
-		});
-		if(_this.find('.compare-item_container').length){
-			_this.slick('slickSetOption', 'swipe', false,false);
+			  	}
+			});
+			_this.slick({
+				accessibility: true,
+				arrows: true,
+				draggable: false,
+				autoplay: false,
+				dots: true,
+				fade: false,
+				touchMove: false,
+				infinite: false,
+				appendArrows: parent.find('.nav-arrows'),
+				appendDots: parent.find('.nav-dots'),
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				nextArrow:'<button type="button" class="carousel-next"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+				prevArrow:'<button type="button" class="carousel-prev"><svg class="icon icon-drop"><use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></button>',
+			});
+			if(_this.find('.compare-item_container').length){
+				_this.slick('slickSetOption', 'swipe', false,false);
+			}
 		}
 	});
-
 }
 CompareImages.prototype = {
 	init: function(){
@@ -1043,15 +1057,8 @@ function popUpsInit() {
 	};
 	_this.f.openPopup = function (_popup) {
 		var _h = _this.c.body.scrollTop();
-		if(_h === 0){
-			_h = $('html').scrollTop();
-		}
-		setTimeout(function(){
-			console.log(_h,'timeout')
-			_popup.addClass(_this.conf.active_class);
-			_this.c.body.addClass(_this.conf.body_class).css('top',-_h);
-		},10)
-
+		_popup.addClass(_this.conf.active_class);
+		_this.c.body.addClass(_this.conf.body_class).css('top',-_h);
 	};
 	/**
 	 * Initial.
@@ -1064,8 +1071,7 @@ function popUpsInit() {
 		});
 		_popup.addClass(_this.conf.initial_class);
 	});
-	_this.b.open.off('click.popup').on('click.popup', function (e) {
-		e.preventDefault();
+	_this.b.open.off('click.popup').on('click.popup', function () {
 		var _b = $(this),
 			_popup = _this.c.popup.filter('[data-modal="' + _b.data('modal') + '"]');
 		_this.f.openPopup(_popup);
@@ -1083,7 +1089,7 @@ function AjaxLoading(el){
 	_this.initEvents = function(){
 
 		$(".ajax-trigger").off("click.trigger").on("click.trigger", function(e){
-			var link = $(this).attr("href");
+			var link = $(this).attr("href") || $(this).data("href");
 			_this.action(link)
 			e.preventDefault();
 			return false;
@@ -1100,6 +1106,7 @@ function AjaxLoading(el){
 					_this.initEvents();
 					roadSlider();
 					popUpsInit();
+					contentSlider();
 				});
 			}
 		})

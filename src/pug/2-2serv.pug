@@ -53,7 +53,7 @@ block content
 			//если акции нету, убираем класс sale. 
 			// .small-block и .price-old-cont при этом можно оставить
 			.price-block.sale
-				a(href="#").small-block.small
+				a(href="promo.html",data-modal='road',data-href='').small-block.small.js-popup-button.ajax-trigger
 					span Акция
 				.text Стоимость услуги:
 				.title.h3 250 000₽
@@ -245,7 +245,11 @@ block content
 						use(xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink")
 				span Назад
 		+phoneform
-
+	script.
+		document.addEventListener("DOMContentLoaded", function() {
+			var ajax = new AjaxLoading($(".ajax-trigger"));
+		});
+			
 
 
 

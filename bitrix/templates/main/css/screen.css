@@ -6753,6 +6753,8 @@ a:active {
     width: 100%; }
   #modal-road .modal-container-header-img img {
     width: 100%; }
+  #modal-road .caption-content {
+    display: none; }
   #modal-road .modal-container {
     background: 0 0;
     padding: 0;
@@ -6779,6 +6781,38 @@ a:active {
         color: #6d6d6d;
         line-height: 1.5;
         margin-bottom: 1.5625rem; }
+    #modal-road .modal-container.sale {
+      background-color: #faf9f5; }
+      #modal-road .modal-container.sale .modal-container-content {
+        background: 0 0;
+        padding-top: 0; }
+        #modal-road .modal-container.sale .modal-container-content .content-column-content-inner {
+          padding-bottom: 0; }
+      #modal-road .modal-container.sale .modal-container-header {
+        height: auto;
+        padding-top: 2.5rem;
+        padding-left: 1.875rem;
+        text-align: left;
+        padding-right: 1.875rem; }
+        #modal-road .modal-container.sale .modal-container-header .title {
+          margin-bottom: 1.5625rem; }
+        #modal-road .modal-container.sale .modal-container-header .small-block {
+          margin-bottom: 1.25rem; }
+      #modal-road .modal-container.sale:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        height: 3px;
+        background-color: #fbd400;
+        -webkit-transition: width 0.35s;
+        transition: width 0.35s;
+        display: inline-block;
+        left: auto;
+        right: 0;
+        -webkit-transition-delay: 0;
+        transition-delay: 0; }
+      #modal-road .modal-container.sale .nav-arrows .slick-arrow use {
+        fill: transparent; }
       @media screen and (min-width: 1150px) and (max-width: 1250px) {
 
   .page__header-content {
@@ -8091,7 +8125,8 @@ a:active {
     -ms-flex-align: stretch;
     align-items: stretch;
     padding-bottom: 1.875rem;
-    padding-top: 1.875rem; }
+    padding-top: 1.875rem;
+    margin: 0; }
 
   .product-container-feachure {
     margin-top: 1.875rem; }
