@@ -1,3 +1,6 @@
+$(window).on('load',function(){
+	openOnLoad();
+})
 document.addEventListener("DOMContentLoaded", function() {
 	(function(){
 		var mainHeader = document.querySelector('.cd-auto-hide-header'),
@@ -397,15 +400,14 @@ function initCustomSelectList() {
 			var _active = _list.find('input:checked');
 			if($(this).parents('.depends-on').length){
 				var item = $(this).closest('.depends-on');
+				var next = item.nextAll('.depends-on').find('.select-check');
+				console.log(item.nextAll('.depends-on').find('input:checked').length);
 				if(_active.length){
-					var next = item.nextAll('.depends-on').find('.select-check');
 					next.removeClass('disabled').find('input').prop('checked', false);
-					next.trigger('reinit');
 				}else{
-					var next = item.nextAll('.depends-on').find('.select-check');
 					next.addClass('disabled').find('input').prop('checked', false);
-					next.trigger('reinit');
 				}
+				next.trigger('reinit');
 			}
 			if(_active.length) {
 				_button.children('.btn-text').addClass('active').text(''+_active.siblings('span').text()+'').parent().addClass('is-checked')
@@ -415,13 +417,15 @@ function initCustomSelectList() {
 			}
 			CheckForSelect($(this).parents('form'));
 		});
-		_button.on('click', function() {
+
+		_button.off('click').on('click', function() {
 		   _button.parent().toggleClass('active').siblings().removeClass('active');
 			return(false);
 		});
+
 		_select.on('click', 'label', function() {
-		   var _label = $(this),
-			   _input = _label.find('input');
+			var _label = $(this),
+				_input = _label.find('input');
 			_input.prop('checked', true);
 			if(_input.hasClass('valid') && _select.hasClass('ajax')){
 				var data = $(_input).data();
@@ -435,13 +439,15 @@ function initCustomSelectList() {
 					success: function(content) {
 						$('.select-list.ajax-target').html(content);
 					}
-				})
+				});
 			}
 			_select.trigger('reinit');
 			_button.parent().removeClass('active');
 		});
+
 		_select.trigger('reinit');
 		_select.addClass(_conf.initClass);
+
 		 $(document).on('mouseup', function (e){
 			if (!_select.is(e.target)
 				&& _select.has(e.target).length === 0) {
@@ -497,6 +503,7 @@ function datepick(){
 			firstDay: 1,
 			minDate: offset,
 			yearRange: '-0:+1',
+			minDate: 1,
 			beforeShow: function() {
 				setTimeout(function() {
 					updateToSelectMenu()
@@ -1089,7 +1096,7 @@ function AjaxLoading(el){
 	_this.initEvents = function(){
 
 		$(".ajax-trigger").off("click.trigger").on("click.trigger", function(e){
-			var link = $(this).attr("href") || $(this).data("href");
+			var link = $(this).data("href");
 			_this.action(link)
 			e.preventDefault();
 			return false;
@@ -1139,6 +1146,7 @@ function ajaxpostshow(urlres, datares, form){
 		dataType: "html",
 		success: function(fillter){
 			form[0].reset();
+			initCustomSelectList();
 			// validateForms();
 		}
 	});
@@ -1236,4 +1244,19 @@ function ajaxBtn() {
 
 function isHistoryApiAvailable() {
 	return !!(window.history && history.pushState);
+}
+function openOnLoad(){
+	var scrollItem = window.location.hash;
+	var item = $('[data-id="'+scrollItem+'"]');
+	setTimeout(function() {
+		window.scrollTo(0, 0);
+	}, 1);
+	if(item.length){
+		setTimeout(function() {
+			var destination = item.offset().top;
+			console.log(destination);
+			$("html,body:not(:animated)").animate({scrollTop: destination - 75}, 500);
+		},10);
+
+	}
 }

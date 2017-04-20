@@ -25,7 +25,8 @@ mixin romb(img, text)
 	a(href="#").romb-item-item
 		.romb-item-wrap
 			.romb-item-middle
-				.romb-item-inner(style='background-image:url(img/romb/'+img+')')
+				.romb-item-inner
+					img(src="img/romb/"+img+"", alt="")
 		.romb-item-text.title.h4 #{text}
 mixin news(text, date,img, type)
 	article.news-item

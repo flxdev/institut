@@ -1156,10 +1156,17 @@ blockquote
 	&-middle
 		padding-bottom: 115.5%
 		transform: rotate(-60deg) skewY(30deg)
+		overflow: hidden
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
 	&-inner
 		+coverdiv
 		+cover
 		transform: skewY(-30deg) rotate(60deg)
+		overflow: hidden
+
 // buttons
 .btn 
 	line-height: 1
@@ -2426,6 +2433,7 @@ a
 	+tr(color .3s)
 	// +rem(letter-spacing,-0.6px)
 	box-shadow:  0 -2px 0 0 #fff,  0 1px 0 0 $hover
+	+nosel
 	&:hover
 		+rm(991)
 			color: $hover
@@ -5026,6 +5034,7 @@ a
 		+r(650)
 			+rem(margin, 0 -10px)
 			+rem(padding-top,22px)
+
 	&-row 
 		font-size: 0
 		+rem(margin-right,-30px)
@@ -5039,6 +5048,8 @@ a
 			+r(650)
 				+rem(padding-right,15px)
 			&.list-single
+				.map-item-col-name
+					pointer-events: none
 				ul 
 					width: 60%
 					+r(991)
@@ -5259,17 +5270,22 @@ a
 			.nav-arrows .slick-arrow use
 				fill: transparent
 
+#bx_incl_area_14_1
+	max-width: 300px
+
+#bx_incl_area_14_2
+	width: 100%
+	.aside-content
+		min-width: 100%
+.footer__main
+	&>[id^="bx_incl_area"]
+		width: 100%
+
 			
 
 
-		
-
-
-				
-
-
-
-			
-
-
-
+.content-item
+	&>img:only-child
+		margin: 0 auto;
+		display: block
+		width: 100%;

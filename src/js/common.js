@@ -1,3 +1,6 @@
+$(window).on('load',function(){
+	openOnLoad();
+})
 document.addEventListener("DOMContentLoaded", function() {
 	(function(){
 		var mainHeader = document.querySelector('.cd-auto-hide-header'),
@@ -50,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		subtogle.children('a').on('click',function(e){
 			if($(this).parent().find('ul').length){
 				e.preventDefault();
-					$(this).parent().toggleClass('active').siblings().removeClass('active');
-				}
+				$(this).parent().toggleClass('active').siblings().removeClass('active');
+			}
 		});
 		maintogle.on('click',function(){
 			$(this).add(target).add('body').toggleClass('open');
@@ -270,12 +273,12 @@ document.addEventListener("DOMContentLoaded", function() {
 				secs = getRandomInt(15, 10);
 				// console.log();
 			bgImageArray.forEach(function(img){
-				new Image().src = img; 
+				new Image().src = img;
 				// caches images, avoiding white flash between background replacements
 			});
-			
+
 			backgroundSequence(target,bgImageArray,secs);
-		});	
+		});
 		function getRandomInt(min, max) {
 		  return Math.floor(Math.random() * (max - min)) + min;
 		}
@@ -283,10 +286,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			window.clearTimeout();
 			var k = 0;
 			for (i = 0; i < arr.length; i++) {
-				setTimeout(function(){ 
+				setTimeout(function(){
 					el[0].style.backgroundImage = "url(" + arr[k] + ")";
-				if ((k + 1) === arr.length) { setTimeout(function() { backgroundSequence(el, arr, sec) }, (sec * 1000))} else { k++; }			
-				}, (sec  * 1000) * i)	
+					if ((k + 1) === arr.length) { setTimeout(function() { backgroundSequence(el, arr, sec) }, (sec * 1000))} else { k++; }
+				}, (sec * 1000) * i)
 			}
 		}
 	}
@@ -397,15 +400,14 @@ function initCustomSelectList() {
 			var _active = _list.find('input:checked');
 			if($(this).parents('.depends-on').length){
 				var item = $(this).closest('.depends-on');
+				var next = item.nextAll('.depends-on').find('.select-check');
+				console.log(item.nextAll('.depends-on').find('input:checked').length);
 				if(_active.length){
-					var next = item.nextAll('.depends-on').find('.select-check');
 					next.removeClass('disabled').find('input').prop('checked', false);
-					next.trigger('reinit');
 				}else{
-					var next = item.nextAll('.depends-on').find('.select-check');
 					next.addClass('disabled').find('input').prop('checked', false);
-					next.trigger('reinit');
 				}
+				next.trigger('reinit');
 			}
 			if(_active.length) {
 				_button.children('.btn-text').addClass('active').text(''+_active.siblings('span').text()+'').parent().addClass('is-checked')
@@ -415,13 +417,15 @@ function initCustomSelectList() {
 			}
 			CheckForSelect($(this).parents('form'));
 		});
-		_button.on('click', function() {
+
+		_button.off('click').on('click', function() {
 		   _button.parent().toggleClass('active').siblings().removeClass('active');
 			return(false);
 		});
+
 		_select.on('click', 'label', function() {
-		   var _label = $(this),
-			   _input = _label.find('input');
+			var _label = $(this),
+				_input = _label.find('input');
 			_input.prop('checked', true);
 			if(_input.hasClass('valid') && _select.hasClass('ajax')){
 				var data = $(_input).data();
@@ -435,13 +439,15 @@ function initCustomSelectList() {
 					success: function(content) {
 						$('.select-list.ajax-target').html(content);
 					}
-				})
+				});
 			}
 			_select.trigger('reinit');
 			_button.parent().removeClass('active');
 		});
+
 		_select.trigger('reinit');
 		_select.addClass(_conf.initClass);
+
 		 $(document).on('mouseup', function (e){
 			if (!_select.is(e.target)
 				&& _select.has(e.target).length === 0) {
@@ -497,6 +503,7 @@ function datepick(){
 			firstDay: 1,
 			minDate: offset,
 			yearRange: '-0:+1',
+			minDate: 1,
 			beforeShow: function() {
 				setTimeout(function() {
 					updateToSelectMenu()
@@ -620,7 +627,7 @@ function contentSlider(){
 			  	var active = _this.find('.slick-current');
 			  	var compareEl = active.find(".comparator-frame");
 			  	if(compareEl.length){
-			  		
+
 			  	}
 			});
 			_this.slick({
@@ -652,7 +659,7 @@ CompareImages.prototype = {
 		this.timer;
 
 		this.itemFrame = this.el.find(".comparator-frame");
-		
+
 		this.setSizeImage();
 		this.setEventListener();
 		this.setDivide();
@@ -751,7 +758,7 @@ CompareImages.prototype = {
 			self.el.find(".compare-runner").animate({
 				"left": ($(that.itemFrame).width() / 2)
 			}, 350)
-		}, this.props.reset_delay);        
+		}, this.props.reset_delay);
 	}
 }
 function CompareImages(el){
@@ -1089,7 +1096,7 @@ function AjaxLoading(el){
 	_this.initEvents = function(){
 
 		$(".ajax-trigger").off("click.trigger").on("click.trigger", function(e){
-			var link = $(this).attr("href") || $(this).data("href");
+			var link = $(this).data("href");
 			_this.action(link)
 			e.preventDefault();
 			return false;
@@ -1139,24 +1146,25 @@ function ajaxpostshow(urlres, datares, form){
 		dataType: "html",
 		success: function(fillter){
 			form[0].reset();
+			initCustomSelectList();
 			// validateForms();
 		}
 	});
 }
 function ajaxPagenation(){
-	var ajaxPagerLoadingClass   = 'ajax-pager-loading',
-		ajaxPagerLazyClass      = 'lazy',
-		ajaxPagerWrapClass      = 'ajax-pager-wrap',
-		ajaxPagerLinkClass      = 'ajax-pager-link',
-		ajaxWrapAttribute       = 'wrapper-class',
-		ajaxPagerLoadingTpl     = ['<span class="' + ajaxPagerLoadingClass + '">',
+	var ajaxPagerLoadingClass = 'ajax-pager-loading',
+		ajaxPagerLazyClass = 'lazy',
+		ajaxPagerWrapClass = 'ajax-pager-wrap',
+		ajaxPagerLinkClass = 'ajax-pager-link',
+		ajaxWrapAttribute = 'wrapper-class',
+		ajaxPagerLoadingTpl = ['<span class="' + ajaxPagerLoadingClass + '">',
 			'Загрузка…',
 			'</span>'].join(''),
 		busy = false,
 
 		attachScrollPagination = function (wrapperClass){
 			var $wrapper = $('.' + wrapperClass),
-				$window  = $(window);
+				$window = $(window);
 
 			if($wrapper.length && $('.' + ajaxPagerWrapClass).length && $('.' + ajaxPagerWrapClass).hasClass(ajaxPagerLazyClass)){
 				$window.off('scroll.pagen').on('scroll.pagen', function() {
@@ -1236,4 +1244,19 @@ function ajaxBtn() {
 
 function isHistoryApiAvailable() {
 	return !!(window.history && history.pushState);
+}
+function openOnLoad(){
+	var scrollItem = window.location.hash;
+	var item = $('[data-id="'+scrollItem+'"]');
+	setTimeout(function() {
+		window.scrollTo(0, 0);
+	}, 1);
+	if(item.length){
+		setTimeout(function() {
+			var destination = item.offset().top;
+			console.log(destination);
+			$("html,body:not(:animated)").animate({scrollTop: destination - 75}, 500);
+		},10);
+
+	}
 }

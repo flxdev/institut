@@ -3325,7 +3325,12 @@ blockquote {
   padding-bottom: 115.5%;
   -webkit-transform: rotate(-60deg) skewY(30deg);
   -ms-transform: rotate(-60deg) skewY(30deg);
-  transform: rotate(-60deg) skewY(30deg); }
+  transform: rotate(-60deg) skewY(30deg);
+  overflow: hidden; }
+  .romb-item-middle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 .romb-item-inner {
   position: absolute;
@@ -3338,7 +3343,8 @@ blockquote {
   background-position: 50% 50%;
   -webkit-transform: skewY(-30deg) rotate(60deg);
   -ms-transform: skewY(-30deg) rotate(60deg);
-  transform: skewY(-30deg) rotate(60deg); }
+  transform: skewY(-30deg) rotate(60deg);
+  overflow: hidden; }
 
 .btn {
   line-height: 1;
@@ -4400,7 +4406,12 @@ a:active {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   -webkit-box-shadow: 0 -2px 0 0 #fff, 0 1px 0 0 #fbd400;
-  box-shadow: 0 -2px 0 0 #fff, 0 1px 0 0 #fbd400; }
+  box-shadow: 0 -2px 0 0 #fff, 0 1px 0 0 #fbd400;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   .link-black:active, .menu-add-items .link-black:active {
     color: #e4b809; }
 
@@ -6648,6 +6659,8 @@ a:active {
     border-bottom: 1px solid #d6d5d1; }
   .mapcont-row .map-item {
     padding-right: 1.875rem; }
+    .mapcont-row .map-item.list-single .map-item-col-name {
+      pointer-events: none; }
     .mapcont-row .map-item.list-single ul {
       width: 60%; }
     .mapcont-row .map-item.s-100 {
@@ -6813,11 +6826,29 @@ a:active {
         transition-delay: 0; }
       #modal-road .modal-container.sale .nav-arrows .slick-arrow use {
         fill: transparent; }
-      @media screen and (min-width: 1150px) and (max-width: 1250px) {
+
+#bx_incl_area_14_1 {
+  max-width: 300px; }
+
+#bx_incl_area_14_2 {
+  width: 100%; }
+  #bx_incl_area_14_2 .aside-content {
+    min-width: 100%; }
+
+.footer__main > [id^="bx_incl_area"] {
+  width: 100%; }
+
+.content-item > img:only-child {
+  margin: 0 auto;
+  display: block;
+  width: 100%; }
+
+@media screen and (min-width: 1150px) and (max-width: 1250px) {
 
   .page__header-content {
     padding-right: 6.25rem; } }
-      @media only screen and (min-width: 991px) and (max-width: 1150px) {
+
+@media only screen and (min-width: 991px) and (max-width: 1150px) {
 
   .page__header.is-hidden .page__header-button {
     padding-left: 1.125rem; }
@@ -6828,39 +6859,47 @@ a:active {
 
   .page__header.is-hidden .page__header-button .btn:before {
     border: none !important; } }
-      @media screen and (min-width: 735px) and (max-width: 991px) {
+
+@media screen and (min-width: 735px) and (max-width: 991px) {
 
   .feachure-list-wrap.price .doc-card-inner .title {
     font-size: 2.25rem; } }
-      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
   * {
     -webkit-text-size-adjust: none; } }
-      @media only screen and (max-width: 1500px) {
+
+@media only screen and (max-width: 1500px) {
 
   .block-cover-img ~ .box .half-aside .yellow-form {
     margin-left: 5%;
     margin-bottom: 9%; } }
-      @media only screen and (max-width: 1380px) {
+
+@media only screen and (max-width: 1380px) {
 
   .block-cover-img {
     background-size: 85%; } }
-      @media only screen and (min-width: 1350px) {
+
+@media only screen and (min-width: 1350px) {
 
   .index-wrapper-inner {
     margin-right: -1.875rem; } }
-      @media only screen and (max-width: 1280px) {
+
+@media only screen and (max-width: 1280px) {
 
   .partner-item-inner {
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; } }
-      @media only screen and (max-width: 1250px) {
+
+@media only screen and (max-width: 1250px) {
 
   .page__header-drop-cont {
     padding-left: 15.9375rem; } }
-      @media only screen and (max-width: 1230px) {
+
+@media only screen and (max-width: 1230px) {
 
   .page__header.is-hidden .page__header-drop-cont {
     padding-left: 5.625rem; }
@@ -6870,7 +6909,8 @@ a:active {
 
   .half-main {
     max-width: 65%; } }
-      @media only screen and (min-width: 1210px) {
+
+@media only screen and (min-width: 1210px) {
 
   .page__header-main {
     padding: 0 5px !important; }
@@ -6878,7 +6918,8 @@ a:active {
   .partner-slider .nav-arrows {
     left: -1.875rem;
     right: -1.875rem; } }
-      @media only screen and (max-width: 1210px) {
+
+@media only screen and (max-width: 1210px) {
 
   .page__header-nav-top .dropdown-target {
     margin: -0.9375rem -12.5rem -0.9375rem -2.1875rem; }
@@ -6901,19 +6942,23 @@ a:active {
 
   .content-form-block-block {
     margin: 0 -6.25rem 0 -1.875rem; } }
-      @media only screen and (min-width: 1180px) {
+
+@media only screen and (min-width: 1180px) {
 
   .tel-form {
     margin-right: 4.6875rem; } }
-      @media only screen and (max-width: 1180px) {
+
+@media only screen and (max-width: 1180px) {
 
   .feachure-list-item {
     margin-right: -40%; } }
-      @media only screen and (min-width: 1150px) {
+
+@media only screen and (min-width: 1150px) {
 
   .page__header-contact {
     padding-right: 2.1%; } }
-      @media only screen and (max-width: 1150px) {
+
+@media only screen and (max-width: 1150px) {
 
   html {
     font-size: 15px; }
@@ -6967,24 +7012,28 @@ a:active {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center; } }
-      @media only screen and (min-width: 1130px) {
+
+@media only screen and (min-width: 1130px) {
 
   .content-column-content p {
     padding-right: 1.875rem; } }
-      @media only screen and (max-width: 1130px) {
+
+@media only screen and (max-width: 1130px) {
 
   .footer__main {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; } }
-      @media only screen and (max-width: 1120px) {
+
+@media only screen and (max-width: 1120px) {
 
   .sertificat-item {
     width: 33.33%;
     margin-top: 1.875rem;
     margin-bottom: 0.9375rem; } }
-      @media only screen and (max-width: 1110px) {
+
+@media only screen and (max-width: 1110px) {
 
   .more-content-slider-item .card-item-wrap {
     max-width: 23.28125rem;
@@ -6996,17 +7045,20 @@ a:active {
     margin: 0 auto;
     display: block;
     padding: 0 0.625rem; } }
-      @media (min-width: 1025px) {
+
+@media (min-width: 1025px) {
 
   .lg-outer .lg-thumb-item {
     -webkit-transition: border-color 0.25s ease;
     transition: border-color 0.25s ease; } }
-      @media only screen and (max-width: 1010px) {
+
+@media only screen and (max-width: 1010px) {
 
   .footer-tel-button {
     left: auto;
     right: 0; } }
-      @media only screen and (min-width: 991px) {
+
+@media only screen and (min-width: 991px) {
 
   .page__header-mobmenu {
     display: none; }
@@ -7212,7 +7264,8 @@ a:active {
 
   .mapcont-row .map-item-col-elem ul li a:hover {
     color: #fbd400; } }
-      @media only screen and (max-width: 991px) {
+
+@media only screen and (max-width: 991px) {
 
   body.open, .out.open {
     overflow: hidden; }
@@ -7579,7 +7632,8 @@ a:active {
 
   .mapcont-row .map-item.list-single ul {
     width: 80%; } }
-      @media only screen and (max-width: 950px) {
+
+@media only screen and (max-width: 950px) {
 
   .footer__footer {
     display: -webkit-box;
@@ -7645,19 +7699,23 @@ a:active {
 
   .feachure-list-wrap.price .feachure-list-item {
     padding-left: 0; } }
-      @media only screen and (max-width: 940px) {
+
+@media only screen and (max-width: 940px) {
 
   .persona-item {
     width: 50%; } }
-      @media only screen and (max-width: 935px) {
+
+@media only screen and (max-width: 935px) {
 
   .depart-item-head .title {
     font-size: 2rem; } }
-      @media only screen and (max-width: 920px) {
+
+@media only screen and (max-width: 920px) {
 
   .news-item {
     width: 50%; } }
-      @media only screen and (min-width: 900px) {
+
+@media only screen and (min-width: 900px) {
 
   .soc-wrapp-item.vk:hover {
     background-color: #5897d2; }
@@ -7667,7 +7725,8 @@ a:active {
 
   .soc-wrapp-item.in:hover {
     background-color: #af8673; } }
-      @media only screen and (max-width: 900px) {
+
+@media only screen and (max-width: 900px) {
 
   .feachure-list-wrap.price .feachure-list-list:last-of-type {
     margin-top: 0; }
@@ -7700,7 +7759,8 @@ a:active {
 
   .mapcont-row .map-item-col-name {
     margin: 0.875rem 0 0.5625rem; } }
-      @media only screen and (max-width: 870px) {
+
+@media only screen and (max-width: 870px) {
 
   .footer__main {
     -webkit-box-orient: vertical;
@@ -7772,7 +7832,8 @@ a:active {
 
   .footer-tel-contact {
     display: none; } }
-      @media only screen and (min-width: 870px) {
+
+@media only screen and (min-width: 870px) {
 
   .link-f:hover {
     color: #fbd400; }
@@ -7785,11 +7846,13 @@ a:active {
 
   .footer-dop-item a:hover {
     color: #000; } }
-      @media only screen and (max-width: 860px) {
+
+@media only screen and (max-width: 860px) {
 
   .sertificat-item {
     width: 50%; } }
-      @media only screen and (max-width: 850px) {
+
+@media only screen and (max-width: 850px) {
 
   .address-item-text, .address-item-map {
     min-width: 100%; }
@@ -7799,7 +7862,8 @@ a:active {
 
   .organ-wrapper {
     padding-left: 0.9375rem; } }
-      @media only screen and (max-width: 800px) {
+
+@media only screen and (max-width: 800px) {
 
   .feachure-list-wrap.price .feachure-list-list {
     -webkit-column-count: 1;
@@ -7818,7 +7882,8 @@ a:active {
 
   .mapcont-row .map-item-col-elem ul {
     width: 100%; } }
-      @media only screen and (min-width: 769px) {
+
+@media only screen and (min-width: 769px) {
 
   .feachure-list-list:first-child {
     width: 33.5%; }
@@ -7828,7 +7893,8 @@ a:active {
 
   .feachure-list-list:nth-child(3) {
     width: 32%; } }
-      @media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 768px) {
 
   .info-block-inner, .info-block-aside {
     min-width: 100%; }
@@ -7854,7 +7920,8 @@ a:active {
 
   .content-center {
     margin: 2.5rem auto 3.375rem; } }
-      @media only screen and (min-width: 768px) {
+
+@media only screen and (min-width: 768px) {
 
   .page__content::-webkit-scrollbar {
     width: 0.25rem; }
@@ -7870,7 +7937,8 @@ a:active {
 
   .depart-item {
     padding-right: 2rem; } }
-      @media only screen and (max-width: 735px) {
+
+@media only screen and (max-width: 735px) {
 
   .box-section {
     margin-top: 3.75rem;
@@ -8199,7 +8267,8 @@ a:active {
   .search-head {
     margin-top: 2.8125rem;
     margin-bottom: 1.875rem; } }
-      @media only screen and (min-width: 735px) {
+
+@media only screen and (min-width: 735px) {
 
   .aside-menu .aside-stick.list-bold .aside-title {
     display: none; }
@@ -8215,13 +8284,15 @@ a:active {
 
   .persona-wrapper {
     padding-left: 1.875rem; } }
-      @media only screen and (max-width: 700px) {
+
+@media only screen and (max-width: 700px) {
 
   .news-title {
     max-width: 100%;
     padding-bottom: 2.8125rem;
     padding-left: 0; } }
-      @media only screen and (max-width: 650px) {
+
+@media only screen and (max-width: 650px) {
 
   .mapcont-wrapper {
     margin: 0 -0.625rem;
@@ -8248,7 +8319,8 @@ a:active {
   .mapcont-row .map-item-head .title .link-arr {
     margin-left: 0;
     margin-top: 0.1875rem; } }
-      @media only screen and (max-width: 630px) {
+
+@media only screen and (max-width: 630px) {
 
   .romb-slider-inner {
     padding: 0;
@@ -8276,7 +8348,8 @@ a:active {
     width: 100%;
     max-width: 15.625rem;
     margin: 0 auto; } }
-      @media only screen and (min-width: 630px) {
+
+@media only screen and (min-width: 630px) {
 
   .romb-slider-inner .nav-arrows .carousel-next {
     -webkit-box-ordinal-group: 2;
@@ -8296,7 +8369,8 @@ a:active {
     display: -ms-flexbox;
     display: flex;
     margin: 0 auto 0.625rem; } }
-      @media only screen and (max-width: 620px) {
+
+@media only screen and (max-width: 620px) {
 
   .nav-wrapper {
     margin-top: 2.5rem;
@@ -8339,7 +8413,8 @@ a:active {
 
   .nav-btn-wrap:empty ~ .tel-form {
     margin-top: 0; } }
-      @media only screen and (min-width: 600px) {
+
+@media only screen and (min-width: 600px) {
 
   .content-main .title + .title-btn {
     margin-bottom: 1.25rem; }
@@ -8349,7 +8424,8 @@ a:active {
 
   .search-container .o-menu-search {
     margin: 0 -1.875rem; } }
-      @media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
 
   .page__header-mobmenu-inner .link-black {
     font-size: 0.875rem; }
@@ -8524,7 +8600,8 @@ a:active {
 
   #modal-road .modal-container-content {
     padding: 1.5625rem 0.9375rem; } }
-      @media only screen and (max-width: 544px) {
+
+@media only screen and (max-width: 544px) {
 
   .block-cover-img {
     background-size: 160%;
@@ -8535,7 +8612,8 @@ a:active {
 
   .mapcont-row .map-item.s-33 {
     width: 100%; } }
-      @media only screen and (min-width: 480px) {
+
+@media only screen and (min-width: 480px) {
 
   .form-footer {
     text-align: justify;
@@ -8553,7 +8631,8 @@ a:active {
     height: 0px;
     visibility: hidden;
     overflow: hidden; } }
-      @media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 480px) {
 
   .page__header-mobmenu {
     padding-left: 0.9375rem;
@@ -8601,11 +8680,13 @@ a:active {
 
   .input-item {
     padding-right: 1.5625rem; } }
-      @media only screen and (max-width: 440px) {
+
+@media only screen and (max-width: 440px) {
 
   .content-head.personal .content-main .title {
     font-size: 9vw; } }
-      @media only screen and (max-width: 420px) {
+
+@media only screen and (max-width: 420px) {
 
   .feachure-item .text-bold {
     padding-right: 0;
@@ -8616,7 +8697,8 @@ a:active {
 
   .mapcont-row .map-item-col {
     width: 100% !important; } }
-      @media only screen and (max-width: 400px) {
+
+@media only screen and (max-width: 400px) {
 
   .footer-dop-item a {
     font-size: 0.9375rem;
@@ -8634,7 +8716,8 @@ a:active {
 
   .input-item.s-50 {
     width: 100%; } }
-      @media only screen and (max-width: 390px) {
+
+@media only screen and (max-width: 390px) {
 
   .persona-item {
     width: 100%; }
@@ -8647,16 +8730,19 @@ a:active {
 
   .sertificat-item .text2 {
     max-width: 15.625rem; } }
-      @media only screen and (max-width: 375px) {
+
+@media only screen and (max-width: 375px) {
 
   .page__header-contact .contact-item .text-bold {
     font-size: 1.0625rem;
     padding: 1.625rem 0; } }
-      @media only screen and (max-width: 359px) {
+
+@media only screen and (max-width: 359px) {
 
   .page__header-mobmenu-inner .mobile_l2 li {
     width: 100%; } }
-      @media only screen and (max-width: 350px) {
+
+@media only screen and (max-width: 350px) {
 
   .doctor-slider-block {
     left: -40%;
