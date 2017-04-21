@@ -1802,8 +1802,11 @@ a.small-block
 				left: 0
 				top: 0
 				text-align: right
+				visibility: hidden
 				+rem(padding-right,10px)
 				+rem(padding-top,30px)
+				* 
+					visibility: visible
 		&-developer
 			width: 25%
 			text-align: right
@@ -2779,6 +2782,8 @@ a
 						&.active		
 							&+.menu-add-items
 								display: block
+							&.parent 
+								pointer-events: all
 								
 				// 	.link-black	
 				// 		color: #000
@@ -3006,11 +3011,19 @@ a
 	   				+rem(padding-right,5px)
 		img
 			display: block
-			max-width: calc(100% + 3.75rem)
+			// max-width: calc(100% + 3.75rem)
+			// +rem(margin-bottom, 40px)
+			// +rem(margin-top, 40px)
 			+rem(margin-bottom, 40px)
 			+rem(margin-top, 40px)
+			margin-left: auto
+			margin-right: auto
+			max-width: 100%
 			&:first-child
 				+rem(margin-top,5px)
+			// &.float-left
+			// 	float: left
+			// 	margin: 0
 		blockquote
 			border: 1px solid $hover
 			+padlr(30px)
@@ -3024,7 +3037,7 @@ a
 				padding-right: 0
 			+r(735)
 				+padlr(15px)
-		.content-slider-wrap, img,.video-wrap,blockquote
+		.content-slider-wrap,.video-wrap,blockquote
 			display: block
 			+rem(margin-left,-30px)
 			+rem(margin-right,-30px)
@@ -3162,10 +3175,10 @@ a
 									height: 100%!important;
 									left: 0
 									right: 0
-									// background-repeat: no-repeat
-									// background-position: left center
-									// background-size: auto 100%
-									background-size: cover
+									background-repeat: no-repeat
+									background-position: left center
+									background-size: auto 100%
+									// background-size: cover
 					.cocoen__drag
 						background: linear-gradient(to right, transparent 0%, transparent calc(50% - 0.81px), $hover calc(50% - 0.8px), $hover calc(50% + 0.8px), transparent calc(50% + 0.81px), transparent 100%)
 						+padlr(6px)
@@ -3547,9 +3560,10 @@ a
 			+rem(max-width,910px)
 			width: 70%
 		&:nth-of-type(even)
-			background-color: #fafafa
+			background: linear-gradient(to right, rgba(250,250,250,0) 0%,rgba(250,250,250,0.22) 22%,rgba(250,250,250,1) 100%);
 		&:last-of-type
 			+rem(padding-bottom,30px)
+			
 	&-content
 		font-size: 0
 	&-list	
@@ -5246,6 +5260,10 @@ a
 				padding-top: 0
 				.content-column-content-inner
 					padding-bottom: 0
+			p a:not(:hover):not(.text2)
+				box-shadow: 0 -2px 0 0 #faf9f5, 0 1px 0 0 #fbd400;
+			.text2
+				box-shadow: none
 			.modal-container-header
 				height: auto
 				+rem(padding-top,40px)
@@ -5280,12 +5298,16 @@ a
 .footer__main
 	&>[id^="bx_incl_area"]
 		width: 100%
-
-			
-
-
 .content-item
 	&>img:only-child
 		margin: 0 auto;
 		display: block
 		width: 100%;
+.loading
+	position: relative
+	&:before
+		content: ''
+		display: inline-block
+		+coverdiv
+		background-color: rgba(255,255,255, .7)
+		z-index: 2

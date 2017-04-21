@@ -398,14 +398,30 @@ function initCustomSelectList() {
 			_list = _select.find('.select-list');
 		_select.on('reinit', function() {
 			var _active = _list.find('input:checked');
+			if(_active.hasClass('valid') && _select.hasClass('ajax')){
+				console.log($('.select-list.ajax-target').length);
+				var data = $(_active).data();
+				delete data.validationErrorMsg;
+				delete data.validation;
+				$.ajax({
+					url: '/include/form/form_get.php',
+					dataType: "html",
+					data: {"data" : data},
+					method: "POST",
+					success: function(content) {
+						$('.select-list.ajax-target').html(content);
+						_select.off("reinit");
+					}
+				});
+			}
 			if($(this).parents('.depends-on').length){
 				var item = $(this).closest('.depends-on');
 				var next = item.nextAll('.depends-on').find('.select-check');
-				console.log(item.nextAll('.depends-on').find('input:checked').length);
+				next.find('input').prop('checked', false);
 				if(_active.length){
-					next.removeClass('disabled').find('input').prop('checked', false);
+					next.removeClass('disabled');
 				}else{
-					next.addClass('disabled').find('input').prop('checked', false);
+					next.addClass('disabled');
 				}
 				next.trigger('reinit');
 			}
@@ -423,24 +439,10 @@ function initCustomSelectList() {
 			return(false);
 		});
 
-		_select.on('click', 'label', function() {
+		_select.off('click').on('click', 'label', function() {
 			var _label = $(this),
 				_input = _label.find('input');
 			_input.prop('checked', true);
-			if(_input.hasClass('valid') && _select.hasClass('ajax')){
-				var data = $(_input).data();
-				delete data.validationErrorMsg;
-				delete data.validation;
-				$.ajax({
-					url: '/include/form/form_get.php',
-					dataType: "html",
-					data: {"data" : data},
-					method: "POST",
-					success: function(content) {
-						$('.select-list.ajax-target').html(content);
-					}
-				});
-			}
 			_select.trigger('reinit');
 			_button.parent().removeClass('active');
 		});
@@ -462,7 +464,7 @@ function aside(){
 			$(".aside-stick").stick_in_parent({
 				parent: ".aside-menu",
 				offset_top : 73,
-				recalc_every: 1
+				// recalc_every: 1
 			});
 		},1)
 	}stickinit();
@@ -1156,6 +1158,7 @@ function ajaxPagenation(){
 		ajaxPagerLazyClass = 'lazy',
 		ajaxPagerWrapClass = 'ajax-pager-wrap',
 		ajaxPagerLinkClass = 'ajax-pager-link',
+		ajaxPagerLoaderClass = 'loading',
 		ajaxWrapAttribute = 'wrapper-class',
 		ajaxPagerLoadingTpl = ['<span class="' + ajaxPagerLoadingClass + '">',
 			'Загрузка…',
@@ -1183,12 +1186,14 @@ function ajaxPagenation(){
 			busy = true;
 			var wrapperClass = $('.'+ajaxPagerLinkClass).data(ajaxWrapAttribute),
 				$wrapper = $('.' + wrapperClass),
-				$link = $(this);
+				$link = $(this),
+				container = $('.ajax-list'),
+				loadingClass= 'loading';
 
 			if($wrapper.length){
 
 				$('.' + ajaxPagerWrapClass).append(ajaxPagerLoadingTpl);
-
+				container.addClass(loadingClass);
 				$.get($link.attr('href'), {'AJAX_PAGE' : 'Y'}, function(data) {
 					if(isHistoryApiAvailable()){
 						if($link.attr('href') != window.location){
@@ -1203,7 +1208,9 @@ function ajaxPagenation(){
 					}
 					listhide();
 					comenthide();
+					container.removeClass(loadingClass);
 				});
+
 			}
 		};
 
@@ -1221,14 +1228,17 @@ function ajaxPagenation(){
 function ajaxBtn() {
 	var btn_continer = $('.ajax-btn'),
 		btn = btn_continer.find('a'),
-		container = $('.ajax-list');
+		container = $('.ajax-list'),
+		loadingClass= 'loading';
 
 	btn.each(function(){
 		var _ = $(this),
 			href = _.attr("href");
 		_.on('click touchstart',function(e){
+
 			_.siblings().removeClass('active');
 			_.addClass('active');
+			container.addClass(loadingClass);
 			$.get(href, {'AJAX_PAGE' : 'Y'}, function(data) {
 				if(isHistoryApiAvailable()){
 					if(href != window.location){
@@ -1236,6 +1246,7 @@ function ajaxBtn() {
 					}
 				}
 				container.html(data);
+				container.removeClass(loadingClass);
 			});
 			e.preventDefault();
 		});
