@@ -60,6 +60,7 @@
 					.form-footer-notify
 						.text Поля обязательные для заполнения
 					button(type='submit').btn.yell Заказать звонок	
+
 	//контейнер модалки  
 	.modal-container.response(style='display: none')
 		.modal-container-header
@@ -72,7 +73,16 @@
 .modal-layout#modal-road(data-modal='road').js-popup-container
 //- .modal-layout#sale(data-modal='sale').js-popup-container
 	
-
+.modal-layout(data-modal='.success-modal').js-popup-container
+	//контейнер модалки
+	.modal-container
+		.modal-container-header
+			.title.h4 Спасибо
+			i.small-link.pop-close.closePopup
+		.modal-container-content
+			.modal-container-content-answer
+				.text2 Ваш отзыв Отправлен!
+				.text2 Наш менеджер свяжется с вами, как только выйдет из запоя.
 
 
 

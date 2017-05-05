@@ -84,7 +84,7 @@ mixin listlist(id,name,img)
 							.link-arr
 								svg(class="icon icon-drop")
 									use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
-				.feachure-list-content.js-slidelist(data-items='16')
+				.feachure-list-content
 					if block
 						block
 
@@ -150,3 +150,19 @@ mixin vacancy(name)
 					| 
 					a(href="#").text2 +7 (495) 212-06-64 &nbsp;&nbsp;&nbsp;
 					a(href="#")  kirillina@institut-krasoty.ru
+mixin priceAccordeon(name,price,promo)
+	
+	.vacancy-head.js-accordion-trigger(class={sale : promo === 1})
+		.vacancy-head-inner.table-item
+			.table-arr  
+				i.select-img
+			.title.text2 
+				span #{name}
+					if promo == 1
+						.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+							span Акция
+				.text-bold #{price}
+		.vacancy-body.js-accordion-body
+			ul.feachure-list-list
+				if block
+					block

@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	};
 	function Accordeon(){
-		if($('.offerlist-section').length){
+		if($('.js-accordion-trigger').length){
 			// $(".aside-stick").trigger("sticky_kit:detach");
 			$(".aside-stick").stick_in_parent({
 				offset_top : 73,
@@ -398,53 +398,70 @@ function initCustomSelectList() {
 			_list = _select.find('.select-list');
 		_select.on('reinit', function() {
 			var _active = _list.find('input:checked');
-			if(_active.hasClass('valid') && _select.hasClass('ajax')){
-				console.log($('.select-list.ajax-target').length);
-				var data = $(_active).data();
-				delete data.validationErrorMsg;
-				delete data.validation;
-				$.ajax({
-					url: '/include/form/form_get.php',
-					dataType: "html",
-					data: {"data" : data},
-					method: "POST",
-					success: function(content) {
-						$('.select-list.ajax-target').html(content);
-						_select.off("reinit");
-					}
-				});
-			}
-			if($(this).parents('.depends-on').length){
-				var item = $(this).closest('.depends-on');
-				var next = item.nextAll('.depends-on').find('.select-check');
-				next.find('input').prop('checked', false);
-				if(_active.length){
-					next.removeClass('disabled');
-				}else{
-					next.addClass('disabled');
-				}
-				next.trigger('reinit');
-			}
+			// if($(this).parents('.depends-on').length){
+			// 	var item = $(this).closest('.depends-on');
+			// 	var next = item.nextAll('.depends-on').find('.select-check');
+			// 	next.find('input').prop('checked', false);
+			// 	if(_active.length){
+			// 		next.removeClass('disabled');
+			// 	}else{
+			// 		next.addClass('disabled');
+			// 	}
+			// 	next.trigger('reinit');
+			// }
 			if(_active.length) {
 				_button.children('.btn-text').addClass('active').text(''+_active.siblings('span').text()+'').parent().addClass('is-checked')
 			}
 			else {
 				_button.children('.btn-text').removeClass('active').text(_button.data('placeholder')).parent().removeClass('is-checked');
 			}
-			CheckForSelect($(this).parents('form'));
+			 CheckForSelect($(this).parents('form'));
 		});
 
 		_button.off('click').on('click', function() {
-		   _button.parent().toggleClass('active').siblings().removeClass('active');
-			return(false);
+			$(this).parent().toggleClass('active').siblings().removeClass('active');
+			return false;
 		});
 
-		_select.off('click').on('click', 'label', function() {
-			var _label = $(this),
-				_input = _label.find('input');
+		_list.off('change').on('change', 'input', function() {
+			var _input = $(this);
+
+			if(_select.hasClass('ajax')){
+				var data = _input.data();
+				$.ajax({
+					url: '/include/form/form_get.php',
+					dataType: "json",
+					data: {"data" : data},
+					method: "POST",
+					success: function(result) {
+						if ("SPECIALIST" in result && result['SERVICE'] === undefined) {
+							var _res = "";
+							_res = '<label class="option"><input name="FIELDS[SPECIALIST]" data-specialist="0" data-specialization="" type="radio" value="Любой"><span>Любой</span></label>';
+							$.each(result['SPECIALIST'], function(i, val) {
+								_res += '<label class="option"><input name="FIELDS[SPECIALIST]" data-specialist="'+val["ID"]+'" data-specialization="'+JSON.stringify(val["PROPERTY_SPECIALIZATION_VALUE"])+'" type="radio" value="'+val["NAME"]+'"><span>'+val["NAME"]+'</span></label>';
+							});
+							$('.SPECIALIST .select-list').html(_res);
+						}
+						if ("SERVICE" in result && result['SPECIALIST'] === undefined) {
+							var _res = "";
+							$.each(result['SERVICE'], function(i, section) {
+								_res += '<div class="listed"><b>'+section["NAME"]+'</b>';
+								if(section["ITEMS"]){
+									$.each(section["ITEMS"], function(i, val) {
+										_res += '<label class="option"><input type="radio" name="FIELDS[SERVICE]" value="'+val["NAME"]+'" data-service="'+val["ID"]+'"><span>'+val["NAME"]+'</span></label>';
+									});
+								}
+								_res += '</div>';
+							});
+							$('.SERVICE .select-list').html(_res);
+						}
+					}
+				});
+			}
 			_input.prop('checked', true);
-			_select.trigger('reinit');
 			_button.parent().removeClass('active');
+			_select.trigger('reinit');
+
 		});
 
 		_select.trigger('reinit');
@@ -699,6 +716,7 @@ CompareImages.prototype = {
 			var wEl = $(this).width();
 
 			$(this).find(".to img").css("width", wEl);
+			$(this).find(".to img").css("max-width", wEl);
 		});
 	},
 	setDivide: function() {
@@ -986,7 +1004,6 @@ function validateForms(){
 				onValidate : function($form) {
 					CheckForSelect(form_this);
 					checkStars(form_this);
-
 				},
 			});
 		});
@@ -1041,7 +1058,7 @@ function popUpsInit() {
 		 * Close buttons.
 		 */
 		$(_popup).on('click','.modal-container-content,.modal-container-header',function(e) {
-			if(!_this.conf.close_selector.is(e.target)){
+			if(!$(_this.conf.close_selector).is(e.target)){
 				e.stopPropagation();
 			}
 		});
@@ -1124,6 +1141,17 @@ function AjaxLoading(el){
 }
 
 function formResponse(form){
+	var modalCls = 'js-popup-button';
+	if(form.data('success').length){
+		var btn = form.find('button[type="submit"]'),
+			targetModal = form.data('success');
+			btn.addClass(modalCls).data('modal',targetModal)
+			popUpsInit();
+			btn.trigger('click');
+			setTimeout(function(){
+				btn.removeClass(modalCls).data('modal','');
+			},300)
+	}
 	if(form.closest('.modal-container').length){
 		var cont = form.closest('.modal-container'),
 			resp = cont.next('.response');
@@ -1134,12 +1162,14 @@ function formResponse(form){
 		}
 	}
 }
+
 function ajaxSubmit(form){
 	var formsubscrube = $(form).serialize(),
 		target_php = $(form).data('php');
 	ajaxpostshow(target_php, formsubscrube, form);
 	return false;
 }
+
 function ajaxpostshow(urlres, datares, form){
 	$.ajax({
 		type: "POST",
@@ -1153,6 +1183,7 @@ function ajaxpostshow(urlres, datares, form){
 		}
 	});
 }
+
 function ajaxPagenation(){
 	var ajaxPagerLoadingClass = 'ajax-pager-loading',
 		ajaxPagerLazyClass = 'lazy',
@@ -1256,6 +1287,7 @@ function ajaxBtn() {
 function isHistoryApiAvailable() {
 	return !!(window.history && history.pushState);
 }
+
 function openOnLoad(){
 	var scrollItem = window.location.hash;
 	var item = $('[data-id="'+scrollItem+'"]');
@@ -1265,7 +1297,6 @@ function openOnLoad(){
 	if(item.length){
 		setTimeout(function() {
 			var destination = item.offset().top;
-			console.log(destination);
 			$("html,body:not(:animated)").animate({scrollTop: destination - 75}, 500);
 		},10);
 

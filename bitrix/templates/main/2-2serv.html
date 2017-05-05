@@ -552,7 +552,7 @@
                   </div>
                   <a class="btn yell" href="#">Записаться на прием</a>
                 </div>
-                <a class="spec-block js-scroll-to" href="#specialist">
+                <a class="spec-block js-scroll-to" href="#" data-href="#specialist">
                   <div class="text">Специалисты:</div>
                                 <div class="doc-block">
                                   <div class="doc-item" style="background-image:url(img/bg/v1.png);"></div>
@@ -742,6 +742,62 @@
                           </div>
                         </div>
                         <p>Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши.</p>
+                        <div class="price-wrapper"> 
+                          <div class="title h2">Стоимость услуг </div>
+                          <div class="feachure-list-wrap price">
+                            <!--таня попросила, чтобы эти ссылки ссылками не были, но если их поменять то все разлетится т.к. там структура дикая, посему ноиндекс и я блочу клик по ссылкам-->
+                            <noindex>
+                              <ul class="feachure-list-list">
+                                <li>
+                                  <a href="#"> 
+                                    <span>Вросший ноготь</span>
+                                    <div class="text-bold">42 000₽</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#"> 
+                                    <span>Вросший ноготь</span>
+                                    <div class="text-bold">42 0500₽</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#"> 
+                                    <span>Вросший ноготь</span>
+                                    <div class="text-bold">425 000₽</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#"> 
+                                    <span>Вросший ноготь</span>
+                                    <div class="text-bold">425 000₽</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#"> 
+                                    <span>Вросший ноготь</span>
+                                    <div class="text-bold">42 000₽</div>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#"> 
+                                    <span>Лечение Розацеа</span>
+                                    <div class="text-bold">5 000₽</div>
+                                  </a>
+                                </li>
+                                <li class="sale">
+                                  <a href="#"> 
+                                    <span>Удаление родинок и папиллом
+                                      <div class="small-block small js-popup-button ajax-trigger" data-href="promo.html" data-modal="road">
+                                        <span>Акция</span>
+                                      </div>
+                                    </span>
+                                    <div class="text-bold">42 000₽</div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </noindex>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <!--div нужен-->
@@ -768,7 +824,7 @@
                 </div>
               </div>
             </div>
-            <div class="wrapper gray more-content-wrapper" id="specialist">
+            <div class="wrapper gray more-content-wrapper" data-id="#specialist">
               <div class="box">
                 <div class="news-title">
                   <div class="title h2">Специа&shy;листы</div>
@@ -1234,6 +1290,21 @@
         </div>
       </div>
       <div class="modal-layout js-popup-container" id="modal-road" data-modal="road"></div>
+      <div class="modal-layout js-popup-container" data-modal=".success-modal">
+        <!--контейнер модалки-->
+        <div class="modal-container">
+          <div class="modal-container-header">
+            <div class="title h4">Спасибо</div>
+            <i class="small-link pop-close closePopup"></i>
+          </div>
+          <div class="modal-container-content">
+            <div class="modal-container-content-answer">
+              <div class="text2">Ваш отзыв Отправлен!</div>
+              <div class="text2">Наш менеджер свяжется с вами, как только выйдет из запоя.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!--END out-->
     <script src="js/lib.min.js"></script>

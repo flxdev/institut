@@ -60,7 +60,7 @@ block content
 				.price-old-cont
 					.price-old 250 000₽
 				a(href="#").btn.yell Записаться на прием
-			a(href="#specialist").spec-block.js-scroll-to
+			a(href="#").spec-block.js-scroll-to(data-href='#specialist')
 				.text Специалисты:
 				+doctors('4', 22)
 	.box
@@ -189,6 +189,42 @@ block content
 								.content-slider-nav
 									.nav-dots
 							p Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши.
+							.price-wrapper 
+								.title.h2 Стоимость услуг 
+								.feachure-list-wrap.price
+									//таня попросила, чтобы эти ссылки ссылками не были, но если их поменять то все разлетится т.к. там структура дикая, посему ноиндекс и я блочу клик по ссылкам
+									noindex
+										ul.feachure-list-list
+											li
+												a(href="#") 
+													span Вросший ноготь
+													.text-bold 42 000₽
+											li
+												a(href="#") 
+													span Вросший ноготь
+													.text-bold 42 0500₽
+											li
+												a(href="#") 
+													span Вросший ноготь
+													.text-bold 425 000₽
+											li
+												a(href="#") 
+													span Вросший ноготь
+													.text-bold 425 000₽
+											li
+												a(href="#") 
+													span Вросший ноготь
+													.text-bold 42 000₽
+											li
+												a(href="#") 
+													span Лечение Розацеа
+													.text-bold 5 000₽
+											li.sale
+												a(href="#") 
+													span Удаление родинок и папиллом
+														.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+															span Акция
+													.text-bold 42 000₽
 					//div нужен
 					.content-column-right
 						.diplom-slider-content
@@ -203,7 +239,7 @@ block content
 										.diplom-slider-inner-img
 											img(src="img/content/d1.jpg", alt="fsdfsd")
 											i Сертификат на осуществление медицинской деятельности
-	.wrapper.gray.more-content-wrapper#specialist
+	.wrapper.gray.more-content-wrapper(data-id='#specialist')
 			.box
 				.news-title
 					.title.h2 Специа&shy;листы

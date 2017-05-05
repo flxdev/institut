@@ -1143,6 +1143,7 @@ blockquote
 		z-index: 2
 		+rem(max-width, 160px)
 		+tr(color .3s)
+		will-change: opacity
 		+r(630)
 			left: 50%
 			+rem(margin-left, -100px)
@@ -1161,6 +1162,7 @@ blockquote
 			width: 100%
 			height: 100%
 			object-fit: cover
+			transform: translateX(0)
 	&-inner
 		+coverdiv
 		+cover
@@ -2596,6 +2598,9 @@ a
 						fill: $hover
 						stroke: $hover
 						color: #000
+				.doc-card-img
+					img 
+						filter: grayscale(0%) brightness(100%) opacity(100%)
 		&:active
 			.link-arr
 				box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
@@ -2637,6 +2642,9 @@ a
 			display: block
 			max-width: 100%
 			+rem(max-height, 221px)
+			filter: grayscale(100%) brightness(110%) opacity(95%)
+			+tr(filter .3s)
+			will-change: filter
 			// position: relative
 			
 .nav
@@ -2906,8 +2914,6 @@ a
 			+rem(letter-spacing,0.2px)
 			
 			+rem(margin, 21px 0)
-			&:first-child
-				+rem(margin-top,5px)
 			+rm(1130)
 				+rem(padding-right,30px)
 			a	
@@ -3150,11 +3156,14 @@ a
 					img 
 						margin: 0
 						width: 100%;
+					&_compator
+						height: 100%
 					.compare
 						&-result
 							height: 100%
 							img
 								height: 100%
+
 						&-idea 
 							position: absolute;
 							top: 0;
@@ -3162,6 +3171,9 @@ a
 							bottom: 0;
 							overflow: hidden;
 							width: 50%;
+							&.to 
+								img 
+									height: 100%
 							&_preview
 								position: absolute;
 								right: 0;
@@ -3175,9 +3187,7 @@ a
 									height: 100%!important;
 									left: 0
 									right: 0
-									background-repeat: no-repeat
-									background-position: left center
-									background-size: auto 100%
+									+cover
 									// background-size: cover
 					.cocoen__drag
 						background: linear-gradient(to right, transparent 0%, transparent calc(50% - 0.81px), $hover calc(50% - 0.8px), $hover calc(50% + 0.8px), transparent calc(50% + 0.81px), transparent 100%)
@@ -3253,6 +3263,8 @@ a
 			+rem(padding-bottom,85px)
 			+rem(padding-top,12px)
 			+rem(padding-right,10px)
+			&:only-child
+				border-bottom: none
 			+r(991)
 				border: none
 				+rem(padding-bottom,15px)
@@ -3338,7 +3350,7 @@ a
 		.slick-arrow
 			background: transparent
 			will-change: opacity
-			top: 31%
+			top: 40%
 			&.slick-disabled
 				pointer-events: none
 			&:before
@@ -3407,7 +3419,7 @@ a
 						+rem(font-size,36px)
 			.feachure-list-item
 				margin-right: 0
-				background-color: #fff
+				background: #fff
 				+rem(padding-bottom,30px)
 				+r(950)
 					padding-left: 0
@@ -3426,14 +3438,13 @@ a
 				+r(991)
 					+rem(margin-right,-22px)
 			.feachure-list-list
-				min-width: 100%
-				display: block
+				width: 50%
 				font-size: 0
-				column-count: 2
+				// column-count: 2
 				padding-right: 0
 				+rem(margin-top,20px)
-				+r(800)
-					column-count: 1
+				+r(870)
+					width: 100%
 				+r(900)
 					&:last-of-type
 						margin-top: 0
@@ -3441,21 +3452,78 @@ a
 					+rem(margin, 0 0)
 					+rem(padding-top,7.5px)
 					+rem(padding-bottom,7.5px)
-					column-fill: auto
+					// column-fill: auto
 						// margin-top: 0
 					// width: 50%
-					-webkit-transform: translate3d(0, 0, 0)
-					-webkit-column-break-inside: avoid;
-					page-break-inside: avoid;
-					break-inside: avoid;
+					// -webkit-transform: translate3d(0, 0, 0)
+					// -webkit-column-break-inside: avoid;
+					// page-break-inside: avoid;
+					// break-inside: avoid;
+					display: inline-block
+					vertical-align: top
+					width: 100%
+
 					+clr
 					+rem(padding-right,62px)
+					.vacancy-head
+						border: none
+						.table-arr
+							padding-left: 0
+							padding-top: 0
+							padding-bottom: 0
+							+rem(padding-right,12px)
+							+rem(width,20px)
+							i 
+								+rem(margin-left,-5px)
+						&.active
+							.title 
+								color: #000
+
+					.title 
+						font-weight: 400
+						text-transform: none
+						font-size: 0
+						padding: 0
+
+						span
+							width: calc(100% - 6.25rem)
+							display: inline-block
+							vertical-align: bottom
+							+rem(font-size,16px)
+							.small-block
+								&>span
+									+rem(font-size,10px)
+						.text-bold
+							display: inline-block
+							vertical-align: bottom
+							+rem(width,100px)
+							font-size: 1.125rem;
+							text-align: right
+							
+					.vacancy-body
+						.feachure-list-list
+							width: 100%
+							li 
+								padding-right: 0
+								width: 100%
+								+rem(padding-left,19px)
+								.text-bold
+									color: #000
+								&.sale
+									.text-bold
+										color: $hover
+								a 
+									padding-left: 0
+									
+									
+
 					+r(991)
 						+rem(padding-right,22px)
 					a
+						+rem(padding-left,19px)
 						span 
 							+rem(padding-right,10px)
-					&.sale
+					&.sale,&>.sale
 						position: relative
 						.text-bold
 							// vertical-align: middle
@@ -3468,7 +3536,7 @@ a
 							+rem(font-size,10px)
 							+rem(width,44px)
 							vertical-align: bottom
-							
+							+rem(margin-left,3px)
 							+rem(height,19px)
 							text-align: center
 							+rem(padding,2px 7px)
@@ -3479,9 +3547,10 @@ a
 							span
 								width: 100%
 								text-align: center
-						.text-bold
-							color: $active
+						
 						a 
+							&>.text-bold
+								color: $active
 							&:hover
 								span:after
 									box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
@@ -4095,6 +4164,11 @@ a
 	.modal-container-content
 		+rem(margin-top,30px)
 		text-align: left
+		&-answer
+			text-align: center
+			+rem(margin-bottom,35px)
+			.text2
+				+rem(font-size,17px)
 	.modal-container-footer
 		+rem(padding, 25px 0 35px)
 		text-align: left
@@ -4557,16 +4631,16 @@ a
 				line-height: 1.375;
 				+rem(font-size,16px)
 				position: relative
-				&:before
-					position: absolute
-					content: ''
-					background-color: #000
-					display: inline-block
-					+rem(width,6px)
-					+rem(height,6px)
-					+rem(top,7px)
-					+rem(left,0px)
-					border-radius: 50%
+				// &:before
+				// 	position: absolute
+				// 	content: ''
+				// 	background-color: #000
+				// 	display: inline-block
+				// 	+rem(width,6px)
+				// 	+rem(height,6px)
+				// 	+rem(top,7px)
+				// 	+rem(left,0px)
+				// 	border-radius: 50%
 					
 .content-form
 	&-block
@@ -5253,6 +5327,7 @@ a
 				color: rgb(109, 109, 109);
 				line-height: 1.5;
 				+rem(margin-bottom,25px)
+
 		&.sale
 			background-color: #faf9f5
 			.modal-container-content
@@ -5311,3 +5386,20 @@ a
 		+coverdiv
 		background-color: rgba(255,255,255, .7)
 		z-index: 2
+.price-wrapper
+	width: 100%
+	+rem(margin-top,80px)
+	+r(950)
+		+rem(margin-top,50px)
+	.feachure-list-wrap
+		+rem(margin-top,30px)
+		border-top: $bb
+	.feachure-list-list
+		min-width: 100%
+		li 
+			padding-right: 0 !important
+		a
+			padding-left: 0 !important
+			pointer-events: none
+			.small-block
+				pointer-events: all

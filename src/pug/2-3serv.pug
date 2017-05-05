@@ -32,56 +32,92 @@ block content
 				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
 					.aside-title.title.h4.js-dropdown Прайс-лист
 					ul.menu-nav.js-dropdown-target
+						//тут ничего ен менял, просто пункты переименовал, у меня тут неправильная версия, не скролит
 						li.menu-nav-item
 							a(href="#1").link-black.js-scroll-to Косметология
 						li.menu-nav-item
-							a(href="#2").link-black.js-scroll-to Пластическая хирургия
+							a(href="#2").link-black.js-scroll-to Детская косметология
 						li.menu-nav-item
-							a(href="#3").link-black.js-scroll-to Лазерная косметология
+							a(href="#3").link-black.js-scroll-to Хирургия
 						li.menu-nav-item
-							a(href="#4").link-black.js-scroll-to Коррекция фигуры
-						li.menu-nav-item
-							a(href="#5").link-black.js-scroll-to Массаж
-						li.menu-nav-item
-							a(href="#6").link-black.js-scroll-to Физиотерапия
-						li.menu-nav-item
-							a(href="#7").link-black.js-scroll-to Флебология
-						li.menu-nav-item
-							a(href="#8").link-black.js-scroll-to Трихология
-						li.menu-nav-item
-							a(href="#9").link-black.js-scroll-to Эндокринология
-						li.menu-nav-item
-							a(href="#10").link-black.js-scroll-to Лабораторные анализы и экспресс-диагностика
-						li.menu-nav-item
-							a(href="#11").link-black.js-scroll-to Персонализированная косметика
+							a(href="#4").link-black.js-scroll-to Клинико-диагностический центр
+
 			.aside-content
 				.feachure-list-wrap.price
 					+listlist('1','Косметология','')
 						ul.feachure-list-list
 							li
-								a(href="#") 
-									span Диагностика кожи
-									.text-bold 5 000₽
+								+priceAccordeon('Диагностика кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревой болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
 							li
-								a(href="#") 
-									span Аутологичное клеточное омоложение рук плазмой
-									.text-bold 42 000₽
+								+priceAccordeon('Диагностика кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревой болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
 							li
-								a(href="#") 
-									span Инъекционная 
-										br 
-										|контурная пластика
-									.text-bold 42 000₽
-							li.sale
-								a(href="#")
-									span Лечение угревой болезни
-										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
-											span Акция
-									.text-bold 60 000₽
+								+priceAccordeon('Диагностика кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревойs fsdf sdfs dfsdfds fsdf sdfsd fsd fsdf sf sf sd fdsfsdfds dsfsdfds sd болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
 							li
-								a(href="#") 
-									span Лечение купероза
-									.text-bold 42 000₽
+								+priceAccordeon('Диагностика жирной как картошечка фри кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревой болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
 							li
 								a(href="#") 
 									span Лечение Розацеа
@@ -96,6 +132,7 @@ block content
 								a(href="#") 
 									span Вросший ноготь
 									.text-bold 42 000₽
+						ul.feachure-list-list
 							li
 								a(href="#") 
 									span Вросший ноготь
@@ -156,43 +193,98 @@ block content
 											span Акция
 									.text-bold 42 000₽
 
-						.menu-nav-item.more.js-list-more(data-alt-text='Свернуть')
-							a(href="#").link-black Показать все
-					+listlist('2','Пластическая хирургия','')
+					+listlist('2','Детская осметология','')
+						ul.feachure-list-list
+							li
+								+priceAccordeon('Диагностика кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревой болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
+							li
+								+priceAccordeon('Диагностика кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревой болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
+							li
+								+priceAccordeon('Диагностика кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревойs fsdf sdfs dfsdfds fsdf sdfsd fsd fsdf sf sf sd fdsfsdfds dsfsdfds sd болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
+							li
+								+priceAccordeon('Диагностика жирной как картошечка фри кожи','5 000₽',1)
+									li
+										a(href="#") 
+											span Аутологичное клеточное омоложение рук плазмой
+											.text-bold 42 000₽
+									li
+										a(href="#") 
+											span Инъекционная 
+												br 
+												|контурная пластика
+											.text-bold 42 000₽
+									li.sale
+										a(href="#")
+											span Лечение угревой болезни
+												.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+													span Акция
+											.text-bold 60 000₽
+							li
+								a(href="#") 
+									span Лечение Розацеа
+									.text-bold 42 000₽
+							li.sale
+								a(href="#") 
+									span Удаление родинок и папиллом
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+											span Акция
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
 						ul.feachure-list-list
 							li
 								a(href="#") 
-									span Диагностика кожи
-									.text-bold 5 000₽
-							li
-								a(href="#") 
-									span Аутологичное клеточное омоложение рук плазмой
-									.text-bold 42 000₽
-							li.sale
-								a(href="#") 
-									span Инъекционная контурная пластика
-										.small-block.small
-											span Акция
-									.text-bold 42 000₽
-							li.sale
-								a(href="#") 
-									span Лечение угревой болезни
-										.small-block.small
-											span Акция
-									.text-bold 60 000₽
-							li
-								a(href="#") 
-									span Лечение купероза
-									.text-bold 42 000₽
-							li.sale
-								a(href="#") 
-									span Лечение Розацеа
-									.text-bold 42 000₽
-								a(href="#").small-block.small
-									span Акция
-							li
-								a(href="#") 
-									span Удаление родинок и папиллом
+									span Вросший ноготь
 									.text-bold 42 000₽
 							li
 								a(href="#") 
@@ -200,7 +292,15 @@ block content
 									.text-bold 42 000₽
 							li
 								a(href="#") 
-									span Биоревитализация
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
+									.text-bold 42 000₽
+							li
+								a(href="#") 
+									span Вросший ноготь
 									.text-bold 42 000₽
 							li
 								a(href="#") 
@@ -210,20 +310,23 @@ block content
 								a(href="#") 
 									span Удаление родинок и папиллом
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Вросший ноготь
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+											span Акция
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
 									span Биоревитализация
+										.small-block.small
+											span Акция
 									.text-bold 60 000₽
-							li.sale
+								
+							li
 								a(href="#") 
 									span Ботулинотерапия
 									.text-bold 42 000₽
-								a(href="#").small-block.small
-									span Акция
 							li
 								a(href="#") 
 									span Детская косметология
@@ -232,13 +335,12 @@ block content
 								a(href="#") 
 									span Косметические маски
 									.text-bold 42 000₽
-							li
+							li.sale
 								a(href="#") 
-									span Косметические маски
+									span Вросший ноготь
+										.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
+											span Акция
 									.text-bold 42 000₽
-
-						.menu-nav-item.more.js-list-more(data-alt-text='Свернуть')
-							a(href="#").link-black Показать все
 					+listlist('3','Лазерная косметология','')
 						ul.feachure-list-list
 							li
