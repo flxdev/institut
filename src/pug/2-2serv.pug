@@ -56,7 +56,7 @@ block content
 				a(href="promo.html",data-modal='road',data-href='').small-block.small.js-popup-button.ajax-trigger
 					span Акция
 				.text Стоимость услуги:
-				.title.h3 250 000₽
+				.title.h3.js-scroll-to(data-href="#price") от 250 000₽
 				.price-old-cont
 					.price-old 250 000₽
 				a(href="#").btn.yell Записаться на прием
@@ -189,42 +189,30 @@ block content
 								.content-slider-nav
 									.nav-dots
 							p Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши.
-							.price-wrapper 
+							.price-wrapper(data-id='#price')
 								.title.h2 Стоимость услуг 
 								.feachure-list-wrap.price
-									//таня попросила, чтобы эти ссылки ссылками не были, но если их поменять то все разлетится т.к. там структура дикая, посему ноиндекс и я блочу клик по ссылкам
-									noindex
-										ul.feachure-list-list
-											li
-												a(href="#") 
-													span Вросший ноготь
-													.text-bold 42 000₽
-											li
-												a(href="#") 
-													span Вросший ноготь
-													.text-bold 42 0500₽
-											li
-												a(href="#") 
-													span Вросший ноготь
-													.text-bold 425 000₽
-											li
-												a(href="#") 
-													span Вросший ноготь
-													.text-bold 425 000₽
-											li
-												a(href="#") 
-													span Вросший ноготь
-													.text-bold 42 000₽
-											li
-												a(href="#") 
-													span Лечение Розацеа
-													.text-bold 5 000₽
-											li.sale
-												a(href="#") 
-													span Удаление родинок и папиллом
-														.small-block.small(data-href="promo.html",data-modal='road').js-popup-button.ajax-trigger
-															span Акция
-													.text-bold 42 000₽
+									//- //таня попросила, чтобы эти ссылки ссылками не были, но если их поменять то все разлетится т.к. там структура дикая, посему ноиндекс и я блочу клик по ссылкам
+									.feachure-list-list
+										.feachure-list-block
+											a(href="#")
+												ul
+													li
+														span Аутологичное клеточное омоложение рук плазмой
+														.text-bold 42 000₽
+													li
+														span Инъекционная 
+															br 
+															|контурная пластика
+														.text-bold 42 000₽
+													li
+														span Инъекционная 
+															br 
+															|контурная пластика
+														.text-bold 42 000₽
+													li
+														span Лечение угревойs fsdf sdfs dfsdfds fsdf sdfsd fsd fsdf sf sf sd fdsfsdfds dsfsdfds sd болезни
+														.text-bold 60 000₽
 					//div нужен
 					.content-column-right
 						.diplom-slider-content
