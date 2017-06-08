@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Вопрос-ответ</title>
+    <title>кОСМЕТОЛОГИЯ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta content="True" name="HandheldFriendly">
@@ -254,211 +254,94 @@
             <div class="wrapper content-wrapper" style="background-image:url(img/bgmain.jpg);">
               <!--для врачей вешаем класс .personal-->
               <div class="box content-head">
-                <div class="content-bread"><a class="content-bread-item text2" href="#">Главная</a><a class="content-bread-item text2" href="#">Вопрос-ответ</a></div>
+                <div class="content-bread"><a class="content-bread-item text2" href="#">Главная</a><a class="content-bread-item text2" href="#">Услуги</a></div>
                 <div class="content-main">
-                  <div class="title h1">Вопрос-ответ</div>
+                  <div class="title h1">кОСМЕ&shy;ТОЛО&shy;ГИЯ</div>
+                  <!--просто вставляем этот блок, а туда уже кнопку которая нужна-->
+                  <div class="title-btn"><a class="btn btn-big" href="#">Прайс Лист</a></div>
                 </div>
               </div>
             </div>
             <div class="box">
               <div class="aside-wrapp">
-                <!-- а вот тут ссылки уже ссылки а не якоря-->
-                <!-- помимо самой ссылки .active надо вешать еще и на дочернюю ссылку если мы на страницах связанных с институтом красоты-->
                 <aside class="aside-menu" data-sticky_parent>
+                  <!-- тут модификатор .list-bold-->
                   <div class="aside-stick list-bold js-dropdown-parent" data-sticky_column>
-                    <div class="aside-title title h4 js-dropdown">Об институте</div>
-                    <ul class="menu-nav js-dropdown-target">
-                      <li class="menu-nav-item"><a class="link-black" href="#">институт красоты</a>
-                        <div class="menu-add-items"><a class="menu-add-link" href="#">
-                            <div class="link-black">Руководство</div></a><a class="menu-add-link" href="#">
-                            <div class="link-black">Миссия</div></a><a class="menu-add-link" href="#">
-                            <div class="link-black">История</div></a><a class="menu-add-link" href="#">
-                            <div class="link-black">Лицензии</div></a></div>
-                      </li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Исследовательский центр</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Научный центр</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Косметическое производство</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">партнёры</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Рекламодателям</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">вакансии</a></li>
-                      <li class="menu-nav-item"><a class="link-black active" href="#">вопрос-ответ</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">отзывы</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Записаться на приём</a></li>
+                    <div class="aside-title title h4 js-dropdown">Список услуг</div>
+                    <ul class="menu-nav js-dropdown-target accordion">
+                      <li class="menu-nav-item"><a class="link-black active">Косметология
+                          <div class="link-black_box"><a class="link-black_box-link active" href="#"><span>Инъекционная косметология</span></a><a class="link-black_box-link" href="#"><span>Аппаратная косметология</span></a><a class="link-black_box-link" href="#"><span>Лазерная косметология</span></a><a class="link-black_box-link" href="#"><span>Эстетическая косметология</span></a></div></a></li>
+                      <li class="menu-nav-item"><a class="link-black" href="#">Детская косметология</a></li>
+                      <li class="menu-nav-item"><a class="link-black" href="#">Хирургия</a></li>
+                      <li class="menu-nav-item"><a class="link-black" href="#">Клинико-диагностический центр</a></li>
                     </ul>
                   </div>
                 </aside>
                 <div class="aside-content">
-                  <div class="content-column-wrap special">
-                    <div class="content-column-content">
-                      <div class="content-column-content-inner">
-                        <div class="content-form-block">
-                          <div class="title h4">вопрос дежурному врачу</div>
-                          <div class="content-form-block-block">
-                            <form class="form js-validate" data-block=".modal-container" data-success=".success-modal">
-                              <div class="input-item s-50">
-                                <div class="input-wrapper req">
-                                  <label>Имя</label>
-                                  <input class="input-main" type="text" placeholder="Имя" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Не заполнено">
-                                </div>
-                              </div>
-                              <div class="input-item s-50">
-                                <div class="input-wrapper req">
-                                  <label>Телефон</label>
-                                  <input class="input-main" type="tel" placeholder="Телефон" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Не заполнено">
-                                </div>
-                              </div>
-                              <div class="input-item s-50">
-                                <div class="input-wrapper req">
-                                  <label>Фамилия</label>
-                                  <input class="input-main" type="text" placeholder="Фамилия" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Не заполнено">
-                                </div>
-                              </div>
-                              <div class="input-item s-50">
-                                <div class="input-wrapper req">
-                                  <label>E-mail</label>
-                                  <input class="input-main" type="email" placeholder="example@mail.com" data-validation="email" data-validation-error-msg="Не заполнено">
-                                </div>
-                              </div>
-                              <div class="input-item s-50">
-                                <div class="input-wrapper req">
-                                  <label>Отчество</label>
-                                  <input class="input-main" type="text" placeholder="Отчество" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Не заполнено">
-                                </div>
-                              </div>
-                              <div class="input-item s-50">
-                                <div class="input-wrapper req">
-                                  <div class="label">Категория</div>
-                                  <div class="select-check js-select-custom">
-                                    <button class="selects" data-placeholder="Выберите"><span class="btn-text">Выберите</span><i class="select-img"></i></button>
-                                    <div class="dropdown-target">
-                                      <div class="dropdown-inner">
-                                        <div class="dropdown-content">
-                                          <div class="select-u-body select-list">
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val1" data-validation="required"><span>Здоровье</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val2"><span>Нездоровье</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val3"><span>DFDF</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val4"><span>GHJGHJ</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val5"><span>GHJ</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val6"><span>HGJGHJ</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val7"><span>GHJHG</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val8"><span>HGJG</span>
-                                            </label>
-                                            <label class="option">
-                                              <input type="radio" name="group4" value="val9"><span>3HGJ</span>
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="input-item s-100">
-                                <div class="input-wrapper">
-                                  <label>Вопрос специалисту </label>
-                                  <textarea class="input-main" rows="5" placeholder="Вопрос"> </textarea>
-                                </div>
-                              </div>
-                              <div class="form-footer">
-                                <div class="form-footer-notify">
-                                  <div class="text">Поля обязательные для заполнения</div>
-                                </div>
-                                <button class="btn yell" type="submit">Задать вопрос</button>
-                              </div>
-                            </form>
-                          </div>
+                  <div class="feachure-list-wrap">
+                    <div class="feachure-list-item">
+                      <div class="feachure-list-item-inner">
+                        <div class="doc-card-inner" style="background-image:url(/img/list/1.png);">
+                          <div class="doc-card-text"><a class="title h2 link" href="#">Инъекционная косметология</a></div>
                         </div>
-                        <div class="feedback-wrapper">
-                          <div class="feedback-item">
-                            <div class="feedback-item-head">
-                              <time class="text2">7 февраля 2017</time>
-                            </div>
-                            <div class="feedback-item-who">
-                              <div class="who-line"><span class="text bold">Клиент:</span>Ольга</div>
-                            </div>
-                            <div class="feedback-item-content js-coment">
-                              <div class="feedback-item-content-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. sdfsd sd fdsfdsfsdf s fsf sfsfdsfs fsd fsddsf dssssghf hdfshdfsdhf sfhjdf  shjdfsdfs  dfs dfsdfssdf s</div>
-                            </div>
-                            <div class="menu-nav-item more js-list-more" data-alt-text="Свернуть">
-                              <div class="link-black">Читать полностью</div>
-                            </div>
-                          </div>
-                          <div class="feedback-item">
-                            <div class="feedback-item-head">
-                              <time class="text2">7 февраля 2017</time>
-                            </div>
-                            <div class="feedback-item-who">
-                              <div class="who-line"><span class="text bold">Клиент:</span>Ольга</div>
-                            </div>
-                            <div class="feedback-item-content js-coment">
-                              <div class="feedback-item-content-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </div>
-                            </div>
-                            <div class="menu-nav-item more js-list-more" data-alt-text="Свернуть">
-                              <div class="link-black">Читать полностью</div>
-                            </div>
-                            <div class="feedback-item-reply">
-                              <div class="text bold">Ответ:</div>
-                              <div class="reply-content">обрый день Валерий Алексеевич, могу Вам рекомендовать в Москве только одного хорошего врача, так как лично знаком с ним и с его работами, зовут его Иванов Иван Иванович, работает он по адресу: <br>г. Москва, Комсомольский пр-т, д.32 </div>
-                            </div>
-                          </div>
-                          <div class="feedback-item">
-                            <div class="feedback-item-head">
-                              <time class="text2">7 февраля 2017</time>
-                            </div>
-                            <div class="feedback-item-who">
-                              <div class="who-line"><span class="text bold">Клиент:</span>Ольга</div>
-                            </div>
-                            <div class="feedback-item-content js-coment">
-                              <div class="feedback-item-content-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                            </div>
-                            <div class="menu-nav-item more js-list-more" data-alt-text="Свернуть">
-                              <div class="link-black">Читать полностью</div>
-                            </div>
-                            <div class="feedback-item-reply">
-                              <div class="text bold">Ответ:</div>
-                              <div class="reply-content">Ольга, спасибо Вам большое за пожелания!</div>
-                            </div>
-                          </div>
-                          <div class="feedback-item">
-                            <div class="feedback-item-head">
-                              <time class="text2">7 февраля 2017</time>
-                            </div>
-                            <div class="feedback-item-who">
-                              <div class="who-line"><span class="text bold">Клиент:</span>Ольга</div>
-                            </div>
-                            <div class="feedback-item-content js-coment">
-                              <div class="feedback-item-content-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                            </div>
-                            <div class="menu-nav-item more js-list-more" data-alt-text="Свернуть">
-                              <div class="link-black">Читать полностью</div>
-                            </div>
-                            <div class="feedback-item-reply">
-                              <div class="text bold">Ответ:</div>
-                              <div class="reply-content">Добрый день Валерий Алексеевич, могу Вам рекомендовать в Москве только одного хорошего врача, так как лично знаком с ним и с его работами, зовут его Иванов Иван Иванович, работает он по адресу: <br>г. Москва, Комсомольский пр-т, д.32 </div>
-                            </div>
-                          </div>
+                        <div class="feachure-list-content">
+                          <ul class="feachure-list-list">
+                            <li><a href="#">Диагностика кожи</a></li>
+                            <li><a href="#">Аутологичное клеточное омоложение рук плазмой</a></li>
+                            <li><a href="#">Инъекционная контурная пластика</a></li>
+                          </ul>
+                          <ul class="feachure-list-list">
+                            <li><a href="#">Ботулинотерапия</a></li>
+                            <li><a href="#">Детская косметология</a></li>
+                            <li><a href="#">Косметические маски</a></li>
+                          </ul>
+                          <ul class="feachure-list-list">
+                            <li><a href="#">Фотомодуляция</a></li>
+                            <li><a href="#">Чистка лица</a></li>
+                            <li><a href="#">Электрокоагуляция</a></li>
+                          </ul>
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div class="content-column-wrap">
+                    <div class="content-column-content">
+                      <div class="content-column-content-inner">
+                        <h1>Об инъекционной косметологии</h1>
+                        <p> Мы постоянно расширяем арсенал методик, которые используем в своей практике и углублённо изучаем состояние здоровья пациента, в том числе его генетические особенности, для того чтобы разработать индивидуальные комплексные программы совершенствования внешности.</p>
+                        <p> В клинике применяются новейшие технологии  (плазмотерапия) и все известные классические методики:<a href="#">биоревитализация</a>,<a href="#">aмезотерапия</a>,<a href="#">контурная пластика</a>,<a href="#">лифтинг с использованием мезонитей</a>,<a href="#">ботулинотерапия</a>,<a href="#">химические пилинги</a>и т.д.), лечение и омоложение с помощью лазеров и фототерапии, совершенствуются традиционные, ставшие классическими методики массажа и эпиляции.</p>
+                        <p> По традиции в отделении семейной медицины оказывают медицинскую косметологическую помощь детям (<a href="#">детская дерматокосметология</a>).</p>
+                        <p> Предмет нашей особой гордости составляют наши<a href="#">специалисты</a>- "золотой фонд" отечественной дерматокосметологии.</p>
+                      </div>
+                    </div>
                     <!--div нужен-->
-                    <div class="content-column-right"></div>
+                    <div class="content-column-right">
+                      <div class="diplom-slider-content"><b>Наша деятельность сертифицирована</b>
+                        <div class="diplom-slider-inner"><a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества3&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;"><img src="img/content/d1.jpg" alt="fsdfsd"></a><a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества1&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;"><img src="img/content/d1.jpg" alt="fsdfsd"></a><a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества31&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;"><img src="img/content/d1.jpg" alt="fsdfsd"></a></div><i>Сертификат на осуществление медицинской деятельности</i>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
+              <div class="nav-wrapper">
+                <div class="nav-btn-wrap">
+                  <!--если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить--><a class="nav-btn" href="#">
+                    <div class="nav-btn-inner">
+                      <svg class="icon icon-drop">
+                        <use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                      </svg>
+                    </div><span>Назад</span></a>
+                </div>
+                              <form class="tel-form js-validate" action="">
+                                <div class="tel-form-text">
+                                  <div class="text-bold">Не нашли что искали?</div>
+                                  <div class="text-bold small">Оставьте свой номер и мы перезвоним</div>
+                                </div>
+                                <div class="tel-form-form">
+                                  <input class="tel-form-inp" type="tel" placeholder="+7 (495) 212 92 99" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Неверный номер">
+                                  <button class="btn tel-form-btn" type="submit" value="Отправить"><span>Отправить</span></button>
+                                </div>
+                              </form>
               </div>
             </div>
           </main>

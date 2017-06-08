@@ -108,33 +108,58 @@ include _mixins.pug
 					span
 .page__header-drop
 	.page__header-drop-cont
-		.page__header-drop-item.col-3(data-id='1')
+		.page__header-drop-item(data-id='1')
 			//без <br> тут в дизайн не попадешь
-			ul.page__header-drop-list
-				li
-					a(href="#") Косметология
-				li
-					a(href="#") Пластическая хирургия
-				li
-					a(href="#") Лазерная косметология
-				li
-					a(href="#") Коррекция фигуры
-				li
-					a(href="#") Трихология
-				li
-					a(href="#") Массаж
-				li
-					a(href="#") Физиотерапия
-				li
-					a(href="#") Флебология
-				li
-					a(href="#") Эндокринология
-				li
-					a(href="#") Лабораторные анализы
-				li
-					a(href="#") Персонализированная косметика
-				li
-					a(href="#") Прайс-лист
+			.page__header-drop-list
+				.page__header-drop_menu-item
+					a(href="#").page__header-drop_menu-item_title Косметология
+					ul.page__header-drop-list-2
+						li
+							a(href="#") Инъекционная косметология
+						li
+							a(href="#") Аппаратная косметология
+						li
+							a(href="#") Лазерная косметология
+						li
+							a(href="#") Эстетическая косметология
+				.page__header-drop_menu-item
+					a(href="#").page__header-drop_menu-item_title Детская косметология
+					ul.page__header-drop-list-2
+						li
+							a(href="#") Дермотология
+						li
+							a(href="#") Трихология
+				.page__header-drop_menu-item
+					a(href="#").page__header-drop_menu-item_title Хирургия
+					ul.page__header-drop-list-2
+						li
+							a(href="#") Эстетическая хирургия
+						li
+							a(href="#") Пластическая хирургия
+						li
+							a(href="#") Малоинвазимная хирургия
+				.page__header-drop_menu-item
+					a(href="#").page__header-drop_menu-item_title Клинико-диагностический центр
+					ul.page__header-drop-list-2
+						li
+							a(href="#") Терапевт
+						li
+							a(href="#") Гинеколог
+						li
+							a(href="#") Диетолог
+						li
+							a(href="#") Флебология
+						li
+							a(href="#") Микология
+						li
+							a(href="#") Трихология
+						li
+							a(href="#") Массаж
+						li
+							a(href="#") Эндокринология
+						li
+							a(href="#") Лабораторная диагностика
+
 		.page__header-drop-item.col-4(data-id='2')
 			ul.page__header-drop-list
 				li
@@ -181,29 +206,11 @@ include _mixins.pug
 					li.mobile_l2-item
 						a(href="#").link-black Косметология
 					li.mobile_l2-item
-						a(href="#").link-black Флебология
+						a(href="#").link-black Детская косметология
 					li.mobile_l2-item
-						a(href="#").link-black Пластическая хирургия
+						a(href="#").link-black Хирургия
 					li.mobile_l2-item
-						a(href="#").link-black Трихология
-					li.mobile_l2-item
-						a(href="#").link-black Лазерная косметология
-					li.mobile_l2-item
-						a(href="#").link-black Эндокринология
-					li.mobile_l2-item
-						a(href="#").link-black Коррекция фигуры
-					li.mobile_l2-item
-						a(href="#").link-black Лабораторные анализы и экспресс-диагностика
-					li.mobile_l2-item
-						a(href="#").link-black Массаж
-					li.mobile_l2-item
-						a(href="#").link-black Персонализированная косметика
-					li.mobile_l2-item
-						a(href="#").link-black Физиотерапия
-					li.mobile_l2-item
-						a(href="#").link-black Физиотерапия
-					li.mobile_l2-item
-						a(href="#").link-black Флебология
+						a(href="#").link-black Клинико-диагностический центр
 			li.js-sub-toggle
 				a(href="#").top-nav.bottom.icon
 					span специалисты

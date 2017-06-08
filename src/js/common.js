@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					targetWrap.find("[data-id="+ id +"]").addClass(current).siblings().removeClass(current);
 					var h = targetWrap.find("[data-id="+ id +"]").find('.page__header-drop-list').outerHeight();
 					targetWrap.css('height',h + 65);
+
 				}else{
 					targetWrap.removeClass(shown);
 					items.removeClass('active')

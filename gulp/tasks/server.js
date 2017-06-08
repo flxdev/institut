@@ -8,7 +8,7 @@ gulp.task('server', function() {
             baseDir: config.dest.root
         },
         files: [config.dest.html + '*.html', config.dest.css + '*.css', config.dest.js + '*.js'],
-        port: 8080,
+        port: 8081,
         notify: false,
         ghostMode: false,
         online: true,

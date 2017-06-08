@@ -218,7 +218,8 @@ body, .out
 					li 
 						display: inline-block
 						vertical-align: top
-						width: 50%
+						width: 100%
+						text-align: center
 						+rem(margin, 10px 0)
 						+rem(padding-right,10px)
 						+r(359)
@@ -2729,7 +2730,7 @@ a
 	&-menu
 		+rem(flex-basis,272px)
 		flex-shrink: 0
-		+rem(padding-right,35px)
+		+rem(padding-right,30px)
 		+r(735)
 			padding-right: 0
 			+rem(margin-bottom,15px)
@@ -3667,6 +3668,12 @@ a
 			line-height: 1.45;
 			&:hover
 				color: $hover
+.feachure-list-preview
+	font-family: 'PTSans'
+	font-weight: 600
+	font-size: 16px
+	color: black
+	margin-top: 30px
 .nav-btn-wrap:empty() + .tel-form
 	+r(620)
 		+rem(margin-top, 0px)
@@ -5141,6 +5148,8 @@ a
 			+rem(margin-right,-15px)	
 		&:not(:last-child)
 			border-bottom: $bb
+		.map-item-col-name
+			text-transform: uppercase
 		.map-item
 			+rem(padding-right,30px)
 			+r(650)
@@ -5422,7 +5431,7 @@ a
 .feachure-list-block
 	a 
 		padding: 0 !important
-		border-color: #aaa !important;
+		border-color: #aaa !important
 		&:hover
 			.text-bold
 				color: #000 !important
@@ -5431,3 +5440,159 @@ a
 		padding-right: 0 !important
 		span
 			padding-right: 20px !important
+.menu-nav-item
+	.link-black.active
+		color: #e4b809
+.link-black_box
+	margin: 13px 0
+	display: inline-block
+	.link-black_box-link
+		display: inline-block
+		font-family: 'PTSans'
+		font-size: 16px
+		font-weight: bold
+		text-transform: none
+		color: black
+		margin: 1rem 0
+		&:hover span:after
+			width: 0
+		span
+			line-height: 1.2
+			transition: color .2s,padding .2s
+			position: relative
+			&:after
+				position: absolute
+				left: 0
+				height: 1px
+				background-color: #e4b809
+				content: ""
+				width: 100%
+				bottom: 0
+				transition: color .2s,width .2s,transform .2s,-webkit-transform .2s
+	.link-black_box-link.active
+		box-shadow: none
+		color: #e4b809
+.page__header-drop_menu-item
+	font-size: 0
+	display: inline-block
+	vertical-align: top
+	width: 25%
+	.page__header-drop_menu-item_title
+		font-family: PTSans
+		font-weight: normal
+		font-size: 16px
+		color: #000
+		margin-top: 30px
+		margin-bottom: 12px
+		display: block
+		transition: color .3s
+		&:hover
+			color: #fbd400
+	.page__header-drop-list-2
+		li
+			width: 100%
+			display: block
+			padding: 10px 0
+			a
+				color: #6d6d6d
+				transition: color .3s
+				font-size: 0.875rem
+				&:hover
+					color: #fbd400
+.page__header-drop-cont .page__header-drop-item
+	padding: 0 0 1.25rem 0
+.map-item-col-elem
+	font-size: 0
+	margin-top: 45px
+.map-item-col-elem_box
+	display: inline-block
+	vertical-align: top
+	width: 25%
+	.map-item-col-elem_box-name
+		font-family: 'PTSans'
+		font-size: 16px
+		font-weight: bold
+		text-transform: none
+		color: black
+		transition: color .3s
+		padding: 30px 0 15px 0
+		display: block
+		&:hover
+			color: #fbd400
+.mapcont-row .map-item-col-elem .map-item-col-elem_box ul
+		width: 84%
+.mapcont-row .map-item-col-elem .map-item-col-elem_box ul li a
+	padding: 14px 0
+.box-link-s
+	font-size: 1.125rem
+	color: #000
+	font-weight: 700
+	text-transform: uppercase
+	position: absolute
+	bottom: 10px
+.doc-card-inner-s .link-arr
+	position: relative
+	top: -5px
+	left: 10px
+.doc-card-text_title
+	font-family: Roboto Condensed
+	color: #000
+	font-weight: 700
+	text-transform: uppercase
+	font-size: 42px
+	transition: color .3s
+	margin-bottom: 13px
+	display: block
+.doc-card-text_title:hover
+	color: #fbd400
+.margin-doc-block
+	margin-bottom: 35px
+.doc-card-inner
+	position: relative
+.doc-card-img
+	position: absolute
+	right: 0
+.doc-card-img img
+	position: absolute
+	bottom: 0
+.doc-card-inner-s .doc-card-text
+	padding-bottom: 4.5rem
+.doc-card-inner-s
+	font-size: 0
+	border-bottom: 1px solid #d6d5d1
+	height: 100%
+	display: -webkit-box
+	display: -webkit-flex
+	display: -ms-flexbox
+	display: flex
+	-webkit-box-orient: horizontal
+	-webkit-box-direction: normal
+	-webkit-flex-flow: row nowrap
+	-ms-flex-flow: row nowrap
+	flex-flow: row nowrap
+	-webkit-box-align: end
+	-webkit-align-items: flex-end
+	-ms-flex-align: end
+	align-items: flex-end
+	position: relative
+.doc-card-text .title.h4:hover
+	color: #fbd400
+
+.link-s:hover .link-arr
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.2)
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2)
+.link-s:hover .link-arr use
+	fill: #fbd400
+	stroke: #fbd400
+	color: #000
+.doc-card-wrap.margin-card-wrap
+	margin: 50px 0 80px 0
+@media all and (max-width: 900px)
+	.map-item-col-elem_box
+		width: 33%
+@media all and (max-width: 767px)
+	.map-item-col-elem_box
+		width: 50%
+@media all and (max-width: 535px)
+	.map-item-col-elem_box
+		width: 100%

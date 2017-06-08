@@ -21,29 +21,24 @@ block content
 				// тут модификатор .list-bold
 				.aside-stick(data-sticky_column).list-bold.js-dropdown-parent
 					.aside-title.title.h4.js-dropdown Список услуг
-					ul.menu-nav.js-dropdown-target
+					ul.menu-nav.js-dropdown-target.accordion
 						li.menu-nav-item
-							a(href="#").link-black.active Косметология
+							a.link-black.active Косметология
+								.link-black_box
+									a(href='#').link-black_box-link
+										span Инъекционная косметология
+									a(href='#').link-black_box-link
+										span Аппаратная косметология
+									a(href='#').link-black_box-link
+										span Лазерная косметология
+									a(href='#').link-black_box-link
+										span Эстетическая косметология
 						li.menu-nav-item
-							a(href="#").link-black Пластическая хирургия
+							a(href="#").link-black Детская косметология
 						li.menu-nav-item
-							a(href="#").link-black Лазерная косметология
+							a(href="#").link-black Хирургия
 						li.menu-nav-item
-							a(href="#").link-black Коррекция фигуры
-						li.menu-nav-item
-							a(href="#").link-black Массаж
-						li.menu-nav-item
-							a(href="#").link-black Физиотерапия
-						li.menu-nav-item
-							a(href="#").link-black Флебология
-						li.menu-nav-item
-							a(href="#").link-black Трихология
-						li.menu-nav-item
-							a(href="#").link-black Эндокринология
-						li.menu-nav-item
-							a(href="#").link-black Лабораторные анализы и экспресс-диагностика
-						li.menu-nav-item
-							a(href="#").link-black Персонализированная косметика
+							a(href="#").link-black Клинико-диагностический центр
 			.aside-content
 				.feachure-list-wrap
 					.feachure-list-item
@@ -52,63 +47,62 @@ block content
 								.doc-card-text
 									a(href="#").title.h2.link Услуги
 							.feachure-list-content
+								.feachure-list-preview Инъекционная косметология
 								ul.feachure-list-list
 									li
 										a(href="#") Диагностика кожи
 									li
 										a(href="#") Аутологичное клеточное омоложение рук плазмой
-									li
-										a(href="#") Инъекционная контурная пластика
-									li
-										a(href="#") Лечение угревой болезни
-									li
-										a(href="#") Лечение купероза
-									li
-										a(href="#") Лечение Розацеа
-									li
-										a(href="#") Удаление родинок и папиллом
-									li
-										a(href="#") Вросший ноготь
-									li
-										a(href="#") Биоревитализация
 								ul.feachure-list-list
-									li
-										a(href="#") Ботулинотерапия
 									li
 										a(href="#") Детская косметология
 									li
 										a(href="#") Косметические маски
-									li
-										a(href="#") Косметическое отбеливание зубов
-									li
-										a(href="#") Криодеструкция
-									li
-										a(href="#") Мезотерапия
-									li
-										a(href="#") Мезонити
-									li
-										a(href="#") Лечение гипергидроза
-									li
-										a(href="#") Плазмотерапия
 								ul.feachure-list-list
-									li
-										a(href="#") Фотомодуляция
 									li
 										a(href="#") Чистка лица
 									li
 										a(href="#") Электрокоагуляция
+							.feachure-list-content
+								.feachure-list-preview Аппаратная косметология
+								ul.feachure-list-list
 									li
-										a(href="#") Фототерапия (IPL)
+										a(href="#") Диагностика кожи
+									li
+										a(href="#") Аутологичное клеточное омоложение рук плазмой
+								ul.feachure-list-list
+									li
+										a(href="#") Детская косметология
+									li
+										a(href="#") Косметические маски
+								ul.feachure-list-list
 									li
 										a(href="#") Jet Peel – омоложение
+							.feachure-list-content
+								.feachure-list-preview Лазерная косметология
+								ul.feachure-list-list
 									li
-										a(href="#") Elos - омоложение
+										a(href="#") Диагностика кожи
 									li
-										a(href="#") Дерматоонкология
+										a(href="#") Инъекционная контурная пластика
+								ul.feachure-list-list
 									li
-										a(href="#") Дермабразия
+										a(href="#") Детская косметология
 									li
-										a(href="#") Дермапигментация
+										a(href="#") Криодеструкция
+								ul.feachure-list-list
+									li
+										a(href="#") Фототерапия (IPL)
+							.feachure-list-content
+								.feachure-list-preview Эстетическая косметология
+								ul.feachure-list-list
+									li
+										a(href="#") Лечение угревой болезни
+									li
+										a(href="#") Лечение Розацеа
+								ul.feachure-list-list
+									li
+										a(href="#") Инъекционная контурная пластика
 				.content-column-wrap
 					.content-column-content
 						.content-column-content-inner

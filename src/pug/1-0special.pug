@@ -17,69 +17,87 @@ block content
 	.box
 		//в длинных словах .title можно использовать &shy;
 		.depart-wrap
-			.depart-item.w-50
-				//js-anim для блоков в которых больше ожной ькартинки врача
-				.depart-item-head.head-img.js-anim(data-images="img/bg/v1.png, img/bg/v2.png, img/bg/v3.png")
-					.depart-doctor-img
-					.title.h2 Хирургия
-				.depart-item-body
-					a(href="#").depart-item-link
-						.link-black Отделение пластической и реконструктивно-восстановительной хирургии
-						+doctors(4,'22')
-					a(href="#").depart-item-link
-						.link-black Отделение малоинвазивной хирургии и лазерных технологий
-						+doctors(4,'12')
-					a(href="#").depart-item-link
-						.link-black Отделение малоинвазивной хирургии и лазерных технологий
-						+doctors(1,'')
-			.depart-item.w-50
-				.depart-item-head.head-img.js-anim( data-images='img/bg/v2.png, img/bg/v1.png,img/bg/v3.png')
-					.depart-doctor-img
-					.title.h2 Косметология
-				.depart-item-body
-					a(href="#").depart-item-link
-						.link-black Отделение 
-							br
-							|Аппаратной косметологии
-						+doctors(4,'25')
-					a(href="#").depart-item-link
-						.link-black Отделение 
-							br
-							|детской косметологии
-						+doctors(4,'17')
-					a(href="#").depart-item-link
-						.link-black Отделение
-							br
-							|диагностики кожи
-						+doctors(4,'17')
-			.depart-item.w-100
-				.depart-item-head.head-img
-					.depart-doctor-img(style="background-image:url(img/bg/v3.png)")
-					.title.h2 Консультативно-диагностический центр персонализи&shy;рованной медицины
-				.depart-item-body
-					a(href="#").depart-item-link
-						.link-black Кабинет превентивной 
-							br
-							|и восстановительной медицины
-						+doctors(2,'')
-					a(href="#").depart-item-link
-						.link-black Кабинет 
-							br
-							|врача-терапевта
-						+doctors(1,'')
-					a(href="#").depart-item-link
-						.link-black Кабинет флебологической 
-							br
-							|реабилитации и УЗИ-диагностики
-						+doctors(2,'')
-					a(href="#").depart-item-link
-						.link-black Кабинет 
-							br
-							|физиотерапии
-						+doctors(1,'')
-					a(href="#").depart-item-link
-						.link-black Приемное отделение
-						+doctors(1,'')
+			.doc-card-wrap.margin-card-wrap
+				a(href="#").doc-card-text_title Центр <br> косметологии
+				.doc-card-inner-s
+					.doc-card-text
+						.doc-block.margin-doc-block
+							.doc-item(style="background-image:url(img/bg/v1.png);")
+							.doc-item(style="background-image:url(img/bg/v2.png);")
+							.doc-item(style="background-image:url(img/bg/v3.png);")
+							.doc-item(style="background-image:url(img/bg/v4.png);")
+							.doc-item.more 22
+						a(href="#").title.h4 СМЕТНЕВА СВЕТЛАНА МИХАЙЛОВНА
+						.text2 Заведующая кабинетом,<br> врач-терапевт
+						a(href="#").box-link-s
+							.link-s Все специалисты
+								.link-arr
+									svg(class="icon icon-drop")
+										use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.doc-card-img
+						img(src="img/bg/v31.png" alt="vrtach")
+
+			.doc-card-wrap.margin-card-wrap
+				a(href="#").doc-card-text_title Центр Детской косметологии
+				.doc-card-inner-s
+					.doc-card-text
+						.doc-block.margin-doc-block
+							.doc-item(style="background-image:url(img/bg/v1.png);")
+							.doc-item(style="background-image:url(img/bg/v2.png);")
+							.doc-item(style="background-image:url(img/bg/v3.png);")
+							.doc-item(style="background-image:url(img/bg/v4.png);")
+							.doc-item.more 22
+						a(href="#").title.h4 ИЗРАИЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ
+						.text2 Заведующий отделением, врач-пластический хирург, кандидат медицинских наук
+						a(href="#").box-link-s
+							.link-s Все специалисты
+								.link-arr
+									svg(class="icon icon-drop")
+										use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.doc-card-img
+						img(src="img/bg/v11.png" alt="vrtach")
+
+			.doc-card-wrap.margin-card-wrap
+				a(href="#").doc-card-text_title Центр пластической хирургии
+				.doc-card-inner-s
+					.doc-card-text
+						.doc-block.margin-doc-block
+							.doc-item(style="background-image:url(img/bg/v1.png);")
+							.doc-item(style="background-image:url(img/bg/v2.png);")
+							.doc-item(style="background-image:url(img/bg/v3.png);")
+							.doc-item(style="background-image:url(img/bg/v4.png);")
+							.doc-item.more 22
+						a(href="#").title.h4 СМЕТНЕВА СВЕТЛАНА МИХАЙЛОВНА
+						.text2 Заведующая кабинетом, <br> врач-терапевт
+						a(href="#").box-link-s
+							.link-s Все специалисты
+								.link-arr
+									svg(class="icon icon-drop")
+										use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.doc-card-img
+						img(src="img/bg/v31.png" alt="vrtach")
+
+			.doc-card-wrap.margin-card-wrap
+				a(href="#").doc-card-text_title Клинико-Диагностический центр
+				.doc-card-inner-s
+					.doc-card-text
+						.doc-block.margin-doc-block
+							.doc-item(style="background-image:url(img/bg/v1.png);")
+							.doc-item(style="background-image:url(img/bg/v2.png);")
+							.doc-item(style="background-image:url(img/bg/v3.png);")
+							.doc-item(style="background-image:url(img/bg/v4.png);")
+							.doc-item.more 22
+						a(href="#").title.h4 ИЗРАИЛОВ ВАЛЕРИЙ АЛЕКСАНДРОВИЧ
+						.text2 Заведующий отделением, врач-пластический хирург, кандидат медицинских наук
+						a(href="#").box-link-s
+							.link-s Все специалисты
+								.link-arr
+									svg(class="icon icon-drop")
+										use(xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink")
+					.doc-card-img
+						img(src="img/bg/v11.png" alt="vrtach")
+
+
 
 
 
