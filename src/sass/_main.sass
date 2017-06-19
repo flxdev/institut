@@ -2535,6 +2535,22 @@ a
 				+rem(padding-right,32px)
 			+r(768)
 				width: 100%
+		&.margin-wrap
+			+rem(margin-top,60px)
+			+r(1024)
+				margin-top: 0
+			.doc-card-wrap
+				+rem(margin,50px 0)
+				+r(768)
+					+rem(margin,35px 0)
+				+r(600)
+					+rem(margin,35px 0 0)
+				.title.h4
+					+rm(1025)
+						+tr(color .3s)
+				.doc-card-inner:hover
+					.title.h4
+						color: $hover
 	&-item
 		display: inline-block
 		vertical-align: top
@@ -3351,7 +3367,7 @@ a
 		.slick-arrow
 			background: transparent
 			will-change: opacity
-			top: 40%
+			+rem(top, 80px)
 			&.slick-disabled
 				pointer-events: none
 			&:before

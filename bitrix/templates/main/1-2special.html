@@ -17,7 +17,6 @@
     <link rel="apple-touch-icon" sizes="114x114" href="img/fav/114x114.png">
     <link rel="stylesheet" media="all" href="css/font.css">
     <link rel="stylesheet" media="all" href="css/screen.min.css">
-    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   </head>
   <body>
     <script type="text/javascript">!function(e){function t(o){if(n[o])return n[o].exports;var c=n[o]={exports:{},id:o,loaded:!1};return e[o].call(c.exports,c,c.exports,t),c.loaded=!0,c.exports}var n={};return t.m=e,t.c=n,t.p="/assets/",t(0)}({0:function(e,t,n){n(18),n(19)},18:function(e,t){!function(){"use strict";function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(c))o(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",c,!0),e.onreadystatechange=function(){4===e.readyState&&(o(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=c)},e.send()}else{var n=document.createElement("link");n.href=c,n.rel="stylesheet",n.type="text/css",document.getElementsByTagName("head")[0].appendChild(n),document.cookie="font_css_cache"}}function o(e){var t=document.createElement("style");t.setAttribute("type","text/css"),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t),window.onFontLoad&&window.onFontLoad()}var c=window.fonts_href||"../css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}()},19:function(e,t){}});</script>
@@ -28,52 +27,102 @@
         <div class="page__wrapper">
           <header class="page__header--wrap">
             <div class="page__header cd-auto-hide-header">
-              <div class="page__header-main box"><a class="page__header-logo" href="#">
+              <div class="page__header-main box">
+                <a class="page__header-logo" href="#">
                   <div class="page__header-logo-big" style="background-image:url(img/logob.png);"></div>
-                  <div class="page__header-logo-small" style="background-image:url(img/logob-small.png);"></div></a>
+                  <div class="page__header-logo-small" style="background-image:url(img/logob-small.png);"></div>
+                </a>
                 <div class="page__header-content">
                   <div class="page__header-nav-top">
-                    <div class="top-nav top icon dropdown-trigger"><a href="#"><span>об инстутуте</span></a>
+                    <div class="top-nav top icon dropdown-trigger">
+                      <a href="#">
+                        <span>об инстутуте</span>
+                      </a>
                       <div class="dropdown-target">
                         <div class="dropdown-inner">
                           <div class="dropdown-content">
                             <ul class="dropdown-list about">
-                              <li><a href="#">Об институте</a></li>
-                              <li><a href="#">Руководство</a></li>
-                              <li><a href="#">Миссия</a></li>
-                              <li><a href="#">История</a></li>
-                              <li><a href="#">Лицензии</a></li>
+                              <li>
+                                <a href="#">Об институте</a>
+                              </li>
+                              <li>
+                                <a href="#">Руководство</a>
+                              </li>
+                              <li>
+                                <a href="#">Миссия</a>
+                              </li>
+                              <li>
+                                <a href="#">История</a>
+                              </li>
+                              <li>
+                                <a href="#">Лицензии</a>
+                              </li>
                             </ul>
                             <ul class="dropdown-list">
-                              <li><a href="#">Исследовательский центр</a></li>
-                              <li><a href="#">Научный центр</a></li>
-                              <li><a href="#">Косметическое производство</a></li>
+                              <li>
+                                <a href="#">Исследовательский центр</a>
+                              </li>
+                              <li>
+                                <a href="#">Научный центр</a>
+                              </li>
+                              <li>
+                                <a href="#">Косметическое производство</a>
+                              </li>
                             </ul>
                             <ul class="dropdown-list">
-                              <li><a href="#">Рекламодателям</a></li>
-                              <li><a href="#">Вакансии</a></li>
-                              <li><a href="#">Вопрос-ответ</a></li>
+                              <li>
+                                <a href="#">Рекламодателям</a>
+                              </li>
+                              <li>
+                                <a href="#">Вакансии</a>
+                              </li>
+                              <li>
+                                <a href="#">Вопрос-ответ</a>
+                              </li>
                             </ul>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="top-nav top"><a href="#"><span>Клиники</span></a></div>
-                    <div class="top-nav top icon dropdown-trigger"><a href="#"><span>Акции</span></a>
+                    <div class="top-nav top">
+                      <a href="#">
+                        <span>Клиники</span>
+                      </a>
+                    </div>
+                    <div class="top-nav top icon dropdown-trigger">
+                      <a href="#">
+                        <span>Акции</span>
+                      </a>
                       <div class="dropdown-target">
                         <div class="dropdown-inner">
                           <div class="dropdown-content">
                             <ul class="dropdown-list">
-                              <li><a href="#">Акция</a></li>
-                              <li><a href="#">Акция на лазерную коррекцию</a></li>
-                              <li><a href="#">Акция</a></li>
-                              <li><a href="#">Акция</a></li>
-                              <li><a href="#">Акция</a></li>
+                              <li>
+                                <a href="#">Акция</a>
+                              </li>
+                              <li>
+                                <a href="#">Акция на лазерную коррекцию</a>
+                              </li>
+                              <li>
+                                <a href="#">Акция</a>
+                              </li>
+                              <li>
+                                <a href="#">Акция</a>
+                              </li>
+                              <li>
+                                <a href="#">Акция</a>
+                              </li>
                             </ul>
                             <ul class="dropdown-list">
-                              <li><a href="#">Исследовательский центр</a></li>
-                              <li><a href="#">Научный центр</a></li>
-                              <li><a href="#">Косметическое производство</a></li>
+                              <li>
+                                <a href="#">Исследовательский центр</a>
+                              </li>
+                              <li>
+                                <a href="#">Научный центр</a>
+                              </li>
+                              <li>
+                                <a href="#">Косметическое производство</a>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -84,29 +133,54 @@
                     <div class="o-menu-search">
                       <form class="search__wrapper">
                         <input class="search__input" type="text" placeholder="Поиск по сайту" required="required">
-                        <button class="search__btn" type="submit"><i class="search-icon">
+                        <button class="search__btn" type="submit">
+                          <i class="search-icon">
                             <svg class="icon icon-drop">
                               <use xlink:href="#lupa" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg></i></button>
+                            </svg>
+                          </i>
+                        </button>
                       </form>
                     </div>
                   </div>
                   <div class="page__header-soc">
-                    <div class="soc-wrapp"><a class="soc-wrapp-item vk" href="#">
+                    <div class="soc-wrapp">
+                      <a class="soc-wrapp-item vk" href="#">
                         <svg class="icon icon-drop">
                           <use xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg></a><a class="soc-wrapp-item fb" href="#">
+                        </svg>
+                      </a>
+                      <a class="soc-wrapp-item fb" href="#">
                         <svg class="icon icon-drop">
                           <use xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg></a><a class="soc-wrapp-item in" href="#">
+                        </svg>
+                      </a>
+                      <a class="soc-wrapp-item in" href="#">
                         <svg class="icon icon-drop">
                           <use xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg></a></div>
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                  <div class="page__header-nav-bottom"><a class="top-nav bottom icon js-desktop-hover" href="#" data-id="1"><span>УСЛУГИ и цены </span></a><a class="top-nav bottom icon js-desktop-hover" href="#" data-id="2"><span>СПЕЦИАЛИСТЫ</span></a><a class="top-nav bottom" href="#"><span>Контакты</span></a></div>
-                  <div class="page__header-button"><a class="btn yell i-left" href="#">Записаться на прием</a></div>
-                  <div class="page__header-contact"><a class="contact-item" href="tel:3333">
-                      <div class="text-bold">+7 (495) 212-92-99 </div></a><a class="js-popup-button" href="#" data-modal="fallback">Обратный звонок</a>
+                  <div class="page__header-nav-bottom">
+                    <a class="top-nav bottom icon js-desktop-hover" href="#" data-id="1">
+                      <span>УСЛУГИ и цены </span>
+                    </a>
+                    <a class="top-nav bottom icon js-desktop-hover" href="#" data-id="2">
+                      <span>СПЕЦИАЛИСТЫ</span>
+                    </a>
+                    <a class="top-nav bottom" href="#">
+                      <span>Контакты</span>
+                    </a>
+                  </div>
+                  <div class="page__header-button">
+                    <a class="btn yell i-left" href="#">Записаться на прием</a>
+                  </div>
+                  <div class="page__header-contact">
+                    <a class="contact-item" href="tel:3333">
+                      <div class="text-bold">+7 (495) 212-92-99 </div>
+                    </a>
+                    <a class="js-popup-button" href="#" data-modal="fallback">Обратный звонок</a>
                     <div class="text2"> 
                       <div class="dete-item">пн–пт: 9:00–21:00</div>
                       <div class="dete-item">сб–вс: 10:00–20:00</div>
@@ -114,7 +188,11 @@
                   </div>
                   <div class="page__header-hamburger js-menu">
                     <div class="hamburger">
-                      <div class="hamburger-inner"><span></span><span></span><span></span></div>
+                      <div class="hamburger-inner">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -124,55 +202,117 @@
                   <div class="page__header-drop-item" data-id="1">
                     <!--без <br> тут в дизайн не попадешь-->
                     <div class="page__header-drop-list">
-                      <div class="page__header-drop_menu-item"><a class="page__header-drop_menu-item_title" href="#">Косметология</a>
+                      <div class="page__header-drop_menu-item">
+                        <a class="page__header-drop_menu-item_title" href="#">Косметология</a>
                         <ul class="page__header-drop-list-2">
-                          <li><a href="#">Инъекционная косметология</a></li>
-                          <li><a href="#">Аппаратная косметология</a></li>
-                          <li><a href="#">Лазерная косметология</a></li>
-                          <li><a href="#">Эстетическая косметология</a></li>
+                          <li>
+                            <a href="#">Инъекционная косметология</a>
+                          </li>
+                          <li>
+                            <a href="#">Аппаратная косметология</a>
+                          </li>
+                          <li>
+                            <a href="#">Лазерная косметология</a>
+                          </li>
+                          <li>
+                            <a href="#">Эстетическая косметология</a>
+                          </li>
                         </ul>
                       </div>
-                      <div class="page__header-drop_menu-item"><a class="page__header-drop_menu-item_title" href="#">Детская косметология</a>
+                      <div class="page__header-drop_menu-item">
+                        <a class="page__header-drop_menu-item_title" href="#">Детская косметология</a>
                         <ul class="page__header-drop-list-2">
-                          <li><a href="#">Дермотология</a></li>
-                          <li><a href="#">Трихология</a></li>
+                          <li>
+                            <a href="#">Дермотология</a>
+                          </li>
+                          <li>
+                            <a href="#">Трихология</a>
+                          </li>
                         </ul>
                       </div>
-                      <div class="page__header-drop_menu-item"><a class="page__header-drop_menu-item_title" href="#">Хирургия</a>
+                      <div class="page__header-drop_menu-item">
+                        <a class="page__header-drop_menu-item_title" href="#">Хирургия</a>
                         <ul class="page__header-drop-list-2">
-                          <li><a href="#">Эстетическая хирургия</a></li>
-                          <li><a href="#">Пластическая хирургия</a></li>
-                          <li><a href="#">Малоинвазимная хирургия</a></li>
+                          <li>
+                            <a href="#">Эстетическая хирургия</a>
+                          </li>
+                          <li>
+                            <a href="#">Пластическая хирургия</a>
+                          </li>
+                          <li>
+                            <a href="#">Малоинвазимная хирургия</a>
+                          </li>
                         </ul>
                       </div>
-                      <div class="page__header-drop_menu-item"><a class="page__header-drop_menu-item_title" href="#">Клинико-диагностический центр</a>
+                      <div class="page__header-drop_menu-item">
+                        <a class="page__header-drop_menu-item_title" href="#">Клинико-диагностический центр</a>
                         <ul class="page__header-drop-list-2">
-                          <li><a href="#">Терапевт</a></li>
-                          <li><a href="#">Гинеколог</a></li>
-                          <li><a href="#">Диетолог</a></li>
-                          <li><a href="#">Флебология</a></li>
-                          <li><a href="#">Микология</a></li>
-                          <li><a href="#">Трихология</a></li>
-                          <li><a href="#">Массаж</a></li>
-                          <li><a href="#">Эндокринология</a></li>
-                          <li><a href="#">Лабораторная диагностика</a></li>
+                          <li>
+                            <a href="#">Терапевт</a>
+                          </li>
+                          <li>
+                            <a href="#">Гинеколог</a>
+                          </li>
+                          <li>
+                            <a href="#">Диетолог</a>
+                          </li>
+                          <li>
+                            <a href="#">Флебология</a>
+                          </li>
+                          <li>
+                            <a href="#">Микология</a>
+                          </li>
+                          <li>
+                            <a href="#">Трихология</a>
+                          </li>
+                          <li>
+                            <a href="#">Массаж</a>
+                          </li>
+                          <li>
+                            <a href="#">Эндокринология</a>
+                          </li>
+                          <li>
+                            <a href="#">Лабораторная диагностика</a>
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
                   <div class="page__header-drop-item col-4" data-id="2">
                     <ul class="page__header-drop-list">
-                      <li><a href="#">Отделение <br>пластической хирургии</a></li>
-                      <li><a href="#">Отделение <br>Аппаратной косметологии</a></li>
-                      <li><a href="#">Отделение <br>детской косметологии</a></li>
-                      <li><a href="#">Кабинет <br>врача-терапевта</a></li>
-                      <li><a href="#">Кабинет <br>физиотерапии</a></li>
-                      <li><a href="#">Отделение малоинвазивной хирургии </a></li>
-                      <li><a href="#">Кабинет превентивной и восстановительной медицины</a></li>
-                      <li><a href="#">Приемное отделение</a></li>
-                      <li><a href="#">Отделение анестезиологии и реанимации</a></li>
-                      <li><a href="#">Отделение<br>диагностики кожи</a></li>
-                      <li><a href="#">Кабинет флебологической реабилитации и УЗИ-диагностики	</a></li>
+                      <li>
+                        <a href="#">Отделение <br>пластической хирургии</a>
+                      </li>
+                      <li>
+                        <a href="#">Отделение <br>Аппаратной косметологии</a>
+                      </li>
+                      <li>
+                        <a href="#">Отделение <br>детской косметологии</a>
+                      </li>
+                      <li>
+                        <a href="#">Кабинет <br>врача-терапевта</a>
+                      </li>
+                      <li>
+                        <a href="#">Кабинет <br>физиотерапии</a>
+                      </li>
+                      <li>
+                        <a href="#">Отделение малоинвазивной хирургии </a>
+                      </li>
+                      <li>
+                        <a href="#">Кабинет превентивной и восстановительной медицины</a>
+                      </li>
+                      <li>
+                        <a href="#">Приемное отделение</a>
+                      </li>
+                      <li>
+                        <a href="#">Отделение анестезиологии и реанимации</a>
+                      </li>
+                      <li>
+                        <a href="#">Отделение<br>диагностики кожи</a>
+                      </li>
+                      <li>
+                        <a href="#">Кабинет флебологической реабилитации и УЗИ-диагностики	</a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -180,71 +320,172 @@
               <div class="page__header-mobmenu">
                 <div class="page__header-mobmenu-inner">
                   <ul class="page__header-mobmenu-list">
-                    <li class="js-sub-toggle"><a class="top-nav bottom icon" href="#"><span>УСЛУГИ и цены </span></a>
+                    <li class="js-sub-toggle">
+                      <a class="top-nav bottom icon" href="#">
+                        <span>УСЛУГИ и цены </span>
+                      </a>
                       <ul class="mobile_l2">
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Косметология</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Детская косметология</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Хирургия</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Клинико-диагностический центр</a></li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Косметология</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Детская косметология</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Хирургия</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Клинико-диагностический центр</a>
+                        </li>
                       </ul>
                     </li>
-                    <li class="js-sub-toggle"><a class="top-nav bottom icon" href="#"><span>специалисты</span></a>
+                    <li class="js-sub-toggle">
+                      <a class="top-nav bottom icon" href="#">
+                        <span>специалисты</span>
+                      </a>
                       <ul class="mobile_l2">
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение пластической хирургии</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение Аппаратной косметологии</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение детской косметологии</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Кабинет врача-терапевта</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Кабинет физиотерапии</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Кабинет превентивной и восстановительной медицины</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение малоинвазивной хирургии</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Лабораторные анализы и экспресс-диагностика</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Отделение анестезиологии и реанимации</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Персонализированная косметика</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Физиотерапия</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Физиотерапия</a></li>
-                        <li class="mobile_l2-item"><a class="link-black" href="#">Флебология</a></li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Отделение пластической хирургии</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Отделение Аппаратной косметологии</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Отделение детской косметологии</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Кабинет врача-терапевта</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Кабинет физиотерапии</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Кабинет превентивной и восстановительной медицины</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Отделение малоинвазивной хирургии</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Лабораторные анализы и экспресс-диагностика</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Отделение анестезиологии и реанимации</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Персонализированная косметика</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Физиотерапия</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Физиотерапия</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a class="link-black" href="#">Флебология</a>
+                        </li>
                       </ul>
                     </li>
-                    <li class="js-sub-toggle"><a class="top-nav bottom" href="#"><span>Контакты</span></a></li>
-                    <li class="js-sub-toggle"><a class="top-nav top icon" href="#"><span>об инстутуте</span></a>
+                    <li class="js-sub-toggle">
+                      <a class="top-nav bottom" href="#">
+                        <span>Контакты</span>
+                      </a>
+                    </li>
+                    <li class="js-sub-toggle">
+                      <a class="top-nav top icon" href="#">
+                        <span>об инстутуте</span>
+                      </a>
                       <ul class="mobile_l2">
-                        <li class="mobile_l2-item"><a href="#">Об институте</a></li>
-                        <li class="mobile_l2-item"><a href="#">Исследовательский центр</a></li>
-                        <li class="mobile_l2-item"><a href="#">Научный центр</a></li>
-                        <li class="mobile_l2-item"><a href="#">Косметическое производство</a></li>
-                        <li class="mobile_l2-item"><a href="#">Партнёры   </a></li>
-                        <li class="mobile_l2-item"><a href="#">Рекламодателям    </a></li>
-                        <li class="mobile_l2-item"><a href="#">Вакансии  </a></li>
-                        <li class="mobile_l2-item"><a href="#">Вопрос-ответ       </a></li>
-                        <li class="mobile_l2-item"><a href="#">Отделение анестезиологии и реанимации       </a></li>
-                        <li class="mobile_l2-item"><a href="#">Отзывы   </a></li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Об институте</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Исследовательский центр</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Научный центр</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Косметическое производство</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Партнёры   </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Рекламодателям    </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Вакансии  </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Вопрос-ответ       </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Отделение анестезиологии и реанимации       </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Отзывы   </a>
+                        </li>
                       </ul>
                     </li>
-                    <li class="js-sub-toggle"><a class="top-nav top" href="#"><span>Клиники</span></a></li>
-                    <li class="js-sub-toggle"><a class="top-nav top icon" href="#"><span>акции</span></a>
+                    <li class="js-sub-toggle">
+                      <a class="top-nav top" href="#">
+                        <span>Клиники</span>
+                      </a>
+                    </li>
+                    <li class="js-sub-toggle">
+                      <a class="top-nav top icon" href="#">
+                        <span>акции</span>
+                      </a>
                       <ul class="mobile_l2">
-                        <li class="mobile_l2-item"><a href="#">Об институте</a></li>
-                        <li class="mobile_l2-item"><a href="#">Исследовательский центр</a></li>
-                        <li class="mobile_l2-item"><a href="#">Научный центр</a></li>
-                        <li class="mobile_l2-item"><a href="#">Косметическое производство</a></li>
-                        <li class="mobile_l2-item"><a href="#">Партнёры   </a></li>
-                        <li class="mobile_l2-item"><a href="#">Рекламодателям    </a></li>
-                        <li class="mobile_l2-item"><a href="#">Вакансии  </a></li>
-                        <li class="mobile_l2-item"><a href="#">Вопрос-ответ       </a></li>
-                        <li class="mobile_l2-item"><a href="#">Отделение анестезиологии и реанимации       </a></li>
-                        <li class="mobile_l2-item"><a href="#">Отзывы  </a></li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Об институте</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Исследовательский центр</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Научный центр</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Косметическое производство</a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Партнёры   </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Рекламодателям    </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Вакансии  </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Вопрос-ответ       </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Отделение анестезиологии и реанимации       </a>
+                        </li>
+                        <li class="mobile_l2-item">
+                          <a href="#">Отзывы  </a>
+                        </li>
                       </ul>
                     </li>
-                    <div class="soc-wrapp"><a class="soc-wrapp-item vk" href="#">
+                    <div class="soc-wrapp">
+                      <a class="soc-wrapp-item vk" href="#">
                         <svg class="icon icon-drop">
                           <use xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg></a><a class="soc-wrapp-item fb" href="#">
+                        </svg>
+                      </a>
+                      <a class="soc-wrapp-item fb" href="#">
                         <svg class="icon icon-drop">
                           <use xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg></a><a class="soc-wrapp-item in" href="#">
+                        </svg>
+                      </a>
+                      <a class="soc-wrapp-item in" href="#">
                         <svg class="icon icon-drop">
                           <use xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg></a></div>
+                        </svg>
+                      </a>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -254,12 +495,19 @@
             <div class="wrapper content-wrapper" style="background-image:url(img/bgmain.jpg);">
               <!--для врачей вешаем класс .personal-->
               <div class="box content-head personal">
-                <div class="content-bread"><a class="content-bread-item text2" href="#">Главная</a><a class="content-bread-item text2" href="#">Специалисты</a><a class="content-bread-item text2" href="#">Отделение пластической и реконструктивно-восстановительной хирургии</a><a class="content-bread-item text2" href="#">Израилов Валерий Александрович</a></div>
+                <div class="content-bread">
+                  <a class="content-bread-item text2" href="#">Главная</a>
+                  <a class="content-bread-item text2" href="#">Специалисты</a>
+                  <a class="content-bread-item text2" href="#">Отделение пластической и реконструктивно-восстановительной хирургии</a>
+                  <a class="content-bread-item text2" href="#">Израилов Валерий Александрович</a>
+                </div>
                 <div class="content-main">
                   <div class="title h1">Израилов Валерий Александрович</div>
                   <div class="text-bold">Заведующий отделением, врач-пластический хирург, кандидат медицинских наук</div>
                 </div>
-                <div class="content-img"><img src="img/bg/v11.png" alt=""></div>
+                <div class="content-img">
+                  <img src="img/bg/v11.png" alt="">
+                </div>
               </div>
             </div>
             <div class="box">
@@ -268,20 +516,46 @@
                   <div class="aside-stick js-dropdown-parent" data-sticky_column>
                     <div class="aside-title title h4 js-dropdown">вРАЧ СПЕЦИАЛИЗИРУЕТСЯ:</div>
                     <ul class="menu-nav js-dropdown-target js-slidelist" data-items="9">
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика груди</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика носа</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика ушных раковин</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика лица и шеи</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Нитевой лифтинг</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Интимный филлинг</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Интимная пластика - лабиопластика</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Удаление новообразований</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика век</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика век</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика век</a></li>
-                      <li class="menu-nav-item"><a class="link-black" href="#">Пластика век</a></li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика груди</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика носа</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика ушных раковин</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика лица и шеи</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Нитевой лифтинг</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Интимный филлинг</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Интимная пластика - лабиопластика</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Удаление новообразований</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика век</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика век</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика век</a>
+                      </li>
+                      <li class="menu-nav-item">
+                        <a class="link-black" href="#">Пластика век</a>
+                      </li>
                     </ul>
-                    <div class="menu-nav-item more js-list-more" data-alt-text="Свернуть"><a class="link-black" href="#">Все направления</a></div>
+                    <div class="menu-nav-item more js-list-more" data-alt-text="Свернуть">
+                      <a class="link-black" href="#">Все направления</a>
+                    </div>
                   </div>
                 </aside>
                 <div class="aside-content">
@@ -290,34 +564,52 @@
                       <div class="content-column-content-inner">
                         <h1>Коротко <br>о специалисте</h1>
                         <p> Окончил Дагестанский медицинский институт, клиническую ординатуру по хирургической стоматологии. После аспирантуры успешно защитил кандидатскую диссертацию.</p>
-                        <p>Валерий Александрович выполняет все эстетические операции в области лица и тела. Состоит в Российском обществе реконструктивных и эстетических хирургов (ОПРЭХ)</p><img src="img/bgmain.jpg" alt="">
+                        <p>Валерий Александрович выполняет все эстетические операции в области лица и тела. Состоит в Российском обществе реконструктивных и эстетических хирургов (ОПРЭХ)</p>
+                        <img src="img/bgmain.jpg" alt="">
                         <p> Несмотря на огромный рабочий стаж и профессиональный опыт Валерий Александрович постоянно повышает свой профессиональный уровень, участвует в конгрессах и конференциях.</p>
                         <p> Израилов читает курс лекций, проводит практические занятия по пластической хирургии, а также выступает в научной и научно – популярной литературе.</p>
                         <div class="content-slider-wrap">
                           <div class="content-slider-slider">
-                            <div class="content-item"><img src="img/content/1.jpg" alt="fsdfsd"></div>
-                            <div class="content-item"><img src="img/content/1.jpg" alt="fsdfsd"></div>
-                            <div class="content-item"><img src="img/content/1.jpg" alt="fsdfsd"></div>
+                            <div class="content-item">
+                              <img src="img/content/1.jpg" alt="fsdfsd">
+                            </div>
+                            <div class="content-item">
+                              <img src="img/content/1.jpg" alt="fsdfsd">
+                            </div>
+                            <div class="content-item">
+                              <img src="img/content/1.jpg" alt="fsdfsd">
+                            </div>
                           </div>
                           <div class="content-slider-nav">
                             <div class="nav-arrows"></div>
                           </div>
                         </div>
-                        <p class="caption">В практике хирурга огромное количество операций по исправлению <a href="#">рубцовых деформаций.</a>Наиболее часто пациенты обращаются с рубцами лица и открытых участков тела – послеожоговыми, посттравматическими, рубцами, приобретёнными в результате бытовых или автотравм. </p>
+                        <p class="caption">В практике хирурга огромное количество операций по исправлению 
+                          <a href="#">рубцовых деформаций.</a>Наиболее часто пациенты обращаются с рубцами лица и открытых участков тела – послеожоговыми, посттравматическими, рубцами, приобретёнными в результате бытовых или автотравм. 
+                        </p>
                         <p>Проведённые Израиловым операции избавляют пациентов от ряда серьёзных функциональных расстройств, таких, как ограничение движений в суставах, выворота век и т.д., а также от тяжелых психических страданий из-за изуродованной рубцами внешности.</p>
                         <div class="video-wrap caption">
                           <div class="video-wrap-cover" style="background-image:url(img/content/vbg.jpg);"></div>
                           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qCBOCVblDYk" frameborder="0" allowfullscreen=""></iframe>
-                          <mark class="caption-content"><i>Интервью с Валерием Александровичем</i></mark>
-                        </div><a class="biglink" href="#">Блефалопластика
+                          <mark class="caption-content">
+                            <i>Интервью с Валерием Александровичем</i>
+                          </mark>
+                        </div>
+                        <a class="biglink" href="#">Блефалопластика
                           <div class="link-arr">
                             <svg class="icon icon-drop">
                               <use xlink:href="#link-arr" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
-                          </div></a>
-                        <p>Одна из самых популярных пластических операций – <a href="#">блефаропластика </a>или <a href="#">пластика век</a>. По оценке косметологов признаки увядания кожи наблюдаются у людей начиная с 25 лет, поэтому возрастной диапазон пациентов, обращающихся с этой проблемой, очень широк. </p>
+                          </div>
+                        </a>
+                        <p>Одна из самых популярных пластических операций – 
+                          <a href="#">блефаропластика </a>или 
+                          <a href="#">пластика век</a>. По оценке косметологов признаки увядания кожи наблюдаются у людей начиная с 25 лет, поэтому возрастной диапазон пациентов, обращающихся с этой проблемой, очень широк. 
+                        </p>
                         <p class="caption">Конечно, эффект операции во многом зависит от состояния кожи век, но опыт и мастерство хирурга играют свою очень важную роль в достижении лучшего результата.
-                          <mark class="caption-content"><i>Самая востребованная из омолаживающих операций в практике всех эстетических хирургов в мире.</i></mark>
+                          <mark class="caption-content">
+                            <i>Самая востребованная из омолаживающих операций в практике всех эстетических хирургов в мире.</i>
+                          </mark>
                         </p>
                         <h3>До / после</h3>
                         <div class="content-slider-wrap diffs">
@@ -326,13 +618,17 @@
                               <div class="compare-item_container comparator">
                                 <div class="compare-item_compator comparator-frame">
                                   <div class="compare-result from">
-                                    <div class="compare-idea_preview"><img src="img/content/1.jpg"></div>
+                                    <div class="compare-idea_preview">
+                                      <img src="img/content/1.jpg">
+                                    </div>
                                   </div>
                                   <div class="compare-runner cocoen__drag">
                                     <div class="compare-roller"></div>
                                   </div>
                                   <div class="compare-idea to">
-                                    <div class="compare-idea_preview"><img src="img/content/1.jpg"></div>
+                                    <div class="compare-idea_preview">
+                                      <img src="img/content/1.jpg">
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -341,13 +637,17 @@
                               <div class="compare-item_container comparator">
                                 <div class="compare-item_compator comparator-frame">
                                   <div class="compare-result from">
-                                    <div class="compare-idea_preview"><img src="img/content/1.jpg"></div>
+                                    <div class="compare-idea_preview">
+                                      <img src="img/content/1.jpg">
+                                    </div>
                                   </div>
                                   <div class="compare-runner cocoen__drag">
                                     <div class="compare-roller"></div>
                                   </div>
                                   <div class="compare-idea to">
-                                    <div class="compare-idea_preview"><img src="img/content/1.jpg"></div>
+                                    <div class="compare-idea_preview">
+                                      <img src="img/content/1.jpg">
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -356,13 +656,17 @@
                               <div class="compare-item_container comparator">
                                 <div class="compare-item_compator comparator-frame">
                                   <div class="compare-result from">
-                                    <div class="compare-idea_preview"><img src="img/content/1.jpg"></div>
+                                    <div class="compare-idea_preview">
+                                      <img src="img/content/1.jpg">
+                                    </div>
                                   </div>
                                   <div class="compare-runner cocoen__drag">
                                     <div class="compare-roller"></div>
                                   </div>
                                   <div class="compare-idea to">
-                                    <div class="compare-idea_preview"><img src="img/content/1.jpg"></div>
+                                    <div class="compare-idea_preview">
+                                      <img src="img/content/1.jpg">
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -372,26 +676,57 @@
                             <div class="nav-dots"></div>
                           </div>
                         </div>
-                        <p>Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши. Отклонение ушной раковины может быть выражено в различной степени: от едва заметного оттопыревания и до почти перпендикулярного положения, тогда проводится коррекция ушных раковин - <a href="#">отопластика</a></p>
+                        <p>Наиболее частой косметической деформацией (в большинстве случаев двусторонней) являются торчащие уши. Отклонение ушной раковины может быть выражено в различной степени: от едва заметного оттопыревания и до почти перпендикулярного положения, тогда проводится коррекция ушных раковин - 
+                          <a href="#">отопластика</a>
+                        </p>
                       </div>
-                      <div class="content-column-links"><a class="nav-btn" href="#">
+                      <div class="content-column-links">
+                        <a class="nav-btn" href="#">
                           <div class="nav-btn-inner">
                             <svg class="icon icon-drop">
                               <use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
-                          </div><span>Предыдущий</span></a><a class="nav-btn right" href="#"><span>Следующий</span>
+                          </div>
+                          <span>Предыдущий</span>
+                        </a>
+                        <a class="nav-btn right" href="#">
+                          <span>Следующий</span>
                           <div class="nav-btn-inner">
                             <svg class="icon icon-drop">
                               <use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
-                          </div></a></div>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                     <div class="content-column-right">
-                      <div class="content-column-right-btnwrap"><a class="btn yell btn-big" href="#">Записаться на приём</a></div>
-                      <div class="caption-content"><span class="date"> <span>1982 </span>год</span><i>работает в Институте Красоты на Арбате c 1982 года</i></div>
-                      <div class="caption-content"><img src="img/content/as1.jpg" alt="fsdfsd"><i>Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).</i></div>
-                      <div class="diplom-slider-content caption-content"><b>Дипломы и лицензии специалиста</b>
-                        <div class="diplom-slider-inner"><a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;"><img src="img/content/d1.jpg" alt="fsdfsd"></a><a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;"><img src="img/content/d1.jpg" alt="fsdfsd"></a><a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;"><img src="img/content/d1.jpg" alt="fsdfsd"></a></div><i>Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).</i>
+                      <div class="content-column-right-btnwrap">
+                        <a class="btn yell btn-big" href="#">Записаться на приём</a>
+                      </div>
+                      <div class="caption-content">
+                        <span class="date"> 
+                          <span>1982 </span>год
+                        </span>
+                        <i>работает в Институте Красоты на Арбате c 1982 года</i>
+                      </div>
+                      <div class="caption-content">
+                        <img src="img/content/as1.jpg" alt="fsdfsd">
+                        <i>Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).</i>
+                      </div>
+                      <div class="diplom-slider-content caption-content">
+                        <b>Дипломы и лицензии специалиста</b>
+                        <div class="diplom-slider-inner">
+                          <a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;">
+                            <img src="img/content/d1.jpg" alt="fsdfsd">
+                          </a>
+                          <a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;">
+                            <img src="img/content/d1.jpg" alt="fsdfsd">
+                          </a>
+                          <a class="diplom-slider-inner-img" href="img/content/big.jpg" data-sub-html="&lt;div class=&quot;text bold&quot;&gt;Сертификат качества&lt;/div&gt;&lt;p class=&quot;text2&quot;&gt;Выдан специалисту высшего разряда&lt;/p&gt;">
+                            <img src="img/content/d1.jpg" alt="fsdfsd">
+                          </a>
+                        </div>
+                        <i>Является ассистентом кафедры челюстно-лицевой и пластической хирургии при Российской академии медицинских наук (РАМН).</i>
                       </div>
                     </div>
                   </div>
@@ -399,12 +734,15 @@
               </div>
               <div class="nav-wrapper">
                 <div class="nav-btn-wrap">
-                  <!--если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить--><a class="nav-btn" href="#">
+                  <!--если кнопки нету, то удалять только кнопку. .nav-btn-wrap оставить-->
+                  <a class="nav-btn" href="#">
                     <div class="nav-btn-inner">
                       <svg class="icon icon-drop">
                         <use xlink:href="#arr-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                       </svg>
-                    </div><span>Назад</span></a>
+                    </div>
+                    <span>Назад</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -412,71 +750,141 @@
           <footer class="page__footer">
             <div class="box">
               <div class="footer__main">
-                <div class="footer-main-nav"><a class="link-f" href="#">Главная</a><a class="link-f" href="#">Специалисты</a><a class="link-f" href="#">Акции</a><a class="link-f" href="#">Об институте</a><a class="link-f" href="#">Клиники</a><a class="link-f" href="#">Контакты</a>
+                <div class="footer-main-nav">
+                              <a class="link-f" href="#">Главная</a>
+                              <a class="link-f" href="#">Специалисты</a>
+                              <a class="link-f" href="#">Акции</a>
+                              <a class="link-f" href="#">Об институте</a>
+                              <a class="link-f" href="#">Клиники</a>
+                              <a class="link-f" href="#">Контакты</a>
                 </div>
                 <div class="footer-dop-nav">
                   <div class="text-bold">Услуги</div>
-                  <ul class="footer-dop-list"><a>!= Массаж</a>
-                                <li class="footer-dop-item"><a href="#">Массаж</a></li><a>!= Пилинги</a>
-                                <li class="footer-dop-item"><a href="#">Пилинги</a></li><a>!= Эпиляция</a>
-                                <li class="footer-dop-item"><a href="#">Эпиляция</a></li><a>!= Трихология</a>
-                                <li class="footer-dop-item"><a href="#">Трихология</a></li><a>!= Косметология</a>
-                                <li class="footer-dop-item"><a href="#">Косметология</a></li><a>!= Клиника витилиго</a>
-                                <li class="footer-dop-item"><a href="#">Клиника витилиго</a></li><a>!= Пластическая хирургия</a>
-                                <li class="footer-dop-item"><a href="#">Пластическая хирургия</a></li><a>!= Лабораторные анализы</a>
-                                <li class="footer-dop-item"><a href="#">Лабораторные анализы</a></li><a>!= Послеоперационная  реабилитация</a>
-                                <li class="footer-dop-item"><a href="#">Послеоперационная  реабилитация</a></li><a>!= Персонализирppованная 			 медицина</a>
-                                <li class="footer-dop-item"><a href="#">Персонализирppованная 			 медицина</a></li><a>!= Лазерная косметология</a>
-                                <li class="footer-dop-item"><a href="#">Лазерная косметология</a></li><a>!= Персонализированная косметика</a>
-                                <li class="footer-dop-item"><a href="#">Персонализированная косметика</a></li><a>!= Коррекция фигуры</a>
-                                <li class="footer-dop-item"><a href="#">Коррекция фигуры</a></li><a>!= Прайс-лист</a>
-                                <li class="footer-dop-item"><a href="#">Прайс-лист</a></li>
+                  <ul class="footer-dop-list">
+                                <a>!= Массаж</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Массаж</a>
+                                </li>
+                                <a>!= Пилинги</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Пилинги</a>
+                                </li>
+                                <a>!= Эпиляция</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Эпиляция</a>
+                                </li>
+                                <a>!= Трихология</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Трихология</a>
+                                </li>
+                                <a>!= Косметология</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Косметология</a>
+                                </li>
+                                <a>!= Клиника витилиго</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Клиника витилиго</a>
+                                </li>
+                                <a>!= Пластическая хирургия</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Пластическая хирургия</a>
+                                </li>
+                                <a>!= Лабораторные анализы</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Лабораторные анализы</a>
+                                </li>
+                                <a>!= Послеоперационная  реабилитация</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Послеоперационная  реабилитация</a>
+                                </li>
+                                <a>!= Персонализирppованная 			 медицина</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Персонализирppованная 			 медицина</a>
+                                </li>
+                                <a>!= Лазерная косметология</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Лазерная косметология</a>
+                                </li>
+                                <a>!= Персонализированная косметика</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Персонализированная косметика</a>
+                                </li>
+                                <a>!= Коррекция фигуры</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Коррекция фигуры</a>
+                                </li>
+                                <a>!= Прайс-лист</a>
+                                <li class="footer-dop-item">
+                                  <a href="#">Прайс-лист</a>
+                                </li>
                   </ul>
                 </div>
                 <div class="footer-tel">
                   <div class="text-bold">Контактная информация</div>
                   <!--визуально кнопка рядом с верхним списком-->
-                  <div class="footer-tel-button"><a class="btn yell i-left" href="#">Записаться на прием</a></div>
-                  <div class="footer-tel-nums"><a class="footer-tel-item" href="tel:3333">
-                                  <div class="text-bold">+7 (495) 212-92-99</div><span class="footer-tel-text">Многоканальный</span></a><a class="footer-tel-item" href="tel:3333">
-                                  <div class="text-bold">+7 (499) 795-10-92</div><span class="footer-tel-text">Администрация</span></a>
+                  <div class="footer-tel-button">
+                    <a class="btn yell i-left" href="#">Записаться на прием</a>
+                  </div>
+                  <div class="footer-tel-nums">
+                                <a class="footer-tel-item" href="tel:3333">
+                                  <div class="text-bold">+7 (495) 212-92-99</div>
+                                  <span class="footer-tel-text">Многоканальный</span>
+                                </a>
+                                <a class="footer-tel-item" href="tel:3333">
+                                  <div class="text-bold">+7 (499) 795-10-92</div>
+                                  <span class="footer-tel-text">Администрация</span>
+                                </a>
                   </div>
                   <div class="footer-tel-contact" style="background-image: url(img/bg/fl.png);">
                     <div class="footer-tel-contact-inner">
                       <div class="text-bold">Напишите нам</div>
-                      <p class="text">Получите профессиональную консультацию в один клик</p><a class="btn" href="#">Задать вопрос врачу</a>
+                      <p class="text">Получите профессиональную консультацию в один клик</p>
+                      <a class="btn" href="#">Задать вопрос врачу</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="footer__footer">
                 <div class="footer__footer-copy">
-                  <div class="text2">© 2016 Институт Красоты на Арбате. </div><a class="footer__footer-copy-link" href="#"> 
+                  <div class="text2">© 2016 Институт Красоты на Арбате. </div>
+                  <a class="footer__footer-copy-link" href="#"> 
                     <svg class="icon icon-drop">
                       <use xlink:href="#sait" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg><span>Карта сайта</span></a>
+                    </svg>
+                    <span>Карта сайта</span>
+                  </a>
                 </div>
                 <div class="footer__footer-notify">
                   <div class="text2">При полном иличастичном использовании материалов обратная ссылка обязательна.</div>
                 </div>
-                <div class="soc-wrapp"><a class="soc-wrapp-item vk" href="#">
+                <div class="soc-wrapp">
+                  <a class="soc-wrapp-item vk" href="#">
                     <svg class="icon icon-drop">
                       <use xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg></a><a class="soc-wrapp-item fb" href="#">
+                    </svg>
+                  </a>
+                  <a class="soc-wrapp-item fb" href="#">
                     <svg class="icon icon-drop">
                       <use xlink:href="#fb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg></a><a class="soc-wrapp-item in" href="#">
+                    </svg>
+                  </a>
+                  <a class="soc-wrapp-item in" href="#">
                     <svg class="icon icon-drop">
                       <use xlink:href="#in" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg></a></div>
-                <div class="footer__footer-developer"><a class="footer-developer-link" href="#">
+                    </svg>
+                  </a>
+                </div>
+                <div class="footer__footer-developer">
+                  <a class="footer-developer-link" href="#">
                     <div class="text2">Разработка сайта:</div>
                     <div class="footer-developer-icon">
                       <svg class="icon icon-drop">
                         <use xlink:href="#logof" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                       </svg>
                     </div>
-                    <div class="footer-developer-text">FLEX.MEDIA</div></a></div>
+                    <div class="footer-developer-text">FLEX.MEDIA</div>
+                  </a>
+                </div>
               </div>
             </div>
           </footer>
@@ -489,7 +897,8 @@
         <!-- по саксесу вешаю на этот блок класс из-за которого следующий открывается-->
         <div class="modal-container">
           <div class="modal-container-header">
-            <div class="title h4">Обратная связь</div><i class="small-link pop-close closePopup"></i>
+            <div class="title h4">Обратная связь</div>
+            <i class="small-link pop-close closePopup"></i>
           </div>
           <div class="modal-container-content">
             <form class="form js-validate" data-block=".modal-container">
@@ -529,7 +938,8 @@
         <!--контейнер модалки  -->
         <div class="modal-container response" style="display: none;">
           <div class="modal-container-header">
-            <div class="title h4">Спасибо</div><i class="small-link pop-close closePopup"></i>
+            <div class="title h4">Спасибо</div>
+            <i class="small-link pop-close closePopup"></i>
           </div>
           <div class="modal-container-content">
             <div class="text">Благодарим вас за проявленый интерес к нашей компании. С вами свяжется наш специалист для решения вашего вопроса.  </div>
@@ -543,7 +953,8 @@
         <!--контейнер модалки-->
         <div class="modal-container">
           <div class="modal-container-header">
-            <div class="title h4">Заказать обратный звонок</div><i class="small-link pop-close closePopup"></i>
+            <div class="title h4">Заказать обратный звонок</div>
+            <i class="small-link pop-close closePopup"></i>
           </div>
           <div class="modal-container-content">
             <form class="form js-validate" data-block=".modal-container">
@@ -577,7 +988,8 @@
         <!--контейнер модалки  -->
         <div class="modal-container response" style="display: none;">
           <div class="modal-container-header">
-            <div class="title h4">Спасибо</div><i class="small-link pop-close closePopup"></i>
+            <div class="title h4">Спасибо</div>
+            <i class="small-link pop-close closePopup"></i>
           </div>
           <div class="modal-container-content">
             <div class="text">Благодарим вас за проявленый интерес к нашей компании. С вами свяжется наш специалист для решения вашего вопроса.  </div>
@@ -592,7 +1004,8 @@
         <!--контейнер модалки-->
         <div class="modal-container">
           <div class="modal-container-header">
-            <div class="title h4">Спасибо</div><i class="small-link pop-close closePopup"></i>
+            <div class="title h4">Спасибо</div>
+            <i class="small-link pop-close closePopup"></i>
           </div>
           <div class="modal-container-content">
             <div class="modal-container-content-answer">
@@ -606,6 +1019,6 @@
     <!--END out-->
     <script src="js/lib.min.js"></script>
     <script src="js/common.min.js"></script>
-    <script src="https://yastatic.net/share2/share.js"></script>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   </body>
 </html>
