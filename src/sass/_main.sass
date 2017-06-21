@@ -3465,6 +3465,10 @@ a
 				+r(900)
 					&:last-of-type
 						margin-top: 0
+				.vacancy-head.sale 
+					.vacancy-head-inner
+						.text-bold
+							color: $active
 				li 
 					+rem(margin, 0 0)
 					+rem(padding-top,7.5px)
@@ -3549,7 +3553,7 @@ a
 							+rem(padding-right,10px)
 					&.sale,&>.sale
 						position: relative
-						.text-bold
+
 							// vertical-align: middle
 						// a:first-child
 
@@ -3584,6 +3588,7 @@ a
 					display: table
 					+tr(border-color .3s)
 					border-bottom: 1px solid #f8f8f8
+					width: 100%;
 					&:hover
 						border-color: #aaaaaa
 						span
@@ -5456,6 +5461,80 @@ a
 		padding-right: 0 !important
 		span
 			padding-right: 20px !important
+
+.select-u-item
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  +rem(margin-bottom, 10px);
+  +nosel
+  &:hover,&.hover
+    .input-text
+      transition: color .3s;
+    .input-checked
+      border-color: $active;
+      transition: border-color .3s ease;
+  .input_label
+    display: inline-block;
+    +rem(min-width, 15px)
+    cursor: pointer;
+    width: 100%;
+    .input_main
+      float: left;
+      position: relative;
+      display: inline-block;
+      &.has-error
+      	.input-checked
+      		border-color: red
+  .input-text
+    +rem(font-size, 14px)
+    color: $text1;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    +rem(padding-left, 10px)
+    transition: color .3s;
+    +r(768)
+      +rem(font-size, 13px)
+  .input-real
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &:checked +.input-checked:before,&.active +.input-checked:before
+      opacity: 1;
+    &:checked +.input-checked,&.active +.input-checked
+      border: 1px solid $active;
+  .input-checked
+    +rem(width, 20px)
+    +rem(height, 20px)
+    display: block;
+    +rem(margin-top,1px);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 3px;
+    position: relative;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+    &:before
+      content: '';
+      +rem(width, 14px)
+      +rem(height, 14px)
+      background: url(../img/icons/i-ok.png) no-repeat; 
+      background-position: center
+      background-size: contain
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      +rem(left, 3px)
+      opacity: 0;
+      -o-transition: all .2s ease;
+      transition: all .2s ease;
+  .help-block
+  	position: absolute
+  	white-space: nowrap
+  	color: red
+  	top: 100%
 .menu-nav-item
 	.link-black.active
 		color: #e4b809
