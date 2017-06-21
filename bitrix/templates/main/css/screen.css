@@ -5336,32 +5336,32 @@ a:active {
             .feachure-list-wrap.price .feachure-list-list li.sale .small-block span, .feachure-list-wrap.price .feachure-list-list li > .sale .small-block span {
               width: 100%;
               text-align: center; }
-          .feachure-list-wrap.price .feachure-list-list li.sale a > .text-bold, .feachure-list-wrap.price .feachure-list-list li > .sale a > .text-bold {
+          .feachure-list-wrap.price .feachure-list-list li.sale a > .text-bold, .feachure-list-wrap.price .feachure-list-list li.sale div:not([class]) > .text-bold, .feachure-list-wrap.price .feachure-list-list li > .sale a > .text-bold, .feachure-list-wrap.price .feachure-list-list li > .sale div:not([class]) > .text-bold {
             color: #e4b809; }
-          .feachure-list-wrap.price .feachure-list-list li.sale a:hover span:after, .feachure-list-wrap.price .feachure-list-list li > .sale a:hover span:after {
+          .feachure-list-wrap.price .feachure-list-list li.sale a:hover span:after, .feachure-list-wrap.price .feachure-list-list li.sale div:not([class]):hover span:after, .feachure-list-wrap.price .feachure-list-list li > .sale a:hover span:after, .feachure-list-wrap.price .feachure-list-list li > .sale div:not([class]):hover span:after {
             -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15); }
-          .feachure-list-wrap.price .feachure-list-list li.sale a:hover .text-bold, .feachure-list-wrap.price .feachure-list-list li > .sale a:hover .text-bold {
+          .feachure-list-wrap.price .feachure-list-list li.sale a:hover .text-bold, .feachure-list-wrap.price .feachure-list-list li.sale div:not([class]):hover .text-bold, .feachure-list-wrap.price .feachure-list-list li > .sale a:hover .text-bold, .feachure-list-wrap.price .feachure-list-list li > .sale div:not([class]):hover .text-bold {
             color: #fbd400; }
-      .feachure-list-wrap.price .feachure-list-list a {
+      .feachure-list-wrap.price .feachure-list-list a, .feachure-list-wrap.price .feachure-list-list div:not([class]) {
         display: table;
         -webkit-transition: border-color 0.3s;
         transition: border-color 0.3s;
         border-bottom: 1px solid #f8f8f8; }
-        .feachure-list-wrap.price .feachure-list-list a:hover {
+        .feachure-list-wrap.price .feachure-list-list a:hover, .feachure-list-wrap.price .feachure-list-list div:not([class]):hover {
           border-color: #aaaaaa; }
-          .feachure-list-wrap.price .feachure-list-list a:hover span {
+          .feachure-list-wrap.price .feachure-list-list a:hover span, .feachure-list-wrap.price .feachure-list-list div:not([class]):hover span {
             color: #000; }
-        .feachure-list-wrap.price .feachure-list-list a span, .feachure-list-wrap.price .feachure-list-list a .text-bold {
+        .feachure-list-wrap.price .feachure-list-list a span, .feachure-list-wrap.price .feachure-list-list a .text-bold, .feachure-list-wrap.price .feachure-list-list div:not([class]) span, .feachure-list-wrap.price .feachure-list-list div:not([class]) .text-bold {
           display: table-cell;
           vertical-align: bottom;
           -webkit-transition: color 0.3s;
           transition: color 0.3s; }
-        .feachure-list-wrap.price .feachure-list-list a .text-bold {
+        .feachure-list-wrap.price .feachure-list-list a .text-bold, .feachure-list-wrap.price .feachure-list-list div:not([class]) .text-bold {
           text-align: right;
           white-space: nowrap;
           font-size: 1.125rem; }
-        .feachure-list-wrap.price .feachure-list-list a span {
+        .feachure-list-wrap.price .feachure-list-list a span, .feachure-list-wrap.price .feachure-list-list div:not([class]) span {
           padding-right: 0.3125rem; }
   .feachure-list-wrap .doc-card-inner {
     padding-top: 5.3125rem;
