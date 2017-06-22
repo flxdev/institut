@@ -110,55 +110,21 @@ include _mixins.pug
 	.page__header-drop-cont
 		.page__header-drop-item(data-id='1')
 			//без <br> тут в дизайн не попадешь
-			.page__header-drop-list
-				.page__header-drop_menu-item
-					a(href="#").page__header-drop_menu-item_title Косметология
+			ul.page__header-drop-list
+				li
+					a(href='/services/kosmetologiya/') Косметология
 					ul.page__header-drop-list-2
 						li
-							a(href="#") Инъекционная косметология
+							a(href='/services/kosmetologiya/inektsionnaya-kosmetologiya/') Инъекционная косметология
 						li
-							a(href="#") Аппаратная косметология
-						li
-							a(href="#") Лазерная косметология
-						li
-							a(href="#") Эстетическая косметология
-				.page__header-drop_menu-item
-					a(href="#").page__header-drop_menu-item_title Детская косметология
-					ul.page__header-drop-list-2
-						li
-							a(href="#") Дермотология
-						li
-							a(href="#") Трихология
-				.page__header-drop_menu-item
-					a(href="#").page__header-drop_menu-item_title Хирургия
-					ul.page__header-drop-list-2
-						li
-							a(href="#") Эстетическая хирургия
-						li
-							a(href="#") Пластическая хирургия
-						li
-							a(href="#") Малоинвазимная хирургия
-				.page__header-drop_menu-item
-					a(href="#").page__header-drop_menu-item_title Клинико-диагностический центр
-					ul.page__header-drop-list-2
-						li
-							a(href="#") Терапевт
-						li
-							a(href="#") Гинеколог
-						li
-							a(href="#") Диетолог
-						li
-							a(href="#") Флебология
-						li
-							a(href="#") Микология
-						li
-							a(href="#") Трихология
-						li
-							a(href="#") Массаж
-						li
-							a(href="#") Эндокринология
-						li
-							a(href="#") Лабораторная диагностика
+							a(href='/services/kosmetologiya/apparatnaya-kosmetologiya/') Аппаратная косметология
+				li
+					a(href='/services/plasticheskaya-khirurgiya/') Пластическая хирургия
+				li
+					a(href='/services/lazernaya-kosmetologiya/') Лазерная косметология
+				li
+					a(href='/services/korrektsiya-figury/') Коррекция фигуры
+
 
 		.page__header-drop-item.col-4(data-id='2')
 			ul.page__header-drop-list

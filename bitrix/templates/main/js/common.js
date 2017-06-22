@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
 					targetWrap.find("[data-id="+ id +"]").addClass(current).siblings().removeClass(current);
 					var h = targetWrap.find("[data-id="+ id +"]").find('.page__header-drop-list').outerHeight();
 					targetWrap.css('height',h + 65);
-
 				}else{
 					targetWrap.removeClass(shown);
 					items.removeClass('active')
@@ -130,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		$('.partner-elem-inner').matchHeight({
 			property: 'min-height'
 		});
-		// $('.action-inner .news-item').matchHeight({
-		// 	property: 'min-height'
-		// });
+		$('.margin-card-wrap').matchHeight({
+			property: 'min-height'
+		});
 	},300)
 
 
@@ -428,7 +427,16 @@ function initCustomSelectList() {
 			var _input = $(this);
 
 			if(_select.hasClass('ajax')){
-				var data = _input.data();
+				var data = _input.data(),
+					check = _select.data("checked"),
+					checked = '';
+
+				if("service" in data) {
+					$('.ajax.SPECIALIST').data('checked', data.service);
+				} else if("specialist" in data) {
+					$('.ajax.SERVICE').data('checked', data.specialist);
+				}
+
 				$.ajax({
 					url: '/include/form/form_get.php',
 					dataType: "json",
@@ -439,7 +447,8 @@ function initCustomSelectList() {
 							var _res = "";
 							_res = '<label class="option"><input name="FIELDS[SPECIALIST]" data-specialist="0" data-specialization="" type="radio" value="Любой"><span>Любой</span></label>';
 							$.each(result['SPECIALIST'], function(i, val) {
-								_res += '<label class="option"><input name="FIELDS[SPECIALIST]" data-specialist="'+val["ID"]+'" data-specialization="'+JSON.stringify(val["PROPERTY_SPECIALIZATION_VALUE"])+'" type="radio" value="'+val["NAME"]+'"><span>'+val["NAME"]+'</span></label>';
+								if(val["ID"] == check) {checked='checked="checked"'}else{checked=''}
+								_res += '<label class="option"><input name="FIELDS[SPECIALIST]" '+checked+' data-specialist="'+val["ID"]+'" data-specialization=\''+JSON.stringify(val["PROPERTY_SPECIALIZATION_VALUE"])+'\' type="radio" value="'+val["NAME"]+'"><span>'+val["NAME"]+'</span></label>';
 							});
 							$('.SPECIALIST .select-list').html(_res);
 						}
@@ -449,7 +458,8 @@ function initCustomSelectList() {
 								_res += '<div class="listed"><b>'+section["NAME"]+'</b>';
 								if(section["ITEMS"]){
 									$.each(section["ITEMS"], function(i, val) {
-										_res += '<label class="option"><input type="radio" name="FIELDS[SERVICE]" value="'+val["NAME"]+'" data-service="'+val["ID"]+'"><span>'+val["NAME"]+'</span></label>';
+										if(val["ID"] == check) {checked='checked="checked"'}else{checked=''}
+										_res += '<label class="option"><input type="radio" name="FIELDS[SERVICE]" '+checked+' value="'+val["NAME"]+'" data-service="'+val["ID"]+'"><span>'+val["NAME"]+'</span></label>';
 									});
 								}
 								_res += '</div>';

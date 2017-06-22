@@ -3507,6 +3507,7 @@ a
 							.text-bold
 								width: auto
 								min-width: 6.25rem
+								color: $active
 					.title 
 						font-weight: 400
 						text-transform: none
@@ -3695,6 +3696,10 @@ a
 	font-size: 16px
 	color: black
 	margin-top: 30px
+	&>a
+		color: black
+		&:hover
+			color: $hover
 .nav-btn-wrap:empty() + .tel-form
 	+r(620)
 		+rem(margin-top, 0px)
@@ -5434,6 +5439,7 @@ a
 	.feachure-list-wrap
 		+rem(margin-top,30px)
 		border-top: $bb
+		pointer-events: none
 	.feachure-list-list
 		min-width: 100%
 		li 
@@ -5567,35 +5573,22 @@ a
 	.link-black_box-link.active
 		box-shadow: none
 		color: #e4b809
-.page__header-drop_menu-item
-	font-size: 0
-	display: inline-block
-	vertical-align: top
-	width: 25%
-	.page__header-drop_menu-item_title
-		font-family: PTSans
-		font-weight: normal
-		font-size: 16px
-		color: #000
-		margin-top: 30px
-		margin-bottom: 12px
+.page__header-drop-list-2
+	li
+		min-width: 100%
+		width: 100%
 		display: block
-		transition: color .3s
-		&:hover
-			color: #fbd400
-	.page__header-drop-list-2
-		li
-			width: 100%
-			display: block
-			padding: 10px 0
-			a
-				color: #6d6d6d
-				transition: color .3s
-				font-size: 0.875rem
-				&:hover
-					color: #fbd400
-.page__header-drop-cont .page__header-drop-item
-	padding: 0 0 1.25rem 0
+		padding: 10px 0
+		padding: 0 !important
+		&>a
+			color: #6d6d6d
+			transition: color .3s
+			font-size: 0.875rem
+			padding: .6525rem .625rem .6525rem 0 !important
+			&:hover
+				color: #fbd400
+// .page__header-drop-cont .page__header-drop-item
+// 	padding: 0 0 1.25rem 0
 .map-item-col-elem
 	font-size: 0
 	margin-top: 45px
@@ -5682,6 +5675,11 @@ a
 	color: #000
 .doc-card-wrap.margin-card-wrap
 	margin: 50px 0 80px 0
+	display: inline-flex
+	flex-flow: column nowrap
+	justify-content: flex-end
+	.doc-item
+	    filter: grayscale(100%) brightness(110%) opacity(95%);
 @media all and (max-width: 900px)
 	.map-item-col-elem_box
 		width: 33%
