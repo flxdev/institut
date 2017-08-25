@@ -438,7 +438,7 @@ body, .out
 				+r(991)
 					display: none
 			&-top
-				padding-right: 3.5%
+				// padding-right: 3.5%
 				+rem(min-width,330px)
 				+rem(padding-bottom, 2px)
 				position: relative
@@ -1396,86 +1396,133 @@ a.small-block
 		+r(735)
 			background-position: left 15% top
 			+rem(padding-bottom,20px)
-		&-inner
-			flex-flow: row nowrap
-			align-items: stretch
-			display: flex
-			+rm(1350)
-				+rem(margin-right,-30px)
-			+r(735)
-				flex-direction: column
-				position: relative
-				
-	&-main
-		flex-basis: 67%
-		+r(991)
-			flex-basis: 45%
+		&-slider
+			.slick-track,.slick-list,.index-wrapper-slide
+				height: 100%
 			position: relative
-			z-index: 3
-		+r(735)
-			flex-basis: 40%
-		& >.title
-			+rem(margin, 62px 0 26px)
-			+r(991)
-				+rem(margin, 42px 0 26px)
-				width: 142%
-			+r(735)
-				font-size: 10vw
+			&>.nav-dots
+				position: absolute
+				right: 0
+				display: block
+				+rem(bottom,30px)
+				+rem(width,350px)
+				text-align: center
+			.doctor-slider-wrapper
+				+r(900)
+					+rem(padding-top, 350px)
+				// 	display: none
+					
+				
+		&-slide
+			display: flex !important
+			flex-flow: row wrap
+			align-items: stretch
+			+r(600)
+				align-items: flex-end
+			.index-main,.index-aside
+				+r(600)
+					width: 100%
+			.index-aside
+				+rem(width,408px)
+				+r(740)
+					+rem(width,300px)
+				+r(600)
+					padding-top: 0
+			.index-main
+				width: calc(100% - 25.5rem)
+				+r(740)
+					width: calc(100% - 18.75rem)
+
+		.card-wrapper
+			position: relative
+			+rem(max-width,800px)
+			+rem(margin-top,-300px)
+			width: 65%
+			+r(900)
+				// +rem(max-width,400px)
+				max-width: 100%
 				width: 100%
-				position: relative
-				z-index: 2
+				+rem(margin-top,-0px)
+			&-slider
+				&:not(.slick-initialized)
+					white-space: nowrap
+					overflow: hidden
+			.slick-list
+				+rem(margin-bottom,-20px)
+				+rem(padding-bottom,20px)
+			// +rem(margin, 58px 0 54px)
+			// +r(1150)
+			// 	justify-content: center
+			// +r(991)
+			// 	+rem(margin, 25px 0 44px)
+			// +r(735)
+			// 	margin-top: 38%
+			// 	margin-bottom: 0
+			// +r(480)
+			// 	margin-top: 45%
+			.card-item
+				width: 100%
+				+r(900)
+					+rem(margin-top,5px)
+				+r(600)
+					+rem(margin,5px auto 0)
+					display: block
+					
+				// +rm(991)
+				// 	width: 100%
+				// 	+rem(max-width,372.5px)
+				// 	&-wrap
+				// 		width: 50%
+			.nav-dots
+				display: block
+				text-align: center
+				+rem(padding-bottom,30px)
+				+rem(padding-top,15px)
+				.slick-dots
+					position: static !important
+		&-inner
+			+rem(height,600px)
+			&:not(.slick-initialized)
+				white-space: nowrap
+				overflow: hidden
+				&>* 
+					display: inline-block
+					width: 100%
+			+r(900)
+				// +rem(height,800px)
+				height: auto
+				
+
+	&-main
+		&-content 
+			+rem(padding-bottom,320px)
+			+r(900)
+				+rem(padding-bottom,36px)
+		.title
+			+rem(margin, 62px 0 26px)
+			+r(1100)
+				+rem(margin, 42px -25px 26px 0)
+				width: 142%
+			+r(600)
+				width: 100%
+				margin-right: 0
+				font-size: 11vw
+				margin-top: 0
 		.text-bold
 			+rem(letter-spacing, -0.4px)
 			+r(735)
 				font-size: 4vw
 				max-width: 40vw
-		.card-wrapper
-			display: flex
-			flex-flow: row wrap
-			align-items: flex-start
-			+rem(margin, 58px 0 54px)
-			+r(1150)
-				justify-content: center
-			+r(991)
-				+rem(margin, 25px 0 44px)
-			+r(735)
-				margin-top: 38%
-				margin-bottom: 0
-			+r(480)
-				margin-top: 45%
-			.card-item
-				+rm(991)
-					width: 100%
-					+rem(max-width,372.5px)
-					&-wrap
-						width: 50%
+			+r(600)
+				width: 100%
+				max-width: 100%
+				
 	&-aside
-		flex-basis:	33%
-		+rem(max-width, 450px)
 		+rem(margin-right,-50px)
-		flex-direction: column
-		justify-content: flex-end
 		position: relative
 		+r(991)
-			flex-basis:	55%
 			+rem(max-width, 550px)
 			+rem(padding-top,100px)
-		+r(735)
-			padding-bottom: 100%
-			height: 100%
-			padding-top: 0
-			position: absolute
-			height: 0
-			top: 0
-			// right: 0
-			+rem(right, -30px)
-			// width: 40vh
-			width: 60%
-			max-width: 100%
-		+r(480)
-			padding-bottom: 120%
-			width: 65%
-			// max-width: 32vh
 		&-inner
 			position: absolute
 			+coverdiv
@@ -1514,15 +1561,6 @@ a.small-block
 		z-index: 4
 		width: 100%
 		padding-left: 24.5%
-		+r(735)
-			bottom: 13%
-			padding-left: 0
-			left: -19%
-		+r(480)
-			left: -35%
-		+r(350)
-			left: -40%
-			bottom: 9%
 		.text
 			+rem(max-width, 230px)
 			+rem(font-size,15px)
@@ -1560,11 +1598,11 @@ a.small-block
 			.bold
 				line-height: .5;
 				+tr(color .3s)
-			+tr(opacity .35s)
-			opacity: 0
-			&.slick-current,&.slick-cloned
-				opacity: 1
-				+tr(opacity .35s .2s)
+			// +tr(opacity .35s)
+			// opacity: 0
+			// &.slick-current,&.slick-cloned
+			// 	opacity: 1
+			// 	+tr(opacity .35s .2s)
 .footer
 	&__main
 		display: flex
@@ -1988,6 +2026,10 @@ a.small-block
 			.title
 				+rem(margin-bottom,28px)
 				display: inline-block
+				&.h4
+					+rem(margin-top,20px)
+					.link-arr
+						+rem(margin-top,-3px)
 		&-aside
 			width: 33%
 			height: 100%
@@ -2878,6 +2920,17 @@ a
 		.more
 			+r(735)
 				display: none	!important
+.aside-content
+	&>.feachure-list-wrap
+		.feachure-list-item
+			&:only-child
+				padding-bottom: 0
+		&+.content-column-wrap
+			+rem(margin-top,80px)
+			+r(950)
+				+rem(margin-top,55px)
+			+r(600)
+				+rem(margin-top,40px)	
 .menu-nav
 	.more
 	&-item
@@ -3051,13 +3104,14 @@ a
 			border: 1px solid $hover
 			+padlr(30px)
 			+rem(padding-top, 20px)
-			+rem(padding-bottom, 5px)
+			+rem(padding-bottom, 20px)
 			+rem(margin-bottom, 40px)
 			+rem(margin-top, 40px)
 			b 
 				padding-left: 0
 			p 
 				padding-right: 0
+				margin-bottom: 0
 			+r(735)
 				+padlr(15px)
 		.content-slider-wrap,.video-wrap,blockquote
@@ -3894,23 +3948,24 @@ a
 				+rem(margin-top, 30px)
 			ul
 				+rem(margin-top, 35px)
-				li
-					+rem(font-size,16px)
-					line-height: 1.25;
-					color: #000
-					+rem(padding-left,28px)
-					position: relative
-					+rem(padding-bottom, 20px)
-					&:after
-						position: absolute
-						content: ''
-						display: inline-block
-						+rem(left, 3px)
-						+rem(top, 7px)
-						+rem(width,6px)
-						+rem(height, 6px)
-						background-color: #000
-						border-radius: 50%
+			li
+				+rem(font-size,16px)
+				line-height: 1.25;
+				color: #000
+				+rem(padding-left,28px)
+				position: relative
+				+rem(padding-bottom, 20px)
+				list-style: none
+				&:after
+					position: absolute
+					content: ''
+					display: inline-block
+					+rem(left, 3px)
+					+rem(top, 7px)
+					+rem(width,6px)
+					+rem(height, 6px)
+					background-color: #000
+					border-radius: 50%
 			.more 
 				+rem(padding-left,28px)
 				margin-top: 0

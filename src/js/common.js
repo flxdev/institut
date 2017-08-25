@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		$('.partner-elem-inner').matchHeight({
 			property: 'min-height'
 		});
-		$('.margin-card-wrap').matchHeight({
-			property: 'min-height'
-		});
+		// $('.margin-card-wrap').matchHeight({
+		// 	property: 'min-height'
+		// });
 	},300)
 
 
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			// $(".aside-stick").trigger("sticky_kit:detach");
 			$(".aside-stick").stick_in_parent({
 				offset_top : 73,
-				recalc_every: 1
+				// recalc_every: 1
 			});
 			var maintrigger = $('.js-accordion-trigger'),
 				body = $('.js-accordion-body'),
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	bgfade();
 	DesktopMenu();
-	doctorSlider();
+	indexdoctorSlider();
 	rombSlider();
 	partnerSlider();
 	contentSlider();
@@ -312,6 +312,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	ajaxPagenation();
 	comenthide();
 	listhide();
+	combSlider();
 	var compare = new CompareImages($('.compare-item_container'));
 //end of document.ready
 });
@@ -557,42 +558,42 @@ function datepick(){
 	  $('.datepicker').blur();
 	});
 }
-function doctorSlider(){
-	$(".js-slider-doctor").each(function() {
-		var _this = $(this);
-		var parent = _this.closest('.index-aside-inner');
-		_this.slick({
-			accessibility: true,
-			arrows: false,
-			draggable: false,
-			autoplay: true,
-			dots: true,
-			appendDots: parent.find('.nav-dots'),
-			asNavFor: parent.find('.js-slider-doctor-add'),
-			touchMove: false,
-			infinite: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			fade: true,
-			autoplaySpeed: 8000
-		});
-	});
-	$(".js-slider-doctor-add").each(function() {
-		var _this = $(this);
-		var parent = _this.closest('.index-aside-inner');
-		_this.slick({
-			accessibility: true,
-			arrows: false,
-			draggable: false,
-			dots: false,
-			asNavFor: parent.find('.js-slider-doctor'),
-			touchMove: false,
-			infinite: true,
-			slidesToShow: 1,
-			slidesToScroll: 1
-		});
-	});
-}
+// function doctorSlider(){
+// 	$(".js-slider-doctor").each(function() {
+// 		var _this = $(this);
+// 		var parent = _this.closest('.index-aside-inner');
+// 		_this.slick({
+// 			accessibility: true,
+// 			arrows: false,
+// 			draggable: false,
+// 			autoplay: true,
+// 			dots: true,
+// 			appendDots: parent.find('.nav-dots'),
+// 			asNavFor: parent.find('.js-slider-doctor-add'),
+// 			touchMove: false,
+// 			infinite: true,
+// 			slidesToShow: 1,
+// 			slidesToScroll: 1,
+// 			fade: true,
+// 			autoplaySpeed: 8000
+// 		});
+// 	});
+// 	$(".js-slider-doctor-add").each(function() {
+// 		var _this = $(this);
+// 		var parent = _this.closest('.index-aside-inner');
+// 		_this.slick({
+// 			accessibility: true,
+// 			arrows: false,
+// 			draggable: false,
+// 			dots: false,
+// 			asNavFor: parent.find('.js-slider-doctor'),
+// 			touchMove: false,
+// 			infinite: true,
+// 			slidesToShow: 1,
+// 			slidesToScroll: 1
+// 		});
+// 	});
+// }
 
 function rombSlider(){
 	$(".romb-slider-main").each(function() {
@@ -631,6 +632,34 @@ function rombSlider(){
 		});
 	});
 }
+function combSlider(){
+	$(".card-wrapper-slider").each(function() {
+		var _this = $(this);
+		var parent = _this.parent();
+		_this.slick({
+			accessibility: true,
+			arrows: false,
+			draggable: false,
+			autoplay: true,
+			dots: true,
+			// touchMove: false,
+			infinite: false,
+			slidesToShow: 2,
+			slidesToScroll: 2,
+			autoplaySpeed: 10000,
+			appendDots: parent.find('.nav-dots'),
+			responsive: [
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				},
+			]
+		});
+	});
+}
 function diplomSlider(){
 	$(".diplom-slider-inner").each(function() {
 		var _this = $(this);
@@ -645,6 +674,35 @@ function diplomSlider(){
 			infinite: false,
 			slidesToShow: 1,
 			slidesToScroll: 1,
+
+		});
+	});
+}
+function indexdoctorSlider(){
+	$(".index-wrapper-inner").each(function() {
+		var _this = $(this);
+		var parent = _this.parent();
+		_this.slick({
+			accessibility: true,
+			arrows: false,
+			draggable: false,
+			autoplay: false,
+			dots: true,
+			fade: true,
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			appendDots: parent.find('.nav-dots'),
+			// autoplay: true,
+			autoplaySpeed: 12000,
+			responsive: [
+				{
+					breakpoint: 600,
+					settings: {
+						adaptiveHeight: true
+					}
+				},
+			]
 		});
 	});
 }
